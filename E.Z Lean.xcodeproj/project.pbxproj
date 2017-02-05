@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50062A1D1E470D62002BDE90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50062A1C1E470D62002BDE90 /* AppDelegate.swift */; };
+		50062A1F1E470D62002BDE90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50062A1E1E470D62002BDE90 /* ViewController.swift */; };
+		50062A221E470D62002BDE90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50062A201E470D62002BDE90 /* Main.storyboard */; };
+		50062A241E470D62002BDE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50062A231E470D62002BDE90 /* Assets.xcassets */; };
+		50062A271E470D62002BDE90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50062A251E470D62002BDE90 /* LaunchScreen.storyboard */; };
+		DC3D23832A4DA19C8882A582 /* Pods_E_Z_Lean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		50062A191E470D62002BDE90 /* E.Z Lean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E.Z Lean.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50062A1C1E470D62002BDE90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		50062A1E1E470D62002BDE90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		50062A211E470D62002BDE90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		50062A231E470D62002BDE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50062A261E470D62002BDE90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		50062A281E470D62002BDE90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Z_Lean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A1E618EEB7A58EB6E059610 /* Pods-E.Z Lean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E.Z Lean.debug.xcconfig"; path = "Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean.debug.xcconfig"; sourceTree = "<group>"; };
+		F991C80613185F1F8E5C30F1 /* Pods-E.Z Lean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E.Z Lean.release.xcconfig"; path = "Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50062A161E470D62002BDE90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC3D23832A4DA19C8882A582 /* Pods_E_Z_Lean.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50062A101E470D61002BDE90 = {
+			isa = PBXGroup;
+			children = (
+				50062A1B1E470D62002BDE90 /* E.Z Lean */,
+				50062A1A1E470D62002BDE90 /* Products */,
+				F8F68B3F4643132A0C1CA6A1 /* Pods */,
+				DDCF52F607F1FED1E2814F9D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		50062A1A1E470D62002BDE90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50062A191E470D62002BDE90 /* E.Z Lean.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50062A1B1E470D62002BDE90 /* E.Z Lean */ = {
+			isa = PBXGroup;
+			children = (
+				50062A1C1E470D62002BDE90 /* AppDelegate.swift */,
+				50062A1E1E470D62002BDE90 /* ViewController.swift */,
+				50062A201E470D62002BDE90 /* Main.storyboard */,
+				50062A231E470D62002BDE90 /* Assets.xcassets */,
+				50062A251E470D62002BDE90 /* LaunchScreen.storyboard */,
+				50062A281E470D62002BDE90 /* Info.plist */,
+			);
+			path = "E.Z Lean";
+			sourceTree = "<group>";
+		};
+		DDCF52F607F1FED1E2814F9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8F68B3F4643132A0C1CA6A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A1E618EEB7A58EB6E059610 /* Pods-E.Z Lean.debug.xcconfig */,
+				F991C80613185F1F8E5C30F1 /* Pods-E.Z Lean.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50062A181E470D62002BDE90 /* E.Z Lean */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50062A2B1E470D62002BDE90 /* Build configuration list for PBXNativeTarget "E.Z Lean" */;
+			buildPhases = (
+				0042BFF0F704FEEF40AEC81C /* [CP] Check Pods Manifest.lock */,
+				50062A151E470D62002BDE90 /* Sources */,
+				50062A161E470D62002BDE90 /* Frameworks */,
+				50062A171E470D62002BDE90 /* Resources */,
+				C01ADD67CBB1BC6E1FDEEB5A /* [CP] Embed Pods Frameworks */,
+				23125D01D19ECB0D08E6B7B0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "E.Z Lean";
+			productName = "E.Z Lean";
+			productReference = 50062A191E470D62002BDE90 /* E.Z Lean.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50062A111E470D61002BDE90 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "E.Z Lean";
+				TargetAttributes = {
+					50062A181E470D62002BDE90 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Z3TDYH9DM8;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 50062A141E470D61002BDE90 /* Build configuration list for PBXProject "E.Z Lean" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 50062A101E470D61002BDE90;
+			productRefGroup = 50062A1A1E470D62002BDE90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50062A181E470D62002BDE90 /* E.Z Lean */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50062A171E470D62002BDE90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50062A271E470D62002BDE90 /* LaunchScreen.storyboard in Resources */,
+				50062A241E470D62002BDE90 /* Assets.xcassets in Resources */,
+				50062A221E470D62002BDE90 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0042BFF0F704FEEF40AEC81C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		23125D01D19ECB0D08E6B7B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C01ADD67CBB1BC6E1FDEEB5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50062A151E470D62002BDE90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50062A1F1E470D62002BDE90 /* ViewController.swift in Sources */,
+				50062A1D1E470D62002BDE90 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		50062A201E470D62002BDE90 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50062A211E470D62002BDE90 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		50062A251E470D62002BDE90 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50062A261E470D62002BDE90 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		50062A291E470D62002BDE90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50062A2A1E470D62002BDE90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50062A2C1E470D62002BDE90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A1E618EEB7A58EB6E059610 /* Pods-E.Z Lean.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z3TDYH9DM8;
+				INFOPLIST_FILE = "E.Z Lean/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "vn.ezLean.E-Z-Lean";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		50062A2D1E470D62002BDE90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F991C80613185F1F8E5C30F1 /* Pods-E.Z Lean.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z3TDYH9DM8;
+				INFOPLIST_FILE = "E.Z Lean/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "vn.ezLean.E-Z-Lean";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50062A141E470D61002BDE90 /* Build configuration list for PBXProject "E.Z Lean" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50062A291E470D62002BDE90 /* Debug */,
+				50062A2A1E470D62002BDE90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50062A2B1E470D62002BDE90 /* Build configuration list for PBXNativeTarget "E.Z Lean" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50062A2C1E470D62002BDE90 /* Debug */,
+				50062A2D1E470D62002BDE90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50062A111E470D61002BDE90 /* Project object */;
+}
