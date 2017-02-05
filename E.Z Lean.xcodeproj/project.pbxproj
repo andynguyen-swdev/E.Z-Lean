@@ -38,6 +38,10 @@
 		50A67FB21E472C5700E463F7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F9B1E472C5700E463F7 /* UIImage.swift */; };
 		50A67FB31E472C5700E463F7 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F9C1E472C5700E463F7 /* UIImageView.swift */; };
 		50A67FB41E472C5700E463F7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F9D1E472C5700E463F7 /* UIView.swift */; };
+		50A67FBA1E472D4A00E463F7 /* Articles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A67FB91E472D4A00E463F7 /* Articles.storyboard */; };
+		50A67FBE1E472D6900E463F7 /* Tools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A67FBB1E472D6900E463F7 /* Tools.storyboard */; };
+		50A67FBF1E472D6900E463F7 /* Coaches.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A67FBC1E472D6900E463F7 /* Coaches.storyboard */; };
+		50A67FC01E472D6900E463F7 /* Exercises.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A67FBD1E472D6900E463F7 /* Exercises.storyboard */; };
 		DC3D23832A4DA19C8882A582 /* Pods_E_Z_Lean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +104,10 @@
 		50A67F9C1E472C5700E463F7 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		50A67F9D1E472C5700E463F7 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		50A67FB51E472C6400E463F7 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		50A67FB91E472D4A00E463F7 /* Articles.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Articles.storyboard; sourceTree = "<group>"; };
+		50A67FBB1E472D6900E463F7 /* Tools.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tools.storyboard; sourceTree = "<group>"; };
+		50A67FBC1E472D6900E463F7 /* Coaches.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coaches.storyboard; sourceTree = "<group>"; };
+		50A67FBD1E472D6900E463F7 /* Exercises.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Exercises.storyboard; sourceTree = "<group>"; };
 		85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Z_Lean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1E618EEB7A58EB6E059610 /* Pods-E.Z Lean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E.Z Lean.debug.xcconfig"; path = "Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean.debug.xcconfig"; sourceTree = "<group>"; };
 		F991C80613185F1F8E5C30F1 /* Pods-E.Z Lean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E.Z Lean.release.xcconfig"; path = "Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +160,7 @@
 				50062A1C1E470D62002BDE90 /* AppDelegate.swift */,
 				50062A1E1E470D62002BDE90 /* ViewController.swift */,
 				50062A201E470D62002BDE90 /* Main.storyboard */,
+				50A67FB61E472CC400E463F7 /* Screens */,
 				50062A231E470D62002BDE90 /* Assets.xcassets */,
 				50062A251E470D62002BDE90 /* LaunchScreen.storyboard */,
 				50062A281E470D62002BDE90 /* Info.plist */,
@@ -237,6 +246,17 @@
 				50A67F9D1E472C5700E463F7 /* UIView.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		50A67FB61E472CC400E463F7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				50A67FB91E472D4A00E463F7 /* Articles.storyboard */,
+				50A67FBB1E472D6900E463F7 /* Tools.storyboard */,
+				50A67FBC1E472D6900E463F7 /* Coaches.storyboard */,
+				50A67FBD1E472D6900E463F7 /* Exercises.storyboard */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		DDCF52F607F1FED1E2814F9D /* Frameworks */ = {
@@ -359,8 +379,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				50062A271E470D62002BDE90 /* LaunchScreen.storyboard in Resources */,
+				50A67FBA1E472D4A00E463F7 /* Articles.storyboard in Resources */,
+				50A67FC01E472D6900E463F7 /* Exercises.storyboard in Resources */,
 				50062A241E470D62002BDE90 /* Assets.xcassets in Resources */,
+				50A67FBE1E472D6900E463F7 /* Tools.storyboard in Resources */,
 				50062A221E470D62002BDE90 /* Main.storyboard in Resources */,
+				50A67FBF1E472D6900E463F7 /* Coaches.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
