@@ -42,7 +42,6 @@
 		50A67FB31E472C5700E463F7 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F9C1E472C5700E463F7 /* UIImageView.swift */; };
 		50A67FB41E472C5700E463F7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F9D1E472C5700E463F7 /* UIView.swift */; };
 		50AF4C651E48D78000E8EF8A /* EZLeanTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4C631E48D78000E8EF8A /* EZLeanTabBarViewController.swift */; };
-		50AF4C661E48D78000E8EF8A /* EZLeanTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50AF4C641E48D78000E8EF8A /* EZLeanTabBarViewController.xib */; };
 		50AF4C6F1E48FE2300E8EF8A /* Articles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AF4C681E48FE2300E8EF8A /* Articles.storyboard */; };
 		50AF4C701E48FE2300E8EF8A /* Tools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AF4C6A1E48FE2300E8EF8A /* Tools.storyboard */; };
 		50AF4C711E48FE2300E8EF8A /* Exercises.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AF4C6C1E48FE2300E8EF8A /* Exercises.storyboard */; };
@@ -122,7 +121,6 @@
 		50A67F9D1E472C5700E463F7 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		50A67FB51E472C6400E463F7 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		50AF4C631E48D78000E8EF8A /* EZLeanTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZLeanTabBarViewController.swift; sourceTree = "<group>"; };
-		50AF4C641E48D78000E8EF8A /* EZLeanTabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EZLeanTabBarViewController.xib; sourceTree = "<group>"; };
 		50AF4C681E48FE2300E8EF8A /* Articles.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Articles.storyboard; sourceTree = "<group>"; };
 		50AF4C6A1E48FE2300E8EF8A /* Tools.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tools.storyboard; sourceTree = "<group>"; };
 		50AF4C6C1E48FE2300E8EF8A /* Exercises.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Exercises.storyboard; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				50AF4C631E48D78000E8EF8A /* EZLeanTabBarViewController.swift */,
-				50AF4C641E48D78000E8EF8A /* EZLeanTabBarViewController.xib */,
 			);
 			path = "Tab Bar";
 			sourceTree = "<group>";
@@ -504,7 +501,6 @@
 				50062A271E470D62002BDE90 /* LaunchScreen.storyboard in Resources */,
 				50AF4C6F1E48FE2300E8EF8A /* Articles.storyboard in Resources */,
 				50AF4C711E48FE2300E8EF8A /* Exercises.storyboard in Resources */,
-				50AF4C661E48D78000E8EF8A /* EZLeanTabBarViewController.xib in Resources */,
 				50062A241E470D62002BDE90 /* Assets.xcassets in Resources */,
 				50AF4C701E48FE2300E8EF8A /* Tools.storyboard in Resources */,
 				50062A221E470D62002BDE90 /* Main.storyboard in Resources */,

@@ -12,7 +12,7 @@
         <!--Bài mới-->
         <scene sceneID="gWQ-ST-1Ck">
             <objects>
-                <viewController title="Bài mới" id="7GT-nD-53D" sceneMemberID="viewController">
+                <viewController id="7GT-nD-53D" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9rU-Vk-6Uz"/>
                         <viewControllerLayoutGuide type="bottom" id="8gg-RD-Sha"/>
@@ -68,13 +68,13 @@
             </objects>
             <point key="canvasLocation" x="1520.8" y="-442.12893553223392"/>
         </scene>
-        <!--Item-->
+        <!--Bài viết-->
         <scene sceneID="zud-Wp-mYq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1MP-a3-w5p" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="e7O-cR-qI4"/>
+                    <tabBarItem key="tabBarItem" title="Bài viết" image="Article" selectedImage="Article" id="e7O-cR-qI4"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="qFw-VH-lUd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="qFw-VH-lUd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -92,6 +92,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Article" width="30" height="30"/>
         <image name="articles_background" width="800" height="534"/>
     </resources>
 </document>
