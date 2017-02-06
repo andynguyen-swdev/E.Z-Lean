@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Lean Tab Bar View Controller-->
         <scene sceneID="YLZ-bM-YaR">
             <objects>
-                <tabBarController id="UqO-6E-U9d" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Dlm-4c-IH3">
+                <tabBarController id="UqO-6E-U9d" customClass="EZLeanTabBarViewController" customModule="E_Z_Lean" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="Dlm-4c-IH3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

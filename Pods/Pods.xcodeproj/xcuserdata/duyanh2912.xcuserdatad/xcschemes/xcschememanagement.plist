@@ -4,50 +4,40 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Drawing.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-E.Z Lean.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>RxCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>RxDataSources.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>RxSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>090FE844756E7E5001EF8D0F537CCBDE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>747EF1A83F8D23EC155DA1DEC5AC4229</key>
+		<key>1A9C3EADD1AA547B1DACD97051C48649</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -63,6 +53,16 @@
 			<true/>
 		</dict>
 		<key>DA3D0FF2134DEB80A2BECDA1ECD30583</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4F87D58CFF75C2CACF2638BCAE40581</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F9F827CB681B1F7C8256AAD856C6AD74</key>
 		<dict>
 			<key>primary</key>
 			<true/>

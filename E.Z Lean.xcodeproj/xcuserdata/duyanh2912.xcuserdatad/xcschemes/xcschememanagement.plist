@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Drawing.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>E.Z Lean.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>50062A181E470D62002BDE90</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>506BCAF61E48C9E80062CE53</key>
 		<dict>
 			<key>primary</key>
 			<true/>

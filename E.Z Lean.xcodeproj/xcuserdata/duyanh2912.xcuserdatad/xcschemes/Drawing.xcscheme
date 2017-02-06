@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4F87D58CFF75C2CACF2638BCAE40581"
-               BuildableName = "RxSwift.framework"
-               BlueprintName = "RxSwift"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "506BCAF61E48C9E80062CE53"
+               BuildableName = "Drawing.framework"
+               BlueprintName = "Drawing"
+               ReferencedContainer = "container:E.Z Lean.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F4F87D58CFF75C2CACF2638BCAE40581"
-            BuildableName = "RxSwift.framework"
-            BlueprintName = "RxSwift"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "506BCAF61E48C9E80062CE53"
+            BuildableName = "Drawing.framework"
+            BlueprintName = "Drawing"
+            ReferencedContainer = "container:E.Z Lean.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "506BCAF61E48C9E80062CE53"
+            BuildableName = "Drawing.framework"
+            BlueprintName = "Drawing"
+            ReferencedContainer = "container:E.Z Lean.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
