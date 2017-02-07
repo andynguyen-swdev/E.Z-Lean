@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>IBAnimatable.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Drawing.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,17 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>91B4AE6C08F2E646BC7B47C3AEF9CCFE</key>
+		<key>4DB37FDD6D9682249FC26FBD3DF9EBE9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC74E04211CFEE9D44ADD92E3EDB9243</key>
+		<key>5714314D591075C7934C1833B549D380</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA3D0FF2134DEB80A2BECDA1ECD30583</key>
+		<key>6F8BF0160986189C432F8827D93F164C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>812F53F1E52066C818C08589A1E56735</key>
 		<dict>
 			<key>primary</key>
 			<true/>

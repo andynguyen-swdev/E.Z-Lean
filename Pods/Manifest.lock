@@ -1,4 +1,5 @@
 PODS:
+  - IBAnimatable (3.1.2)
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
   - RxDataSources (1.0.2):
@@ -8,17 +9,19 @@ PODS:
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - IBAnimatable
   - RxCocoa
   - RxDataSources
   - RxSwift
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  IBAnimatable: 26b74a72df9369d40faab97428477c246b9e42ba
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxDataSources: 1de77880bf5b7fcee42102adcd5a5d65e5b81541
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 32ea929fd110c845662d61d96ce0f50332631b04
+PODFILE CHECKSUM: ddd6efa8b73324d1b9adc122ff7990f29f6a820f
 
 COCOAPODS: 1.1.1

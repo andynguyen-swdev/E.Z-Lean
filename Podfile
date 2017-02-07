@@ -12,6 +12,7 @@ target 'E.Z Lean' do
 	pod ‘RxSwift’
 	pod ‘RxCocoa’
 	pod ‘RxDataSources’
+    pod 'IBAnimatable'
 end
 
 target 'Drawing' do
