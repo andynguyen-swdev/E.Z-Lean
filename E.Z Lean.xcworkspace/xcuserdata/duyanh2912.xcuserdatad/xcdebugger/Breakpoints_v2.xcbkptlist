@@ -41,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "E.Z Lean/Screens/Articles/Recent/RecentCollectionViewDelegate.swift"
-            timestampString = "508151121.456917"
+            filePath = "E.Z Lean/Screens/Articles/Single Article/SingleArticleViewController.swift"
+            timestampString = "508353559.896171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "collectionView(_:willDisplay:forItemAt:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "webView(_:didFail:withError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E.Z Lean/Screens/Articles/Single Article/SingleArticleViewController.swift"
+            timestampString = "508353559.896171"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "webView(_:didFailProvisionalNavigation:withError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -10,7 +10,11 @@ import UIKit
 
 extension RecentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.width * 0.95, height: view.width * 0.95 / 3)
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return CGSize(width: view.width - 20, height: view.width * 0.95 / 3)
+        } else {
+            return CGSize(width: view.width - 20, height: 150)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -20,7 +24,6 @@ extension RecentViewController: UICollectionViewDelegateFlowLayout {
         } else {
             articleCell.contentLabel.textColor = try! UIColor(rgba_throws: "#9B9B9B")
         }
-        
     }
 }
  
