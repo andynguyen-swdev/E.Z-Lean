@@ -14,6 +14,10 @@ class Article: Hashable, IdentifiableType {
     var contentLink: String
     var thumbnailImageLink: String
     
+    var thumgnailURL: URL? {
+        return URL(string: thumbnailImageLink)
+    }
+    
     init(title: String, summary: String ,contentLink: String, imageLink: String) {
         self.title = title
         self.summary = summary

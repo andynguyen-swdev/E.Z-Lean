@@ -6,7 +6,7 @@
 //  Copyright © 2017 E.Z Lean. All rights reserved.
 //
 
-import UIKit
+import Utils
 
 extension RecentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -14,7 +14,9 @@ extension RecentViewController: UICollectionViewDelegateFlowLayout {
         var height: CGFloat
         
         let topBarHeight: CGFloat = 44
-        let photoHeight = width * 9 / 16
+        let aspectRatio: CGFloat = 16 / 9
+    
+        let photoHeight = width / aspectRatio
         
         let title = dataSource.articles.value[indexPath.row].title
         
