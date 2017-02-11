@@ -14,6 +14,8 @@ import IBAnimatable
 class RecentViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoryBarButton: AnimatableButton!
+    @IBOutlet weak var searchButton: AnimatableButton!
+    
     var dataSource: RecentCollectionViewDataSource!
     
     var disposeBag = DisposeBag()
@@ -22,9 +24,16 @@ class RecentViewController: UIViewController {
         navigationController?.navigationBar.tintColor = try! UIColor.init(rgba_throws: "#54C7FC")
         ArticleCell.registerFor(collectionView: collectionView)
         configDataSource()
+        configButtons()
+    }
+    
+    func configButtons() {
+         categoryBarButton.animate(animation: AnimationType.slide(way: .in, direction: .down), completion: nil)
+        categoryBarButton.backgroundColor = .clear
+        categoryBarButton.tintColor = .white
         
-        categoryBarButton.animate(animation: AnimationType.slide(way: .in, direction: .down), completion: nil)
-//        collectionView.backgroundColor = UIColor.black.withAlphaComponent(0.05)
+        searchButton.backgroundColor = .clear
+        searchButton.tintColor = .white
     }
     
     func configDataSource() {

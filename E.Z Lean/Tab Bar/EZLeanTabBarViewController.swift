@@ -27,6 +27,7 @@ class EZLeanTabBarViewController: UITabBarController {
         }
         tabBar.tintColor = .white
         
+//        tabBar.barTintColor = UIColor.init(hexString: "#404040")
         tabBar.barTintColor = UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
 //        tabBar.barTintColor = .white
         

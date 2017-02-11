@@ -12,6 +12,7 @@ import RxCocoa
 
 class ArticleCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     
     static var identifier = "ArticleCell"

@@ -50,32 +50,36 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Bài mới" id="4Yf-pV-QHr">
-                        <barButtonItem key="leftBarButtonItem" image="search" id="ajG-eB-Gz1">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="DGW-Ef-65m">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1wk-OF-8Al" customClass="AnimatableButton" customModule="IBAnimatable">
-                                <rect key="frame" x="287" y="7" width="72" height="30"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="SY7-Y2-JGL">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J85-NH-vdr" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                <state key="normal" title="Mục">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <color key="tintColor" red="0.3294117647" green="0.78039215689999997" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="category"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autoRun" value="NO"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.28627450980392155" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="BIG-Uv-BQh" kind="show" id="fI1-Hg-HIV"/>
-                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="rQA-gM-1Hc">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jbx-Lh-m0y" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="339" y="11" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="search"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="categoryBarButton" destination="1wk-OF-8Al" id="gek-SI-ZUi"/>
+                        <outlet property="categoryBarButton" destination="J85-NH-vdr" id="Zca-sL-KQ9"/>
                         <outlet property="collectionView" destination="ZcD-bi-56c" id="ptX-LT-t2h"/>
+                        <outlet property="searchButton" destination="jbx-Lh-m0y" id="0kZ-HG-iiL"/>
                         <segue destination="zxa-Wj-4Fj" kind="show" identifier="RecentToSingleArticle" id="8kd-yR-CYs"/>
                     </connections>
                 </viewController>
@@ -270,7 +274,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MSf-Bz-bGv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6bf-ZZ-bur">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -307,7 +311,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="category" width="22" height="22"/>
         <image name="news" width="30" height="30"/>
-        <image name="search" width="20" height="20"/>
+        <image name="search" width="22" height="22"/>
     </resources>
 </document>

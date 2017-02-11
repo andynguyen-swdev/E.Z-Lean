@@ -20,10 +20,13 @@ extension RecentViewController: UICollectionViewDelegateFlowLayout {
         
         let titleHeight = NSString(string: title).boundingRect(with: CGSize(width: width - 16, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.init(name: "Helvetica Neue", size: 17)!], context: nil).height
         
-        let paddingHeight: CGFloat = 8
-        let bottomBarHeight: CGFloat = 0
+        let titleTopPaddingHeight: CGFloat = 8
+        let titleBottomPaddingHeight: CGFloat = 3
         
-        height = topBarHeight + photoHeight + titleHeight + 2*paddingHeight + bottomBarHeight
+        let summaryHeight: CGFloat = 33.5
+        let summaryBottomPaddingHeight: CGFloat = 8
+        
+        height = topBarHeight + photoHeight + titleTopPaddingHeight + titleHeight + titleBottomPaddingHeight + summaryHeight + summaryBottomPaddingHeight
         
         return CGSize(width: width, height: height)
     }
