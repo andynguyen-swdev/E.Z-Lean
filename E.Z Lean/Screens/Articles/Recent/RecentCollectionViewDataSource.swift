@@ -36,7 +36,12 @@ class RecentCollectionViewDataSource {
             cell.summaryLabel.text = article.summary
             cell.thumbnailImageView.sd_setShowActivityIndicatorView(true)
             cell.thumbnailImageView.sd_setIndicatorStyle(.gray)
-            cell.thumbnailImageView.sd_setImage(with: article.thumgnailURL, placeholderImage: #imageLiteral(resourceName: "articles_background"), options: [.scaleDownLargeImages], completed: nil)
+            cell.thumbnailImageView.sd_setImage(with: article.thumgnailURL, placeholderImage: #imageLiteral(resourceName: "EZ Lean logo"), options: [.scaleDownLargeImages]) { image, e,_,_ in
+                if let error = e { print(error) } else {
+                    print("Done")
+                    cell.thumbnailImageView.image = image
+                }
+            }
             return cell
         }
         dataSource.animationConfiguration = AnimationConfiguration(insertAnimation: .right, reloadAnimation: .automatic, deleteAnimation: .automatic)
