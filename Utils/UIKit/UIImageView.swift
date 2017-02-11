@@ -73,7 +73,12 @@ public class CustomUIImageView: UIImageView {
     }
     
     // Circle
-    @IBInspectable public var cornerCircle: Bool = false {didSet{configCornerCircle()}}
+    @IBInspectable public var cornerCircle: Bool = false {
+        didSet{ if cornerCircle {
+            configCornerCircle()
+            }
+        }
+    }
     
     func configCornerCircle() {
         cornerRadius = (self.bounds.width + self.bounds.height) / 4

@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.3.0)
   - IBAnimatable (3.1.2)
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
@@ -6,22 +7,29 @@ PODS:
     - RxCocoa (~> 3.0)
     - RxSwift (~> 3.0)
   - RxSwift (3.2.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire
   - IBAnimatable
   - RxCocoa
   - RxDataSources
   - RxSwift
+  - SDWebImage
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   IBAnimatable: 26b74a72df9369d40faab97428477c246b9e42ba
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxDataSources: 1de77880bf5b7fcee42102adcd5a5d65e5b81541
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: ddd6efa8b73324d1b9adc122ff7990f29f6a820f
+PODFILE CHECKSUM: a3906f5696dc2c172bf4a93a1468166383e16cfa
 
 COCOAPODS: 1.1.1

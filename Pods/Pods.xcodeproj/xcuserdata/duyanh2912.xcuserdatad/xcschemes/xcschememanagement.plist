@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IBAnimatable.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,7 +52,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>177D8245EC132CB249C892EC6BA888E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1A9C3EADD1AA547B1DACD97051C48649</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2585F240DE38B77AB8E89FECE62D348A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5714314D591075C7934C1833B549D380</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6F8BF0160986189C432F8827D93F164C</key>
+		<key>8BEEA81ACBE47016ECCCF411D3C5BA5D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>812F53F1E52066C818C08589A1E56735</key>
+		<key>C0BA7F51E3DF98935F6BD587C22AFE27</key>
 		<dict>
 			<key>primary</key>
 			<true/>

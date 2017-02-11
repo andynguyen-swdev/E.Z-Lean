@@ -12,7 +12,6 @@ import RxCocoa
 
 class ArticleCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     
     static var identifier = "ArticleCell"
@@ -22,7 +21,7 @@ class ArticleCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         self.layer.masksToBounds = false
-        layer.shadowOffset = CGSize(width: 2, height: 1)
+        layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowRadius = 4
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5

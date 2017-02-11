@@ -23,16 +23,19 @@ class EZLeanTabBarViewController: UITabBarController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if #available(iOS 10.0, *) {
-            tabBar.unselectedItemTintColor = .white
-            tabBar.tintColor = .black
-        } else {
-            tabBar.tintColor = .white
+            tabBar.unselectedItemTintColor = try! UIColor(rgba_throws: "#777777")
         }
+        tabBar.tintColor = .white
+        
+        tabBar.barTintColor = UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
+//        tabBar.barTintColor = .white
+        
         initialConfig()
     }
     
     func initialConfig() {
         configSelectingRect()
+//        addBottomBar()
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -62,11 +65,11 @@ class EZLeanTabBarViewController: UITabBarController {
     func configSelectingRect() {
         selectingRect = UIView.init(frame: .zero)
         tabBar.addSubview(selectingRect)
-        tabBar.sendSubview(toBack: selectingRect)
         
         selectingRect.translatesAutoresizingMaskIntoConstraints = false
-        selectingRect.heightAnchor.constraint(equalTo: tabBar.heightAnchor, multiplier: 1).isActive = true
-        selectingRect.topAnchor.constraint(equalTo: tabBar.topAnchor).isActive = true
+        selectingRect.heightAnchor.constraint(equalToConstant: 4).isActive = true
+//        selectingRect.topAnchor.constraint(equalTo: tabBar.topAnchor).isActive = true
+        selectingRect.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor).isActive = true
         
         if UIDevice.current.userInterfaceIdiom == .pad {
             selectingRect.widthAnchor.constraint(equalToConstant: tabBarButtons[0].frame.width).isActive = true
@@ -77,9 +80,23 @@ class EZLeanTabBarViewController: UITabBarController {
         }
         selectingRectLeftConstraint.isActive = true
         
-        selectingRect.backgroundColor = UIColor.init("#54C7FC").withAlphaComponent(1)
+        selectingRect.backgroundColor = UIColor.init("#4990E2")
         selectingRect.isOpaque = true
         
         self.selectedIndex = 0
+    }
+    
+    func addBottomBar() {
+        let bottomBar = UIView.init(frame: .zero)
+        tabBar.addSubview(bottomBar)
+        tabBar.bringSubview(toFront: selectingRect)
+        
+        bottomBar.translatesAutoresizingMaskIntoConstraints = false
+        bottomBar.heightAnchor.constraint(equalTo: selectingRect.heightAnchor, multiplier: 1).isActive = true
+        bottomBar.leftAnchor.constraint(equalTo: tabBar.leftAnchor).isActive = true
+        bottomBar.rightAnchor.constraint(equalTo: tabBar.rightAnchor).isActive = true
+        bottomBar.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor).isActive = true
+        
+        bottomBar.backgroundColor = try! UIColor(rgba_throws: "#777777")
     }
 }

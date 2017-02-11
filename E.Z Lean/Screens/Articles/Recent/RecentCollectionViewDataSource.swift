@@ -30,7 +30,6 @@ class RecentCollectionViewDataSource {
             data, cView, indexPath, article in
             let cell = cView.dequeueReusableCell(withReuseIdentifier: ArticleCell.identifier, for: indexPath) as! ArticleCell
             cell.titleLabel.text = article.title
-            cell.contentLabel.text = article.summary
             cell.thumbnailImageView.image = UIImage(named: "test\(indexPath.row)")
             return cell
         }

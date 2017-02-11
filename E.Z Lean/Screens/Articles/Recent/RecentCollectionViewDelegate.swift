@@ -10,20 +10,22 @@ import UIKit
 
 extension RecentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return CGSize(width: view.width - 20, height: view.width * 0.95 / 3)
-        } else {
-            return CGSize(width: view.width - 20, height: 150)
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let articleCell = cell as? ArticleCell else { return }
-        if articleCell.contentLabel.frame.height < articleCell.contentLabel.font.capHeight {
-            articleCell.contentLabel.textColor = .clear
-        } else {
-            articleCell.contentLabel.textColor = try! UIColor(rgba_throws: "#9B9B9B")
-        }
+        let width = collectionView.width - 16
+        var height: CGFloat
+        
+        let topBarHeight: CGFloat = 44
+        let photoHeight = width * 9 / 16
+        
+        let title = dataSource.articles.value[indexPath.row].title
+        
+        let titleHeight = NSString(string: title).boundingRect(with: CGSize(width: width - 16, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.init(name: "Helvetica Neue", size: 17)!], context: nil).height
+        
+        let paddingHeight: CGFloat = 8
+        let bottomBarHeight: CGFloat = 0
+        
+        height = topBarHeight + photoHeight + titleHeight + 2*paddingHeight + bottomBarHeight
+        
+        return CGSize(width: width, height: height)
     }
 }
- 
+

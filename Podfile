@@ -13,9 +13,7 @@ target 'E.Z Lean' do
 	pod ‘RxCocoa’
 	pod ‘RxDataSources’
     pod 'IBAnimatable'
+    pod 'SDWebImage'
+    pod 'Alamofire'
 end
 
-target 'Drawing' do
-    pod 'RxSwift'
-    pod 'RxCocoa'
-end

@@ -24,6 +24,7 @@ class RecentViewController: UIViewController {
         configDataSource()
         
         categoryBarButton.animate(animation: AnimationType.slide(way: .in, direction: .down), completion: nil)
+//        collectionView.backgroundColor = UIColor.black.withAlphaComponent(0.05)
     }
     
     func configDataSource() {

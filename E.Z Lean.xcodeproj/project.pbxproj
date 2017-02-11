@@ -57,6 +57,7 @@
 		50D89D431E4C166400F56AAF /* test0.html in Resources */ = {isa = PBXBuildFile; fileRef = 50D89D401E4C166400F56AAF /* test0.html */; };
 		50D89D441E4C166400F56AAF /* test1.html in Resources */ = {isa = PBXBuildFile; fileRef = 50D89D411E4C166400F56AAF /* test1.html */; };
 		50D89D451E4C166400F56AAF /* test2.html in Resources */ = {isa = PBXBuildFile; fileRef = 50D89D421E4C166400F56AAF /* test2.html */; };
+		50FEF9321E4EA23A00308CCA /* EZLeanNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FEF9311E4EA23A00308CCA /* EZLeanNavigationController.swift */; };
 		DC3D23832A4DA19C8882A582 /* Pods_E_Z_Lean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */; };
 		F863B5FCF46473BC04607CBC /* Pods_Drawing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF12600BF5C1EEB48946324 /* Pods_Drawing.framework */; };
 /* End PBXBuildFile section */
@@ -147,6 +148,7 @@
 		50D89D401E4C166400F56AAF /* test0.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test0.html; sourceTree = "<group>"; };
 		50D89D411E4C166400F56AAF /* test1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test1.html; sourceTree = "<group>"; };
 		50D89D421E4C166400F56AAF /* test2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test2.html; sourceTree = "<group>"; };
+		50FEF9311E4EA23A00308CCA /* EZLeanNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZLeanNavigationController.swift; sourceTree = "<group>"; };
 		85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Z_Lean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1E618EEB7A58EB6E059610 /* Pods-E.Z Lean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E.Z Lean.debug.xcconfig"; path = "Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean.debug.xcconfig"; sourceTree = "<group>"; };
 		D6FEFD13831FC4CB7A05CC0B /* Pods-Drawing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Drawing.release.xcconfig"; path = "Pods/Target Support Files/Pods-Drawing/Pods-Drawing.release.xcconfig"; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				50AF4C631E48D78000E8EF8A /* EZLeanTabBarViewController.swift */,
+				50FEF9311E4EA23A00308CCA /* EZLeanNavigationController.swift */,
 			);
 			path = "Tab Bar";
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				501D61CF1E4CDC6C00E9C859 /* CategoryViewController.swift in Sources */,
+				50FEF9321E4EA23A00308CCA /* EZLeanNavigationController.swift in Sources */,
 				504278071E49AE2A00D062DF /* RecentCollectionViewDataSource.swift in Sources */,
 				50062A1F1E470D62002BDE90 /* ViewController.swift in Sources */,
 				504278031E49AC6500D062DF /* RecentViewController.swift in Sources */,
