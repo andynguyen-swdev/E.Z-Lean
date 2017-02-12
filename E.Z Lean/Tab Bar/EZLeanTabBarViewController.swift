@@ -42,11 +42,12 @@ class EZLeanTabBarViewController: UITabBarController {
         guard let index = tabBar.items?.index(of: item) else { return }
         animateSelectingRect(index: index)
         
-        let image = tabBar.subviews[index+1].subviews[0]
-        image.transform = CGAffineTransform.identity
-        UIView.animate(withDuration: 0.25, delay: 0, options: .curveLinear, animations: {
-            image.transform = CGAffineTransform(rotationAngle: -CGFloat.pi)
-        })
+        if let image = tabBar.subviews[index+1].subviews.first {
+            image.transform = CGAffineTransform.identity
+            UIView.animate(withDuration: 0.25, delay: 0, options: .curveLinear, animations: {
+                image.transform = CGAffineTransform(rotationAngle: -CGFloat.pi)
+            })
+        }
     }
     
     func animateSelectingRect(index: Int) {
