@@ -21,4 +21,8 @@ extension CGSize {
         let y = self.height + dy
         return CGSize(width: x, height: y)
     }
+    
+    public var aspectRatio: CGFloat {
+        return (self.width / self.height)
+    }
 }

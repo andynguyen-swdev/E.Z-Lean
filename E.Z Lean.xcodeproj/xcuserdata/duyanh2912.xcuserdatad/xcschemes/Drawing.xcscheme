@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "506BCAF61E48C9E80062CE53"
-               BuildableName = "Drawing.framework"
-               BlueprintName = "Drawing"
+               BuildableName = "CocoaPods.framework"
+               BlueprintName = "CocoaPods"
                ReferencedContainer = "container:E.Z Lean.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "506BCAF61E48C9E80062CE53"
-            BuildableName = "Drawing.framework"
-            BlueprintName = "Drawing"
+            BuildableName = "CocoaPods.framework"
+            BlueprintName = "CocoaPods"
             ReferencedContainer = "container:E.Z Lean.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,8 +64,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "506BCAF61E48C9E80062CE53"
-            BuildableName = "Drawing.framework"
-            BlueprintName = "Drawing"
+            BuildableName = "CocoaPods.framework"
+            BlueprintName = "CocoaPods"
             ReferencedContainer = "container:E.Z Lean.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

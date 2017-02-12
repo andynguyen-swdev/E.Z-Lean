@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,63 +17,138 @@
                         <viewControllerLayoutGuide type="bottom" id="8gg-RD-Sha"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JEQ-qM-7uf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="articles_background" translatesAutoresizingMaskIntoConstraints="NO" id="3zZ-AT-f2W">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZcD-bi-56c">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="NIB-JH-heo">
-                                    <size key="itemSize" width="339" height="138"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZcD-bi-56c">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" red="0.23921568627450979" green="0.23921568627450979" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="NIB-JH-heo">
+                                    <size key="itemSize" width="359" height="138"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="11" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="test" id="SNe-Dh-mwe">
+                                        <rect key="frame" x="8" y="8" width="359" height="138"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="138"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3zZ-AT-f2W" firstAttribute="top" secondItem="9rU-Vk-6Uz" secondAttribute="bottom" constant="-64" id="LP5-Ks-1re"/>
-                            <constraint firstAttribute="bottom" secondItem="3zZ-AT-f2W" secondAttribute="bottom" id="Mce-WZ-mT8"/>
                             <constraint firstAttribute="trailing" secondItem="ZcD-bi-56c" secondAttribute="trailing" id="YP0-W6-uNf"/>
                             <constraint firstItem="ZcD-bi-56c" firstAttribute="top" secondItem="9rU-Vk-6Uz" secondAttribute="bottom" id="ZvY-fH-BCW"/>
                             <constraint firstItem="ZcD-bi-56c" firstAttribute="leading" secondItem="JEQ-qM-7uf" secondAttribute="leading" id="cyK-oe-H2f"/>
                             <constraint firstItem="8gg-RD-Sha" firstAttribute="top" secondItem="ZcD-bi-56c" secondAttribute="bottom" id="hCm-yT-ey9"/>
-                            <constraint firstAttribute="trailing" secondItem="3zZ-AT-f2W" secondAttribute="trailing" id="sgM-JD-L3L"/>
-                            <constraint firstItem="3zZ-AT-f2W" firstAttribute="leading" secondItem="JEQ-qM-7uf" secondAttribute="leading" id="whA-2h-mk6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Bài mới" id="4Yf-pV-QHr">
-                        <barButtonItem key="rightBarButtonItem" title="Mục" id="iEi-cW-Y6Z">
-                            <color key="tintColor" red="0.3294117647" green="0.78039215689999997" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="SY7-Y2-JGL">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J85-NH-vdr" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.3294117647" green="0.78039215689999997" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="category"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="rQA-gM-1Hc">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jbx-Lh-m0y" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="341" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="search"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <connections>
-                        <outlet property="categoryBarButton" destination="iEi-cW-Y6Z" id="lzi-jP-lDD"/>
+                        <outlet property="categoryBarButton" destination="J85-NH-vdr" id="Zca-sL-KQ9"/>
                         <outlet property="collectionView" destination="ZcD-bi-56c" id="ptX-LT-t2h"/>
+                        <outlet property="searchButton" destination="jbx-Lh-m0y" id="0kZ-HG-iiL"/>
+                        <segue destination="zxa-Wj-4Fj" kind="show" identifier="RecentToSingleArticle" id="8kd-yR-CYs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kso-Vc-RP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1520.8" y="-442.12893553223392"/>
         </scene>
+        <!--Single Article View Controller-->
+        <scene sceneID="47u-SA-TEm">
+            <objects>
+                <viewController id="zxa-Wj-4Fj" customClass="SingleArticleViewController" customModule="E_Z_Lean" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eed-S8-1Sc"/>
+                        <viewControllerLayoutGuide type="bottom" id="FMC-Oq-Ted"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uc4-NE-dG3">
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vqt-lg-Zci">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vqt-lg-Zci" firstAttribute="leading" secondItem="uc4-NE-dG3" secondAttribute="leading" id="ERX-zJ-htS"/>
+                            <constraint firstItem="Vqt-lg-Zci" firstAttribute="top" secondItem="Eed-S8-1Sc" secondAttribute="bottom" id="HPn-44-SR3"/>
+                            <constraint firstAttribute="trailing" secondItem="Vqt-lg-Zci" secondAttribute="trailing" id="Od3-2T-dxB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="Vqt-lg-Zci" id="Nqe-fP-awp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVi-ed-ERG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2368.8000000000002" y="-442.12893553223392"/>
+        </scene>
+        <!--Category View Controller-->
+        <scene sceneID="klz-7V-vCI">
+            <objects>
+                <viewController id="BIG-Uv-BQh" customClass="CategoryViewController" customModule="E_Z_Lean" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FX2-yx-5Ks"/>
+                        <viewControllerLayoutGuide type="bottom" id="MSf-Bz-bGv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6bf-ZZ-bur">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aUA-pH-R7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2369" y="383"/>
+        </scene>
         <!--Bài viết-->
         <scene sceneID="zud-Wp-mYq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1MP-a3-w5p" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bài viết" image="Article" selectedImage="Article" id="e7O-cR-qI4"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1MP-a3-w5p" customClass="EZLeanNavigationController" customModule="E_Z_Lean" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bài viết" image="feed" selectedImage="feed_filled" id="e7O-cR-qI4"/>
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="qFw-VH-lUd">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="qFw-VH-lUd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -88,7 +162,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Article" width="30" height="30"/>
-        <image name="articles_background" width="800" height="534"/>
+        <image name="category" width="22" height="22"/>
+        <image name="feed" width="30" height="30"/>
+        <image name="feed_filled" width="30" height="30"/>
+        <image name="search" width="18" height="18"/>
     </resources>
 </document>

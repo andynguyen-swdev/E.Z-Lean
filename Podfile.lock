@@ -1,27 +1,48 @@
 PODS:
+  - Alamofire (4.3.0)
+  - CHTCollectionViewWaterfallLayout (0.9.5):
+    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.5)
+  - CHTCollectionViewWaterfallLayout/ObjC (0.9.5)
   - IBAnimatable (3.1.2)
+  - Material (2.4.16):
+    - Material/Core (= 2.4.16)
+  - Material/Core (2.4.16)
+  - MaterialControls (1.2.2)
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
   - RxDataSources (1.0.2):
     - RxCocoa (~> 3.0)
     - RxSwift (~> 3.0)
   - RxSwift (3.2.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire
+  - CHTCollectionViewWaterfallLayout
   - IBAnimatable
+  - Material
+  - MaterialControls
   - RxCocoa
   - RxDataSources
   - RxSwift
+  - SDWebImage
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  CHTCollectionViewWaterfallLayout: 775ff73f48cfc13859b62d8bceb96e772e4a0318
   IBAnimatable: 26b74a72df9369d40faab97428477c246b9e42ba
+  Material: 84645fb4c9409c3db76bd7c8e1fd00dc4a76c144
+  MaterialControls: 1c6b29e78d3a13d8dd6a67ed31b6d26eb5de8f72
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxDataSources: 1de77880bf5b7fcee42102adcd5a5d65e5b81541
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: ddd6efa8b73324d1b9adc122ff7990f29f6a820f
+PODFILE CHECKSUM: 7b1250e854a5358f86f7a06be90a2f80f6dff2bb
 
 COCOAPODS: 1.1.1

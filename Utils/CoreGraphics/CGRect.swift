@@ -24,4 +24,8 @@ extension CGRect {
         
         return CGRect(origin: origin, size: self.size)
     }
+    
+    public var aspectRatio: CGFloat {
+        return self.size.aspectRatio
+    }
 }

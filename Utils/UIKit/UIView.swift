@@ -34,6 +34,10 @@ extension UIView {
         }
     }
     
+    public func removeAllSubViews() {
+        for sub in self.subviews { sub.removeFromSuperview() }
+    }
+    
     public var width: CGFloat { return self.frame.width }
     public var height: CGFloat { return self.frame.height }
     

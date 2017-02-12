@@ -16,20 +16,26 @@ class EZLeanTabBarViewController: UITabBarController {
     var selectingRectLeftConstraint: NSLayoutConstraint!
     
     var disposeBag = DisposeBag()
+    lazy var tabBarButtons: [UIControl] = { [unowned self] in
+        return self.tabBar.subviews.flatMap { $0 as? UIControl }
+        }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if #available(iOS 10.0, *) {
-            tabBar.unselectedItemTintColor = .white
-        } else {
-            // Fallback on earlier versions
+            tabBar.unselectedItemTintColor = try! UIColor(rgba_throws: "#777777")
         }
-        tabBar.tintColor = .black
+        tabBar.tintColor = .white
+        
+//        tabBar.barTintColor = UIColor.init(hexString: "#404040")
+        tabBar.barTintColor = UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
+        
         initialConfig()
     }
     
     func initialConfig() {
         configSelectingRect()
+//        addBottomBar()
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -47,7 +53,11 @@ class EZLeanTabBarViewController: UITabBarController {
     func animateChangeIndex(index: Int) {
         selectingRectLeftConstraint.isActive = false
         selectingRect.removeConstraint(selectingRectLeftConstraint)
-        selectingRectLeftConstraint = NSLayoutConstraint(item: selectingRect, attribute: .right, relatedBy: .equal, toItem: tabBar, attribute: .right, multiplier: 1/CGFloat(self.tabBar.items!.count)*CGFloat(index + 1), constant: 0)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            selectingRectLeftConstraint = NSLayoutConstraint(item: selectingRect, attribute: .left, relatedBy: .equal, toItem: tabBar, attribute: .left, multiplier: 1, constant: tabBarButtons[index].frame.origin.x)
+        } else {
+            selectingRectLeftConstraint = NSLayoutConstraint(item: selectingRect, attribute: .right, relatedBy: .equal, toItem: tabBar, attribute: .right, multiplier: CGFloat(index+1)/CGFloat(tabBarButtons.count), constant: 0)
+        }
         selectingRectLeftConstraint.isActive = true
         view.layoutIfNeeded()
     }
@@ -55,19 +65,38 @@ class EZLeanTabBarViewController: UITabBarController {
     func configSelectingRect() {
         selectingRect = UIView.init(frame: .zero)
         tabBar.addSubview(selectingRect)
-        tabBar.sendSubview(toBack: selectingRect)
         
         selectingRect.translatesAutoresizingMaskIntoConstraints = false
-        selectingRect.widthAnchor.constraint(equalTo: tabBar.widthAnchor, multiplier: 1/CGFloat(tabBar.items!.count)).isActive = true
-        selectingRect.heightAnchor.constraint(equalTo: tabBar.heightAnchor, multiplier: 1).isActive = true
+        selectingRect.heightAnchor.constraint(equalToConstant: 2).isActive = true
         selectingRect.topAnchor.constraint(equalTo: tabBar.topAnchor).isActive = true
+//        selectingRect.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor).isActive = true
         
-        selectingRectLeftConstraint = NSLayoutConstraint(item: selectingRect, attribute: .right, relatedBy: .equal, toItem: tabBar, attribute: .right, multiplier: 1/CGFloat(tabBar.items!.count), constant: 0)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            selectingRect.widthAnchor.constraint(equalToConstant: tabBarButtons[0].frame.width).isActive = true
+            selectingRectLeftConstraint = NSLayoutConstraint(item: selectingRect, attribute: .left, relatedBy: .equal, toItem: tabBar, attribute: .left, multiplier: 1, constant: tabBarButtons[0].frame.origin.x)
+        } else {
+            selectingRect.widthAnchor.constraint(equalTo: tabBar.widthAnchor, multiplier: 1/CGFloat(tabBarButtons.count)).isActive = true
+            selectingRectLeftConstraint = NSLayoutConstraint(item: selectingRect, attribute: .right, relatedBy: .equal, toItem: tabBar, attribute: .right, multiplier: 1/CGFloat(tabBarButtons.count), constant: 0)
+        }
         selectingRectLeftConstraint.isActive = true
         
-        selectingRect.backgroundColor = UIColor.init("#54C7FC").withAlphaComponent(1)
+        selectingRect.backgroundColor = UIColor(hexString: "#CB7539")
         selectingRect.isOpaque = true
         
         self.selectedIndex = 0
+    }
+    
+    func addBottomBar() {
+        let bottomBar = UIView.init(frame: .zero)
+        tabBar.addSubview(bottomBar)
+        tabBar.bringSubview(toFront: selectingRect)
+        
+        bottomBar.translatesAutoresizingMaskIntoConstraints = false
+        bottomBar.heightAnchor.constraint(equalTo: selectingRect.heightAnchor, multiplier: 1).isActive = true
+        bottomBar.leftAnchor.constraint(equalTo: tabBar.leftAnchor).isActive = true
+        bottomBar.rightAnchor.constraint(equalTo: tabBar.rightAnchor).isActive = true
+        bottomBar.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor).isActive = true
+        
+        bottomBar.backgroundColor = try! UIColor(rgba_throws: "#777777")
     }
 }
