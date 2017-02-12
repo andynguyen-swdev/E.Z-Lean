@@ -56,6 +56,12 @@
 		50D89D451E4C166400F56AAF /* test2.html in Resources */ = {isa = PBXBuildFile; fileRef = 50D89D421E4C166400F56AAF /* test2.html */; };
 		50FEF9321E4EA23A00308CCA /* EZLeanNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FEF9311E4EA23A00308CCA /* EZLeanNavigationController.swift */; };
 		DC3D23832A4DA19C8882A582 /* Pods_E_Z_Lean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */; };
+		F12644DB1E4B7B0600C5D33C /* WilksCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12644DA1E4B7B0600C5D33C /* WilksCalculatorViewController.swift */; };
+		F164A41F1E4F621A0084F6B3 /* TDEECalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */; };
+		F1D8333D1E47871F00772F42 /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333C1E47871F00772F42 /* ToolViewController.swift */; };
+		F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */; };
+		F1D833411E478F2D00772F42 /* StringToDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D833401E478F2D00772F42 /* StringToDouble.swift */; };
+		F863B5FCF46473BC04607CBC /* Pods_Drawing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF12600BF5C1EEB48946324 /* Pods_Drawing.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +143,11 @@
 		85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Z_Lean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1E618EEB7A58EB6E059610 /* Pods-E.Z Lean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E.Z Lean.debug.xcconfig"; path = "Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean.debug.xcconfig"; sourceTree = "<group>"; };
 		EBF12600BF5C1EEB48946324 /* Pods_Drawing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Drawing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F12644DA1E4B7B0600C5D33C /* WilksCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WilksCalculatorViewController.swift; sourceTree = "<group>"; };
+		F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDEECalculatorViewController.swift; sourceTree = "<group>"; };
+		F1D8333C1E47871F00772F42 /* ToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolViewController.swift; sourceTree = "<group>"; };
+		F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneRMCalculatorViewController.swift; sourceTree = "<group>"; };
+		F1D833401E478F2D00772F42 /* StringToDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringToDouble.swift; sourceTree = "<group>"; };
 		F991C80613185F1F8E5C30F1 /* Pods-E.Z Lean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E.Z Lean.release.xcconfig"; path = "Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,6 +258,7 @@
 				50A67F841E472C5700E463F7 /* CGRect.swift */,
 				50A67F851E472C5700E463F7 /* CGSize.swift */,
 				50A67F861E472C5700E463F7 /* CGVector.swift */,
+				F1D833401E478F2D00772F42 /* StringToDouble.swift */,
 			);
 			path = CoreGraphics;
 			sourceTree = "<group>";
@@ -338,6 +350,10 @@
 			isa = PBXGroup;
 			children = (
 				50AF4C6A1E48FE2300E8EF8A /* Tools.storyboard */,
+				F1D8333C1E47871F00772F42 /* ToolViewController.swift */,
+				F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */,
+				F12644DA1E4B7B0600C5D33C /* WilksCalculatorViewController.swift */,
+				F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -464,7 +480,6 @@
 				TargetAttributes = {
 					50062A181E470D62002BDE90 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Z3TDYH9DM8;
 						ProvisioningStyle = Automatic;
 					};
 					50A67F731E472C4700E463F7 = {
@@ -575,16 +590,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F164A41F1E4F621A0084F6B3 /* TDEECalculatorViewController.swift in Sources */,
 				501D61CF1E4CDC6C00E9C859 /* CategoryViewController.swift in Sources */,
 				50FEF9321E4EA23A00308CCA /* EZLeanNavigationController.swift in Sources */,
 				504278071E49AE2A00D062DF /* RecentCollectionViewDataSource.swift in Sources */,
 				50062A1F1E470D62002BDE90 /* ViewController.swift in Sources */,
 				504278031E49AC6500D062DF /* RecentViewController.swift in Sources */,
+				F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */,
 				504278051E49ACE900D062DF /* RecentCollectionViewDelegate.swift in Sources */,
+				F12644DB1E4B7B0600C5D33C /* WilksCalculatorViewController.swift in Sources */,
 				5042780A1E49AE9000D062DF /* Article.swift in Sources */,
 				50AF4C651E48D78000E8EF8A /* EZLeanTabBarViewController.swift in Sources */,
 				50276FA21E4A2AE4006CBAC0 /* SingleArticleViewController.swift in Sources */,
 				50C8FA361E49A6C4009FF195 /* ArticleCell.swift in Sources */,
+				F1D8333D1E47871F00772F42 /* ToolViewController.swift in Sources */,
 				50062A1D1E470D62002BDE90 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,6 +624,7 @@
 				50A67FA41E472C5700E463F7 /* Functional.swift in Sources */,
 				50A67F9F1E472C5700E463F7 /* CGPoint.swift in Sources */,
 				50A67FA21E472C5700E463F7 /* CGVector.swift in Sources */,
+				F1D833411E478F2D00772F42 /* StringToDouble.swift in Sources */,
 				50A67FA91E472C5700E463F7 /* Configuration.swift in Sources */,
 				50A67FAD1E472C5700E463F7 /* Visualizer.swift in Sources */,
 				50A67FAC1E472C5700E463F7 /* UIWindow+Swizzle.swift in Sources */,
@@ -747,7 +767,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z3TDYH9DM8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "E.Z Lean/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -764,7 +784,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z3TDYH9DM8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "E.Z Lean/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
