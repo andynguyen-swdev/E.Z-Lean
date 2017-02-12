@@ -29,7 +29,6 @@ class EZLeanTabBarViewController: UITabBarController {
         
 //        tabBar.barTintColor = UIColor.init(hexString: "#404040")
         tabBar.barTintColor = UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
-//        tabBar.barTintColor = .white
         
         initialConfig()
     }
@@ -68,9 +67,9 @@ class EZLeanTabBarViewController: UITabBarController {
         tabBar.addSubview(selectingRect)
         
         selectingRect.translatesAutoresizingMaskIntoConstraints = false
-        selectingRect.heightAnchor.constraint(equalToConstant: 4).isActive = true
-//        selectingRect.topAnchor.constraint(equalTo: tabBar.topAnchor).isActive = true
-        selectingRect.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor).isActive = true
+        selectingRect.heightAnchor.constraint(equalToConstant: 2).isActive = true
+        selectingRect.topAnchor.constraint(equalTo: tabBar.topAnchor).isActive = true
+//        selectingRect.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor).isActive = true
         
         if UIDevice.current.userInterfaceIdiom == .pad {
             selectingRect.widthAnchor.constraint(equalToConstant: tabBarButtons[0].frame.width).isActive = true
@@ -81,7 +80,7 @@ class EZLeanTabBarViewController: UITabBarController {
         }
         selectingRectLeftConstraint.isActive = true
         
-        selectingRect.backgroundColor = UIColor.init("#4990E2")
+        selectingRect.backgroundColor = UIColor(hexString: "#CB7539")
         selectingRect.isOpaque = true
         
         self.selectedIndex = 0

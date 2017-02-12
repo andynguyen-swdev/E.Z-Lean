@@ -15,5 +15,8 @@ target 'E.Z Lean' do
     pod 'IBAnimatable'
     pod 'SDWebImage'
     pod 'Alamofire'
+    pod 'Material'
+    pod 'MaterialControls'
+    pod 'CHTCollectionViewWaterfallLayout'
 end
 

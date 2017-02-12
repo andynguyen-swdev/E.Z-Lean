@@ -21,8 +21,10 @@ class RecentViewController: UIViewController {
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
-        navigationController?.navigationBar.tintColor = try! UIColor.init(rgba_throws: "#54C7FC")
+        collectionView.backgroundColor = UIColor(hexString: "#3D3D3D").withAlphaComponent(0.16)
+        navigationController?.navigationBar.tintColor = UIColor(hexString: "#CB7539")
         ArticleCell.registerFor(collectionView: collectionView)
+//        configLayout()
         configDataSource()
         configButtons()
     }
@@ -30,10 +32,10 @@ class RecentViewController: UIViewController {
     func configButtons() {
          categoryBarButton.animate(animation: AnimationType.slide(way: .in, direction: .down), completion: nil)
         categoryBarButton.backgroundColor = .clear
-        categoryBarButton.tintColor = .white
+        categoryBarButton.tintColor = UIColor(hexString: "#CB7539")
         
         searchButton.backgroundColor = .clear
-        searchButton.tintColor = .white
+        searchButton.tintColor = UIColor(hexString: "#CB7539")
     }
     
     func configDataSource() {

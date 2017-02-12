@@ -23,7 +23,7 @@ class ArticleCell: UICollectionViewCell {
         // Initialization code
         self.layer.masksToBounds = false
         layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowRadius = 4
+        layer.shadowRadius = 2
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
     }
