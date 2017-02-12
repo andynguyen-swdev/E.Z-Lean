@@ -19,7 +19,11 @@ class EZLeanTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBar.unselectedItemTintColor = .white
+        if #available(iOS 10.0, *) {
+            tabBar.unselectedItemTintColor = .white
+        } else {
+            // Fallback on earlier versions
+        }
         tabBar.tintColor = .black
         initialConfig()
     }
