@@ -27,7 +27,7 @@ class EZLeanTabBarViewController: UITabBarController {
         }
         tabBar.tintColor = .white
         
-//        tabBar.barTintColor = UIColor.init(hexString: "#404040")
+        //        tabBar.barTintColor = UIColor.init(hexString: "#404040")
         tabBar.barTintColor = UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
         
         initialConfig()
@@ -35,22 +35,32 @@ class EZLeanTabBarViewController: UITabBarController {
     
     func initialConfig() {
         configSelectingRect()
-//        addBottomBar()
+        //        addBottomBar()
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let index = tabBar.items?.index(of: item) else { return }
+        animateSelectingRect(index: index)
+        
+        let image = tabBar.subviews[index+1].subviews[0]
+        image.transform = CGAffineTransform.identity
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveLinear, animations: {
+            image.transform = CGAffineTransform(rotationAngle: -CGFloat.pi)
+        })
+    }
+    
+    func animateSelectingRect(index: Int) {
         view.layoutIfNeeded()
         UIView.animate(withDuration: 0.6,
                        delay: 0,
                        usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 0.2,
                        options: [],
-                       animations:  { [weak self] in self?.animateChangeIndex(index: index) },
+                       animations:  { [weak self] in self?.moveSelectingRectTo(index: index) },
                        completion: nil)
     }
     
-    func animateChangeIndex(index: Int) {
+    private func moveSelectingRectTo(index: Int) {
         selectingRectLeftConstraint.isActive = false
         selectingRect.removeConstraint(selectingRectLeftConstraint)
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -62,14 +72,14 @@ class EZLeanTabBarViewController: UITabBarController {
         view.layoutIfNeeded()
     }
     
-    func configSelectingRect() {
+    private func configSelectingRect() {
         selectingRect = UIView.init(frame: .zero)
         tabBar.addSubview(selectingRect)
         
         selectingRect.translatesAutoresizingMaskIntoConstraints = false
         selectingRect.heightAnchor.constraint(equalToConstant: 2).isActive = true
         selectingRect.topAnchor.constraint(equalTo: tabBar.topAnchor).isActive = true
-//        selectingRect.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor).isActive = true
+        //        selectingRect.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor).isActive = true
         
         if UIDevice.current.userInterfaceIdiom == .pad {
             selectingRect.widthAnchor.constraint(equalToConstant: tabBarButtons[0].frame.width).isActive = true
@@ -86,7 +96,7 @@ class EZLeanTabBarViewController: UITabBarController {
         self.selectedIndex = 0
     }
     
-    func addBottomBar() {
+    private func addBottomBar() {
         let bottomBar = UIView.init(frame: .zero)
         tabBar.addSubview(bottomBar)
         tabBar.bringSubview(toFront: selectingRect)
