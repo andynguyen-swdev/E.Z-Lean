@@ -12,12 +12,17 @@ import RxCocoa
 import IBAnimatable
 import Popover
 
-class RecentViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+class RecentViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoryBarButton: AnimatableButton!
     @IBOutlet weak var searchButton: AnimatableButton!
     
+    lazy var popOverCategory: CategoryPopOverViewController = {
+        return self.storyboard!.instantiateViewController(withIdentifier: "PopOver") as! CategoryPopOverViewController
+    }()
+    
     var dataSource: RecentCollectionViewDataSource!
+    
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -39,8 +44,8 @@ class RecentViewController: UIViewController, UIPopoverPresentationControllerDel
         
         categoryBarButton.rx
             .tap
-            .subscribe(onNext: { _ in
-                
+            .subscribe(onNext: { [unowned self] _ in
+                self.presentPopOver()
             })
             .addDisposableTo(disposeBag)
     }
@@ -63,21 +68,30 @@ class RecentViewController: UIViewController, UIPopoverPresentationControllerDel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PopOver" {
-            let popoverViewController = segue.destination 
-            popoverViewController.modalPresentationStyle = UIModalPresentationStyle.popover
-            popoverViewController.popoverPresentationController!.delegate = self
-            return
-        }
-        
         if let article = sender as? Article {
             guard let vc = segue.destination as? SingleArticleViewController else { return }
             vc.urlStringToLoad = article.contentLink
-            return
         }
     }
     
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
+    func presentPopOver() {
+        let vc = self.popOverCategory
+        let view = vc.view
+        view?.frame = CGRect(x: 0, y: 0, width: self.view.width-16, height: 198)
+        view?.translatesAutoresizingMaskIntoConstraints = false
+        
+        let options: [PopoverOption] = [
+            .sideEdge(8),
+            .cornerRadius(4),
+            .blackOverlayColor(UIColor.black.withAlphaComponent(0.5)),
+            .arrowSize(CGSize(width: 10, height: 6))
+        ]
+        let popover = Popover(options: options)
+        popover.show(view!, point: CGPoint(x: 22, y: 67))
+        
+        view?.topAnchor.constraint(equalTo: popover.topAnchor, constant: 10).isActive = true
+        view?.bottomAnchor.constraint(equalTo: popover.bottomAnchor).isActive = true
+        view?.leftAnchor.constraint(equalTo: popover.leftAnchor).isActive = true
+        view?.rightAnchor.constraint(equalTo: popover.rightAnchor).isActive = true
     }
 }

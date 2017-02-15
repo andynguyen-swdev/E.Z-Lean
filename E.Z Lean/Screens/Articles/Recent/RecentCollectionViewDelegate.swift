@@ -20,13 +20,13 @@ extension RecentViewController: CHTCollectionViewDelegateWaterfallLayout {
         
         let title = dataSource.articles.value[indexPath.row].title
         
-        let fontSize: CGFloat = (UIDevice.current.userInterfaceIdiom == .phone) ? 14 : 20
+        let fontSize: CGFloat = (UIDevice.current.userInterfaceIdiom == .phone) ? 16 : 20
         let titleHeight = NSString(string: title).boundingRect(with: CGSize(width: width - 16, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.init(name: "Helvetica Neue", size: fontSize)!], context: nil).height
         
         let titleTopPaddingHeight: CGFloat = 8
-        let titleBottomPaddingHeight: CGFloat = 6
+        let titleBottomPaddingHeight: CGFloat = 4
         
-        let summaryHeight: CGFloat = (UIDevice.current.userInterfaceIdiom == .phone) ? 33.5 : 35.5
+        let summaryHeight: CGFloat = (UIDevice.current.userInterfaceIdiom == .phone) ? 33 : 35.5
         let summaryBottomPaddingHeight: CGFloat = 4
         
         let categoryHeight: CGFloat = 25
