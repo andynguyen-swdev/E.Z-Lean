@@ -18,15 +18,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="358" height="318"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="EZ Lean logo" translatesAutoresizingMaskIntoConstraints="NO" id="orK-aV-CxI">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="EZ Lean logo" translatesAutoresizingMaskIntoConstraints="NO" id="orK-aV-CxI" customClass="AnimatableImageView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="358" height="201.33333333333334"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="orK-aV-CxI" secondAttribute="height" multiplier="16/9" id="yaT-Tb-QRH"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="_cornerSides" value="topLeft,topRight"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Bách khoa toàn thư về thể hình - Xây dựng cơ bắp từ A-Z - P.1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBW-cQ-de0">
-                        <rect key="frame" x="10" y="209.33333333333326" width="338" height="37.333333333333314"/>
+                        <rect key="frame" x="10" y="209.33333333333334" width="338" height="37.333333333333314"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -35,34 +41,34 @@
                         </variation>
                     </label>
                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBr-V8-9E9" customClass="AnimatableView" customModule="IBAnimatable">
-                        <rect key="frame" x="0.0" y="157.33333333333326" width="358" height="44"/>
+                        <rect key="frame" x="0.0" y="161.33333333333334" width="358" height="40"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile PIcture" translatesAutoresizingMaskIntoConstraints="NO" id="HND-56-6ZK" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                <rect key="frame" x="10" y="7" width="30" height="30"/>
+                                <rect key="frame" x="9" y="7.6666666666666572" width="26" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HND-56-6ZK" secondAttribute="height" multiplier="1:1" id="cCe-iI-9JX"/>
-                                    <constraint firstAttribute="height" constant="30" id="tLq-AS-8gK"/>
+                                    <constraint firstAttribute="height" constant="26" id="tLq-AS-8gK"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
+                                        <real key="value" value="13"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E.Z Lean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMq-TZ-mMP">
-                                <rect key="frame" x="45.000000000000007" y="21.666666666666657" width="51.666666666666679" height="15.333333333333343"/>
+                                <rect key="frame" x="42.000000000000007" y="18.333333333333314" width="51.666666666666679" height="15.333333333333343"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 Tháng 2, 2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emH-et-muY">
-                                <rect key="frame" x="253.66666666666663" y="21.666666666666657" width="94.333333333333371" height="15.333333333333343"/>
+                                <rect key="frame" x="253.66666666666663" y="18.333333333333314" width="94.333333333333371" height="15.333333333333343"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -70,14 +76,23 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="emH-et-muY" firstAttribute="bottom" secondItem="xMq-TZ-mMP" secondAttribute="bottom" id="6Xy-gy-lpW"/>
-                            <constraint firstItem="xMq-TZ-mMP" firstAttribute="leading" secondItem="HND-56-6ZK" secondAttribute="trailing" constant="5" id="Hcb-7E-jUg"/>
+                            <constraint firstItem="xMq-TZ-mMP" firstAttribute="leading" secondItem="HND-56-6ZK" secondAttribute="trailing" constant="7" id="Hcb-7E-jUg"/>
                             <constraint firstItem="xMq-TZ-mMP" firstAttribute="bottom" secondItem="HND-56-6ZK" secondAttribute="bottom" id="SLX-Eo-Wnt"/>
                             <constraint firstItem="HND-56-6ZK" firstAttribute="centerY" secondItem="uBr-V8-9E9" secondAttribute="centerY" id="bjf-m1-ZSQ"/>
-                            <constraint firstAttribute="height" constant="44" id="tkN-ho-WsW"/>
+                            <constraint firstAttribute="height" constant="40" id="tkN-ho-WsW"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="_startPoint" value="top"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bộ môn thể hình “Tôi đã nghỉ thi đấu, nhưng tôi sẽ không bao giờ ngừng tập thể hình. Bởi nó là môn thể thao tuyệt vời nhất”" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFD-F3-GAV">
-                        <rect key="frame" x="10" y="251.66666666666674" width="338" height="31.000000000000057"/>
+                        <rect key="frame" x="10" y="251.66666666666669" width="338" height="31.000000000000057"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                         <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -85,12 +100,11 @@
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                         </variation>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dumbbell" translatesAutoresizingMaskIntoConstraints="NO" id="oBH-BU-pY2">
-                        <rect key="frame" x="10" y="286.66666666666674" width="25" height="25"/>
-                        <color key="tintColor" red="0.90588235294117647" green="0.62352941176470589" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dumbbell" translatesAutoresizingMaskIntoConstraints="NO" id="oBH-BU-pY2" customClass="AnimatableImageView" customModule="IBAnimatable">
+                        <rect key="frame" x="11" y="286.66666666666669" width="25" height="25"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luyện tập" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc6-3L-Ixo">
-                        <rect key="frame" x="41" y="291.33333333333326" width="56" height="15.666666666666686"/>
+                        <rect key="frame" x="42" y="291.33333333333326" width="56" height="15.666666666666686"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                         <color key="textColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -101,7 +115,7 @@
             <constraints>
                 <constraint firstItem="orK-aV-CxI" firstAttribute="bottom" secondItem="uBr-V8-9E9" secondAttribute="bottom" id="81F-Qd-qTC"/>
                 <constraint firstItem="oBH-BU-pY2" firstAttribute="top" secondItem="JFD-F3-GAV" secondAttribute="bottom" constant="4" id="CHe-Sa-Apl"/>
-                <constraint firstItem="HND-56-6ZK" firstAttribute="leading" secondItem="jBW-cQ-de0" secondAttribute="leading" id="Giw-xP-c0e"/>
+                <constraint firstItem="HND-56-6ZK" firstAttribute="leading" secondItem="jBW-cQ-de0" secondAttribute="leading" constant="-1" id="Giw-xP-c0e"/>
                 <constraint firstItem="orK-aV-CxI" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="KNm-zr-8Qq"/>
                 <constraint firstItem="jBW-cQ-de0" firstAttribute="top" secondItem="uBr-V8-9E9" secondAttribute="bottom" constant="8" id="MlD-xS-lWd"/>
                 <constraint firstAttribute="trailing" secondItem="orK-aV-CxI" secondAttribute="trailing" id="NWH-J3-5P3"/>
@@ -111,7 +125,7 @@
                 <constraint firstAttribute="trailing" secondItem="uBr-V8-9E9" secondAttribute="trailing" id="cYZ-qc-zaE"/>
                 <constraint firstItem="JFD-F3-GAV" firstAttribute="trailing" secondItem="jBW-cQ-de0" secondAttribute="trailing" id="dPk-UM-ofn"/>
                 <constraint firstItem="Kc6-3L-Ixo" firstAttribute="centerY" secondItem="oBH-BU-pY2" secondAttribute="centerY" id="obA-Lh-JgL"/>
-                <constraint firstItem="oBH-BU-pY2" firstAttribute="leading" secondItem="JFD-F3-GAV" secondAttribute="leading" id="qZt-P6-r7D"/>
+                <constraint firstItem="oBH-BU-pY2" firstAttribute="leading" secondItem="JFD-F3-GAV" secondAttribute="leading" constant="1" id="qZt-P6-r7D"/>
                 <constraint firstItem="Kc6-3L-Ixo" firstAttribute="leading" secondItem="oBH-BU-pY2" secondAttribute="trailing" constant="6" id="tT6-Jm-Xgi"/>
                 <constraint firstItem="orK-aV-CxI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="te2-GM-XaM"/>
                 <constraint firstItem="jBW-cQ-de0" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="uqf-gO-NVO"/>
@@ -122,7 +136,7 @@
             <size key="customSize" width="1674" height="393"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                    <real key="value" value="3"/>
+                    <real key="value" value="4"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <variation key="default">
@@ -131,6 +145,8 @@
                 </mask>
             </variation>
             <connections>
+                <outlet property="categoryImage" destination="oBH-BU-pY2" id="ZPS-B0-Zjg"/>
+                <outlet property="categoryLabel" destination="Kc6-3L-Ixo" id="lJg-iU-bSw"/>
                 <outlet property="imageAspectConstraint" destination="yaT-Tb-QRH" id="IZI-7Y-7qt"/>
                 <outlet property="summaryLabel" destination="JFD-F3-GAV" id="XYe-82-FL7"/>
                 <outlet property="thumbnailImageView" destination="orK-aV-CxI" id="6KU-Bw-TRa"/>

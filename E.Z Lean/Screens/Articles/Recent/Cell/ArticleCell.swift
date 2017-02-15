@@ -6,6 +6,7 @@
 //  Copyright © 2017 E.Z Lean. All rights reserved.
 //
 
+import IBAnimatable
 import UIKit
 import RxSwift
 import RxCocoa
@@ -14,19 +15,26 @@ class ArticleCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    
+    @IBOutlet weak var categoryImage: AnimatableImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    
     var imageAspectConstraint: NSLayoutConstraint?
     
     static var identifier = "ArticleCell"
     var disposeBag = DisposeBag()
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
         self.layer.masksToBounds = false
         layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowRadius = 2
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
+        
+        categoryImage.tintColor = UIColor(hexString: "#E79F62")
         setImageRatio(16/9)
     }
     
