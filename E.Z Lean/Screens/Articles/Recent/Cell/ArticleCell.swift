@@ -14,6 +14,7 @@ class ArticleCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    var imageAspectConstraint: NSLayoutConstraint?
     
     static var identifier = "ArticleCell"
     var disposeBag = DisposeBag()
@@ -26,6 +27,16 @@ class ArticleCell: UICollectionViewCell {
         layer.shadowRadius = 2
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
+        setImageRatio(16/9)
+    }
+    
+    func setImageRatio(_ ratio: CGFloat) {
+        if let constraint = imageAspectConstraint {
+            constraint.isActive = false
+            thumbnailImageView.removeConstraint(constraint)
+        }
+        imageAspectConstraint = NSLayoutConstraint(item: thumbnailImageView, attribute: .width, relatedBy: .equal, toItem: thumbnailImageView, attribute: .height, multiplier: ratio, constant: 0)
+        imageAspectConstraint?.isActive = true
     }
     
     static func registerFor(collectionView: UICollectionView) {

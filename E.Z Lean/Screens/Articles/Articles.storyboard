@@ -121,17 +121,7 @@
         <!--Category View Controller-->
         <scene sceneID="klz-7V-vCI">
             <objects>
-                <viewController id="BIG-Uv-BQh" customClass="CategoryViewController" customModule="E_Z_Lean" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FX2-yx-5Ks"/>
-                        <viewControllerLayoutGuide type="bottom" id="MSf-Bz-bGv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6bf-ZZ-bur">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
+                <viewController id="BIG-Uv-BQh" customClass="CategoryViewController" customModule="E_Z_Lean" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUA-pH-R7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2369" y="383"/>
@@ -144,7 +134,7 @@
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="qFw-VH-lUd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="qFw-VH-lUd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
