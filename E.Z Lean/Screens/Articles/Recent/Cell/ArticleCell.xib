@@ -104,8 +104,8 @@
                         <rect key="frame" x="11" y="286.66666666666669" width="25" height="25"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luyện tập" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc6-3L-Ixo">
-                        <rect key="frame" x="42" y="291.33333333333326" width="56" height="15.666666666666686"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
+                        <rect key="frame" x="41.999999999999993" y="291.33333333333326" width="58.333333333333321" height="15.666666666666686"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                         <color key="textColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>

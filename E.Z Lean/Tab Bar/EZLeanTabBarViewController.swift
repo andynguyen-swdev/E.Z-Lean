@@ -91,7 +91,7 @@ class EZLeanTabBarViewController: UITabBarController {
         }
         selectingRectLeftConstraint.isActive = true
         
-        selectingRect.backgroundColor = UIColor(hexString: "#CB7539")
+        selectingRect.backgroundColor = UIColor(hexString: "#E79F62")
         selectingRect.isOpaque = true
         
         self.selectedIndex = 0

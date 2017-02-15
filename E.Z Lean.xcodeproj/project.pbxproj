@@ -14,6 +14,7 @@
 		50062A271E470D62002BDE90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50062A251E470D62002BDE90 /* LaunchScreen.storyboard */; };
 		501D61CF1E4CDC6C00E9C859 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501D61CE1E4CDC6C00E9C859 /* CategoryViewController.swift */; };
 		50276FA21E4A2AE4006CBAC0 /* SingleArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50276FA11E4A2AE4006CBAC0 /* SingleArticleViewController.swift */; };
+		503B73B01E549E3B005838CC /* CategoryPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503B73AF1E549E3B005838CC /* CategoryPopOverViewController.swift */; };
 		504278031E49AC6500D062DF /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504278021E49AC6500D062DF /* RecentViewController.swift */; };
 		504278051E49ACE900D062DF /* RecentCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504278041E49ACE900D062DF /* RecentCollectionViewDelegate.swift */; };
 		504278071E49AE2A00D062DF /* RecentCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504278061E49AE2A00D062DF /* RecentCollectionViewDataSource.swift */; };
@@ -61,7 +62,6 @@
 		F1D8333D1E47871F00772F42 /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333C1E47871F00772F42 /* ToolViewController.swift */; };
 		F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */; };
 		F1D833411E478F2D00772F42 /* StringToDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D833401E478F2D00772F42 /* StringToDouble.swift */; };
-		F863B5FCF46473BC04607CBC /* Pods_Drawing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF12600BF5C1EEB48946324 /* Pods_Drawing.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +98,7 @@
 		50062A281E470D62002BDE90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		501D61CE1E4CDC6C00E9C859 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		50276FA11E4A2AE4006CBAC0 /* SingleArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleArticleViewController.swift; sourceTree = "<group>"; };
+		503B73AF1E549E3B005838CC /* CategoryPopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPopOverViewController.swift; sourceTree = "<group>"; };
 		504278021E49AC6500D062DF /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
 		504278041E49ACE900D062DF /* RecentCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		504278061E49AE2A00D062DF /* RecentCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -340,8 +341,8 @@
 			children = (
 				50AF4C681E48FE2300E8EF8A /* Articles.storyboard */,
 				50C8FA321E49A6C4009FF195 /* Recent */,
-				501D61CD1E4CD86300E9C859 /* Category */,
 				50276FA01E4A2AD1006CBAC0 /* Single Article */,
+				501D61CD1E4CD86300E9C859 /* Category */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -382,6 +383,7 @@
 				504278021E49AC6500D062DF /* RecentViewController.swift */,
 				504278041E49ACE900D062DF /* RecentCollectionViewDelegate.swift */,
 				504278061E49AE2A00D062DF /* RecentCollectionViewDataSource.swift */,
+				503B73AF1E549E3B005838CC /* CategoryPopOverViewController.swift */,
 			);
 			path = Recent;
 			sourceTree = "<group>";
@@ -596,6 +598,7 @@
 				504278071E49AE2A00D062DF /* RecentCollectionViewDataSource.swift in Sources */,
 				50062A1F1E470D62002BDE90 /* ViewController.swift in Sources */,
 				504278031E49AC6500D062DF /* RecentViewController.swift in Sources */,
+				503B73B01E549E3B005838CC /* CategoryPopOverViewController.swift in Sources */,
 				F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */,
 				504278051E49ACE900D062DF /* RecentCollectionViewDelegate.swift in Sources */,
 				F12644DB1E4B7B0600C5D33C /* WilksCalculatorViewController.swift in Sources */,

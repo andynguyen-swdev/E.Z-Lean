@@ -44,7 +44,7 @@ class SingleArticleViewController: UIViewController, WKNavigationDelegate {
     func configProgressView() {
         progressView.removeFromSuperview()
         webView.addSubview(progressView)
-        progressView.progressTintColor = UIColor(hexString: "#CB7539")
+        progressView.progressTintColor = UIColor(hexString: "#E79F62")
         
         progressView.topAnchor.constraint(equalTo: webView.topAnchor).isActive = true
         progressView.leftAnchor.constraint(equalTo: webView.leftAnchor).isActive = true
