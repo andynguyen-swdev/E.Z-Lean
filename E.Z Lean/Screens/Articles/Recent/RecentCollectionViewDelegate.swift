@@ -9,32 +9,16 @@
 import Utils
 import CHTCollectionViewWaterfallLayout
 
-extension RecentViewController: CHTCollectionViewDelegateWaterfallLayout {
+extension RecentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cell = RecentArticleCell.fromNib
+        let article = dataSource.articles.value[indexPath.row]
+        
         let width = collectionView.width - 16
-//        width = (UIDevice.current.userInterfaceIdiom == .phone) ? width : (width - 8) / 2
+        (cell as? ArticleCell)?.config(article: article, collectionView: nil, indexPath: nil)
         
-        var height: CGFloat
-        let aspectRatio: CGFloat = dataSource.articles.value[indexPath.row].imageRatio ?? 16/9
-        let photoHeight = width / aspectRatio
-        
-        let title = dataSource.articles.value[indexPath.row].title
-        
-        let fontSize: CGFloat = (UIDevice.current.userInterfaceIdiom == .phone) ? 18 : 20
-        let titleHeight = NSString(string: title).boundingRect(with: CGSize(width: width - 16, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.init(name: "Helvetica Neue", size: fontSize)!], context: nil).height
-        
-        let titleTopPaddingHeight: CGFloat = 7
-        let titleBottomPaddingHeight: CGFloat = 5
-        
-        let summaryHeight: CGFloat = (UIDevice.current.userInterfaceIdiom == .phone) ? 33 : 35.5
-        let summaryBottomPaddingHeight: CGFloat = 4
-        
-        let categoryHeight: CGFloat = 25
-        let categoryBottomPadding: CGFloat = 7
-        
-        height = photoHeight + titleTopPaddingHeight + titleHeight + titleBottomPaddingHeight + summaryHeight + summaryBottomPaddingHeight + categoryHeight + categoryBottomPadding
-        
-        return CGSize(width: width, height: height)
+        cell.contentWidth = width
+        return cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
     }
     
     func configLayout() {

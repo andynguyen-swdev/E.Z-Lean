@@ -35,8 +35,8 @@ class RecentViewController: UIViewController {
         RecentViewController.instance = self
         collectionView.backgroundColor = Colors.collectionViewBackground
         navigationController?.navigationBar.tintColor = Colors.brightOrange
-        ArticleCell.registerFor(collectionView: collectionView)
-        //        configLayout()
+        RecentArticleCell.registerFor(collectionView: collectionView)
+//                configLayout()
         configDataSource()
         configButtons()
 //        configSearchController()

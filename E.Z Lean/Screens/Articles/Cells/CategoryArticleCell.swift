@@ -11,18 +11,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ArticleCell: UICollectionViewCell {
+class CategoryArticleCell: BaseCell, ArticleCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     
-    @IBOutlet weak var categoryImage: AnimatableImageView!
-    @IBOutlet weak var categoryLabel: UILabel!
-    
     var imageAspectConstraint: NSLayoutConstraint?
     
-    static var identifier = "ArticleCell"
-    var disposeBag = DisposeBag()
+    static var nibName: String { return "CategoryArticleCell" }
+    static var identifier: String { return nibName }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,7 +31,6 @@ class ArticleCell: UICollectionViewCell {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
         
-        categoryImage.tintColor = Colors.brightOrange
         setImageRatio(16/9)
     }
     
@@ -47,14 +43,22 @@ class ArticleCell: UICollectionViewCell {
         imageAspectConstraint?.isActive = true
     }
     
-    override class func registerFor(collectionView: UICollectionView) {
-        let nib = UINib(nibName: "ArticleCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: ArticleCell.identifier)
-    }
-}
+    func config(article: Article, collectionView: UICollectionView? = nil, indexPath: IndexPath? = nil) {
+        titleLabel.text = article.title
+        summaryLabel.text = article.summary
+        
+        setImageRatio(article.imageRatio ?? 16/9)
+        
+        guard let cView = collectionView, let indexPath = indexPath else { return }
+        thumbnailImageView.sd_setShowActivityIndicatorView(true)
+        thumbnailImageView.sd_setIndicatorStyle(.gray)
+        thumbnailImageView.sd_setImage(with: article.thumgnailURL, placeholderImage: #imageLiteral(resourceName: "EZ Lean logo"), options: [.scaleDownLargeImages]) { [weak self] image, e,_,_ in
+            if let error = e { print(error) } else {
+                if cView.cellForItem(at: indexPath) != nil {
+                    self?.thumbnailImageView.image = image
+                }
+            }
+        }
 
-extension UICollectionViewCell {
-    class func registerFor(collectionView: UICollectionView) {
-        //Placeholder
     }
 }

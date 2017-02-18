@@ -31,24 +31,9 @@ class RecentCollectionViewDataSource {
         let dataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSectionModel<String,Article>>()
         dataSource.configureCell = {
             data, cView, indexPath, article in
-            let cell = cView.dequeueReusableCell(withReuseIdentifier: ArticleCell.identifier, for: indexPath) as! ArticleCell
-            cell.titleLabel.text = article.title
-            cell.summaryLabel.text = article.summary
-            
-            cell.categoryImage.image = article.category.image
-            cell.categoryLabel.text = article.category.name
-            
-            cell.setImageRatio(article.imageRatio ?? 16/9)
-            cell.thumbnailImageView.sd_setShowActivityIndicatorView(true)
-            cell.thumbnailImageView.sd_setIndicatorStyle(.gray)
-            cell.thumbnailImageView.sd_setImage(with: article.thumgnailURL, placeholderImage: #imageLiteral(resourceName: "EZ Lean logo"), options: [.scaleDownLargeImages]) { image, e,_,_ in
-                if let error = e { print(error) } else {
-                    print("Done")
-                    if cView.cellForItem(at: indexPath) != nil {
-                        cell.thumbnailImageView.image = image
-                    }
-                }
-            }
+            let cell = cView.dequeueReusableCell(withReuseIdentifier: RecentArticleCell.identifier, for: indexPath) as! RecentArticleCell
+            cell.contentWidth = cView.width-16
+            cell.config(article: article, collectionView: cView, indexPath: indexPath)
             return cell
         }
         
@@ -70,6 +55,9 @@ class RecentCollectionViewDataSource {
         let article1 = Article(title: "Bách khoa toàn thư về thể hình - Xây dựng cơ bắp từ A-Z - P.1", summary: "Bộ môn thể hình\n“Tôi đã nghỉ thi đấu, nhưng tôi sẽ không bao giờ ngừng tập thể hình. Bởi nó là môn thể thao tuyệt vời nhất”", contentLink: path1, imageLink: "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/16473857_1860792030872129_3305724862498556086_n.jpg?oh=f3da1ece79de6dd3cc6e8dc153b061bb&oe=594685BE", imageRatio: 16/9)
         let path2 = Bundle.main.path(forResource: "test2", ofType: "html")!
         let article2 = Article(title: "5 CÁCH CHO PHỤ NỮ GIẢM MỠ -TĂNG CƠ", summary: "Hiểu được phụ nữ luôn là 1 điều vô cùng khó khăn nên chúng ta không đem những phương pháp vốn dành cho đàn ông - những tế bào đơn giản đến ngờ ngệch - áp dụng cho phụ nữ - 1 cơ thể hoàn hảo của quá trình tiến hóa và thích nghi với thiên nhiên. Hãy thay đổi vấn đề từ các yếu tố căn bản là sinh lý thay vì chỉ biết tập và tập. Ps: bài viết khá dài và có những vấn đề chuyên môn nhưng các bạn cần xem để hiểu rõ sự khác biệt và có phương án xây dựng chế độ ăn và tập phù hợp.", contentLink: path2, imageLink: "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/15976996_1849094002041932_3248249048536576598_n.jpg?oh=99f7acb7b0a1d109e5b53aef20064ce8&oe=5943FCE1", imageRatio: 690/493)
+        articles.value.append(article0)
+        articles.value.append(article1)
+        articles.value.append(article2)
         articles.value.append(article0)
         articles.value.append(article1)
         articles.value.append(article2)
