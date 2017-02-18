@@ -32,8 +32,8 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Bách khoa toàn thư về thể hình - Xây dựng cơ bắp từ A-Z - P.1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBW-cQ-de0">
-                        <rect key="frame" x="10" y="209.33333333333334" width="338" height="37.333333333333314"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <rect key="frame" x="10" y="208.33333333333334" width="338" height="42"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -92,7 +92,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bộ môn thể hình “Tôi đã nghỉ thi đấu, nhưng tôi sẽ không bao giờ ngừng tập thể hình. Bởi nó là môn thể thao tuyệt vời nhất”" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFD-F3-GAV">
-                        <rect key="frame" x="10" y="250.66666666666669" width="338" height="32.666666666666686"/>
+                        <rect key="frame" x="10" y="255.33333333333337" width="338" height="32.666666666666629"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -100,11 +100,11 @@
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                         </variation>
                     </label>
-                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dumbbell" translatesAutoresizingMaskIntoConstraints="NO" id="oBH-BU-pY2" customClass="AnimatableImageView" customModule="IBAnimatable">
-                        <rect key="frame" x="11" y="287.33333333333331" width="25" height="25"/>
+                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dumbbell_25" translatesAutoresizingMaskIntoConstraints="NO" id="oBH-BU-pY2" customClass="AnimatableImageView" customModule="IBAnimatable">
+                        <rect key="frame" x="11" y="292" width="25" height="25"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luyện tập" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc6-3L-Ixo">
-                        <rect key="frame" x="42.000000000000007" y="292" width="62.666666666666679" height="15.666666666666686"/>
+                        <rect key="frame" x="42.000000000000007" y="296.66666666666669" width="62.666666666666679" height="15.666666666666629"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                 <constraint firstItem="oBH-BU-pY2" firstAttribute="top" secondItem="JFD-F3-GAV" secondAttribute="bottom" constant="4" id="CHe-Sa-Apl"/>
                 <constraint firstItem="HND-56-6ZK" firstAttribute="leading" secondItem="jBW-cQ-de0" secondAttribute="leading" constant="-1" id="Giw-xP-c0e"/>
                 <constraint firstItem="orK-aV-CxI" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="KNm-zr-8Qq"/>
-                <constraint firstItem="jBW-cQ-de0" firstAttribute="top" secondItem="uBr-V8-9E9" secondAttribute="bottom" constant="8" id="MlD-xS-lWd"/>
+                <constraint firstItem="jBW-cQ-de0" firstAttribute="top" secondItem="uBr-V8-9E9" secondAttribute="bottom" constant="7" id="MlD-xS-lWd"/>
                 <constraint firstAttribute="trailing" secondItem="orK-aV-CxI" secondAttribute="trailing" id="NWH-J3-5P3"/>
                 <constraint firstItem="JFD-F3-GAV" firstAttribute="leading" secondItem="jBW-cQ-de0" secondAttribute="leading" id="Wm6-4d-wNM"/>
                 <constraint firstItem="orK-aV-CxI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XuQ-Vk-V95"/>
@@ -130,7 +130,7 @@
                 <constraint firstItem="orK-aV-CxI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="te2-GM-XaM"/>
                 <constraint firstItem="jBW-cQ-de0" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="uqf-gO-NVO"/>
                 <constraint firstItem="jBW-cQ-de0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="xEC-wl-G9P"/>
-                <constraint firstItem="JFD-F3-GAV" firstAttribute="top" secondItem="jBW-cQ-de0" secondAttribute="bottom" constant="4" id="xz7-0U-LTS"/>
+                <constraint firstItem="JFD-F3-GAV" firstAttribute="top" secondItem="jBW-cQ-de0" secondAttribute="bottom" constant="5.0000000000000284" id="xz7-0U-LTS"/>
                 <constraint firstItem="uBr-V8-9E9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zaC-Km-Khd"/>
             </constraints>
             <size key="customSize" width="1674" height="399"/>
@@ -156,7 +156,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Dumbbell" width="25" height="25"/>
+        <image name="Dumbbell_25" width="25" height="25"/>
         <image name="EZ Lean logo" width="2000" height="2000"/>
         <image name="Profile PIcture" width="679" height="679"/>
     </resources>

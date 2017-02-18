@@ -10,24 +10,19 @@ import UIKit
 
 class CategoryPopOverViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
-    var category: [(name: String, image: UIImage)] = []
+    var category = ArticleCategory.all
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configDataSource()
         tableView.dataSource = self
         tableView.delegate = self
-    }
-    
-    func configDataSource() {
-        category.append((name: "Luyện tập",image: #imageLiteral(resourceName: "Dumbbell")))
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = category[indexPath.row].name
         cell.imageView?.image = category[indexPath.row].image
-        cell.imageView?.tintColor = UIColor(hexString: "#E79F62")
+        cell.imageView?.tintColor = Colors.brightOrange
         cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "Disclosure Indicator"))
         return cell
     }
@@ -38,5 +33,6 @@ class CategoryPopOverViewController: UIViewController, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        RecentViewController.instance.performSegue(withIdentifier: SegueIdentifiers.recentToCategory, sender: category[indexPath.row])
     }
 }

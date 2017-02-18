@@ -11,7 +11,7 @@ import RxCocoa
 import RxDataSources
 import SDWebImage
 
-class RecentCollectionViewDataSource {
+class CategoryViewDataSource {
     weak var collectionView: UICollectionView!
     var disposeBag = DisposeBag()
     var articles: Variable<[Article]> = Variable([])
@@ -31,19 +31,15 @@ class RecentCollectionViewDataSource {
         let dataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSectionModel<String,Article>>()
         dataSource.configureCell = {
             data, cView, indexPath, article in
-            let cell = cView.dequeueReusableCell(withReuseIdentifier: ArticleCell.identifier, for: indexPath) as! ArticleCell
+            let cell = cView.dequeueReusableCell(withReuseIdentifier: ArticleCell.identifier, for: indexPath) as! CategoryArticleCell
             cell.titleLabel.text = article.title
             cell.summaryLabel.text = article.summary
-            
-            cell.categoryImage.image = article.category.image
-            cell.categoryLabel.text = article.category.name
             
             cell.setImageRatio(article.imageRatio ?? 16/9)
             cell.thumbnailImageView.sd_setShowActivityIndicatorView(true)
             cell.thumbnailImageView.sd_setIndicatorStyle(.gray)
             cell.thumbnailImageView.sd_setImage(with: article.thumgnailURL, placeholderImage: #imageLiteral(resourceName: "EZ Lean logo"), options: [.scaleDownLargeImages]) { image, e,_,_ in
                 if let error = e { print(error) } else {
-                    print("Done")
                     if cView.cellForItem(at: indexPath) != nil {
                         cell.thumbnailImageView.image = image
                     }

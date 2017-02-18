@@ -11,13 +11,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ArticleCell: UICollectionViewCell {
+class CategoryArticleCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
-    
-    @IBOutlet weak var categoryImage: AnimatableImageView!
-    @IBOutlet weak var categoryLabel: UILabel!
     
     var imageAspectConstraint: NSLayoutConstraint?
     
@@ -34,7 +31,6 @@ class ArticleCell: UICollectionViewCell {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
         
-        categoryImage.tintColor = Colors.brightOrange
         setImageRatio(16/9)
     }
     
@@ -48,13 +44,7 @@ class ArticleCell: UICollectionViewCell {
     }
     
     override class func registerFor(collectionView: UICollectionView) {
-        let nib = UINib(nibName: "ArticleCell", bundle: nil)
+        let nib = UINib(nibName: "CategoryArticleCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: ArticleCell.identifier)
-    }
-}
-
-extension UICollectionViewCell {
-    class func registerFor(collectionView: UICollectionView) {
-        //Placeholder
     }
 }

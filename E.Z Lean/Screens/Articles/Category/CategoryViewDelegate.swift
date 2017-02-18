@@ -9,7 +9,7 @@
 import Utils
 import CHTCollectionViewWaterfallLayout
 
-extension RecentViewController: CHTCollectionViewDelegateWaterfallLayout {
+extension CategoryViewController: CHTCollectionViewDelegateWaterfallLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.width - 16
 //        width = (UIDevice.current.userInterfaceIdiom == .phone) ? width : (width - 8) / 2
@@ -27,10 +27,10 @@ extension RecentViewController: CHTCollectionViewDelegateWaterfallLayout {
         let titleBottomPaddingHeight: CGFloat = 5
         
         let summaryHeight: CGFloat = (UIDevice.current.userInterfaceIdiom == .phone) ? 33 : 35.5
-        let summaryBottomPaddingHeight: CGFloat = 4
+        let summaryBottomPaddingHeight: CGFloat = 6
         
-        let categoryHeight: CGFloat = 25
-        let categoryBottomPadding: CGFloat = 7
+        let categoryHeight: CGFloat = 26
+        let categoryBottomPadding: CGFloat = 9
         
         height = photoHeight + titleTopPaddingHeight + titleHeight + titleBottomPaddingHeight + summaryHeight + summaryBottomPaddingHeight + categoryHeight + categoryBottomPadding
         

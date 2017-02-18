@@ -12,20 +12,20 @@ class Article: Hashable, IdentifiableType {
     var title: String
     var summary: String
     var contentLink: String
-    var category: String?
+    var category: ArticleCategory
     
     
     var imageRatio: CGFloat?
     private var thumbnailImageLink: String
     var thumgnailURL: URL? { return URL(string: thumbnailImageLink) }
     
-    init(title: String, summary: String ,contentLink: String, imageLink: String, imageRatio: CGFloat? = nil, category: String? = nil) {
+    init(title: String, summary: String ,contentLink: String, imageLink: String, imageRatio: CGFloat? = nil, category: ArticleCategory? = nil) {
         self.title = title
         self.summary = summary
         self.contentLink = contentLink
         self.thumbnailImageLink = imageLink
         self.imageRatio = imageRatio
-        self.category = category
+        self.category = category ?? ArticleCategory.training
     }
     
     public static func ==(lhs: Article, rhs: Article) -> Bool {

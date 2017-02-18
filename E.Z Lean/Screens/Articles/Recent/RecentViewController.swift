@@ -13,6 +13,8 @@ import IBAnimatable
 import Popover
 
 class RecentViewController: UIViewController {
+    static var instance: RecentViewController!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoryBarButton: AnimatableButton!
     @IBOutlet weak var searchButton: AnimatableButton!
@@ -22,25 +24,47 @@ class RecentViewController: UIViewController {
     }()
     
     var dataSource: RecentCollectionViewDataSource!
+    var popover: Popover!
+    
+    var searchController: UISearchController!
+    var searchBar: UISearchBar!
     
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
-        collectionView.backgroundColor = UIColor(hexString: "#3D3D3D").withAlphaComponent(0.16)
-        navigationController?.navigationBar.tintColor = UIColor(hexString: "#E79F62")
+        RecentViewController.instance = self
+        collectionView.backgroundColor = Colors.collectionViewBackground
+        navigationController?.navigationBar.tintColor = Colors.brightOrange
         ArticleCell.registerFor(collectionView: collectionView)
         //        configLayout()
         configDataSource()
         configButtons()
+//        configSearchController()
+    }
+    
+    func configSearchController() {
+        searchController = UISearchController(searchResultsController: SearchViewController.instantiate(with: self))
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.definesPresentationContext = true
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        searchBar = searchController.searchBar
+        searchButton.rx.tap.subscribe(onNext: { [unowned self] _ in
+            self.navigationItem.leftBarButtonItem = nil
+            self.navigationItem.rightBarButtonItem = nil
+            self.navigationItem.titleView = self.searchBar
+            self.searchBar.becomeFirstResponder()
+        })
+        .addDisposableTo(disposeBag)
     }
     
     func configButtons() {
         categoryBarButton.animate(animation: AnimationType.slide(way: .in, direction: .down), completion: nil)
         categoryBarButton.backgroundColor = .clear
-        categoryBarButton.tintColor = UIColor(hexString: "#E79F62")
+        categoryBarButton.tintColor = Colors.brightOrange
         
         searchButton.backgroundColor = .clear
-        searchButton.tintColor = UIColor(hexString: "#E79F62")
+        searchButton.tintColor = Colors.brightOrange
         
         categoryBarButton.rx
             .tap
@@ -62,7 +86,7 @@ class RecentViewController: UIViewController {
         collectionView.rx
             .modelSelected(Article.self)
             .subscribe(onNext: { [weak self] article in
-                self?.performSegue(withIdentifier: "RecentToSingleArticle", sender: article)
+                self?.performSegue(withIdentifier: SegueIdentifiers.recentToSingleArticle, sender: article)
             })
             .addDisposableTo(disposeBag)
     }
@@ -71,6 +95,14 @@ class RecentViewController: UIViewController {
         if let article = sender as? Article {
             guard let vc = segue.destination as? SingleArticleViewController else { return }
             vc.urlStringToLoad = article.contentLink
+            return
+        }
+        if let category = sender as? ArticleCategory {
+            guard let vc = segue.destination as? CategoryViewController else { return }
+            vc.category = category
+            popover.dismiss()
+            popover.removeFromSuperview()
+            return
         }
     }
     
@@ -86,7 +118,7 @@ class RecentViewController: UIViewController {
             .blackOverlayColor(UIColor.black.withAlphaComponent(0.5)),
             .arrowSize(CGSize(width: 10, height: 6))
         ]
-        let popover = Popover(options: options)
+        popover = Popover(options: options)
         popover.show(view!, point: CGPoint(x: 22, y: 67))
         
         view?.topAnchor.constraint(equalTo: popover.topAnchor, constant: 10).isActive = true

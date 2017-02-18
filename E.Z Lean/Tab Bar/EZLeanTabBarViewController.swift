@@ -26,7 +26,7 @@ class EZLeanTabBarViewController: UITabBarController {
             tabBar.unselectedItemTintColor = try! UIColor(rgba_throws: "#777777")
         }
         tabBar.tintColor = .white
-        tabBar.barTintColor = UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
+        tabBar.barTintColor = Colors.barColor
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,7 +91,7 @@ class EZLeanTabBarViewController: UITabBarController {
         }
         selectingRectLeftConstraint.isActive = true
         
-        selectingRect.backgroundColor = UIColor(hexString: "#E79F62")
+        selectingRect.backgroundColor = Colors.brightOrange
         selectingRect.isOpaque = true
         
         self.selectedIndex = 0
