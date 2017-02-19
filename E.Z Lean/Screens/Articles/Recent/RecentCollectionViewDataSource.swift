@@ -13,11 +13,16 @@ import SDWebImage
 
 class RecentCollectionViewDataSource {
     weak var collectionView: UICollectionView!
+    
     var disposeBag = DisposeBag()
     var articles: Variable<[Article]> = Variable([])
     
-    init(_ cView: UICollectionView) {
+    typealias cellClass = RecentViewController.type
+    var cellType: cellClass.Type
+    
+    init(_ cView: UICollectionView, cellType: cellClass.Type) {
         self.collectionView = cView
+        self.cellType = cellType
     }
     
     func config() {
@@ -30,9 +35,11 @@ class RecentCollectionViewDataSource {
     func bindDataSource() {
         let dataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSectionModel<String,Article>>()
         dataSource.configureCell = {
+            [unowned self]
             data, cView, indexPath, article in
-            let cell = cView.dequeueReusableCell(withReuseIdentifier: RecentArticleCell.identifier, for: indexPath) as! RecentArticleCell
-            cell.contentWidth = cView.width-16
+            let cell = cView.dequeueReusableCell(withReuseIdentifier: self.cellType.identifier, for: indexPath) as! cellClass
+            
+            cell.contentWidth = cView.width - 10
             cell.config(article: article, collectionView: cView, indexPath: indexPath)
             return cell
         }
@@ -45,7 +52,6 @@ class RecentCollectionViewDataSource {
             .bindTo(collectionView.rx
                 .items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
-        
     }
     
     func getData() {

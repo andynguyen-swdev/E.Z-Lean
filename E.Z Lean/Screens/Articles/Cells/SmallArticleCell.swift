@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 import IBAnimatable
 
-class SmallArticleCell: BaseCell, ArticleCell {
+class SmallArticleCell: ArticleCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var profilePictureImageView: AnimatableImageView!
@@ -19,9 +19,6 @@ class SmallArticleCell: BaseCell, ArticleCell {
     @IBOutlet weak var thumbnailAspectRatioConstraint: NSLayoutConstraint!
     
     @IBOutlet var paddingConstraints: [NSLayoutConstraint]!
-    
-    static var nibName: String { return "SmallArticleCell" }
-    static var identifier: String { return nibName }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,7 +32,7 @@ class SmallArticleCell: BaseCell, ArticleCell {
         layer.shadowOpacity = 0.5
     }
     
-    func config(article: Article, collectionView: UICollectionView?, indexPath: IndexPath?) {
+    override func config(article: Article, collectionView: UICollectionView?, indexPath: IndexPath?) {
         
     }
 }

@@ -42,13 +42,106 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "E.Z Lean/Screens/Articles/Cells/ArticleCell.swift"
-            timestampString = "509127407.196532"
+            timestampString = "509177094.974968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "ArticleCell"
-            landmarkType = "5">
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E.Z Lean/Screens/Articles/Cells/ArticleCell.swift"
+            timestampString = "509177231.732322"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ArticleCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_Z_Lean.ArticleCell.__deallocating_deinit"
+                  moduleName = "E.Z Lean"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyanh2912/Desktop/E.Z-Lean/E.Z%20Lean/Screens/Articles/Cells/ArticleCell.swift"
+                  timestampString = "509177231.746274"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_Z_Lean.ArticleCell.init (frame : __C.CGRect) -&gt; E_Z_Lean.ArticleCell"
+                  moduleName = "E.Z Lean"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyanh2912/Desktop/E.Z-Lean/E.Z%20Lean/Screens/Articles/Cells/ArticleCell.swift"
+                  timestampString = "509177231.750069"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "87">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_Z_Lean.ArticleCell.__allocating_init (frame : __C.CGRect) -&gt; E_Z_Lean.ArticleCell"
+                  moduleName = "E.Z Lean"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyanh2912/Desktop/E.Z-Lean/E.Z%20Lean/Screens/Articles/Cells/ArticleCell.swift"
+                  timestampString = "509177231.754553"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_Z_Lean.ArticleCell.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;E_Z_Lean.ArticleCell&gt;"
+                  moduleName = "E.Z Lean"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyanh2912/Desktop/E.Z-Lean/E.Z%20Lean/Screens/Articles/Cells/ArticleCell.swift"
+                  timestampString = "509177231.759884"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_Z_Lean.ArticleCell.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;E_Z_Lean.ArticleCell&gt;"
+                  moduleName = "E.Z Lean"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyanh2912/Desktop/E.Z-Lean/E.Z%20Lean/Screens/Articles/Cells/ArticleCell.swift"
+                  timestampString = "509177231.762758"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

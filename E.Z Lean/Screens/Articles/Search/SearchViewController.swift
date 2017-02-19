@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
+class SearchViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var searchBar: UISearchBar!
     
@@ -78,5 +78,14 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
     
     static func instantiate(with currentViewController: UIViewController) -> SearchViewController {
         return currentViewController.storyboard!.instantiateViewController(withIdentifier: "SearchResult") as! SearchViewController
+    }
+}
+
+extension SearchViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if navigationController!.viewControllers.count > 1 {
+            return true
+        }
+        return false
     }
 }

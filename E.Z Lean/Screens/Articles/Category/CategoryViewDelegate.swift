@@ -14,7 +14,7 @@ extension CategoryViewController: CHTCollectionViewDelegateWaterfallLayout {
         let width = collectionView.width - 16
         let article = dataSource.articles.value[indexPath.row]
         
-        let cell = CategoryArticleCell.fromNib as! CategoryArticleCell
+        let cell = CategoryArticleCell.fromNib
         cell.config(article: article, collectionView: nil, indexPath: nil)
         cell.contentWidth = width
         

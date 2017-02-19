@@ -11,15 +11,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class CategoryArticleCell: BaseCell, ArticleCell {
+class CategoryArticleCell: ArticleCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     
     var imageAspectConstraint: NSLayoutConstraint?
-    
-    static var nibName: String { return "CategoryArticleCell" }
-    static var identifier: String { return nibName }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +32,8 @@ class CategoryArticleCell: BaseCell, ArticleCell {
     }
     
     func setImageRatio(_ ratio: CGFloat) {
+        let ratio = (ratio > 16/9) ? ratio : 16/9
+        
         if let constraint = imageAspectConstraint {
             constraint.isActive = false
             thumbnailImageView.removeConstraint(constraint)
@@ -43,7 +42,7 @@ class CategoryArticleCell: BaseCell, ArticleCell {
         imageAspectConstraint?.isActive = true
     }
     
-    func config(article: Article, collectionView: UICollectionView? = nil, indexPath: IndexPath? = nil) {
+    override func config(article: Article, collectionView: UICollectionView? = nil, indexPath: IndexPath? = nil) {
         titleLabel.text = article.title
         summaryLabel.text = article.summary
         

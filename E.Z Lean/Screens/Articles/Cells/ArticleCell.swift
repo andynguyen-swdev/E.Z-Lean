@@ -8,6 +8,8 @@
 
 import UIKit
 
-protocol ArticleCell: CellIdentifiable {
-    func config(article: Article, collectionView: UICollectionView?, indexPath: IndexPath?)
+class ArticleCell: BaseCell, CellIdentifiable {    
+    func config(article: Article, collectionView: UICollectionView?, indexPath: IndexPath?) {
+        fatalError("Not implemented")
+    }
 }

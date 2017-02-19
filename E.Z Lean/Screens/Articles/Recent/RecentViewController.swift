@@ -15,6 +15,9 @@ import Popover
 class RecentViewController: UIViewController {
     static var instance: RecentViewController!
     
+    typealias type = RecentArticleCell
+    let cellType: type.Type = type.self
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoryBarButton: AnimatableButton!
     @IBOutlet weak var searchButton: AnimatableButton!
@@ -33,13 +36,17 @@ class RecentViewController: UIViewController {
     
     override func viewDidLoad() {
         RecentViewController.instance = self
-        collectionView.backgroundColor = Colors.collectionViewBackground
         navigationController?.navigationBar.tintColor = Colors.brightOrange
-        RecentArticleCell.registerFor(collectionView: collectionView)
-//                configLayout()
+        
+        configCollectionView()
         configDataSource()
         configButtons()
 //        configSearchController()
+    }
+    
+    func configCollectionView() {
+        collectionView.backgroundColor = Colors.collectionViewBackground
+        cellType.registerFor(collectionView: collectionView)
     }
     
     func configSearchController() {
@@ -75,7 +82,7 @@ class RecentViewController: UIViewController {
     }
     
     func configDataSource() {
-        dataSource = RecentCollectionViewDataSource(collectionView)
+        dataSource = RecentCollectionViewDataSource(collectionView, cellType: cellType)
         dataSource.config()
         
         configSelectingCell()

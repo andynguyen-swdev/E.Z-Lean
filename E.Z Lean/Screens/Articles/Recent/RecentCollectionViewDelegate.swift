@@ -11,24 +11,22 @@ import CHTCollectionViewWaterfallLayout
 
 extension RecentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cell = RecentArticleCell.fromNib
+        let cell = cellType.fromNib
         let article = dataSource.articles.value[indexPath.row]
         
-        let width = collectionView.width - 16
-        (cell as? ArticleCell)?.config(article: article, collectionView: nil, indexPath: nil)
+        let width = collectionView.width - 10
+        cell.config(article: article)
         
         cell.contentWidth = width
         return cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
     }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
     
-    func configLayout() {
-        let layout = CHTCollectionViewWaterfallLayout()
-        layout.columnCount = 2
-        layout.minimumColumnSpacing = 8
-        layout.minimumInteritemSpacing = 8
-        layout.sectionInset = UIEdgeInsetsMake(8, 8, 8, 8)
-        
-        collectionView.collectionViewLayout = layout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
     }
 }
 

@@ -25,27 +25,31 @@ class BaseCell: UICollectionViewCell {
         }
     }
     
-    static func loadCellFromNib(name: String) -> BaseCell {
-        let cell = Bundle.main.loadNibNamed(name, owner: nil, options: nil)![0]
-        return cell as! BaseCell
+    class var nibName: String {
+        return NSStringFromClass(self).components(separatedBy: ".").last!
     }
+    
+    class var identifier: String { return nibName }
 }
 
-protocol CellIdentifiable {    
-    static var identifier: String { get }
-    static var nibName: String { get }
-    
+protocol CellIdentifiable: class {
     static func registerFor(collectionView: UICollectionView)
-    static var fromNib: BaseCell { get }
+    
+    associatedtype cellType
+    static var fromNib: cellType { get }
 }
 
 extension CellIdentifiable where Self: BaseCell {
+    
     static func registerFor(collectionView: UICollectionView) {
+        print(nibName)
         let nib = UINib(nibName: Self.nibName, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: Self.identifier)
     }
     
-    static var fromNib: BaseCell {
-        return Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)![0] as! BaseCell
+    static var fromNib: Self {
+        print(nibName)
+        let cell = Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)![0]
+        return cell as! Self
     }
 }
