@@ -13,6 +13,12 @@ import RxCocoa
 class CategoryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    typealias cellClass = SmallArticleCell
+    var cellType: cellClass.Type = cellClass.self
+    var cellWidth: CGFloat {
+        return collectionView.width - 10
+    }
+    
     var category: ArticleCategory!
     var dataSource: CategoryViewDataSource!
     var disposeBag = DisposeBag()
@@ -25,10 +31,11 @@ class CategoryViewController: UIViewController {
         super.viewDidLoad()
         collectionView.backgroundColor = Colors.collectionViewBackground
         
-        CategoryArticleCell.registerFor(collectionView: collectionView)
+        cellType.registerFor(collectionView: collectionView)
         
         dataSource = CategoryViewDataSource(collectionView)
         dataSource.config()
+        dataSource.cellWidth = cellWidth
         
         collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
         

@@ -9,15 +9,27 @@ target 'E.Z Lean' do
 
   # Pods for E.Z Lean
 	pod ’SwiftyJSON’
-	pod ‘RxSwift’
-	pod ‘RxCocoa’
-	pod ‘RxDataSources’
-    pod 'IBAnimatable'
-    pod 'SDWebImage'
-    pod 'Alamofire'
-    pod 'Material'
-    pod 'MaterialControls'
-    pod 'CHTCollectionViewWaterfallLayout'
-    pod 'Popover'
+
+pod 'RxSwift'
+pod 'RxCocoa'
+pod 'RxDataSources'
+pod 'RxSwiftExt'
+pod 'IBAnimatable'
+pod 'SDWebImage'
+pod 'Alamofire'
+pod 'MaterialControls'
+pod 'Popover'
+pod 'RealmSwift'
+pod 'ReachabilitySwift'
+pod 'SlideMenuControllerSwift'
 end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '3.0'
+    end
+  end
+end
+
 

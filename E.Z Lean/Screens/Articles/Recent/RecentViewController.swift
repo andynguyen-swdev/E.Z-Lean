@@ -15,8 +15,8 @@ import Popover
 class RecentViewController: UIViewController {
     static var instance: RecentViewController!
     
-    typealias type = RecentArticleCell
-    let cellType: type.Type = type.self
+    typealias cellClass = RecentArticleCell
+    let cellType: cellClass.Type = cellClass.self
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoryBarButton: AnimatableButton!
@@ -82,7 +82,7 @@ class RecentViewController: UIViewController {
     }
     
     func configDataSource() {
-        dataSource = RecentCollectionViewDataSource(collectionView, cellType: cellType)
+        dataSource = RecentCollectionViewDataSource(collectionView)
         dataSource.config()
         
         configSelectingCell()

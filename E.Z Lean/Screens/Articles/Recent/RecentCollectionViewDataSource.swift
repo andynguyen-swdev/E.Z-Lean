@@ -17,12 +17,11 @@ class RecentCollectionViewDataSource {
     var disposeBag = DisposeBag()
     var articles: Variable<[Article]> = Variable([])
     
-    typealias cellClass = RecentViewController.type
-    var cellType: cellClass.Type
+    typealias cellClass = RecentViewController.cellClass
+    var cellType: cellClass.Type = cellClass.self
     
-    init(_ cView: UICollectionView, cellType: cellClass.Type) {
+    init(_ cView: UICollectionView) {
         self.collectionView = cView
-        self.cellType = cellType
     }
     
     func config() {

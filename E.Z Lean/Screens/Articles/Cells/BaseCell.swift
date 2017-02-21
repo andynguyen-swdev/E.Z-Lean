@@ -42,13 +42,11 @@ protocol CellIdentifiable: class {
 extension CellIdentifiable where Self: BaseCell {
     
     static func registerFor(collectionView: UICollectionView) {
-        print(nibName)
         let nib = UINib(nibName: Self.nibName, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: Self.identifier)
     }
     
     static var fromNib: Self {
-        print(nibName)
         let cell = Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)![0]
         return cell as! Self
     }

@@ -14,6 +14,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var searchBar: UISearchBar!
     
+    var cellType: ArticleCell.Type = SmallArticleCell.self
     var dataSource: SearchViewDataSource!
     var disposeBag = DisposeBag()
     
@@ -37,9 +38,6 @@ class SearchViewController: UIViewController {
         dataSource = SearchViewDataSource(collectionView: collectionView)
         dataSource.config()
         collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
-        
-        let flow = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        flow.estimatedItemSize = CGSize(width: 365, height: 114)
     }
     
     func configNavigation() {

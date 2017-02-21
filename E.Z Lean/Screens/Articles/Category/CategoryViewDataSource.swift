@@ -16,6 +16,10 @@ class CategoryViewDataSource {
     var disposeBag = DisposeBag()
     var articles: Variable<[Article]> = Variable([])
     
+    typealias cellClass = CategoryViewController.cellClass
+    var cellType: cellClass.Type = cellClass.self
+    var cellWidth: CGFloat!
+    
     init(_ cView: UICollectionView) {
         self.collectionView = cView
     }
@@ -29,10 +33,10 @@ class CategoryViewDataSource {
     
     func bindDataSource() {
         let dataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSectionModel<String,Article>>()
-        dataSource.configureCell = {
+        dataSource.configureCell = { [unowned self]
             data, cView, indexPath, article in
-            let cell = cView.dequeueReusableCell(withReuseIdentifier: CategoryArticleCell.identifier, for: indexPath) as! CategoryArticleCell
-            cell.contentWidth = cView.width - 16
+            let cell = cView.dequeueReusableCell(withReuseIdentifier: self.cellType.identifier, for: indexPath) as! cellClass
+            cell.contentWidth = self.cellWidth
             cell.config(article: article, collectionView: cView, indexPath: indexPath)
             return cell
         }

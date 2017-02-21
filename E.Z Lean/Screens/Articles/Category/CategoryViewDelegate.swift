@@ -7,28 +7,29 @@
 //
 
 import Utils
-import CHTCollectionViewWaterfallLayout
 
 extension CategoryViewController: CHTCollectionViewDelegateWaterfallLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.width - 16
+        let width = self.cellWidth
         let article = dataSource.articles.value[indexPath.row]
         
-        let cell = CategoryArticleCell.fromNib
+        let cell = cellType.fromNib
         cell.config(article: article, collectionView: nil, indexPath: nil)
         cell.contentWidth = width
         
         return cell.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
     }
     
-    func configLayout() {
-        let layout = CHTCollectionViewWaterfallLayout()
-        layout.columnCount = 2
-        layout.minimumColumnSpacing = 8
-        layout.minimumInteritemSpacing = 8
-        layout.sectionInset = UIEdgeInsetsMake(8, 8, 8, 8)
-        
-        collectionView.collectionViewLayout = layout
+    func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, minimumColumnSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(5, 5, 5, 5)
     }
 }
 
