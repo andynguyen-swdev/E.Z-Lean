@@ -8,14 +8,6 @@
 
 import UIKit
 
-struct ArticleCategory {
-    var name: String
-    var image: UIImage
-    
-    static let training = ArticleCategory(name: "Luyện tập", image: Icons.dumbbell_25)
-    static let all: [ArticleCategory] = [.training]
-}
-
 struct Icons {
     static let feed_25 = #imageLiteral(resourceName: "feed_25")
     static let feed_filled_25 = #imageLiteral(resourceName: "feed_filled_25")

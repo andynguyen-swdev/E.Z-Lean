@@ -13,6 +13,12 @@ import RxCocoa
 class BaseCell: UICollectionViewCell {
     var disposeBag = DisposeBag()
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.shouldRasterize = true
+        layer.rasterizationScale = UIScreen.main.scale
+    }
+    
     override var bounds: CGRect {
         didSet {
             contentView.frame = bounds

@@ -25,7 +25,6 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         SmallArticleCell.registerFor(collectionView: collectionView)
         configSearchBar()
-        configNavigation()
         configCollectionView()
         configDataSource()
     }
@@ -38,10 +37,6 @@ class SearchViewController: UIViewController {
         dataSource = SearchViewDataSource(collectionView: collectionView)
         dataSource.config()
         collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
-    }
-    
-    func configNavigation() {
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     func configSearchBar() {
@@ -76,14 +71,5 @@ class SearchViewController: UIViewController {
     
     static func instantiate(with currentViewController: UIViewController) -> SearchViewController {
         return currentViewController.storyboard!.instantiateViewController(withIdentifier: "SearchResult") as! SearchViewController
-    }
-}
-
-extension SearchViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if navigationController!.viewControllers.count > 1 {
-            return true
-        }
-        return false
     }
 }

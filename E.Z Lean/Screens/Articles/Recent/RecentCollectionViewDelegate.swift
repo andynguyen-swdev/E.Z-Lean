@@ -9,19 +9,23 @@
 import Utils
 
 extension RecentViewController: UICollectionViewDelegateFlowLayout {
+    var cellWidth: CGFloat {
+        return collectionView.width - 10
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cell = cellType.fromNib
+        let width = self.cellWidth
         let article = dataSource.articles.value[indexPath.row]
         
-        let width = collectionView.width - 10
-        cell.config(article: article)
-        
+        let cell = cellType.fromNib
+        cell.config(article: article, collectionView: nil, indexPath: nil)
         cell.contentWidth = width
-        return cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        
+        return cell.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

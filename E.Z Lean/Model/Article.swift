@@ -6,36 +6,42 @@
 //  Copyright © 2017 E.Z Lean. All rights reserved.
 //
 
+import RealmSwift
 import RxDataSources
 
-class Article: Hashable, IdentifiableType {
-    var title: String
-    var summary: String
-    var contentLink: String
-    var category: ArticleCategory
+class Article: Object, IdentifiableType {
+    dynamic var id: Int = 0
+    dynamic var title: String = ""
+    dynamic var summary: String = ""
+    dynamic var contentLink: String = ""
+    dynamic var category: ArticleCategory?
     
-    
-    var imageRatio: CGFloat?
-    private var thumbnailImageLink: String
+    dynamic var imageRatio: Float = 0
+    dynamic var thumbnailImageLink: String = ""
     var thumgnailURL: URL? { return URL(string: thumbnailImageLink) }
     
-    init(title: String, summary: String ,contentLink: String, imageLink: String, imageRatio: CGFloat? = nil, category: ArticleCategory? = nil) {
-        self.title = title
-        self.summary = summary
-        self.contentLink = contentLink
-        self.thumbnailImageLink = imageLink
-        self.imageRatio = imageRatio
-        self.category = category ?? ArticleCategory.training
+    static func create(title: String, summary: String ,contentLink: String, imageLink: String, imageRatio: Float, category: ArticleCategory?) -> Article {
+        let article = Article()
+        
+        article.title = title
+        article.summary = summary
+        article.contentLink = contentLink
+        article.thumbnailImageLink = imageLink
+        article.imageRatio = imageRatio
+        article.category = category
+        
+        return article
     }
     
-    public static func ==(lhs: Article, rhs: Article) -> Bool {
-        return lhs.contentLink == rhs.contentLink
-    }
-    
-    var hashValue: Int {
-        return contentLink.hashValue
+    override static func primaryKey() -> String? {
+        return "id"
     }
     
     typealias Identity = Article
     var identity: Article { return self }
+    
+    static var incrementID: Int = {
+        let realm = try! Realm()
+        return (realm.objects(Article.self).max(ofProperty: "id") as Int? ?? 0) + 1
+    }()
 }

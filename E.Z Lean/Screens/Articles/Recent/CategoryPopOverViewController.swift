@@ -7,32 +7,45 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxRealm
+import RealmSwift
 
-class CategoryPopOverViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CategoryPopOverViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
-    var category = ArticleCategory.all
-
+    var category: Variable<[ArticleCategory]> = Variable([])
+    var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
+        configDataSource()
+        getData()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = category[indexPath.row].name
-        cell.imageView?.image = category[indexPath.row].image
-        cell.imageView?.tintColor = Colors.brightOrange
-        cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "Disclosure Indicator"))
-        return cell
+    func configDataSource() {
+        category.asObservable()
+            .bindTo(tableView
+                .rx
+                .items(cellIdentifier: "Cell")) {
+                    row, category, cell in
+                    cell.textLabel?.text = category.name
+                    cell.imageView?.image = category.image
+                    cell.imageView?.tintColor = Colors.brightOrange
+                    cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "Disclosure Indicator"))
+            }
+            .addDisposableTo(disposeBag)
+        tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return category.count
+    func getData() {
+        Observable.array(from: DatabaseManager.articles.allArticeCategory)
+            .bindTo(category)
+            .addDisposableTo(disposeBag)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        RecentViewController.instance.performSegue(withIdentifier: SegueIdentifiers.recentToCategory, sender: category[indexPath.row])
+        RecentViewController.instance.performSegue(withIdentifier: SegueIdentifiers.recentToCategory, sender: category.value[indexPath.row])
     }
 }

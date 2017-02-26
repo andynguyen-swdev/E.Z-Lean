@@ -13,7 +13,7 @@ import RxCocoa
 class CategoryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    typealias cellClass = SmallArticleCell
+    typealias cellClass = CategoryArticleCell
     var cellType: cellClass.Type = cellClass.self
     var cellWidth: CGFloat {
         return collectionView.width - 10
@@ -30,10 +30,12 @@ class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = Colors.collectionViewBackground
+        collectionView.showsVerticalScrollIndicator = false
         
         cellType.registerFor(collectionView: collectionView)
         
         dataSource = CategoryViewDataSource(collectionView)
+        dataSource.category = category
         dataSource.config()
         dataSource.cellWidth = cellWidth
         

@@ -31,8 +31,9 @@ class CategoryArticleCell: ArticleCell {
         setImageRatio(16/9)
     }
     
-    func setImageRatio(_ ratio: CGFloat) {
-        let ratio = (ratio > 16/9) ? ratio : 16/9
+    func setImageRatio(_ ratio: Float) {
+        var ratio = CGFloat(ratio)
+        ratio = (ratio > 16/9) ? ratio : 16/9
         
         if let constraint = imageAspectConstraint {
             constraint.isActive = false
@@ -46,18 +47,14 @@ class CategoryArticleCell: ArticleCell {
         titleLabel.text = article.title
         summaryLabel.text = article.summary
         
-        setImageRatio(article.imageRatio ?? 16/9)
+        setImageRatio(article.imageRatio)
         
-        guard let cView = collectionView, let indexPath = indexPath else { return }
-        thumbnailImageView.sd_setShowActivityIndicatorView(true)
-        thumbnailImageView.sd_setIndicatorStyle(.gray)
-        thumbnailImageView.sd_setImage(with: article.thumgnailURL, placeholderImage: #imageLiteral(resourceName: "EZ Lean logo"), options: [.scaleDownLargeImages]) { [weak self] image, e,_,_ in
-            if let error = e { print(error) } else {
-                if cView.cellForItem(at: indexPath) != nil {
-                    self?.thumbnailImageView.image = image
-                }
-            }
+        guard let _ = collectionView, let _ = indexPath else { return }
+        let url = article.thumgnailURL
+        DispatchQueue.global(qos: .userInteractive).async { [unowned self] in
+            self.thumbnailImageView.sd_setShowActivityIndicatorView(true)
+            self.thumbnailImageView.sd_setIndicatorStyle(.gray)
+            self.thumbnailImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "EZ Lean logo"), options: [.scaleDownLargeImages])
         }
-
     }
 }

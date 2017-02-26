@@ -35,23 +35,21 @@ class SmallArticleCell: ArticleCell {
     override func config(article: Article, collectionView: UICollectionView?, indexPath: IndexPath?) {
         titleLabel.text = article.title
         summaryLabel.text = article.summary
-        setImageRatio(article.imageRatio ?? 16/9)
+        setImageRatio(article.imageRatio)
         
-        guard let cView = collectionView, let iPath = indexPath else { return }
-        thumbnailImageView.sd_setShowActivityIndicatorView(true)
-        thumbnailImageView.sd_setIndicatorStyle(.gray)
-        thumbnailImageView.sd_setImage(with: article.thumgnailURL, placeholderImage: #imageLiteral(resourceName: "EZ Lean logo"), options: [.scaleDownLargeImages]) { [weak self] image, e,_,_ in
-            if let error = e { print(error) } else {
-                print("Done")
-                if cView.cellForItem(at: iPath) != nil {
-                    self?.thumbnailImageView.image = image
-                }
-            }
+        guard let _ = collectionView, let _ = indexPath else { return }
+        let url = article.thumgnailURL
+        DispatchQueue.global(qos: .userInteractive).async { [unowned self] in
+        self.thumbnailImageView.sd_setShowActivityIndicatorView(true)
+        self.thumbnailImageView.sd_setIndicatorStyle(.gray)
+            self.thumbnailImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "EZ Lean logo"), options: [.scaleDownLargeImages])
         }
-
     }
     
-    func setImageRatio(_ ratio: CGFloat) {
+    
+    
+    func setImageRatio(_ ratio: Float) {
+        let ratio = CGFloat(ratio)
         if let constraint = thumbnailAspectRatioConstraint {
             constraint.isActive = false
             thumbnailImageView.removeConstraint(constraint)

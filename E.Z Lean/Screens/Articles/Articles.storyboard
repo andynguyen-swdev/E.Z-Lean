@@ -327,7 +327,7 @@
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="qFw-VH-lUd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="qFw-VH-lUd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -353,6 +353,6 @@
         <image name="search" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8kd-yR-CYs"/>
+        <segue reference="K4w-Lb-G2B"/>
     </inferredMetricsTieBreakers>
 </document>

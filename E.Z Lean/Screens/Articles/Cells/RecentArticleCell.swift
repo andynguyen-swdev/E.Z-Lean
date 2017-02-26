@@ -26,9 +26,9 @@ class RecentArticleCell: ArticleCell {
         
         self.layer.masksToBounds = false
         layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowRadius = 2
+        layer.shadowRadius = 1
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.5
+        layer.shadowOpacity = 0
         
         categoryImage.tintColor = Colors.brightOrange
         setImageRatio(16/9)
@@ -36,8 +36,9 @@ class RecentArticleCell: ArticleCell {
         contentView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func setImageRatio(_ ratio: CGFloat) {
-        let ratio = (ratio > 16/9) ? ratio : 16/9
+    func setImageRatio(_ ratio: Float) {
+        var ratio = CGFloat(ratio)
+        ratio = (ratio > 16/9) ? ratio : 16/9
         
         guard var constraint = imageAspectRatioConstraint else { return }
         constraint.isActive = false
@@ -50,21 +51,17 @@ class RecentArticleCell: ArticleCell {
     override func config(article: Article, collectionView: UICollectionView? = nil, indexPath: IndexPath? = nil) {
         titleLabel.text = article.title
         summaryLabel.text = article.summary
-        categoryImage.image = article.category.image
-        categoryLabel.text = article.category.name
+        categoryImage.image = article.category?.image
+        categoryLabel.text = article.category?.name
         
-        setImageRatio(article.imageRatio ?? 16/9)
+        setImageRatio(article.imageRatio)
         
-        guard let cView = collectionView, let iPath = indexPath else { return }
-        thumbnailImageView.sd_setShowActivityIndicatorView(true)
-        thumbnailImageView.sd_setIndicatorStyle(.gray)
-        thumbnailImageView.sd_setImage(with: article.thumgnailURL, placeholderImage: #imageLiteral(resourceName: "EZ Lean logo"), options: [.scaleDownLargeImages]) { [weak self] image, e,_,_ in
-            if let error = e { print(error) } else {
-                print("Done")
-                if cView.cellForItem(at: iPath) != nil {
-                    self?.thumbnailImageView.image = image
-                }
-            }
+        guard let _ = collectionView, let _ = indexPath else { return }
+        let url = article.thumgnailURL
+        DispatchQueue.global(qos: .userInteractive).async { [unowned self] in
+            self.thumbnailImageView.sd_setShowActivityIndicatorView(true)
+            self.thumbnailImageView.sd_setIndicatorStyle(.gray)
+            self.thumbnailImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "EZ Lean logo"), options: [.scaleDownLargeImages])
         }
     }
 }

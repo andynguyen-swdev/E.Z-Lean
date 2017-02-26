@@ -14,6 +14,9 @@ PODS:
   - RxDataSources (1.0.3):
     - RxCocoa (~> 3.0)
     - RxSwift (~> 3.0)
+  - RxRealm (0.5.1):
+    - RealmSwift (~> 2.2)
+    - RxSwift (~> 3.1)
   - RxSwift (3.2.0)
   - RxSwiftExt (2.1.0):
     - RxSwift (~> 3.0)
@@ -32,6 +35,7 @@ DEPENDENCIES:
   - RealmSwift
   - RxCocoa
   - RxDataSources
+  - RxRealm
   - RxSwift
   - RxSwiftExt
   - SDWebImage
@@ -48,12 +52,13 @@ SPEC CHECKSUMS:
   RealmSwift: 30d49739ccb3385d201242736ca4dda56aec9dfc
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
+  RxRealm: c80d17d42fc362f4d8af4ac62de360b014be5c3f
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   RxSwiftExt: 492a6575cf6afabb8feeed3204bd0f9e2c695e67
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: f71e01f4bb8b960807fea1702c60766de8cec266
+PODFILE CHECKSUM: 28c396bc05b65847373f3a1b7a1831d345677efa
 
 COCOAPODS: 1.2.0
