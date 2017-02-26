@@ -18,5 +18,6 @@ target 'E.Z Lean' do
     pod 'Material'
     pod 'MaterialControls'
     pod 'CHTCollectionViewWaterfallLayout'
+    pod "AKPickerView-Swift"
 end
 
