@@ -26,7 +26,7 @@ class CategoryArticleCell: ArticleCell {
         layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowRadius = 2
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.5
+        layer.shadowOpacity = 0
         
         setImageRatio(16/9)
     }

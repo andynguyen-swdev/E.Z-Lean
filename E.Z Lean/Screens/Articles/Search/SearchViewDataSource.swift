@@ -7,10 +7,14 @@
 //
 import RxSwift
 import RxCocoa
+import RxRealm
+import RealmSwift
 import UIKit
 
 class SearchViewDataSource {
     weak var collectionView: UICollectionView!
+    
+    var searchQuerry: Variable<String> = Variable("")
     var articles: Variable<[Article]> = Variable([])
     var disposeBag = DisposeBag()
     
@@ -29,6 +33,24 @@ class SearchViewDataSource {
                             collectionView: self.collectionView,
                             indexPath: IndexPath(item: row, section: 0))
             }
+            .addDisposableTo(disposeBag)
+        
+        searchQuerry.asObservable()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .userInteractive))
+            .map { (original: String) -> String in
+                let querry = NSMutableString(string: original)
+                CFStringTransform(querry, nil, kCFStringTransformStripDiacritics, false)
+                return querry as String
+            }
+            .observeOn(MainScheduler.instance)
+            .flatMapLatest { querry -> Observable<[Article]> in
+                if querry.isEmpty {
+                    self.articles.value = []
+                    return Variable<[Article]>([]).asObservable()
+                }
+                return Observable.array(from: DatabaseManager.articles.search(querry: querry))
+            }
+            .bindTo(articles)
             .addDisposableTo(disposeBag)
     }
 }

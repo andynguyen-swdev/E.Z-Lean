@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxSwiftExt
 
 class SearchViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -27,6 +28,19 @@ class SearchViewController: UIViewController {
         configSearchBar()
         configCollectionView()
         configDataSource()
+        bindSearchBar()
+    }
+    
+    func bindSearchBar() {
+        searchBar.rx.text
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .userInteractive))
+            .unwrap()
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .userInteractive))
+            .throttle(0.5, scheduler: ConcurrentDispatchQueueScheduler(qos: .userInteractive))
+            .distinctUntilChanged()
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .bindTo(dataSource.searchQuerry)
+            .addDisposableTo(disposeBag)
     }
     
     func configCollectionView() {
@@ -37,6 +51,11 @@ class SearchViewController: UIViewController {
         dataSource = SearchViewDataSource(collectionView: collectionView)
         dataSource.config()
         collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
+        collectionView.rx.modelSelected(Article.self)
+            .subscribe(onNext: { [unowned self] article in
+                self.performSegue(withIdentifier: SegueIdentifiers.searchToSingleArticle, sender: article)
+            })
+            .addDisposableTo(disposeBag)
     }
     
     func configSearchBar() {
@@ -57,11 +76,23 @@ class SearchViewController: UIViewController {
         uiButton.setTitle("Huỷ", for: UIControlState.normal)
         
         searchBar.rx.cancelButtonClicked
+            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInteractive))
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] _ in
                 self.searchBar.resignFirstResponder()
                 _ = self.navigationController?.popViewController(animated: true)
             })
             .addDisposableTo(disposeBag)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        view.endEditing(true)
+        if segue.identifier == SegueIdentifiers.searchToSingleArticle {
+            let article = sender as! Article
+            let vc = segue.destination as! SingleArticleViewController
+            vc.urlStringToLoad = article.contentLink
+            return
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

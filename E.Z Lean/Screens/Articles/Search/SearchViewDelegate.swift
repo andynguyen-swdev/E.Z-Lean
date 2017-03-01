@@ -18,4 +18,8 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
         cell.contentWidth = width
         return cell.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
 }

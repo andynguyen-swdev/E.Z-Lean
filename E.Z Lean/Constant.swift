@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IBAnimatable
 
 struct Icons {
     static let feed_25 = #imageLiteral(resourceName: "feed_25")
@@ -21,14 +22,24 @@ struct Icons {
     static let category = #imageLiteral(resourceName: "category")
 }
 
+struct BarOptions {
+    static let navigationBarTranslucent = false
+    static let tabBarTranslucent = false
+}
+
 struct Colors {
     static let collectionViewBackground = UIColor(hexString: "#3D3D3D").withAlphaComponent(0.16)
     static let brightOrange = UIColor(hexString: "#E79F62")
-    static let barColor = UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
+    static let navigationBarColor = UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
+    
+    static let tabBarColor = navigationBarColor
+    static let selectedTabBarItem = UIColor.white
+    static let unselectedTabBarItem = try! UIColor(rgba_throws: "#777777")
 }
 
 struct SegueIdentifiers {
     static let recentToSingleArticle = "RecentToSingleArticle"
     static let recentToCategory = "Category"
     static let categoryToSingleArticle = "CategoryToSingleArticle"
+    static let searchToSingleArticle = "SearchToSingle"
 }

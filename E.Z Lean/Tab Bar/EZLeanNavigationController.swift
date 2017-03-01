@@ -10,9 +10,11 @@ import UIKit
 
 class EZLeanNavigationController: UINavigationController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
-        navigationBar.barTintColor = Colors.barColor
+        navigationBar.barTintColor = Colors.navigationBarColor
 //        navigationBar.barTintColor = UIColor(hexString: "#404040")
         interactivePopGestureRecognizer?.delegate = self
+        navigationBar.isTranslucent = BarOptions.navigationBarTranslucent
+        navigationBar.isOpaque = !BarOptions.navigationBarTranslucent
     }
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {

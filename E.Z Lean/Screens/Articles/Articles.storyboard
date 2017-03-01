@@ -313,6 +313,7 @@
                     <toolbarItems/>
                     <connections>
                         <outlet property="collectionView" destination="rXF-dc-GcK" id="QoF-GE-onY"/>
+                        <segue destination="zxa-Wj-4Fj" kind="show" identifier="SearchToSingle" id="mH6-IN-YeP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hY0-00-FHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -353,6 +354,6 @@
         <image name="search" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K4w-Lb-G2B"/>
+        <segue reference="mH6-IN-YeP"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,12 +11,17 @@ import RealmSwift
 
 extension DatabaseManager {
     class ArticlesManager {
-        let realm = try! Realm()
+        let readRealm = try! Realm()
+        let writeRealm = try! Realm()
+        
+        init() {
+            
+        }
         
         func addArticle(_ article: Article) {
             do {
-                try realm.write {
-                    realm.add(article, update: true)
+                try writeRealm.write {
+                    writeRealm.add(article, update: true)
                 }
             } catch {
                 print("Realm error")
@@ -24,13 +29,13 @@ extension DatabaseManager {
         }
         
         func write(article: Article, id: Int?) {
-            do { try realm.write {
+            do { try writeRealm.write {
                 if let id = id {
                     article.id = id
                 } else {
                     article.id = Article.incrementID
                 }
-                realm.add(article, update: true)
+                writeRealm.add(article, update: true)
                 }
             } catch {
                 print("Write error")
@@ -39,11 +44,11 @@ extension DatabaseManager {
         
         func write(articlesWithId dict: [Int: Article]) {
             do {
-                try realm.write {
+                try writeRealm.write {
                     for id in dict.keys {
                         let article = dict[id]!
                         article.id = id
-                        realm.add(article, update: true)
+                        writeRealm.add(article, update: true)
                     }
                 }
             } catch {
@@ -53,10 +58,10 @@ extension DatabaseManager {
         
         func write(articles: [Article]) {
             do {
-                try realm.write {
+                try writeRealm.write {
                     for (index,article) in articles.enumerated() {
                         article.id = Article.incrementID + index
-                        realm.add(article, update: true)
+                        writeRealm.add(article, update: true)
                     }
                 }
             } catch {
@@ -65,7 +70,7 @@ extension DatabaseManager {
         }
         
         func getArticleCategory(name: String) -> ArticleCategory {
-            if let category = realm.object(ofType: ArticleCategory.self, forPrimaryKey: name) {
+            if let category = readRealm.object(ofType: ArticleCategory.self, forPrimaryKey: name) {
                 return category
             } else {
                 return ArticleCategory.create(name: name)
@@ -73,13 +78,18 @@ extension DatabaseManager {
         }
         
         var allArticles: Results<Article> {
-            return realm.objects(Article.self)
+            return readRealm.objects(Article.self)
                 .sorted(byKeyPath: "id", ascending: true)
         }
         
         var allArticeCategory: Results<ArticleCategory> {
-            return self.realm.objects(ArticleCategory.self)
+            return self.readRealm.objects(ArticleCategory.self)
                 .sorted(byKeyPath: #keyPath(ArticleCategory.name))
+        }
+        
+        func search(querry: String) -> Results<Article> {
+            let predicate = NSPredicate(format: "titleWithoutDiacritic CONTAINS[c] %@", argumentArray: [querry])
+            return readRealm.objects(Article.self).filter(predicate)
         }
         
         func createArticles() {
@@ -93,10 +103,12 @@ extension DatabaseManager {
             
             let path2 = Bundle.main.path(forResource: "test2", ofType: "html")!
             let article2 = Article.create(title: "5 CÁCH CHO PHỤ NỮ GIẢM MỠ -TĂNG CƠ", summary: "Hiểu được phụ nữ luôn là 1 điều vô cùng khó khăn nên chúng ta không đem những phương pháp vốn dành cho đàn ông - những tế bào đơn giản đến ngờ ngệch - áp dụng cho phụ nữ - 1 cơ thể hoàn hảo của quá trình tiến hóa và thích nghi với thiên nhiên. Hãy thay đổi vấn đề từ các yếu tố căn bản là sinh lý thay vì chỉ biết tập và tập. Ps: bài viết khá dài và có những vấn đề chuyên môn nhưng các bạn cần xem để hiểu rõ sự khác biệt và có phương án xây dựng chế độ ăn và tập phù hợp.", contentLink: path2, imageLink: "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/15976996_1849094002041932_3248249048536576598_n.jpg?oh=99f7acb7b0a1d109e5b53aef20064ce8&oe=5943FCE1", imageRatio: 690/493, category: category)
-            
-            try! realm.write {
-                realm.delete(realm.objects(Article.self))
+
+            try! writeRealm.write {
+                writeRealm.delete(readRealm.objects(Article.self))
             }
+            
+            Thread.sleep(forTimeInterval: 5)
             
             write(articlesWithId: [0: article0,
                                    1: article1,
@@ -114,8 +126,8 @@ extension DatabaseManager {
                 write(article: article, id: 3 + index)
             }
             
-            try! realm.write {
-                realm.add(getArticleCategory(name: "Test"), update: true)
+            try! writeRealm.write {
+                writeRealm.add(getArticleCategory(name: "Test"), update: true)
             }
         }
     }

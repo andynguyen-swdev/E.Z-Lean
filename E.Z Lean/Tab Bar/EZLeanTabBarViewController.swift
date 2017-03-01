@@ -23,10 +23,13 @@ class EZLeanTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 10.0, *) {
-            tabBar.unselectedItemTintColor = try! UIColor(rgba_throws: "#777777")
+            tabBar.unselectedItemTintColor = Colors.unselectedTabBarItem
         }
-        tabBar.tintColor = .white
-        tabBar.barTintColor = Colors.barColor
+        tabBar.tintColor = Colors.selectedTabBarItem
+        tabBar.barTintColor = Colors.tabBarColor
+        
+        tabBar.isTranslucent = BarOptions.tabBarTranslucent
+        tabBar.isOpaque = !BarOptions.tabBarTranslucent
     }
     
     override func viewDidAppear(_ animated: Bool) {

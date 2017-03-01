@@ -11,7 +11,10 @@ import RxDataSources
 
 class Article: Object, IdentifiableType {
     dynamic var id: Int = 0
+    
     dynamic var title: String = ""
+    dynamic var titleWithoutDiacritic: String = ""
+    
     dynamic var summary: String = ""
     dynamic var contentLink: String = ""
     dynamic var category: ArticleCategory?
@@ -24,6 +27,11 @@ class Article: Object, IdentifiableType {
         let article = Article()
         
         article.title = title
+        
+        let string = NSMutableString(string: title) as CFMutableString
+        CFStringTransform(string, nil, kCFStringTransformStripDiacritics, false)
+        article.titleWithoutDiacritic = string as String
+        
         article.summary = summary
         article.contentLink = contentLink
         article.thumbnailImageLink = imageLink
@@ -44,4 +52,8 @@ class Article: Object, IdentifiableType {
         let realm = try! Realm()
         return (realm.objects(Article.self).max(ofProperty: "id") as Int? ?? 0) + 1
     }()
+    
+    deinit {
+        print("Deinit-Article")
+    }
 }

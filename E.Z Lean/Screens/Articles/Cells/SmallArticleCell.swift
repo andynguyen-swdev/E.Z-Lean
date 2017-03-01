@@ -29,7 +29,7 @@ class SmallArticleCell: ArticleCell {
         layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowRadius = 2
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.5
+        layer.shadowOpacity = 0
     }
     
     override func config(article: Article, collectionView: UICollectionView?, indexPath: IndexPath?) {
