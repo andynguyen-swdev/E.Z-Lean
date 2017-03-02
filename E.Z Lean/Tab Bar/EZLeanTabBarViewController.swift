@@ -20,22 +20,25 @@ class EZLeanTabBarViewController: UITabBarController {
         return self.tabBar.subviews.flatMap { $0 as? UIControl }
         }()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if #available(iOS 10.0, *) {
+            tabBar.unselectedItemTintColor = Colors.unselectedTabBarItem
+        }
+        tabBar.tintColor = Colors.selectedTabBarItem
+        tabBar.barTintColor = Colors.tabBarColor
+        
+        tabBar.isTranslucent = BarOptions.tabBarTranslucent
+        tabBar.isOpaque = !BarOptions.tabBarTranslucent
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if #available(iOS 10.0, *) {
-            tabBar.unselectedItemTintColor = try! UIColor(rgba_throws: "#777777")
-        }
-        tabBar.tintColor = .white
-        
-        //        tabBar.barTintColor = UIColor.init(hexString: "#404040")
-        tabBar.barTintColor = UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
-        
         initialConfig()
     }
     
     func initialConfig() {
         configSelectingRect()
-        //        addBottomBar()
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -91,7 +94,7 @@ class EZLeanTabBarViewController: UITabBarController {
         }
         selectingRectLeftConstraint.isActive = true
         
-        selectingRect.backgroundColor = UIColor(hexString: "#CB7539")
+        selectingRect.backgroundColor = Colors.brightOrange
         selectingRect.isOpaque = true
         
         self.selectedIndex = 0

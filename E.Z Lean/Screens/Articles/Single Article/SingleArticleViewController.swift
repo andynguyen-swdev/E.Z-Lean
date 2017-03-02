@@ -44,7 +44,7 @@ class SingleArticleViewController: UIViewController, WKNavigationDelegate {
     func configProgressView() {
         progressView.removeFromSuperview()
         webView.addSubview(progressView)
-        progressView.progressTintColor = UIColor(hexString: "#CB7539")
+        progressView.progressTintColor = Colors.brightOrange
         
         progressView.topAnchor.constraint(equalTo: webView.topAnchor).isActive = true
         progressView.leftAnchor.constraint(equalTo: webView.leftAnchor).isActive = true
@@ -68,11 +68,11 @@ class SingleArticleViewController: UIViewController, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        print("fail")
+        print(error)
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        print("fail")
+        print(error)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

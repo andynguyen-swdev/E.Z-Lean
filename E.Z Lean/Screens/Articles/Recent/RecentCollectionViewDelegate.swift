@@ -7,44 +7,29 @@
 //
 
 import Utils
-import CHTCollectionViewWaterfallLayout
 
-extension RecentViewController: CHTCollectionViewDelegateWaterfallLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var width = collectionView.width - 16
-//        width = (UIDevice.current.userInterfaceIdiom == .phone) ? width : (width - 8) / 2
-        
-        var height: CGFloat
-        
-        let topBarHeight: CGFloat = 44
-        let aspectRatio: CGFloat = 16 / 9
-    
-        let photoHeight = width / aspectRatio
-        
-        let title = dataSource.articles.value[indexPath.row].title
-        
-        let fontSize: CGFloat = (UIDevice.current.userInterfaceIdiom == .phone) ? 17 : 20
-        let titleHeight = NSString(string: title).boundingRect(with: CGSize(width: width - 16, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.init(name: "Helvetica Neue", size: fontSize)!], context: nil).height
-        
-        let titleTopPaddingHeight: CGFloat = 8
-        let titleBottomPaddingHeight: CGFloat = 3
-        
-        let summaryHeight: CGFloat = (UIDevice.current.userInterfaceIdiom == .phone) ? 33.5 : 35.5
-        let summaryBottomPaddingHeight: CGFloat = 8
-        
-        height = topBarHeight + photoHeight + titleTopPaddingHeight + titleHeight + titleBottomPaddingHeight + summaryHeight + summaryBottomPaddingHeight
-        
-        return CGSize(width: width, height: height)
+extension RecentViewController: UICollectionViewDelegateFlowLayout {
+    var cellWidth: CGFloat {
+        return collectionView.width - 10
     }
     
-    func configLayout() {
-        let layout = CHTCollectionViewWaterfallLayout()
-        layout.columnCount = 2
-        layout.minimumColumnSpacing = 8
-        layout.minimumInteritemSpacing = 8
-        layout.sectionInset = UIEdgeInsetsMake(8, 8, 8, 8)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.cellWidth
+        let article = dataSource.articles.value[indexPath.row]
         
-        collectionView.collectionViewLayout = layout
+        let cell = cellType.fromNib
+        cell.config(article: article, collectionView: nil, indexPath: nil)
+        cell.contentWidth = width
+        
+        return cell.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
     }
 }
 

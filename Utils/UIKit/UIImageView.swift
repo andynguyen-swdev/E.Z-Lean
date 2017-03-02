@@ -8,7 +8,6 @@
 import UIKit
 import Foundation
 
-@available(iOS 10.0, *)
 @IBDesignable
 public class CustomUIImageView: UIImageView {
     

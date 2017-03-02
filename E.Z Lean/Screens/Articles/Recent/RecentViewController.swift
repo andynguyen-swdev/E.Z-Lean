@@ -10,32 +10,75 @@ import UIKit
 import RxSwift
 import RxCocoa
 import IBAnimatable
+import Popover
 
 class RecentViewController: UIViewController {
+    static var instance: RecentViewController!
+    
+    typealias cellClass = RecentArticleCell
+    let cellType: cellClass.Type = cellClass.self
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoryBarButton: AnimatableButton!
     @IBOutlet weak var searchButton: AnimatableButton!
     
+    lazy var popOverCategory: CategoryPopOverViewController = {
+        return self.storyboard!.instantiateViewController(withIdentifier: "PopOver") as! CategoryPopOverViewController
+    }()
+    
     var dataSource: RecentCollectionViewDataSource!
+    var popover: Popover!
+    
+    var searchController: UISearchController!
+    var searchBar: UISearchBar!
     
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
-        collectionView.backgroundColor = UIColor(hexString: "#3D3D3D").withAlphaComponent(0.16)
-        navigationController?.navigationBar.tintColor = UIColor(hexString: "#CB7539")
-        ArticleCell.registerFor(collectionView: collectionView)
-//        configLayout()
+        RecentViewController.instance = self
+        navigationController?.navigationBar.tintColor = Colors.brightOrange
+        
+        configCollectionView()
         configDataSource()
         configButtons()
+//        configSearchController()
+    }
+    
+    func configCollectionView() {
+        collectionView.backgroundColor = Colors.collectionViewBackground
+        cellType.registerFor(collectionView: collectionView)
+    }
+    
+    func configSearchController() {
+        searchController = UISearchController(searchResultsController: SearchViewController.instantiate(with: self))
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.definesPresentationContext = true
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        searchBar = searchController.searchBar
+        searchButton.rx.tap.subscribe(onNext: { [unowned self] _ in
+            self.navigationItem.leftBarButtonItem = nil
+            self.navigationItem.rightBarButtonItem = nil
+            self.navigationItem.titleView = self.searchBar
+            self.searchBar.becomeFirstResponder()
+        })
+        .addDisposableTo(disposeBag)
     }
     
     func configButtons() {
-         categoryBarButton.animate(animation: AnimationType.slide(way: .in, direction: .down), completion: nil)
+        categoryBarButton.animate(animation: AnimationType.slide(way: .in, direction: .down), completion: nil)
         categoryBarButton.backgroundColor = .clear
-        categoryBarButton.tintColor = UIColor(hexString: "#CB7539")
+        categoryBarButton.tintColor = Colors.brightOrange
         
         searchButton.backgroundColor = .clear
-        searchButton.tintColor = UIColor(hexString: "#CB7539")
+        searchButton.tintColor = Colors.brightOrange
+        
+        categoryBarButton.rx
+            .tap
+            .subscribe(onNext: { [unowned self] _ in
+                self.presentPopOver()
+            })
+            .addDisposableTo(disposeBag)
     }
     
     func configDataSource() {
@@ -47,18 +90,47 @@ class RecentViewController: UIViewController {
     }
     
     func configSelectingCell() {
-       collectionView.rx
-        .modelSelected(Article.self)
-        .subscribe(onNext: { [weak self] article in
-            self?.performSegue(withIdentifier: "RecentToSingleArticle", sender: article)
-        })
-        .addDisposableTo(disposeBag)
+        collectionView.rx
+            .modelSelected(Article.self)
+            .subscribe(onNext: { [weak self] article in
+                self?.performSegue(withIdentifier: SegueIdentifiers.recentToSingleArticle, sender: article)
+            })
+            .addDisposableTo(disposeBag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let article = sender as? Article {
             guard let vc = segue.destination as? SingleArticleViewController else { return }
             vc.urlStringToLoad = article.contentLink
+            return
         }
+        if let category = sender as? ArticleCategory {
+            guard let vc = segue.destination as? CategoryViewController else { return }
+            vc.category = category
+            popover.dismiss()
+            popover.removeFromSuperview()
+            return
+        }
+    }
+    
+    func presentPopOver() {
+        let vc = self.popOverCategory
+        let view = vc.view
+        view?.frame = CGRect(x: 0, y: 0, width: self.view.width-16, height: 198)
+        view?.translatesAutoresizingMaskIntoConstraints = false
+        
+        let options: [PopoverOption] = [
+            .sideEdge(8),
+            .cornerRadius(4),
+            .blackOverlayColor(UIColor.black.withAlphaComponent(0.5)),
+            .arrowSize(CGSize(width: 10, height: 6))
+        ]
+        popover = Popover(options: options)
+        popover.show(view!, point: CGPoint(x: 22, y: 67))
+        
+        view?.topAnchor.constraint(equalTo: popover.topAnchor, constant: 10).isActive = true
+        view?.bottomAnchor.constraint(equalTo: popover.bottomAnchor).isActive = true
+        view?.leftAnchor.constraint(equalTo: popover.leftAnchor).isActive = true
+        view?.rightAnchor.constraint(equalTo: popover.rightAnchor).isActive = true
     }
 }
