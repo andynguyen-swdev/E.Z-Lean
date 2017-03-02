@@ -79,7 +79,6 @@
 		DC3D23832A4DA19C8882A582 /* Pods_E_Z_Lean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */; };
 		F12644DB1E4B7B0600C5D33C /* WilksCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12644DA1E4B7B0600C5D33C /* WilksCalculatorViewController.swift */; };
 		F164A41F1E4F621A0084F6B3 /* TDEECalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */; };
-		F1BAB0CF1E65A650008C4399 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BAB0CE1E65A650008C4399 /* AKPickerView.swift */; };
 		F1D8333D1E47871F00772F42 /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333C1E47871F00772F42 /* ToolViewController.swift */; };
 		F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */; };
 		F1D833411E478F2D00772F42 /* StringToDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D833401E478F2D00772F42 /* StringToDouble.swift */; };
@@ -721,7 +720,6 @@
 				507F54921E58563C006E296B /* CategoryArticleCell.swift in Sources */,
 				507F54901E58563C006E296B /* RecentArticleCell.swift in Sources */,
 				50F521A91E5D390300275564 /* ArticlesManager.swift in Sources */,
-F1BAB0CF1E65A650008C4399 /* AKPickerView.swift in Sources */,
 				F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */,
 				504278051E49ACE900D062DF /* RecentCollectionViewDelegate.swift in Sources */,
 				F12644DB1E4B7B0600C5D33C /* WilksCalculatorViewController.swift in Sources */,
@@ -735,7 +733,6 @@ F1BAB0CF1E65A650008C4399 /* AKPickerView.swift in Sources */,
 				50AF4C651E48D78000E8EF8A /* EZLeanTabBarViewController.swift in Sources */,
 				50276FA21E4A2AE4006CBAC0 /* SingleArticleViewController.swift in Sources */,
 				F1D8333D1E47871F00772F42 /* ToolViewController.swift in Sources */,
-F1BAB0CF1E65A650008C4399 /* AKPickerView.swift in Sources */,
 				507F54971E585651006E296B /* BaseCell.swift in Sources */,
 				501ABB521E68508B00562787 /* TouchableAnatomy+Function.swift in Sources */,
 				5079F5BB1E65A5DC002B50B1 /* StringScore.swift in Sources */,
