@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
-class ToolViewController: UIViewController {
+import QuartzCore
+class ToolViewController: UIViewController{
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         button1.layer.cornerRadius = 5
@@ -22,15 +23,55 @@ class ToolViewController: UIViewController {
         button3.layer.cornerRadius = 5
         button3.layer.masksToBounds = true
 
-        // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        setStartPosition()
+        DispatchQueue.main.async {
+            
+            self.button1.startAnimation(duration: 1,delay: 0.4, vector: CGVector(dx: 0, dy: 200), spring: 0.8)
+        }
+         DispatchQueue.main.async {
+            self.button2.startAnimation(duration: 1.5, delay: 0.2, vector: CGVector(dx: 0, dy: 325), spring: 0.7)
+        }
+         DispatchQueue.main.async {
+            self.button3.startAnimation(duration: 2, delay: 0.0, vector: CGVector(dx: 0, dy: 450), spring: 0.5)
+            
+        }
 
+    }
+    func setStartPosition(){
+        button1.frame.origin = CGPoint(x: view.frame.width/2-button1.frame.width/2, y: -button1.frame.height)
+        button2.frame.origin = CGPoint(x: view.frame.width/2-button1.frame.width/2, y: -button1.frame.height)
+        button3.frame.origin = CGPoint(x: view.frame.width/2-button1.frame.width/2, y: -button1.frame.height)
+        button1.alpha=0
+        button2.alpha=0
+        button3.alpha = 0
+    }
+    
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //let touch = UITouch()
+            let location = touches.first?.location(in: self.button3)
+            print(location)
+            print(button3.point(inside: location!, with: nil))
+            if ((button3.layer.presentation()?.hitTest(location!)) != nil){
+                print("ABC")
+            }
+        
+    }
     
-
+}
+extension UIButton{
+    func startAnimation(duration:Double,delay: Double? = 0.0,vector : CGVector,spring:Double){
+        let oldOrigin = self.frame.origin
+        UIView.animate(withDuration: duration, delay: delay!, usingSpringWithDamping: CGFloat(spring), initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+            self.alpha = 1
+            self.frame.origin = oldOrigin.add(x: vector.dx, y: vector.dy)
+        }, completion: nil)
+    }
     
-
 }

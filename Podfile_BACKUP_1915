@@ -1,0 +1,27 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+use_frameworks!
+
+target 'E.Z Lean' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+
+
+  # Pods for E.Z Lean
+	pod ’SwiftyJSON’
+	pod ‘RxSwift’
+	pod ‘RxCocoa’
+	pod ‘RxDataSources’
+    pod 'IBAnimatable'
+    pod 'SDWebImage'
+    pod 'Alamofire'
+    pod 'Material'
+    pod 'MaterialControls'
+    pod 'CHTCollectionViewWaterfallLayout'
+<<<<<<< HEAD
+    pod "AKPickerView-Swift"
+=======
+    pod 'Popover'
+>>>>>>> 00e235e907c3fb3ab7338be4a7b9397b04a21026
+end
+

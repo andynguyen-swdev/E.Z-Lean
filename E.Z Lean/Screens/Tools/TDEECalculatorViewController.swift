@@ -8,33 +8,52 @@
 
 import UIKit
 
-class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate{
+    @IBOutlet weak var scrollView: UIScrollView!
     let LB_TO_KG:Double = 0.45359237
     let FOOT_TO_CENTIMETER = 30.48
+    let CALO_IF_GAIN_ONE_KG = 551.0
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var weightUnit: UISwitch!
-  
+    @IBOutlet weak var gainResult: UILabel!
+    
+    @IBOutlet weak var loseResult: UILabel!
+    @IBOutlet var notify: [UILabel]!
     @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet weak var label: UILabel!
     
     @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var bodyFat: UITextField!
     @IBOutlet weak var gender: UISwitch!
     @IBOutlet weak var heightUnit: UISwitch!
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var height: UITextField!
     @IBOutlet weak var weight: UITextField!
-    let data: [String] = ["Office worker,litle or no exercise","Some exercise throughout the week","Physical job or an hour of exercise daily","Very physical job or 2 hours of exercise daily","Competitive endurance athlete"]
+    private let pickerViewData = Array(0...49)
+    private let numberOfRow = 250
+    private let pickerViewMiddle = 125
+    let data: [String] = ["Ít vận động(nhân viên văn phòng)","Vận động nhẹ(1-3 lần/tuần)","Vận động vừa(3-5 lần/tuần)","Vận đông nhiều(6-7 lần/tuần)","Vận động tích cực(vận động viên)"]
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.dataSource = self
         pickerView.delegate = self
-        label.isHidden = true
+        //scrollView.delegate = self
+        pickerView.selectRow(125, inComponent: 0, animated: false)
+        DispatchQueue.main.async {
+            for i in self.notify{
+                i.isHidden = true
+            }
+        }
+        gainResult.isHidden = true
+        loseResult.isHidden = true
         result.isHidden = true
         calculateButton.layer.cornerRadius = 5
         calculateButton.layer.masksToBounds = true
         pickerView.layer.cornerRadius = 10
         pickerView.layer.masksToBounds = true
         // Do any additional setup after loading the view.
+    
+    
     }
     // number of  column
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -42,11 +61,9 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
     }
     //number of row
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return data.count
+        return numberOfRow
     }
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return data[row]
-//    }
+    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var pickerLabel = view as? UILabel;
         
@@ -58,10 +75,11 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
             pickerLabel?.textAlignment = NSTextAlignment.center
         }
         
-        pickerLabel?.text = data[row]//fetchLabelForRowNumber(row)
+        pickerLabel?.text = data[row%5]
         
         return pickerLabel!
     }
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -82,20 +100,45 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
             else {
                 return
         }
-        if !weightUnit.isOn {
-            myWeight = myWeight*LB_TO_KG
+        guard  let bodyFatTxt = bodyFat.text else {
+           print("ABC")
+            return
         }
-        if !heightUnit.isOn{
-            myHeight = myHeight*FOOT_TO_CENTIMETER
-        }
-        if !gender.isOn {
+        guard let myBodyFat = Double(bodyFatTxt) else {
+            if !weightUnit.isOn {
+                myWeight = myWeight*LB_TO_KG
+            }
+            if !heightUnit.isOn{
+                myHeight = myHeight*FOOT_TO_CENTIMETER
+            }
+            if !gender.isOn {
+                
+            }
+            bmr = BMRFormula(weight: myWeight, height: myHeight, age: myAge, isMale: gender.isOn)
+            print(getSelectedValueFromPickerView(selectedRow: pickerView.selectedRow(inComponent: 0)))
+            myResult = bmr*getSelectedValueFromPickerView(selectedRow: pickerView.selectedRow(inComponent: 0))
+            result.text = "\(myResult.roundTo(places: 0))"
+            result.isHidden = false
+            showGainLabel(result: myResult)
             
+                for i in self.notify{
+                    i.isHidden = false
+                }
+            
+            return
         }
-        bmr = BMRFormula(weight: myWeight, height: myHeight, age: myAge, isMale: gender.isOn)
+        bmr =  370 + 21.6*myWeight*(100-myBodyFat)/100
         myResult = bmr*getSelectedValueFromPickerView(selectedRow: pickerView.selectedRow(inComponent: 0))
-        label.isHidden = false
-        result.text = "\(myResult.roundTo(places: 2))"
+        result.text = "\(myResult.roundTo(places: 0))"
         result.isHidden = false
+        DispatchQueue.global().async {
+            for i in self.notify{
+                i.isHidden = false
+            }
+        }
+        showGainLabel(result: myResult)
+        
+
         
     }
     func BMRFormula(weight: Double,height:Double,age:Double,isMale: Bool) -> Double{
@@ -105,8 +148,15 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
             return 10 * weight  + 6.25 * height - 5 * age - 161
         }
     }
+    func showGainLabel(result:Double){
+        gainResult.isHidden = false
+        loseResult.isHidden = false
+        gainResult.text = "\(result.roundTo(places: 0)+CALO_IF_GAIN_ONE_KG)"
+        loseResult.text = "\(result.roundTo(places: 0)-CALO_IF_GAIN_ONE_KG)"
+    }
+   
     func getSelectedValueFromPickerView(selectedRow: Int)->Double{
-        switch selectedRow {
+        switch selectedRow%5 {
         case 0:
             return 1.2
         case 1:
