@@ -15,6 +15,7 @@
 		501ABB511E68508B00562787 /* AnatomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501ABB4E1E68508B00562787 /* AnatomyViewController.swift */; };
 		501ABB521E68508B00562787 /* TouchableAnatomy+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501ABB4F1E68508B00562787 /* TouchableAnatomy+Function.swift */; };
 		501ABB531E68508B00562787 /* TouchableAnatomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501ABB501E68508B00562787 /* TouchableAnatomy.swift */; };
+		501ABB581E6853C800562787 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501ABB571E6853C800562787 /* ExerciseListViewController.swift */; };
 		501D61CF1E4CDC6C00E9C859 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501D61CE1E4CDC6C00E9C859 /* CategoryViewController.swift */; };
 		50276FA21E4A2AE4006CBAC0 /* SingleArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50276FA11E4A2AE4006CBAC0 /* SingleArticleViewController.swift */; };
 		503B73B01E549E3B005838CC /* CategoryPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503B73AF1E549E3B005838CC /* CategoryPopOverViewController.swift */; };
@@ -118,6 +119,7 @@
 		501ABB4E1E68508B00562787 /* AnatomyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnatomyViewController.swift; sourceTree = "<group>"; };
 		501ABB4F1E68508B00562787 /* TouchableAnatomy+Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TouchableAnatomy+Function.swift"; sourceTree = "<group>"; };
 		501ABB501E68508B00562787 /* TouchableAnatomy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchableAnatomy.swift; sourceTree = "<group>"; };
+		501ABB571E6853C800562787 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
 		501D61CE1E4CDC6C00E9C859 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		50276FA11E4A2AE4006CBAC0 /* SingleArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleArticleViewController.swift; sourceTree = "<group>"; };
 		503B73AF1E549E3B005838CC /* CategoryPopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPopOverViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		501ABB561E6850AD00562787 /* ExerciseList */ = {
 			isa = PBXGroup;
 			children = (
+				501ABB571E6853C800562787 /* ExerciseListViewController.swift */,
 			);
 			path = ExerciseList;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				F12644DB1E4B7B0600C5D33C /* WilksCalculatorViewController.swift in Sources */,
 				5042098B1E55E00F005AC8D4 /* CategoryViewDataSource.swift in Sources */,
 				501ABB531E68508B00562787 /* TouchableAnatomy.swift in Sources */,
+				501ABB581E6853C800562787 /* ExerciseListViewController.swift in Sources */,
 				50B6CBC81E5777400064291C /* SearchViewDelegate.swift in Sources */,
 				504209851E55D912005AC8D4 /* Constant.swift in Sources */,
 				50E947C71E55F3ED00AEFEC4 /* SearchViewController.swift in Sources */,
