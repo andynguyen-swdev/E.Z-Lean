@@ -6,83 +6,73 @@
 	<dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>CHTCollectionViewWaterfallLayout.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>IBAnimatable.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Material-io.cosmicmind.material.fonts.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>13</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Material-io.cosmicmind.material.icons.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>14</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Material.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>12</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>MaterialControls.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>15</integer>
-		</dict>
-		<key>Pods-Drawing.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-E.Z Lean.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>RxCocoa.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>RxDataSources.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>RxSwift.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>8</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>16</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>10106EE6ECECC17757B3E17467BF85E2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1A9C3EADD1AA547B1DACD97051C48649</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,27 +102,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5714314D591075C7934C1833B549D380</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>6A783ACFA499851FC1F366540EF16B90</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6F8BF0160986189C432F8827D93F164C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7AC99A7CA11CF7FA8D784292E8078F7B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>812F53F1E52066C818C08589A1E56735</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -158,16 +133,6 @@
 			<true/>
 		</dict>
 		<key>DE3A290D3216612378829CB8E4A76B7C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F4F87D58CFF75C2CACF2638BCAE40581</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F9F827CB681B1F7C8256AAD856C6AD74</key>
 		<dict>
 			<key>primary</key>
 			<true/>
