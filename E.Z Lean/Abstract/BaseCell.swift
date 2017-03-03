@@ -39,8 +39,6 @@ class BaseCell: UICollectionViewCell {
 }
 
 protocol CellIdentifiable: class {
-    static func registerFor(collectionView: UICollectionView)
-    
     associatedtype cellType
     static var fromNib: cellType { get }
 }

@@ -55,7 +55,7 @@ class RecentCollectionViewDataSource {
     
     func getData() {
         Observable.array(from: DatabaseManager.articles.allArticles)
-            .map { Array($0.prefix(3)) }
+//            .map { Array($0.prefix(3)) }
             .bindTo(articles)
             .addDisposableTo(disposeBag)
     }

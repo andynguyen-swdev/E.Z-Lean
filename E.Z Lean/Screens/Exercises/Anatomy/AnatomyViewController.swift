@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxSwiftExt
 
 class AnatomyViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
@@ -25,6 +26,13 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         scrollView.delegate = self
+        anatomyControl.currentBodyPart
+            .asObservable()
+            .unwrap()
+            .subscribe(onNext: { [unowned self] bodyPart in
+                self.performSegue(withIdentifier: SegueIdentifiers.anatomyToExerciseList, sender: bodyPart)
+            })
+            .addDisposableTo(disposeBag)
     }
     
     override func viewDidLayoutSubviews() {

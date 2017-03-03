@@ -27,6 +27,7 @@ extension TouchableAnatomy {
         if let location = touch?.location(in: self) {
             if let bodyPart = getTouchedPart(location: location) {
                 print(bodyPart)
+                self.currentBodyPart.value = bodyPart
             }
         }
     }
