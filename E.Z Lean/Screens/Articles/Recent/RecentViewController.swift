@@ -38,35 +38,34 @@ class RecentViewController: UIViewController {
         RecentViewController.instance = self
         navigationController?.navigationBar.tintColor = Colors.brightOrange
         
+        configTabBar()
         configCollectionView()
         configDataSource()
         configButtons()
-//        configSearchController()
+    }
+    
+    func configTabBar() {
+        EZLeanTabBarViewController.instance
+            .currentIndex
+            .asObservable()
+            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInteractive))
+            .observeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInteractive))
+            .filter { [unowned self] in
+                return self.view.window != nil && $0 == 0
+            }
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] _ in
+                self.collectionView.setContentOffset(.zero, animated: true)
+            })
+            .addDisposableTo(disposeBag)
     }
     
     func configCollectionView() {
-        collectionView.backgroundColor = Colors.collectionViewBackground
+        collectionView.backgroundColor = .clear
         cellType.registerFor(collectionView: collectionView)
     }
     
-    func configSearchController() {
-        searchController = UISearchController(searchResultsController: SearchViewController.instantiate(with: self))
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.definesPresentationContext = true
-        searchController.dimsBackgroundDuringPresentation = false
-        
-        searchBar = searchController.searchBar
-        searchButton.rx.tap.subscribe(onNext: { [unowned self] _ in
-            self.navigationItem.leftBarButtonItem = nil
-            self.navigationItem.rightBarButtonItem = nil
-            self.navigationItem.titleView = self.searchBar
-            self.searchBar.becomeFirstResponder()
-        })
-        .addDisposableTo(disposeBag)
-    }
-    
     func configButtons() {
-        categoryBarButton.animate(animation: AnimationType.slide(way: .in, direction: .down), completion: nil)
         categoryBarButton.backgroundColor = .clear
         categoryBarButton.tintColor = Colors.brightOrange
         

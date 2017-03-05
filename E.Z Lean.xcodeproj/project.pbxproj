@@ -76,6 +76,17 @@
 		50AF4C721E48FE2300E8EF8A /* Coaches.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AF4C6E1E48FE2300E8EF8A /* Coaches.storyboard */; };
 		50B6CBC61E5776250064291C /* SearchViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B6CBC51E5776250064291C /* SearchViewDataSource.swift */; };
 		50B6CBC81E5777400064291C /* SearchViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B6CBC71E5777400064291C /* SearchViewDelegate.swift */; };
+		50B7C0EB1E6BF02200C7DD76 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7C0EA1E6BF02200C7DD76 /* BodyPart.swift */; };
+		50B7C0F51E6BF33E00C7DD76 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B7C0EE1E6BF33E00C7DD76 /* back.png */; };
+		50B7C0F61E6BF33E00C7DD76 /* biceps.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B7C0EF1E6BF33E00C7DD76 /* biceps.png */; };
+		50B7C0F71E6BF33E00C7DD76 /* chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B7C0F01E6BF33E00C7DD76 /* chest.png */; };
+		50B7C0F81E6BF33E00C7DD76 /* core.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B7C0F11E6BF33E00C7DD76 /* core.png */; };
+		50B7C0F91E6BF33E00C7DD76 /* leg.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B7C0F21E6BF33E00C7DD76 /* leg.png */; };
+		50B7C0FA1E6BF33E00C7DD76 /* shoulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B7C0F31E6BF33E00C7DD76 /* shoulder.png */; };
+		50B7C0FB1E6BF33E00C7DD76 /* triceps.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B7C0F41E6BF33E00C7DD76 /* triceps.png */; };
+		50B7C1021E6C096400C7DD76 /* glute.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B7C1001E6C096400C7DD76 /* glute.png */; };
+		50B7C1031E6C096400C7DD76 /* hamstring.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B7C1011E6C096400C7DD76 /* hamstring.png */; };
+		50B7C1061E6C0AC100C7DD76 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7C1051E6C0AC100C7DD76 /* ExerciseViewController.swift */; };
 		50D89D431E4C166400F56AAF /* test0.html in Resources */ = {isa = PBXBuildFile; fileRef = 50D89D401E4C166400F56AAF /* test0.html */; };
 		50D89D441E4C166400F56AAF /* test1.html in Resources */ = {isa = PBXBuildFile; fileRef = 50D89D411E4C166400F56AAF /* test1.html */; };
 		50D89D451E4C166400F56AAF /* test2.html in Resources */ = {isa = PBXBuildFile; fileRef = 50D89D421E4C166400F56AAF /* test2.html */; };
@@ -187,6 +198,17 @@
 		50AF4C6E1E48FE2300E8EF8A /* Coaches.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coaches.storyboard; sourceTree = "<group>"; };
 		50B6CBC51E5776250064291C /* SearchViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewDataSource.swift; sourceTree = "<group>"; };
 		50B6CBC71E5777400064291C /* SearchViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewDelegate.swift; sourceTree = "<group>"; };
+		50B7C0EA1E6BF02200C7DD76 /* BodyPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
+		50B7C0EE1E6BF33E00C7DD76 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		50B7C0EF1E6BF33E00C7DD76 /* biceps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = biceps.png; sourceTree = "<group>"; };
+		50B7C0F01E6BF33E00C7DD76 /* chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chest.png; sourceTree = "<group>"; };
+		50B7C0F11E6BF33E00C7DD76 /* core.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = core.png; sourceTree = "<group>"; };
+		50B7C0F21E6BF33E00C7DD76 /* leg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg.png; sourceTree = "<group>"; };
+		50B7C0F31E6BF33E00C7DD76 /* shoulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoulder.png; sourceTree = "<group>"; };
+		50B7C0F41E6BF33E00C7DD76 /* triceps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triceps.png; sourceTree = "<group>"; };
+		50B7C1001E6C096400C7DD76 /* glute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glute.png; sourceTree = "<group>"; };
+		50B7C1011E6C096400C7DD76 /* hamstring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamstring.png; sourceTree = "<group>"; };
+		50B7C1051E6C0AC100C7DD76 /* ExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		50D89D401E4C166400F56AAF /* test0.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test0.html; sourceTree = "<group>"; };
 		50D89D411E4C166400F56AAF /* test1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test1.html; sourceTree = "<group>"; };
 		50D89D421E4C166400F56AAF /* test2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test2.html; sourceTree = "<group>"; };
@@ -249,6 +271,7 @@
 		50062A1B1E470D62002BDE90 /* E.Z Lean */ = {
 			isa = PBXGroup;
 			children = (
+				50B7C0EC1E6BF33E00C7DD76 /* Images */,
 				5079F5B81E65A5DC002B50B1 /* Libraries */,
 				504209841E55D912005AC8D4 /* Constant.swift */,
 				50D89D401E4C166400F56AAF /* test0.html */,
@@ -331,6 +354,7 @@
 				504209871E55DF79005AC8D4 /* Article.swift */,
 				50AF24AB1E5C827200453512 /* ArticleCategory.swift */,
 				5021EE091E6863660058B500 /* Exercise.swift */,
+				50B7C0EA1E6BF02200C7DD76 /* BodyPart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -508,6 +532,7 @@
 				5021EDF91E6857230058B500 /* Cells */,
 				501ABB4D1E68508B00562787 /* Anatomy */,
 				501ABB561E6850AD00562787 /* ExerciseList */,
+				50B7C1041E6C0A0800C7DD76 /* ExerciseView */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -518,6 +543,38 @@
 				50AF4C6E1E48FE2300E8EF8A /* Coaches.storyboard */,
 			);
 			path = Contact;
+			sourceTree = "<group>";
+		};
+		50B7C0EC1E6BF33E00C7DD76 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				50B7C0ED1E6BF33E00C7DD76 /* BodyParts */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		50B7C0ED1E6BF33E00C7DD76 /* BodyParts */ = {
+			isa = PBXGroup;
+			children = (
+				50B7C0EE1E6BF33E00C7DD76 /* back.png */,
+				50B7C0EF1E6BF33E00C7DD76 /* biceps.png */,
+				50B7C0F01E6BF33E00C7DD76 /* chest.png */,
+				50B7C0F11E6BF33E00C7DD76 /* core.png */,
+				50B7C0F21E6BF33E00C7DD76 /* leg.png */,
+				50B7C0F31E6BF33E00C7DD76 /* shoulder.png */,
+				50B7C0F41E6BF33E00C7DD76 /* triceps.png */,
+				50B7C1001E6C096400C7DD76 /* glute.png */,
+				50B7C1011E6C096400C7DD76 /* hamstring.png */,
+			);
+			path = BodyParts;
+			sourceTree = "<group>";
+		};
+		50B7C1041E6C0A0800C7DD76 /* ExerciseView */ = {
+			isa = PBXGroup;
+			children = (
+				50B7C1051E6C0AC100C7DD76 /* ExerciseViewController.swift */,
+			);
+			path = ExerciseView;
 			sourceTree = "<group>";
 		};
 		50C8FA321E49A6C4009FF195 /* Recent */ = {
@@ -663,15 +720,24 @@
 			files = (
 				50062A271E470D62002BDE90 /* LaunchScreen.storyboard in Resources */,
 				50D89D451E4C166400F56AAF /* test2.html in Resources */,
+				50B7C0F81E6BF33E00C7DD76 /* core.png in Resources */,
 				50AF4C6F1E48FE2300E8EF8A /* Articles.storyboard in Resources */,
+				50B7C0F61E6BF33E00C7DD76 /* biceps.png in Resources */,
 				50AF4C711E48FE2300E8EF8A /* Exercises.storyboard in Resources */,
 				50D89D431E4C166400F56AAF /* test0.html in Resources */,
 				5021EE041E6857D80058B500 /* ExerciseListTableViewCell.xib in Resources */,
 				50062A241E470D62002BDE90 /* Assets.xcassets in Resources */,
+				50B7C0FA1E6BF33E00C7DD76 /* shoulder.png in Resources */,
 				50AF4C701E48FE2300E8EF8A /* Tools.storyboard in Resources */,
 				50062A221E470D62002BDE90 /* Main.storyboard in Resources */,
 				50D89D441E4C166400F56AAF /* test1.html in Resources */,
+				50B7C1021E6C096400C7DD76 /* glute.png in Resources */,
+				50B7C0F91E6BF33E00C7DD76 /* leg.png in Resources */,
+				50B7C0F71E6BF33E00C7DD76 /* chest.png in Resources */,
+				50B7C1031E6C096400C7DD76 /* hamstring.png in Resources */,
 				507F54911E58563C006E296B /* RecentArticleCell.xib in Resources */,
+				50B7C0F51E6BF33E00C7DD76 /* back.png in Resources */,
+				50B7C0FB1E6BF33E00C7DD76 /* triceps.png in Resources */,
 				507F54931E58563C006E296B /* CategoryArticleCell.xib in Resources */,
 				507F54951E58563C006E296B /* SmallArticleCell.xib in Resources */,
 				50AF4C721E48FE2300E8EF8A /* Coaches.storyboard in Resources */,
@@ -742,6 +808,7 @@
 			files = (
 				F164A41F1E4F621A0084F6B3 /* TDEECalculatorViewController.swift in Sources */,
 				501D61CF1E4CDC6C00E9C859 /* CategoryViewController.swift in Sources */,
+				50B7C1061E6C0AC100C7DD76 /* ExerciseViewController.swift in Sources */,
 				5042098C1E55E00F005AC8D4 /* CategoryViewDelegate.swift in Sources */,
 				504209881E55DF79005AC8D4 /* Article.swift in Sources */,
 				5021EE001E68579A0058B500 /* BaseTableViewCell.swift in Sources */,
@@ -778,6 +845,7 @@
 				5021EE0A1E6863660058B500 /* Exercise.swift in Sources */,
 				50062A1D1E470D62002BDE90 /* AppDelegate.swift in Sources */,
 				50AF24AC1E5C827200453512 /* ArticleCategory.swift in Sources */,
+				50B7C0EB1E6BF02200C7DD76 /* BodyPart.swift in Sources */,
 				50AF24AA1E5C823B00453512 /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

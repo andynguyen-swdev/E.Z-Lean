@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,13 +17,12 @@
                         <viewControllerLayoutGuide type="top" id="9rU-Vk-6Uz"/>
                         <viewControllerLayoutGuide type="bottom" id="8gg-RD-Sha"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JEQ-qM-7uf">
+                    <view key="view" contentMode="scaleToFill" id="JEQ-qM-7uf" customClass="AnimatableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZcD-bi-56c">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                <color key="backgroundColor" red="0.23921568627450979" green="0.23921568627450979" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="NIB-JH-heo">
                                     <size key="itemSize" width="355" height="138"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -34,11 +34,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="topMargin" secondItem="ZcD-bi-56c" secondAttribute="top" id="G5d-3j-lg9"/>
                             <constraint firstAttribute="trailing" secondItem="ZcD-bi-56c" secondAttribute="trailing" id="YP0-W6-uNf"/>
-                            <constraint firstItem="ZcD-bi-56c" firstAttribute="top" secondItem="9rU-Vk-6Uz" secondAttribute="bottom" id="ZvY-fH-BCW"/>
                             <constraint firstItem="ZcD-bi-56c" firstAttribute="leading" secondItem="JEQ-qM-7uf" secondAttribute="leading" id="cyK-oe-H2f"/>
-                            <constraint firstItem="8gg-RD-Sha" firstAttribute="top" secondItem="ZcD-bi-56c" secondAttribute="bottom" id="hCm-yT-ey9"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ZcD-bi-56c" secondAttribute="bottom" id="pDH-e3-fqd"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" red="0.97254901959999995" green="0.70588235290000001" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" red="0.58431372550000005" green="0.27450980390000002" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="_startPoint" value="topLeft"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Bài mới" id="4Yf-pV-QHr">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="SY7-Y2-JGL">
@@ -193,9 +202,9 @@
                             <constraint firstItem="fV1-94-UKY" firstAttribute="leading" secondItem="IF1-6p-Ap4" secondAttribute="leading" id="EON-Gx-hsl"/>
                             <constraint firstAttribute="trailing" secondItem="fV1-94-UKY" secondAttribute="trailing" id="HiM-pf-CtX"/>
                             <constraint firstItem="vfX-CH-g0t" firstAttribute="leading" secondItem="IF1-6p-Ap4" secondAttribute="leading" id="Qv6-Lt-x0D"/>
-                            <constraint firstItem="20L-Gu-tdq" firstAttribute="top" secondItem="vfX-CH-g0t" secondAttribute="bottom" id="XFF-XR-Gpx"/>
                             <constraint firstAttribute="trailing" secondItem="vfX-CH-g0t" secondAttribute="trailing" id="clj-XV-wSI"/>
                             <constraint firstItem="vfX-CH-g0t" firstAttribute="top" secondItem="fV1-94-UKY" secondAttribute="bottom" id="lDF-QV-cDr"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="vfX-CH-g0t" secondAttribute="bottom" id="sp1-AB-8Mj"/>
                             <constraint firstItem="fV1-94-UKY" firstAttribute="top" secondItem="IF1-6p-Ap4" secondAttribute="top" id="yd8-1G-GEl"/>
                         </constraints>
                     </view>
@@ -218,13 +227,13 @@
                         <viewControllerLayoutGuide type="top" id="DFd-dP-Oba"/>
                         <viewControllerLayoutGuide type="bottom" id="Qn1-PP-TSV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="iXQ-ow-FLO">
+                    <view key="view" contentMode="scaleToFill" id="iXQ-ow-FLO" customClass="AnimatableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qdv-g1-ixi">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qdv-g1-ixi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="A9v-Ct-WSX">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -234,13 +243,15 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qdv-g1-ixi" firstAttribute="top" secondItem="iXQ-ow-FLO" secondAttribute="top" id="B1U-1m-ScF"/>
                             <constraint firstItem="qdv-g1-ixi" firstAttribute="leading" secondItem="iXQ-ow-FLO" secondAttribute="leading" id="Kgx-3J-xDG"/>
                             <constraint firstAttribute="trailing" secondItem="qdv-g1-ixi" secondAttribute="trailing" id="e4l-ds-Ske"/>
                             <constraint firstAttribute="bottom" secondItem="qdv-g1-ixi" secondAttribute="bottom" id="lKk-3X-D7e"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="_startPoint" value="topLeft"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="qdv-g1-ixi" id="zDS-h0-3yK"/>
@@ -259,13 +270,13 @@
                         <viewControllerLayoutGuide type="top" id="zb5-nU-1jX"/>
                         <viewControllerLayoutGuide type="bottom" id="w4w-4w-8gu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BzQ-Bf-NXf">
+                    <view key="view" contentMode="scaleToFill" id="BzQ-Bf-NXf" customClass="AnimatableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rXF-dc-GcK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tdu-er-mSR">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -275,13 +286,16 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rXF-dc-GcK" firstAttribute="top" secondItem="zb5-nU-1jX" secondAttribute="bottom" id="1HP-5m-Icr"/>
-                            <constraint firstItem="w4w-4w-8gu" firstAttribute="top" secondItem="rXF-dc-GcK" secondAttribute="bottom" id="905-Rg-G3Y"/>
                             <constraint firstAttribute="trailing" secondItem="rXF-dc-GcK" secondAttribute="trailing" id="Sfb-wG-B2R"/>
+                            <constraint firstAttribute="topMargin" secondItem="rXF-dc-GcK" secondAttribute="top" id="e8P-7G-4pd"/>
                             <constraint firstItem="rXF-dc-GcK" firstAttribute="leading" secondItem="BzQ-Bf-NXf" secondAttribute="leading" id="uNu-tH-lrK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="rXF-dc-GcK" secondAttribute="bottom" id="xn2-20-4hu"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="_startPoint" value="bottomRight"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <toolbarItems/>
                     <connections>
@@ -299,7 +313,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1MP-a3-w5p" customClass="EZLeanNavigationController" customModule="E_Z_Lean" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Bài viết" image="feed_25" selectedImage="feed_filled_25" id="e7O-cR-qI4"/>
                     <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="qFw-VH-lUd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -309,6 +322,10 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" id="B7O-mm-PEU">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="7GT-nD-53D" kind="relationship" relationship="rootViewController" id="yzk-FV-j95"/>
                     </connections>

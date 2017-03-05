@@ -28,9 +28,10 @@ struct BarOptions {
 }
 
 struct Colors {
-    static let collectionViewBackground = UIColor(hexString: "#3D3D3D").withAlphaComponent(0.16)
-    static let brightOrange = UIColor(hexString: "#D0866B")
-//        UIColor(hexString: "#E79F62")
+    static let collectionViewBackground = UIColor(hexString: "#DDDDDD")
+    static let brightOrange = UIColor(hexString: "#E79F62")
+    static let redOrange = UIColor(hexString: "#D0866B")
+    
     static let navigationBarColor = UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
     
     static let tabBarColor = navigationBarColor
@@ -47,4 +48,5 @@ struct SegueIdentifiers {
     
     // Exercise
     static let anatomyToExerciseList = "AnatomyToExerciseList"
+    static let exerciseListToExercise = "ExerciseListToExercise"
 }
