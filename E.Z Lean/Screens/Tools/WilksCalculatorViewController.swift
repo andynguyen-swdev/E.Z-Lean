@@ -23,42 +23,26 @@ class WilksCalculatorViewController: UIViewController {
     let FME:Double = 4.731582E-05
     let FMF:Double = -9.054E-08
     
-    @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet weak var result: UILabel!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var weightUnit: UISwitch!
     @IBOutlet weak var gender: UISwitch!
-    @IBOutlet weak var lifted: UITextField!
     @IBOutlet weak var weight: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.isHidden = true
         result.isHidden = true
-        calculateButton.layer.cornerRadius = 5
-        calculateButton.layer.masksToBounds = true
 
         // Do any additional setup after loading the view.
     }
     @IBAction func calculate(_ sender: Any) {
         var myResult:Double!
-        guard let weightTxt = weight.text,
-            let liftedTxt = lifted.text else {
-                return
-        }
-        guard var myWeight = Double(weightTxt),
-            var myLifted = Double(liftedTxt) else {
-                return
-        }
-        if !weightUnit.isOn {// Lb
-            myWeight = myWeight*LB_TO_KG
-            myLifted = myLifted*LB_TO_KG
-        }
-        if !gender.isOn{//Female
-            myResult = wilksFormula(myWeight: myWeight, myLifted: myLifted, a: FMA, b: FMB, c: FMC, d: FMD, e: FME, f: FMF)
-        } else {//Male
-            myResult = wilksFormula(myWeight: myWeight, myLifted: myLifted, a: MA, b: MB, c: MC, d: MD, e: ME, f: MF)
-        }
-        label.isHidden = false
+    
+     
+//        if !gender.isOn{//Female
+//            myResult = wilksFormula(myWeight: myWeight, myLifted: myLifted, a: FMA, b: FMB, c: FMC, d: FMD, e: FME, f: FMF)
+//        } else {//Male
+//            myResult = wilksFormula(myWeight: myWeight, myLifted: myLifted, a: MA, b: MB, c: MC, d: MD, e: ME, f: MF)
+//        }
         result.isHidden = false
         result.text = "\(myResult.roundTo(places: 2))"
         

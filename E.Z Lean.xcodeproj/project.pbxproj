@@ -76,9 +76,14 @@
 		50E947C71E55F3ED00AEFEC4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E947C61E55F3ED00AEFEC4 /* SearchViewController.swift */; };
 		50F521A91E5D390300275564 /* ArticlesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F521A81E5D390300275564 /* ArticlesManager.swift */; };
 		50FEF9321E4EA23A00308CCA /* EZLeanNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FEF9311E4EA23A00308CCA /* EZLeanNavigationController.swift */; };
-		DC3D23832A4DA19C8882A582 /* Pods_E_Z_Lean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */; };
+		AE41D70772DC3AE06D329054 /* Pods_E_Z_Lean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6B1D2003A8D42E46A6F7CA /* Pods_E_Z_Lean.framework */; };
+		F123ED4F1E68CFEC000D24BD /* Deadlift.png in Resources */ = {isa = PBXBuildFile; fileRef = F123ED4C1E68CFEC000D24BD /* Deadlift.png */; };
+		F123ED501E68CFEC000D24BD /* Food.png in Resources */ = {isa = PBXBuildFile; fileRef = F123ED4D1E68CFEC000D24BD /* Food.png */; };
+		F123ED511E68CFEC000D24BD /* Squat.png in Resources */ = {isa = PBXBuildFile; fileRef = F123ED4E1E68CFEC000D24BD /* Squat.png */; };
 		F12644DB1E4B7B0600C5D33C /* WilksCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12644DA1E4B7B0600C5D33C /* WilksCalculatorViewController.swift */; };
 		F164A41F1E4F621A0084F6B3 /* TDEECalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */; };
+		F1B5C5261E697878006BB375 /* CombinedShape.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B5C5251E697878006BB375 /* CombinedShape.png */; };
+		F1B5C5281E697AFF006BB375 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B5C5271E697AFF006BB375 /* back_icon.png */; };
 		F1D8333D1E47871F00772F42 /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333C1E47871F00772F42 /* ToolViewController.swift */; };
 		F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */; };
 		F1D833411E478F2D00772F42 /* StringToDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D833401E478F2D00772F42 /* StringToDouble.swift */; };
@@ -109,6 +114,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2DEEA4E248901C2A1F0489EB /* Pods-E.Z Lean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E.Z Lean.debug.xcconfig"; path = "Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean.debug.xcconfig"; sourceTree = "<group>"; };
 		50062A191E470D62002BDE90 /* E.Z Lean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E.Z Lean.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50062A1C1E470D62002BDE90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50062A1E1E470D62002BDE90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,16 +187,18 @@
 		50E947C61E55F3ED00AEFEC4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		50F521A81E5D390300275564 /* ArticlesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesManager.swift; sourceTree = "<group>"; };
 		50FEF9311E4EA23A00308CCA /* EZLeanNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZLeanNavigationController.swift; sourceTree = "<group>"; };
-		85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Z_Lean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A1E618EEB7A58EB6E059610 /* Pods-E.Z Lean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E.Z Lean.debug.xcconfig"; path = "Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean.debug.xcconfig"; sourceTree = "<group>"; };
-		EBF12600BF5C1EEB48946324 /* Pods_Drawing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Drawing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C759D5717A307D8C0C10B92D /* Pods-E.Z Lean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E.Z Lean.release.xcconfig"; path = "Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean.release.xcconfig"; sourceTree = "<group>"; };
+		F123ED4C1E68CFEC000D24BD /* Deadlift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deadlift.png; sourceTree = "<group>"; };
+		F123ED4D1E68CFEC000D24BD /* Food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Food.png; sourceTree = "<group>"; };
+		F123ED4E1E68CFEC000D24BD /* Squat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Squat.png; sourceTree = "<group>"; };
 		F12644DA1E4B7B0600C5D33C /* WilksCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WilksCalculatorViewController.swift; sourceTree = "<group>"; };
 		F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDEECalculatorViewController.swift; sourceTree = "<group>"; };
-		F1BAB0CE1E65A650008C4399 /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
+		F1B5C5251E697878006BB375 /* CombinedShape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CombinedShape.png; sourceTree = "<group>"; };
+		F1B5C5271E697AFF006BB375 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
 		F1D8333C1E47871F00772F42 /* ToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolViewController.swift; sourceTree = "<group>"; };
 		F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneRMCalculatorViewController.swift; sourceTree = "<group>"; };
 		F1D833401E478F2D00772F42 /* StringToDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringToDouble.swift; sourceTree = "<group>"; };
-		F991C80613185F1F8E5C30F1 /* Pods-E.Z Lean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E.Z Lean.release.xcconfig"; path = "Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean.release.xcconfig"; sourceTree = "<group>"; };
+		FB6B1D2003A8D42E46A6F7CA /* Pods_E_Z_Lean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Z_Lean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A67F7B1E472C4700E463F7 /* Utils.framework in Frameworks */,
-				DC3D23832A4DA19C8882A582 /* Pods_E_Z_Lean.framework in Frameworks */,
+				AE41D70772DC3AE06D329054 /* Pods_E_Z_Lean.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +221,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21A5109853C6D5120D24FD30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB6B1D2003A8D42E46A6F7CA /* Pods_E_Z_Lean.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24E2E1540F16913B72D3512D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DEEA4E248901C2A1F0489EB /* Pods-E.Z Lean.debug.xcconfig */,
+				C759D5717A307D8C0C10B92D /* Pods-E.Z Lean.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		50062A101E470D61002BDE90 = {
 			isa = PBXGroup;
 			children = (
@@ -220,8 +245,8 @@
 				50062A1B1E470D62002BDE90 /* E.Z Lean */,
 				50A67F751E472C4700E463F7 /* Utils */,
 				50062A1A1E470D62002BDE90 /* Products */,
-				F8F68B3F4643132A0C1CA6A1 /* Pods */,
-				DDCF52F607F1FED1E2814F9D /* Frameworks */,
+				24E2E1540F16913B72D3512D /* Pods */,
+				21A5109853C6D5120D24FD30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -458,12 +483,12 @@
 		50AF4C691E48FE2300E8EF8A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F123ED4B1E68CFC0000D24BD /* image */,
 				50AF4C6A1E48FE2300E8EF8A /* Tools.storyboard */,
 				F1D8333C1E47871F00772F42 /* ToolViewController.swift */,
 				F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */,
 				F12644DA1E4B7B0600C5D33C /* WilksCalculatorViewController.swift */,
 				F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */,
-				F1BAB0CE1E65A650008C4399 /* AKPickerView.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -507,22 +532,16 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		DDCF52F607F1FED1E2814F9D /* Frameworks */ = {
+		F123ED4B1E68CFC0000D24BD /* image */ = {
 			isa = PBXGroup;
 			children = (
-				85CB5D73771D1A92DC4FA05A /* Pods_E_Z_Lean.framework */,
-				EBF12600BF5C1EEB48946324 /* Pods_Drawing.framework */,
+				F123ED4C1E68CFEC000D24BD /* Deadlift.png */,
+				F123ED4D1E68CFEC000D24BD /* Food.png */,
+				F1B5C5271E697AFF006BB375 /* back_icon.png */,
+				F1B5C5251E697878006BB375 /* CombinedShape.png */,
+				F123ED4E1E68CFEC000D24BD /* Squat.png */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F8F68B3F4643132A0C1CA6A1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8A1E618EEB7A58EB6E059610 /* Pods-E.Z Lean.debug.xcconfig */,
-				F991C80613185F1F8E5C30F1 /* Pods-E.Z Lean.release.xcconfig */,
-			);
-			name = Pods;
+			name = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,13 +563,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50062A2B1E470D62002BDE90 /* Build configuration list for PBXNativeTarget "E.Z Lean" */;
 			buildPhases = (
-				0042BFF0F704FEEF40AEC81C /* [CP] Check Pods Manifest.lock */,
+				C19E9CEFB61D47D45FA13321 /* [CP] Check Pods Manifest.lock */,
 				50062A151E470D62002BDE90 /* Sources */,
 				50062A161E470D62002BDE90 /* Frameworks */,
 				50062A171E470D62002BDE90 /* Resources */,
-				C01ADD67CBB1BC6E1FDEEB5A /* [CP] Embed Pods Frameworks */,
-				23125D01D19ECB0D08E6B7B0 /* [CP] Copy Pods Resources */,
 				50A67F801E472C4700E463F7 /* Embed Frameworks */,
+				7962E22C84A9C00C2A269BFD /* [CP] Embed Pods Frameworks */,
+				EC362AD45B5B01868B11A20E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -630,14 +649,19 @@
 				50062A271E470D62002BDE90 /* LaunchScreen.storyboard in Resources */,
 				50D89D451E4C166400F56AAF /* test2.html in Resources */,
 				50AF4C6F1E48FE2300E8EF8A /* Articles.storyboard in Resources */,
+				F1B5C5261E697878006BB375 /* CombinedShape.png in Resources */,
 				50AF4C711E48FE2300E8EF8A /* Exercises.storyboard in Resources */,
+				F1B5C5281E697AFF006BB375 /* back_icon.png in Resources */,
 				50D89D431E4C166400F56AAF /* test0.html in Resources */,
 				50062A241E470D62002BDE90 /* Assets.xcassets in Resources */,
 				50AF4C701E48FE2300E8EF8A /* Tools.storyboard in Resources */,
 				50062A221E470D62002BDE90 /* Main.storyboard in Resources */,
 				50D89D441E4C166400F56AAF /* test1.html in Resources */,
 				507F54911E58563C006E296B /* RecentArticleCell.xib in Resources */,
+				F123ED511E68CFEC000D24BD /* Squat.png in Resources */,
+				F123ED4F1E68CFEC000D24BD /* Deadlift.png in Resources */,
 				507F54931E58563C006E296B /* CategoryArticleCell.xib in Resources */,
+				F123ED501E68CFEC000D24BD /* Food.png in Resources */,
 				507F54951E58563C006E296B /* SmallArticleCell.xib in Resources */,
 				50AF4C721E48FE2300E8EF8A /* Coaches.storyboard in Resources */,
 			);
@@ -653,7 +677,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0042BFF0F704FEEF40AEC81C /* [CP] Check Pods Manifest.lock */ = {
+		7962E22C84A9C00C2A269BFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C19E9CEFB61D47D45FA13321 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -668,7 +707,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		23125D01D19ECB0D08E6B7B0 /* [CP] Copy Pods Resources */ = {
+		EC362AD45B5B01868B11A20E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -681,21 +720,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C01ADD67CBB1BC6E1FDEEB5A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -897,7 +921,7 @@
 		};
 		50062A2C1E470D62002BDE90 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A1E618EEB7A58EB6E059610 /* Pods-E.Z Lean.debug.xcconfig */;
+			baseConfigurationReference = 2DEEA4E248901C2A1F0489EB /* Pods-E.Z Lean.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -914,7 +938,7 @@
 		};
 		50062A2D1E470D62002BDE90 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F991C80613185F1F8E5C30F1 /* Pods-E.Z Lean.release.xcconfig */;
+			baseConfigurationReference = C759D5717A307D8C0C10B92D /* Pods-E.Z Lean.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

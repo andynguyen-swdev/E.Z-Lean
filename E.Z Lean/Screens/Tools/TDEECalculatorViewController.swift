@@ -7,20 +7,22 @@
 //
 
 import UIKit
+import IBAnimatable
 
-class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate{
+class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate,UITextFieldDelegate{
     @IBOutlet weak var scrollView: UIScrollView!
     let LB_TO_KG:Double = 0.45359237
     let FOOT_TO_CENTIMETER = 30.48
-    let CALO_IF_GAIN_ONE_KG = 551.0
+    let CALO_IF_GAIN_ONE_KG = 1102.0
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var weightUnit: UISwitch!
     @IBOutlet weak var gainResult: UILabel!
     
     @IBOutlet weak var loseResult: UILabel!
-    @IBOutlet var notify: [UILabel]!
+    
     @IBOutlet weak var calculateButton: UIButton!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var numberofLoseWeight: AnimatableTextField!
+    @IBOutlet weak var numberOfGainWeight: AnimatableTextField!
     
     @IBOutlet weak var result: UILabel!
     @IBOutlet weak var bodyFat: UITextField!
@@ -29,31 +31,49 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var height: UITextField!
     @IBOutlet weak var weight: UITextField!
-    private let pickerViewData = Array(0...49)
     private let numberOfRow = 250
     private let pickerViewMiddle = 125
     let data: [String] = ["Ít vận động(nhân viên văn phòng)","Vận động nhẹ(1-3 lần/tuần)","Vận động vừa(3-5 lần/tuần)","Vận đông nhiều(6-7 lần/tuần)","Vận động tích cực(vận động viên)"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        numberOfGainWeight.delegate = self
+        numberofLoseWeight.delegate = self
         pickerView.dataSource = self
         pickerView.delegate = self
         //scrollView.delegate = self
         pickerView.selectRow(125, inComponent: 0, animated: false)
-        DispatchQueue.main.async {
-            for i in self.notify{
-                i.isHidden = true
-            }
-        }
+        
         gainResult.isHidden = true
         loseResult.isHidden = true
         result.isHidden = true
-        calculateButton.layer.cornerRadius = 5
-        calculateButton.layer.masksToBounds = true
+        
         pickerView.layer.cornerRadius = 10
         pickerView.layer.masksToBounds = true
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        numberOfGainWeight.addTarget(self, action: #selector(gainWeight), for: .editingChanged)
+        numberofLoseWeight.addTarget(self, action: #selector(loseWeight), for: .editingChanged)
         // Do any additional setup after loading the view.
     
     
+    }
+    func gainWeight(){
+        guard let gainTxt = numberOfGainWeight.text else {
+            return
+        }
+        guard let myGainWeight = Double(gainTxt) else {
+            return
+        }
+        showGainLoseLabel(label: gainResult, gainWeight: myGainWeight)
+    }
+    func loseWeight(){
+        guard let LoseTxt = numberofLoseWeight.text else {
+            return
+        }
+        guard let myLoseWeight = Double(LoseTxt) else {
+            return
+        }
+        showGainLoseLabel(label: loseResult, gainWeight: -myLoseWeight)
     }
     // number of  column
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -101,7 +121,7 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
                 return
         }
         guard  let bodyFatTxt = bodyFat.text else {
-           print("ABC")
+           
             return
         }
         guard let myBodyFat = Double(bodyFatTxt) else {
@@ -119,11 +139,8 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
             myResult = bmr*getSelectedValueFromPickerView(selectedRow: pickerView.selectedRow(inComponent: 0))
             result.text = "\(myResult.roundTo(places: 0))"
             result.isHidden = false
-            showGainLabel(result: myResult)
-            
-                for i in self.notify{
-                    i.isHidden = false
-                }
+            numberofLoseWeight.isHidden = false
+            numberOfGainWeight.isHidden = false
             
             return
         }
@@ -131,14 +148,9 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
         myResult = bmr*getSelectedValueFromPickerView(selectedRow: pickerView.selectedRow(inComponent: 0))
         result.text = "\(myResult.roundTo(places: 0))"
         result.isHidden = false
-        DispatchQueue.global().async {
-            for i in self.notify{
-                i.isHidden = false
-            }
-        }
-        showGainLabel(result: myResult)
+        numberofLoseWeight.isHidden = false
+        numberOfGainWeight.isHidden = false
         
-
         
     }
     func BMRFormula(weight: Double,height:Double,age:Double,isMale: Bool) -> Double{
@@ -148,13 +160,16 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
             return 10 * weight  + 6.25 * height - 5 * age - 161
         }
     }
-    func showGainLabel(result:Double){
-        gainResult.isHidden = false
-        loseResult.isHidden = false
-        gainResult.text = "\(result.roundTo(places: 0)+CALO_IF_GAIN_ONE_KG)"
-        loseResult.text = "\(result.roundTo(places: 0)-CALO_IF_GAIN_ONE_KG)"
+    func showGainLoseLabel(label: UILabel,gainWeight: Double){
+        
+        let myResult = Double(result.text!)!+CALO_IF_GAIN_ONE_KG*gainWeight
+        
     }
-   
+    @IBAction func popToRootVC(_ sender: Any) {
+        print("ABC")
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func getSelectedValueFromPickerView(selectedRow: Int)->Double{
         switch selectedRow%5 {
         case 0:
@@ -172,6 +187,9 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
         default:
             return 0.0
         }
+    }
+    @IBAction func popViewController(_ sender: UIButton) {
+//        self.navigationController?.popViewController(animated: true)
     }
     /*
     // MARK: - Navigation
