@@ -25,10 +25,10 @@ class RecentArticleCell: ArticleCell {
         // Initialization code
         
         self.layer.masksToBounds = false
-        layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowRadius = 1
+        layer.shadowOffset = CGSize(width: 0, height: 2)
+        layer.shadowRadius = 2
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0
+        layer.shadowOpacity = 0.5
         
         categoryImage.tintColor = Colors.brightOrange
         setImageRatio(16/9)

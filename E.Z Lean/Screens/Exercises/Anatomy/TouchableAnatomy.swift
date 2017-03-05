@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class TouchableAnatomy: UIControl {
+    var currentBodyPart: Variable<BodyPart?> = Variable(nil)
+    
 	// Calf
 	var calfLeftPath: UIBezierPath!
 	var calfLeft2Path: UIBezierPath!

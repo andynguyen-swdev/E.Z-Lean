@@ -23,6 +23,7 @@ pod 'Popover'
 pod 'RealmSwift'
 pod 'ReachabilitySwift'
 pod 'SlideMenuControllerSwift'
+pod 'LTMorphingLabel'
 end
 
 post_install do |installer|

@@ -93,6 +93,7 @@ extension DatabaseManager {
         }
         
         func createArticles() {
+            guard true == false else { return }
             let category = getArticleCategory(name: "Luyện tập")
             
             let path0 = Bundle.main.path(forResource: "test0", ofType: "html")!

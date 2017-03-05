@@ -26,8 +26,8 @@ class SmallArticleCell: ArticleCell {
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         
         self.layer.masksToBounds = false
-        layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowRadius = 2
+        layer.shadowOffset = CGSize(width: 0, height: 1)
+        layer.shadowRadius = 1
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0
     }

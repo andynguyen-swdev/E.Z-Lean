@@ -1,8 +1,8 @@
 //
-//  BaseArticleCell.swift
+//  BaseTableViewCell.swift
 //  E.Z Lean
 //
-//  Created by Duy Anh on 2/18/17.
+//  Created by Duy Anh on 3/2/17.
 //  Copyright © 2017 E.Z Lean. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class BaseCell: UICollectionViewCell {
+class BaseTableViewCell: UITableViewCell {
     var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
@@ -38,18 +38,11 @@ class BaseCell: UICollectionViewCell {
     class var identifier: String { return nibName }
 }
 
-protocol CellIdentifiable: class {
-    static func registerFor(collectionView: UICollectionView)
+extension CellIdentifiable where Self: BaseTableViewCell {
     
-    associatedtype cellType
-    static var fromNib: cellType { get }
-}
-
-extension CellIdentifiable where Self: BaseCell {
-    
-    static func registerFor(collectionView: UICollectionView) {
+    static func registerFor(tableView: UITableView) {
         let nib = UINib(nibName: Self.nibName, bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: Self.identifier)
+        tableView.register(nib, forCellReuseIdentifier: Self.identifier)
     }
     
     static var fromNib: Self {
@@ -57,3 +50,4 @@ extension CellIdentifiable where Self: BaseCell {
         return cell as! Self
     }
 }
+

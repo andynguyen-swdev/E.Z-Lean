@@ -755,7 +755,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập số" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m5H-Qb-5a9" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                <rect key="frame" x="121.66666666666667" y="27" width="155" height="47"/>
+                                                <rect key="frame" x="122" y="27" width="154.66666666666669" height="47"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -774,6 +774,7 @@
                                         <constraints>
                                             <constraint firstItem="PLN-Bw-soD" firstAttribute="top" secondItem="eca-U3-gvA" secondAttribute="top" constant="5" id="97g-g7-9od"/>
                                             <constraint firstItem="m5H-Qb-5a9" firstAttribute="top" secondItem="PLN-Bw-soD" secondAttribute="bottom" constant="2" id="KN0-oM-aYX"/>
+                                            <constraint firstItem="m5H-Qb-5a9" firstAttribute="width" relation="lessThanOrEqual" secondItem="eca-U3-gvA" secondAttribute="width" constant="-16" id="MJd-cq-lZU"/>
                                             <constraint firstItem="PLN-Bw-soD" firstAttribute="leading" secondItem="eca-U3-gvA" secondAttribute="leading" constant="8" id="Xze-uJ-HqS"/>
                                             <constraint firstAttribute="bottom" secondItem="m5H-Qb-5a9" secondAttribute="bottom" constant="11" id="eMD-6A-BKZ"/>
                                             <constraint firstItem="m5H-Qb-5a9" firstAttribute="centerX" secondItem="eca-U3-gvA" secondAttribute="centerX" id="rPa-y1-Uec"/>

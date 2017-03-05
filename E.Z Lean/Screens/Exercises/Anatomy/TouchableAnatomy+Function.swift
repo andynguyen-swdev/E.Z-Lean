@@ -8,10 +8,6 @@
 
 import UIKit
 
-enum BodyPart {
-    case calf, hamstring, quad, glute, chest, lats, shoulder, biceps, triceps, forearm, core
-}
-
 extension TouchableAnatomy {
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         guard event != nil else { return false }
@@ -27,6 +23,7 @@ extension TouchableAnatomy {
         if let location = touch?.location(in: self) {
             if let bodyPart = getTouchedPart(location: location) {
                 print(bodyPart)
+                self.currentBodyPart.value = bodyPart
             }
         }
     }

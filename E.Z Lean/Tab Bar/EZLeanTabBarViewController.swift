@@ -12,6 +12,9 @@ import RxSwift
 import RxCocoa
 
 class EZLeanTabBarViewController: UITabBarController {
+    static var instance: EZLeanTabBarViewController!
+    
+    var currentIndex = Variable(0)
     var selectingRect: UIView!
     var selectingRectLeftConstraint: NSLayoutConstraint!
     
@@ -22,6 +25,8 @@ class EZLeanTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        EZLeanTabBarViewController.instance = self
+        
         if #available(iOS 10.0, *) {
             tabBar.unselectedItemTintColor = Colors.unselectedTabBarItem
         }
@@ -43,6 +48,7 @@ class EZLeanTabBarViewController: UITabBarController {
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let index = tabBar.items?.index(of: item) else { return }
+        currentIndex.value = index
         animateSelectingRect(index: index)
         
         if let image = tabBar.subviews[index+1].subviews.first {
