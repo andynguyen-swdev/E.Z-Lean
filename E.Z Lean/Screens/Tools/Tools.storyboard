@@ -310,7 +310,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="6qh-Am-8hC" customClass="AnimatableCollectionViewCell" customModule="IBAnimatable">
-                                                <rect key="frame" x="27" y="0.0" width="306" height="36"/>
+                                                <rect key="frame" x="26.5" y="0.0" width="306" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="306" height="36"/>
@@ -507,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0UM-pd-5sj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="-1446.0269865067467"/>
+            <point key="canvasLocation" x="3433" y="-1379"/>
         </scene>
         <!--Wilks Calculator-->
         <scene sceneID="ucq-pS-J2d">
@@ -859,7 +859,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFX-gZ-l3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2545" y="-863"/>
+            <point key="canvasLocation" x="3433" y="-443"/>
         </scene>
         <!--Calculator View Controller-->
         <scene sceneID="r0g-iK-eM6">
@@ -1398,7 +1398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JX-d7-tiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2137.5999999999999" y="174.51274362818592"/>
+            <point key="canvasLocation" x="3432" y="727"/>
         </scene>
     </scenes>
     <resources>
