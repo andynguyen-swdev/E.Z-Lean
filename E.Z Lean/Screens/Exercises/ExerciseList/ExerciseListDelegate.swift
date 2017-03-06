@@ -16,7 +16,7 @@ extension ExerciseListViewController: UITableViewDelegate {
         let yOffset = scrollView.contentOffset.y
         
         if scrollView == self.scrollView {
-            if yOffset >= scrollOffset {
+            if scrollOffset <= yOffset {
                 scrollView.isScrollEnabled = false
                 tableView.isScrollEnabled = true
             }
