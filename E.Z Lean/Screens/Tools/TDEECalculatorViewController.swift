@@ -13,31 +13,42 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
     let LB_TO_KG:Double = 0.45359237
     let FOOT_TO_CENTIMETER = 30.48
     let CALO_IF_GAIN_ONE_KG = 1102.0
+    @IBOutlet weak var scrollView: AnimatableScrollView!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var weightUnit: UISwitch!
-    @IBOutlet weak var gainResult: UILabel!
-    @IBOutlet weak var scrollView: AnimatableScrollView!
-    
-    @IBOutlet weak var loseResult: UILabel!
-    
-    @IBOutlet weak var calculateButton: UIButton!
-    @IBOutlet weak var numberofLoseWeight: AnimatableTextField!
-    @IBOutlet weak var numberOfGainWeight: AnimatableTextField!
     
     @IBOutlet weak var result: UILabel!
-    @IBOutlet weak var bodyFat: UITextField!
+    @IBOutlet weak var gainResult: UILabel!
+    @IBOutlet weak var loseResult: UILabel!
+    
+    @IBOutlet weak var numberofLoseWeight: AnimatableTextField!
+    @IBOutlet weak var numberOfGainWeight: AnimatableTextField!
+ 
     @IBOutlet weak var gender: UISwitch!
     @IBOutlet weak var heightUnit: UISwitch!
+    
+    @IBOutlet weak var bodyFat: UITextField!
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var height: UITextField!
     @IBOutlet weak var weight: UITextField!
+    
     private let numberOfRow = 250
-    private let pickerViewMiddle = 125
     let data: [String] = ["Ít vận động(nhân viên văn phòng)","Vận động nhẹ(1-3 lần/tuần)","Vận động vừa(3-5 lần/tuần)","Vận đông nhiều(6-7 lần/tuần)","Vận động tích cực(vận động viên)"]
+    
     let disposeBag = DisposeBag()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     override func viewDidLoad() {
-        configNavigationCenter()
         super.viewDidLoad()
+        configNavigationCenter(disposeBag: disposeBag, scrollView: scrollView)
+        setUp()
+        componentDidEdited()
+
+    }
+    func setUp(){
         gender.isOn = false
         weightUnit.isOn = false
         heightUnit.isOn = false
@@ -48,6 +59,10 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
         loseResult.isHidden = true
         result.isHidden = true
         pickerView.layer.cornerRadius = 4
+        addDoneButton(textFields: [bodyFat,weight,height,age])
+        addDoneButtonForAnimatableTF(textFields: [numberOfGainWeight,numberofLoseWeight])
+    }
+    func componentDidEdited(){
         numberOfGainWeight.addTarget(self, action: #selector(calculate), for: .editingChanged)
         numberofLoseWeight.addTarget(self, action: #selector(calculate), for: .editingChanged)
         weight.addTarget(self, action: #selector(calculate), for: .editingChanged)
@@ -57,21 +72,12 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
         gender.addTarget(self, action: #selector(calculate), for: .valueChanged)
         weightUnit.addTarget(self, action: #selector(calculate), for: .valueChanged)
         heightUnit.addTarget(self, action: #selector(calculate), for: .valueChanged)
-        
-        
-        // Do any additional setup after loading the view.
-    
-    
     }
-    override func viewWillAppear(_ animated: Bool) {
-        
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-        // number of  column
+  
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    //number of row
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return numberOfRow
     }
@@ -92,11 +98,7 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
         return pickerLabel!
     }
  
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+  
     func calculate() {
         var bmr:Double!
         var myResult:Double!
@@ -190,38 +192,11 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
             return 0.0
         }
     }
-    func configNavigationCenter() {
-        NotificationCenter.default
-            .rx
-            .notification(Notification.Name.UIKeyboardWillChangeFrame)
-            .concat(NotificationCenter
-                .default
-                .rx
-                .notification(Notification.Name.UIKeyboardWillHide)
-            )
-            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInteractive))
-            .subscribe(onNext: { [unowned self] in
-                self.adjustForKeyboard(notification: $0)
-            })
-            .addDisposableTo(disposeBag)
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    func adjustForKeyboard(notification: Notification) {
-        let userInfo = notification.userInfo!
-        
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        let keyboardViewEndFrame = self.view.convert(keyboardScreenEndFrame, from: self.view.window)
-        let intersection = keyboardViewEndFrame.intersection(self.scrollView.frame)
-        
-        if notification.name == Notification.Name.UIKeyboardWillHide {
-            self.scrollView.contentInset.bottom = 0
-        } else {
-            self.scrollView.contentInset.bottom = intersection.height
-        }
-        self.scrollView.scrollIndicatorInsets = self.scrollView.contentInset
-        
-    }
-
     /*
     // MARK: - Navigation
 

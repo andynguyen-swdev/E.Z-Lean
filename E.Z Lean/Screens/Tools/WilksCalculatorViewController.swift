@@ -9,7 +9,7 @@
 import UIKit
 import IBAnimatable
 import RxSwift
-class WilksCalculatorViewController: UIViewController {
+class WilksCalculatorViewController: UIViewController,UITextFieldDelegate {
     let LB_TO_KG:Double = 0.45359237
     let MA:Double = -216.0475144
     let MB:Double = 16.2606339
@@ -27,38 +27,46 @@ class WilksCalculatorViewController: UIViewController {
     @IBOutlet weak var squat: AnimatableTextField!
     @IBOutlet weak var deadLift: AnimatableTextField!
     @IBOutlet weak var benchPress: AnimatableTextField!
+    
     @IBOutlet weak var result: UILabel!
     @IBOutlet weak var label: UILabel!
+    
     @IBOutlet weak var weightUnit: UISwitch!
     @IBOutlet weak var gender: UISwitch!
+    
     @IBOutlet weak var weight: UITextField!
     
-    var heightKeyBoard: CGFloat?
     let disposeBag = DisposeBag()
-    @IBOutlet weak var bottomComponent: AnimatableView!
+    
     @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
-
-  
-       override func viewDidLoad() {
+   override func viewDidLoad() {
         super.viewDidLoad()
+        configNavigationCenter(disposeBag: disposeBag, scrollView: scrollView)
+        setUp()
+        componentsDidEdited()
+        
+        // Do any additional setup after loading the view.
+    }
+    func setUp(){
         result.isHidden = true
         gender.isOn = false
         weightUnit.isOn = false
-        configNavigationCenter()
+        addDoneButton(textFields: [weight])
+        addDoneButtonForAnimatableTF(textFields: [squat,deadLift,benchPress])
+        
+    }
+    func componentsDidEdited(){
         gender.addTarget(self, action: #selector(calculate), for: .valueChanged)
         weightUnit.addTarget(self, action: #selector(calculate), for: .valueChanged)
         weight.addTarget(self, action: #selector(calculate), for: .editingChanged)
         benchPress.addTarget(self, action: #selector(calculate), for: .editingChanged)
         deadLift.addTarget(self, action: #selector(calculate), for: .editingChanged)
         squat.addTarget(self, action: #selector(calculate), for: .editingChanged)
-        // Do any additional setup after loading the view.
-    }
-    func addConstraintForScrollView(height: CGFloat){
-        NSLayoutConstraint(item: bottomComponent, attribute: .bottom, relatedBy: .equal, toItem: bottomComponent.superview, attribute: .bottom, multiplier: 1, constant: -height).isActive = true
     }
     func calculate(_ sender: Any) {
         var myResult:Double!
@@ -92,9 +100,6 @@ class WilksCalculatorViewController: UIViewController {
         }
         result.isHidden = false
         result.text = "\(Int(myResult))"
-        
-        
-        
     }
     func wilksFormula(myWeight:Double,myLifted:Double,a:Double,b:Double,c:Double,d:Double,e:Double,f:Double)
         ->Double{
@@ -103,7 +108,6 @@ class WilksCalculatorViewController: UIViewController {
             
     }
     @IBAction func popToRootVC(_ sender: Any) {
-        print("ABC")
         self.navigationController?.popViewController(animated: true)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
 
@@ -113,38 +117,7 @@ class WilksCalculatorViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func configNavigationCenter() {
-        NotificationCenter.default
-            .rx
-            .notification(Notification.Name.UIKeyboardWillChangeFrame)
-            .concat(NotificationCenter
-                .default
-                .rx
-                .notification(Notification.Name.UIKeyboardWillHide)
-            )
-            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInteractive))
-            .subscribe(onNext: { [unowned self] in
-                self.adjustForKeyboard(notification: $0)
-            })
-            .addDisposableTo(disposeBag)
-    }
-    
-    func adjustForKeyboard(notification: Notification) {
-        let userInfo = notification.userInfo!
-        
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        let keyboardViewEndFrame = self.view.convert(keyboardScreenEndFrame, from: self.view.window)
-        let intersection = keyboardViewEndFrame.intersection(self.scrollView.frame)
-        
-        if notification.name == Notification.Name.UIKeyboardWillHide {
-            self.scrollView.contentInset.bottom = 0
-        } else {
-            self.scrollView.contentInset.bottom = intersection.height
-        }
-        self.scrollView.scrollIndicatorInsets = self.scrollView.contentInset
-        
-    }
+
 
     /*
     // MARK: - Navigation

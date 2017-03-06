@@ -27,77 +27,6 @@
             </objects>
             <point key="canvasLocation" x="-369" y="-442"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Xgv-ga-LfQ">
-            <objects>
-                <viewController id="hwc-55-Voh" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ad9-fu-A9Q"/>
-                        <viewControllerLayoutGuide type="bottom" id="lbJ-Qw-kqe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="e6v-dc-i0M">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MCq-CZ-cU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="126" y="-1101"/>
-        </scene>
-        <!--Tools-->
-        <scene sceneID="oVc-bd-gv2">
-            <objects>
-                <viewController id="VMM-04-Zp4" customClass="ToolViewController" customModule="E_Z_Lean" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eAN-4W-5Hj"/>
-                        <viewControllerLayoutGuide type="bottom" id="iKG-d5-bTe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kUN-Fa-PDq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yj-lT-2fW">
-                                <rect key="frame" x="61" y="336" width="199" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90588235294117647" green="0.62352941176470589" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
-                                <state key="normal" title="Tính chỉ số Wilks">
-                                    <color key="titleColor" red="1" green="0.94713685213958521" blue="0.85686421982348882" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MD-b3-Fmn">
-                                <rect key="frame" x="61" y="215" width="199" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90588235294117647" green="0.62352941176470589" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
-                                <state key="normal" title="Tính chỉ số TDEE">
-                                    <color key="titleColor" red="1" green="0.91279071176185689" blue="0.92205759663274334" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dm-xZ-BcN">
-                                <rect key="frame" x="61" y="104" width="199" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90588235294117647" green="0.62352941176470589" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
-                                <state key="normal" title="Tính chỉ số 1RM">
-                                    <color key="titleColor" red="1" green="0.91113221630999741" blue="0.97954161023929509" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Tools" id="GOm-m9-KLB"/>
-                    <connections>
-                        <outlet property="button1" destination="4Dm-xZ-BcN" id="tKK-2w-PvT"/>
-                        <outlet property="button2" destination="3Yj-lT-2fW" id="3sP-a7-ul4"/>
-                        <outlet property="button3" destination="9MD-b3-Fmn" id="5Qs-a0-GAK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eub-yj-A5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="615" y="-443.75"/>
-        </scene>
         <!--Công cụ-->
         <scene sceneID="0wx-or-o5T">
             <objects>
@@ -381,7 +310,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="6qh-Am-8hC" customClass="AnimatableCollectionViewCell" customModule="IBAnimatable">
-                                                <rect key="frame" x="26.5" y="0.0" width="306" height="36"/>
+                                                <rect key="frame" x="27" y="0.0" width="306" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="306" height="36"/>
@@ -919,7 +848,6 @@
                     <navigationItem key="navigationItem" title="Wilks Calculator" id="CNe-iS-OKk"/>
                     <connections>
                         <outlet property="benchPress" destination="wM5-pf-9EI" id="tYH-by-32y"/>
-                        <outlet property="bottomComponent" destination="xrD-kA-4ko" id="xLI-AC-GJR"/>
                         <outlet property="deadLift" destination="m5H-Qb-5a9" id="LSN-Vh-o5g"/>
                         <outlet property="gender" destination="dvs-Ct-141" id="kF6-Zt-CEH"/>
                         <outlet property="result" destination="Y4N-1m-hm2" id="cwG-a1-cK3"/>
