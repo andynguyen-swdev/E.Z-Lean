@@ -22,13 +22,18 @@ extension TouchableAnatomy {
 //            .addDisposableTo(disposeBag)
     }
     
+    func selectBodyPart(_ bodyPart: BodyPart?) {
+        guard let bodyPart = bodyPart else { return }
+        self.currentBodyPart.value = bodyPart
+    }
+    
     func touched(at location: CGPoint) {
         if let bodyPart = getTouchedPart(location: location) {
             self.currentBodyPart.value = bodyPart
         }
     }
     
-    private func getTouchedPart(location: CGPoint) -> BodyPart? {
+    func getTouchedPart(location: CGPoint) -> BodyPart? {
         if location.isIn(calfPaths) {
             return .calf
         }

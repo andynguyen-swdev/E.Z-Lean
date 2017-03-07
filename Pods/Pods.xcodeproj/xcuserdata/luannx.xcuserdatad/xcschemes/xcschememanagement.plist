@@ -9,27 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>CHTCollectionViewWaterfallLayout.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>IBAnimatable.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Material-io.cosmicmind.material.fonts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Material-io.cosmicmind.material.icons.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Material.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -44,6 +24,26 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Popover.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReachabilitySwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RealmSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RxCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -54,12 +54,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RxRealm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RxSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RxSwiftExt.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SlideMenuControllerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,12 +87,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>10106EE6ECECC17757B3E17467BF85E2</key>
+		<key>104E0AAA71B279C974DA2E8E61CCA570</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1B1D273869ABD048668655565FABD91A</key>
+		<key>1A0A90869C2AA8CFB13C3A44F06B5BA2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2FE85200C33A969189045CE663C127C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>34C215C7BD56F731EB098AB16673EDB5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4017B0B8815FF792314F1A877AAA2243</key>
+		<key>3E995DD3D825D2B2860591EA63CD399D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A2F765C0008E6907A56FA900AB21F77</key>
+		<key>3F606D97EFDC0985D97DBC62835FD894</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48D1B7CCBAE0E519051C4765A59F66D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6A783ACFA499851FC1F366540EF16B90</key>
+		<key>56679CC467BE17E13693745CA2FCA4F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7AC99A7CA11CF7FA8D784292E8078F7B</key>
+		<key>75C97CC902914552D3239E255825FB97</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83A4BA10E4D0E25035DE87C05B9EEBC7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,22 +152,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>895526568B8741F59CEA89FDD66770A2</key>
+		<key>CB27321172BF1D7989BCB86F15F145BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A197C081A082042562B6F8F3B345A0A4</key>
+		<key>F65A6F6F6B384AF5B74B8118E544CE43</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C10A3D56D9722EC76584E3911946028F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DE3A290D3216612378829CB8E4A76B7C</key>
+		<key>FC23485102BD59C148C230EBDF488311</key>
 		<dict>
 			<key>primary</key>
 			<true/>

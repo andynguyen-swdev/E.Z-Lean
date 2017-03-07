@@ -58,6 +58,19 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
                 self.anatomyControl.touched(at: location)
             })
             .addDisposableTo(disposeBag)
+        
+        let longPressGesture = UILongPressGestureRecognizer(target: nil, action: nil)
+        anatomyControl.rx.gesture(longPressGesture)
+            .subscribe(onNext: { [unowned self] gesture in
+                let location = gesture.location(in: self.anatomyControl)
+                let bodyPart = self.anatomyControl.getTouchedPart(location: location)
+                if gesture.state == .ended {
+                    self.anatomyControl.selectBodyPart(bodyPart)
+                    return
+                }
+                self.navigationItem.title = bodyPart?.name ?? "Các bộ phận cơ thể"
+            })
+            .addDisposableTo(disposeBag)
     }
     
     func configTabBar() {

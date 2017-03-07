@@ -106,6 +106,7 @@
 		F123ED501E68CFEC000D24BD /* Food.png in Resources */ = {isa = PBXBuildFile; fileRef = F123ED4D1E68CFEC000D24BD /* Food.png */; };
 		F123ED511E68CFEC000D24BD /* Squat.png in Resources */ = {isa = PBXBuildFile; fileRef = F123ED4E1E68CFEC000D24BD /* Squat.png */; };
 		F12644DB1E4B7B0600C5D33C /* WilksCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12644DA1E4B7B0600C5D33C /* WilksCalculatorViewController.swift */; };
+		F1335C9D1E6D866D00DFCA6B /* ViewControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1335C9C1E6D866D00DFCA6B /* ViewControllerUtils.swift */; };
 		F164A41F1E4F621A0084F6B3 /* TDEECalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */; };
 		F1B5C5261E697878006BB375 /* CombinedShape.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B5C5251E697878006BB375 /* CombinedShape.png */; };
 		F1B5C5281E697AFF006BB375 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B5C5271E697AFF006BB375 /* back_icon.png */; };
@@ -242,6 +243,7 @@
 		F123ED4D1E68CFEC000D24BD /* Food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Food.png; sourceTree = "<group>"; };
 		F123ED4E1E68CFEC000D24BD /* Squat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Squat.png; sourceTree = "<group>"; };
 		F12644DA1E4B7B0600C5D33C /* WilksCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WilksCalculatorViewController.swift; sourceTree = "<group>"; };
+		F1335C9C1E6D866D00DFCA6B /* ViewControllerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerUtils.swift; sourceTree = "<group>"; };
 		F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDEECalculatorViewController.swift; sourceTree = "<group>"; };
 		F1B5C5251E697878006BB375 /* CombinedShape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CombinedShape.png; sourceTree = "<group>"; };
 		F1B5C5271E697AFF006BB375 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 				F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */,
 				F12644DA1E4B7B0600C5D33C /* WilksCalculatorViewController.swift */,
 				F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */,
+				F1335C9C1E6D866D00DFCA6B /* ViewControllerUtils.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -869,6 +872,7 @@
 				F164A41F1E4F621A0084F6B3 /* TDEECalculatorViewController.swift in Sources */,
 				5052D9401E6C59AF000784DD /* ExercisePhotosDataSource.swift in Sources */,
 				501D61CF1E4CDC6C00E9C859 /* CategoryViewController.swift in Sources */,
+				F1335C9D1E6D866D00DFCA6B /* ViewControllerUtils.swift in Sources */,
 				50B7C1061E6C0AC100C7DD76 /* ExerciseViewController.swift in Sources */,
 				5042098C1E55E00F005AC8D4 /* CategoryViewDelegate.swift in Sources */,
 				504209881E55DF79005AC8D4 /* Article.swift in Sources */,

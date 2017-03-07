@@ -53,16 +53,7 @@ class ToolViewController: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //let touch = UITouch()
-            let location = touches.first?.location(in: self.button3)
-            print(location)
-            print(button3.point(inside: location!, with: nil))
-            if ((button3.layer.presentation()?.hitTest(location!)) != nil){
-                print("ABC")
-            }
-        
-    }
+   
     
 }
 extension UIButton{
