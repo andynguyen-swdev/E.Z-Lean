@@ -170,8 +170,8 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
         
     }
     @IBAction func popToRootVC(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        _ = self.navigationController?.popViewController(animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         calculate()

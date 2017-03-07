@@ -60,7 +60,7 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
             .addDisposableTo(disposeBag)
         
         let longPressGesture = UILongPressGestureRecognizer(target: nil, action: nil)
-        anatomyControl.rx.gesture(longPressGesture)
+        scrollView.rx.gesture(longPressGesture)
             .subscribe(onNext: { [unowned self] gesture in
                 let location = gesture.location(in: self.anatomyControl)
                 let bodyPart = self.anatomyControl.getTouchedPart(location: location)

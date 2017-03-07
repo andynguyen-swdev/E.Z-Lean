@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class OneRMCalculatorViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+class OneRMCalculatorViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var reps: UITextField!
     
@@ -117,17 +117,16 @@ class OneRMCalculatorViewController: UIViewController,UICollectionViewDataSource
         }
     }
     @IBAction func popToRootVc(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        _ = self.navigationController?.popViewController(animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
-   
-
-
-
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.width, height: 37)
+    }
 }

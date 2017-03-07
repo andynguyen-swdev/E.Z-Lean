@@ -253,7 +253,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="LNT-UG-Yr4">
-                                                <rect key="frame" x="0.0" y="-2" width="349" height="266"/>
+                                                <rect key="frame" x="0.0" y="-2.5" width="349" height="266"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="349" height="266"/>

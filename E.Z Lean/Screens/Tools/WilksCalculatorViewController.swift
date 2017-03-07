@@ -108,8 +108,8 @@ class WilksCalculatorViewController: UIViewController,UITextFieldDelegate {
             
     }
     @IBAction func popToRootVC(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        _ = self.navigationController?.popViewController(animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
 
     }
 
