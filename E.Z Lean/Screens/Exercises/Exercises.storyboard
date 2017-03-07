@@ -89,109 +89,104 @@
                         <viewControllerLayoutGuide type="top" id="lne-qa-Zxh"/>
                         <viewControllerLayoutGuide type="bottom" id="a6d-tj-cCQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4x1-SL-wql">
+                    <view key="view" contentMode="scaleToFill" id="4x1-SL-wql" userLabel="Root View">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Yz-jo-sIw">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mv4-70-Qgn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joG-kq-fUh" userLabel="Body Part Image Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biceps.png" translatesAutoresizingMaskIntoConstraints="NO" id="BEt-tw-koM">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6u9-BD-IP9">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biceps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzy-Kt-5wD" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                        <rect key="frame" x="149" y="54" width="77" height="32.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="26"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <size key="shadowOffset" width="1" height="1"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="Nzy-Kt-5wD" firstAttribute="centerX" secondItem="6u9-BD-IP9" secondAttribute="centerX" id="1mF-LZ-0Io"/>
-                                                    <constraint firstItem="Nzy-Kt-5wD" firstAttribute="centerY" secondItem="6u9-BD-IP9" secondAttribute="centerY" id="bSD-wx-vDK"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="6u9-BD-IP9" secondAttribute="bottom" id="Dra-dd-YND"/>
-                                            <constraint firstItem="6u9-BD-IP9" firstAttribute="leading" secondItem="joG-kq-fUh" secondAttribute="leading" id="EzL-ZM-kpp"/>
-                                            <constraint firstItem="BEt-tw-koM" firstAttribute="top" secondItem="joG-kq-fUh" secondAttribute="top" id="ILx-af-dme"/>
-                                            <constraint firstItem="6u9-BD-IP9" firstAttribute="top" secondItem="joG-kq-fUh" secondAttribute="top" id="SLj-uc-8po"/>
-                                            <constraint firstAttribute="width" secondItem="joG-kq-fUh" secondAttribute="height" multiplier="24/9" id="bgc-Ko-mNe"/>
-                                            <constraint firstItem="BEt-tw-koM" firstAttribute="leading" secondItem="joG-kq-fUh" secondAttribute="leading" id="gpI-c1-S0d"/>
-                                            <constraint firstAttribute="trailing" secondItem="6u9-BD-IP9" secondAttribute="trailing" id="iDL-fA-9Hl"/>
-                                            <constraint firstAttribute="bottom" secondItem="BEt-tw-koM" secondAttribute="bottom" id="uIi-eS-31I"/>
-                                            <constraint firstAttribute="trailing" secondItem="BEt-tw-koM" secondAttribute="trailing" id="urI-8e-EF9"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqA-8G-ySf">
-                                        <rect key="frame" x="0.0" y="140" width="375" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cấu trúc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvC-Ja-VMr">
-                                                <rect key="frame" x="20" y="15" width="63" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-AJ-VOH">
-                                                <rect key="frame" x="351" y="14" width="8" height="22"/>
-                                                <state key="normal" image="Disclosure Indicator"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT7-Y7-fsu">
-                                                <rect key="frame" x="317" y="14" width="22" height="22"/>
-                                                <state key="normal" image="Detail Disclosure"/>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.81568627449999997" green="0.52549019610000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="RT7-Y7-fsu" firstAttribute="centerY" secondItem="YqA-8G-ySf" secondAttribute="centerY" id="9uf-um-Qrb"/>
-                                            <constraint firstItem="vvC-Ja-VMr" firstAttribute="centerY" secondItem="YqA-8G-ySf" secondAttribute="centerY" id="EFY-5p-rt4"/>
-                                            <constraint firstItem="fLd-AJ-VOH" firstAttribute="leading" secondItem="RT7-Y7-fsu" secondAttribute="trailing" constant="12" id="RNw-Mi-U1I"/>
-                                            <constraint firstAttribute="height" constant="50" id="ScE-F8-quD"/>
-                                            <constraint firstAttribute="trailing" secondItem="fLd-AJ-VOH" secondAttribute="trailing" constant="16" id="dL2-nM-nzO"/>
-                                            <constraint firstItem="fLd-AJ-VOH" firstAttribute="centerY" secondItem="YqA-8G-ySf" secondAttribute="centerY" id="gu4-bb-ZjR"/>
-                                            <constraint firstItem="vvC-Ja-VMr" firstAttribute="leading" secondItem="YqA-8G-ySf" secondAttribute="leading" constant="20" id="kNR-oa-ZPB"/>
-                                        </constraints>
-                                    </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mv4-70-Qgn">
-                                        <rect key="frame" x="0.0" y="190.5" width="375" height="554"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="YqA-8G-ySf" firstAttribute="top" secondItem="joG-kq-fUh" secondAttribute="bottom" id="5aV-Uz-OQI"/>
-                                    <constraint firstAttribute="trailing" secondItem="mv4-70-Qgn" secondAttribute="trailing" id="93l-Be-JRn"/>
-                                    <constraint firstItem="YqA-8G-ySf" firstAttribute="leading" secondItem="5Yz-jo-sIw" secondAttribute="leading" id="988-3J-UrC"/>
-                                    <constraint firstAttribute="trailing" secondItem="joG-kq-fUh" secondAttribute="trailing" id="Emt-xl-IIr"/>
-                                    <constraint firstItem="joG-kq-fUh" firstAttribute="top" secondItem="5Yz-jo-sIw" secondAttribute="top" id="Iok-DA-32G"/>
-                                    <constraint firstItem="joG-kq-fUh" firstAttribute="leading" secondItem="5Yz-jo-sIw" secondAttribute="leading" id="X9V-fR-NPG"/>
-                                    <constraint firstItem="mv4-70-Qgn" firstAttribute="top" secondItem="YqA-8G-ySf" secondAttribute="bottom" id="bsl-ti-w2r"/>
-                                    <constraint firstItem="mv4-70-Qgn" firstAttribute="leading" secondItem="5Yz-jo-sIw" secondAttribute="leading" id="cAG-Ft-vhg"/>
-                                    <constraint firstAttribute="bottom" secondItem="mv4-70-Qgn" secondAttribute="bottom" id="eCe-Go-UmS"/>
-                                    <constraint firstAttribute="trailing" secondItem="YqA-8G-ySf" secondAttribute="trailing" id="myX-eo-ZQe"/>
-                                </constraints>
-                            </scrollView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="3zx-WI-VBO" userLabel="Header">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="190.5"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joG-kq-fUh" userLabel="Body Part Image Container">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biceps.png" translatesAutoresizingMaskIntoConstraints="NO" id="BEt-tw-koM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
+                                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6u9-BD-IP9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biceps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzy-Kt-5wD" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                            <rect key="frame" x="149" y="54.5" width="78" height="32"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <size key="shadowOffset" width="1" height="1"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Nzy-Kt-5wD" firstAttribute="centerX" secondItem="6u9-BD-IP9" secondAttribute="centerX" id="1mF-LZ-0Io"/>
+                                                        <constraint firstItem="Nzy-Kt-5wD" firstAttribute="centerY" secondItem="6u9-BD-IP9" secondAttribute="centerY" id="bSD-wx-vDK"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="6u9-BD-IP9" secondAttribute="bottom" id="Dra-dd-YND"/>
+                                                <constraint firstItem="6u9-BD-IP9" firstAttribute="leading" secondItem="joG-kq-fUh" secondAttribute="leading" id="EzL-ZM-kpp"/>
+                                                <constraint firstItem="BEt-tw-koM" firstAttribute="top" secondItem="joG-kq-fUh" secondAttribute="top" id="ILx-af-dme"/>
+                                                <constraint firstItem="6u9-BD-IP9" firstAttribute="top" secondItem="joG-kq-fUh" secondAttribute="top" id="SLj-uc-8po"/>
+                                                <constraint firstAttribute="width" secondItem="joG-kq-fUh" secondAttribute="height" multiplier="24/9" id="bgc-Ko-mNe"/>
+                                                <constraint firstItem="BEt-tw-koM" firstAttribute="leading" secondItem="joG-kq-fUh" secondAttribute="leading" id="gpI-c1-S0d"/>
+                                                <constraint firstAttribute="trailing" secondItem="6u9-BD-IP9" secondAttribute="trailing" id="iDL-fA-9Hl"/>
+                                                <constraint firstAttribute="bottom" secondItem="BEt-tw-koM" secondAttribute="bottom" id="uIi-eS-31I"/>
+                                                <constraint firstAttribute="trailing" secondItem="BEt-tw-koM" secondAttribute="trailing" id="urI-8e-EF9"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqA-8G-ySf">
+                                            <rect key="frame" x="0.0" y="140.5" width="375" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cấu tạo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvC-Ja-VMr">
+                                                    <rect key="frame" x="20" y="13.5" width="65" height="23"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-AJ-VOH">
+                                                    <rect key="frame" x="351" y="14" width="8" height="22"/>
+                                                    <state key="normal" image="Disclosure Indicator"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT7-Y7-fsu">
+                                                    <rect key="frame" x="317" y="14" width="22" height="22"/>
+                                                    <state key="normal" image="Detail Disclosure"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.81568627449999997" green="0.52549019610000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="RT7-Y7-fsu" firstAttribute="centerY" secondItem="YqA-8G-ySf" secondAttribute="centerY" id="9uf-um-Qrb"/>
+                                                <constraint firstItem="vvC-Ja-VMr" firstAttribute="centerY" secondItem="YqA-8G-ySf" secondAttribute="centerY" id="EFY-5p-rt4"/>
+                                                <constraint firstItem="fLd-AJ-VOH" firstAttribute="leading" secondItem="RT7-Y7-fsu" secondAttribute="trailing" constant="12" id="RNw-Mi-U1I"/>
+                                                <constraint firstAttribute="height" constant="50" id="ScE-F8-quD"/>
+                                                <constraint firstAttribute="trailing" secondItem="fLd-AJ-VOH" secondAttribute="trailing" constant="16" id="dL2-nM-nzO"/>
+                                                <constraint firstItem="fLd-AJ-VOH" firstAttribute="centerY" secondItem="YqA-8G-ySf" secondAttribute="centerY" id="gu4-bb-ZjR"/>
+                                                <constraint firstItem="vvC-Ja-VMr" firstAttribute="leading" secondItem="YqA-8G-ySf" secondAttribute="leading" constant="20" id="kNR-oa-ZPB"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="YqA-8G-ySf" secondAttribute="bottom" id="DFu-i8-6sk"/>
+                                        <constraint firstItem="YqA-8G-ySf" firstAttribute="leading" secondItem="3zx-WI-VBO" secondAttribute="leading" id="EDl-tB-91y"/>
+                                        <constraint firstItem="joG-kq-fUh" firstAttribute="leading" secondItem="3zx-WI-VBO" secondAttribute="leading" id="Eq7-ed-U8n"/>
+                                        <constraint firstAttribute="trailing" secondItem="YqA-8G-ySf" secondAttribute="trailing" id="YC8-v7-hif"/>
+                                        <constraint firstAttribute="trailing" secondItem="joG-kq-fUh" secondAttribute="trailing" id="hye-dF-Ln0"/>
+                                        <constraint firstItem="YqA-8G-ySf" firstAttribute="top" secondItem="joG-kq-fUh" secondAttribute="bottom" id="ilV-4y-vy8"/>
+                                        <constraint firstItem="joG-kq-fUh" firstAttribute="top" secondItem="3zx-WI-VBO" secondAttribute="top" id="o3k-eI-u6Q"/>
+                                    </constraints>
+                                </view>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5Yz-jo-sIw" firstAttribute="leading" secondItem="4x1-SL-wql" secondAttribute="leading" id="Cm5-eg-aC4"/>
-                            <constraint firstAttribute="trailing" secondItem="5Yz-jo-sIw" secondAttribute="trailing" id="K59-cO-Axc"/>
-                            <constraint firstItem="5Yz-jo-sIw" firstAttribute="top" secondItem="4x1-SL-wql" secondAttribute="top" id="M74-yG-UCC"/>
-                            <constraint firstItem="YqA-8G-ySf" firstAttribute="width" secondItem="4x1-SL-wql" secondAttribute="width" id="O5p-Yc-t4Y"/>
-                            <constraint firstItem="mv4-70-Qgn" firstAttribute="height" secondItem="4x1-SL-wql" secondAttribute="height" id="bET-Pu-Wbi"/>
-                            <constraint firstAttribute="bottom" secondItem="5Yz-jo-sIw" secondAttribute="bottom" id="oUj-9D-EaV"/>
-                            <constraint firstItem="joG-kq-fUh" firstAttribute="width" secondItem="4x1-SL-wql" secondAttribute="width" id="rlO-f9-sgb"/>
-                            <constraint firstItem="mv4-70-Qgn" firstAttribute="width" secondItem="4x1-SL-wql" secondAttribute="width" id="rzv-HO-Ydy"/>
+                            <constraint firstItem="mv4-70-Qgn" firstAttribute="leading" secondItem="4x1-SL-wql" secondAttribute="leading" id="ALc-te-UyA"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="mv4-70-Qgn" secondAttribute="bottom" id="Ho7-RE-Kyj"/>
+                            <constraint firstAttribute="trailing" secondItem="mv4-70-Qgn" secondAttribute="trailing" id="onz-eK-c1O"/>
+                            <constraint firstAttribute="topMargin" secondItem="mv4-70-Qgn" secondAttribute="top" id="yiQ-VI-qWc"/>
                         </constraints>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
@@ -204,7 +199,6 @@
                         <outlet property="bodyPartImageView" destination="BEt-tw-koM" id="D5C-KA-bvR"/>
                         <outlet property="bodyPartImageViewOverlay" destination="6u9-BD-IP9" id="6Di-AF-UGl"/>
                         <outlet property="bodyPartNameLabel" destination="Nzy-Kt-5wD" id="IkY-qf-mvL"/>
-                        <outlet property="scrollView" destination="5Yz-jo-sIw" id="6rw-O5-93R"/>
                         <outlet property="tableView" destination="mv4-70-Qgn" id="o4a-Fz-Pzm"/>
                         <segue destination="7hz-Xg-4as" kind="show" identifier="ExerciseListToExercise" id="BR8-AO-hB1"/>
                     </connections>
@@ -213,10 +207,10 @@
             </objects>
             <point key="canvasLocation" x="2540" y="-442.12893553223392"/>
         </scene>
-        <!--View Controller-->
+        <!--Exercise View Controller-->
         <scene sceneID="J2G-Lq-mNO">
             <objects>
-                <viewController id="7hz-Xg-4as" sceneMemberID="viewController">
+                <viewController id="7hz-Xg-4as" customClass="ExerciseViewController" customModule="E_Z_Lean" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rBw-vH-XoO"/>
                         <viewControllerLayoutGuide type="bottom" id="t9e-uj-yGw"/>
@@ -229,13 +223,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulgarian Split Squat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDs-iw-c0K">
-                                        <rect key="frame" x="94.5" y="10.5" width="187" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="102" y="11.5" width="171.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.81568627450980391" green="0.52549019607843139" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.52549019610000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="nDs-iw-c0K" firstAttribute="centerY" secondItem="l5T-oj-Zwn" secondAttribute="centerY" id="6DX-bB-gcr"/>
                                     <constraint firstAttribute="height" constant="44" id="jSe-lY-zSV"/>
@@ -245,259 +239,200 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWy-Pe-Id7">
                                 <rect key="frame" x="0.0" y="44" width="375" height="643"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OEB-ic-mfc">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OEB-ic-mfc">
                                         <rect key="frame" x="8" y="8" width="359" height="261.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="OEB-ic-mfc" secondAttribute="height" multiplier="350/255" id="AnJ-a5-QAR"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="IT5-Bz-XtO">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="IT5-Bz-XtO">
                                             <size key="itemSize" width="349" height="266"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LNT-UG-Yr4">
-                                                <rect key="frame" x="5" y="0.0" width="349" height="266"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="LNT-UG-Yr4">
+                                                <rect key="frame" x="0.0" y="-2" width="349" height="266"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="349" height="266"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="iW2-xU-cJq">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="iW2-xU-cJq">
                                                             <rect key="frame" x="0.0" y="0.0" width="349" height="266"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
+                                                <constraints>
+                                                    <constraint firstItem="iW2-xU-cJq" firstAttribute="leading" secondItem="LNT-UG-Yr4" secondAttribute="leading" id="0Sz-FF-7Uf"/>
+                                                    <constraint firstItem="iW2-xU-cJq" firstAttribute="top" secondItem="LNT-UG-Yr4" secondAttribute="top" id="FRd-3E-LIk"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iW2-xU-cJq" secondAttribute="bottom" id="N7Y-JQ-Twe"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iW2-xU-cJq" secondAttribute="trailing" id="NYP-5N-9Pc"/>
+                                                </constraints>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="q1Z-BY-Ghu">
                                         <rect key="frame" x="168" y="269.5" width="39" height="37"/>
-                                        <color key="pageIndicatorTintColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="currentPageIndicatorTintColor" red="0.81568627450980391" green="0.52549019607843139" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="pageIndicatorTintColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="0.54896190068493156" colorSpace="calibratedRGB"/>
+                                        <color key="currentPageIndicatorTintColor" red="0.81568627449999997" green="0.52549019610000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </pageControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3S-sb-QFy">
-                                        <rect key="frame" x="16" y="306.5" width="343" height="250.5"/>
+                                        <rect key="frame" x="16" y="306.5" width="343" height="245.5"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Dụng cụ: ">
+                                            <fragment content="Dụng cụ:">
                                                 <attributes>
-                                                    <color key="NSColor" red="0.29021999999999998" green="0.29017999999999999" blue="0.29024" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
                                                     <real key="NSKern" value="-0.40000000000000002"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="84">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="112">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="140">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="168">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="196">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="224">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="252">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="280">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="308">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="336">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
+                                                    <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <string key="content">Tạ đơn, ghế
+                                                <string key="content"> Tạ đơn, ghế
 
 </string>
                                                 <attributes>
-                                                    <color key="NSColor" red="0.29021999999999998" green="0.29017999999999999" blue="0.29024" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="15" name="HelveticaNeue-Medium"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                     <real key="NSKern" value="-0.40000000000000002"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="84">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="112">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="140">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="168">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="196">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="224">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="252">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="280">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="308">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="336">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
+                                                    <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment>
-                                                <string key="content">Cách thực hiện:
-</string>
+                                            <fragment content="Cách thực hiện:">
                                                 <attributes>
-                                                    <color key="NSColor" red="0.29021999999999998" green="0.29017999999999999" blue="0.29024" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
                                                     <real key="NSKern" value="-0.40000000000000002"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="84">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="112">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="140">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="168">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="196">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="224">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="252">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="280">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="308">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="336">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
+                                                    <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
                                                 <string key="content">
-1. Hai tay nắm tạ, đứng cách ghế tập khoảng 3 bước chân
-2. Đưa chân thuận đặt lên ghế trước
-3 .Giữ thẳng lưng, hạ người xuống cho tới khi cảm thấy căng ở đùi trước của chân đặt lên ghế
-4. Dùng sức của hông và chân phía trước đưa cơ thể về vị trí đứng ban đầu
-5. Lặp lại theo số lần đưa ra, rồi đổi chân
-6. Lưu ý: Ở điểm thấp nhất, đùi và cẳng chân của chân phía trước tạo thành góc 90 độ</string>
+
+1. Hai tay nắm tạ, đứng cách ghế tập khoảng 3 bước chân</string>
                                                 <attributes>
-                                                    <color key="NSColor" red="0.29021999999999998" green="0.29017999999999999" blue="0.29024" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="15" name="HelveticaNeue-Medium"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                     <real key="NSKern" value="-0.40000000000000002"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="84">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="112">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="140">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="168">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="196">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="224">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="252">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="280">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="308">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="336">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
+                                                    <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <real key="NSKern" value="-0.40000000000000002"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+2. Đưa chân thuận đặt lên ghế trước</string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <real key="NSKern" value="-0.40000000000000002"/>
+                                                    <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <real key="NSKern" value="-0.40000000000000002"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+3. Giữ thẳng lưng, hạ người xuống cho tới khi cảm thấy căng ở đùi trước của chân đặt lên ghế</string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <real key="NSKern" value="-0.40000000000000002"/>
+                                                    <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <real key="NSKern" value="-0.40000000000000002"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+4. Dùng sức của hông và chân phía trước đưa cơ thể về vị trí đứng ban đầu
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <real key="NSKern" value="-0.40000000000000002"/>
+                                                    <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <real key="NSKern" value="-0.40000000000000002"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">5. Lặp lại theo số lần đưa ra, rồi đổi chân
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <real key="NSKern" value="-0.40000000000000002"/>
+                                                    <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <real key="NSKern" value="-0.40000000000000002"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="6. Lưu ý: Ở điểm thấp nhất, đùi và cẳng chân của chân phía trước tạo thành góc 90 độ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <real key="NSKern" value="-0.40000000000000002"/>
+                                                    <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJK-Ta-3zu" userLabel="Seperator" customClass="AnimatableView" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="573" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="568" width="375" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Video Playlist" translatesAutoresizingMaskIntoConstraints="NO" id="BAq-Bv-T8E">
-                                                <rect key="frame" x="16" y="9.5" width="25" height="25"/>
+                                                <rect key="frame" x="16" y="12.5" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="O8j-sl-LJG"/>
                                                     <constraint firstAttribute="width" constant="25" id="bAg-HH-r0v"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xem clip hướng dẫn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMk-uM-xNo">
-                                                <rect key="frame" x="53" y="12" width="153" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="53" y="15.5" width="156" height="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -505,7 +440,7 @@
                                         <constraints>
                                             <constraint firstItem="oMk-uM-xNo" firstAttribute="leading" secondItem="BAq-Bv-T8E" secondAttribute="trailing" constant="12" id="Iqd-fK-ym5"/>
                                             <constraint firstItem="BAq-Bv-T8E" firstAttribute="centerY" secondItem="OJK-Ta-3zu" secondAttribute="centerY" id="Ycu-No-bS6"/>
-                                            <constraint firstAttribute="height" constant="44" id="nxB-aC-lHd"/>
+                                            <constraint firstAttribute="height" constant="50" id="nxB-aC-lHd"/>
                                             <constraint firstItem="oMk-uM-xNo" firstAttribute="centerY" secondItem="OJK-Ta-3zu" secondAttribute="centerY" id="yds-Lm-hvv"/>
                                             <constraint firstItem="BAq-Bv-T8E" firstAttribute="leading" secondItem="OJK-Ta-3zu" secondAttribute="leading" constant="16" id="yk3-7h-VYK"/>
                                         </constraints>
@@ -516,7 +451,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="top"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="top, bottom"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
@@ -551,21 +486,29 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>
+                    <connections>
+                        <outlet property="collectionViewPageControl" destination="q1Z-BY-Ghu" id="hFN-mM-l05"/>
+                        <outlet property="exerciseDescriptionLabel" destination="k3S-sb-QFy" id="c1i-Df-zr6"/>
+                        <outlet property="exerciseNameLabel" destination="nDs-iw-c0K" id="eWB-Qp-mGs"/>
+                        <outlet property="exercisePhotosCollectionView" destination="OEB-ic-mfc" id="QjT-Gg-Xc5"/>
+                        <outlet property="scrollView" destination="EWy-Pe-Id7" id="P6Q-k8-Dbd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pmb-dK-qrj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3384.8000000000002" y="-442.5787106446777"/>
         </scene>
-        <!--Item-->
+        <!--Bài tập-->
         <scene sceneID="xY3-HA-DAf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GSa-Ds-dm9" customClass="EZLeanNavigationController" customModule="E_Z_Lean" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="Dumbbell_27" selectedImage="Dumbbell Filled_27" id="30K-FB-Y84"/>
+                    <tabBarItem key="tabBarItem" title="Bài tập" image="Dumbbell_27" selectedImage="Dumbbell Filled_27" id="30K-FB-Y84"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="ArJ-Nz-QFx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="ArJ-Nz-QFx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>

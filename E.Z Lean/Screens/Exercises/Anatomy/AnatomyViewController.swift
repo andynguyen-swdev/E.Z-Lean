@@ -22,15 +22,42 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var anatomyLeftConstraint: NSLayoutConstraint!
     @IBOutlet weak var anatomyRightConstraint: NSLayoutConstraint!
     
+    var zooming = false
     var minScaleZoom: Variable<CGFloat?> = Variable(nil)
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
-        scrollView.delegate = self
+        configScrollView()
         configTabBar()
         configNavigation()
         configTouchBodyPart()
         addBackgroundView()
+    }
+    
+    func configScrollView() {
+        scrollView.delegate = self
+        let doubleTapGesture = UITapGestureRecognizer(target: nil, action: nil)
+        doubleTapGesture.numberOfTapsRequired = 2
+        scrollView.rx.gesture(doubleTapGesture)
+            .subscribe(onNext: { [unowned self] gesture in
+                guard self.minScaleZoom.value != nil else { return }
+                guard self.scrollView.zoomScale == self.minScaleZoom.value! else {
+                    self.scrollView.setZoomScale(self.minScaleZoom.value!, animated: true)
+                    return
+                }
+                let location = gesture.location(in: self.scrollView)
+                self.scrollView.zoomToPoint(location, withScale: self.scrollView.maximumZoomScale, animated: true)
+            })
+            .addDisposableTo(disposeBag)
+        
+        let oneTapGesture = UITapGestureRecognizer(target: nil, action: nil)
+        scrollView.rx.gesture(oneTapGesture)
+            .subscribe(onNext: { [unowned self] gesture in
+                let location = gesture.location(in: self.anatomyControl)
+                guard !self.zooming else { return }
+                self.anatomyControl.touched(at: location)
+            })
+            .addDisposableTo(disposeBag)
     }
     
     func configTabBar() {
@@ -57,8 +84,8 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
     
     func addBackgroundView() {
         minScaleZoom.asObservable()
-        .unwrap()
-        .distinctUntilChanged()
+            .unwrap()
+            .distinctUntilChanged()
             .subscribe(onNext: { [unowned self] minScale in
                 let width = (self.view.width - 10) / minScale
                 let height = (self.view.height - 20) / minScale
@@ -71,10 +98,11 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
                 self.contentView.addSubview(backgroundView)
                 self.contentView.sendSubview(toBack: backgroundView)
             })
-        .addDisposableTo(disposeBag)
+            .addDisposableTo(disposeBag)
     }
     
     func configTouchBodyPart() {
+        anatomyControl.config()
         anatomyControl.currentBodyPart
             .asObservable()
             .unwrap()
@@ -103,16 +131,17 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func updateConstraintsForSize(_ size: CGSize) {
-        let yOffset = max(20, (size.height - anatomyControl.frame.height) / 2)
+        var yOffset = max(20, (size.height - anatomyControl.frame.height) / 2)
         anatomyTopConstraint.constant = yOffset
         anatomyBottomConstraint.constant = yOffset
         
         var xOffset = max(0, (size.width - anatomyControl.frame.width) / 2)
-        if scrollView.zoomScale == scrollView.minimumZoomScale {
+        if scrollView.zoomScale >= scrollView.minimumZoomScale {
             xOffset = -0.15*size.width / 2
+            yOffset = 20
         }
-        anatomyLeftConstraint.constant = (xOffset > 0) ? xOffset : xOffset
-        anatomyRightConstraint.constant = (xOffset > 0) ? xOffset : xOffset*3
+        anatomyLeftConstraint.constant = (scrollView.zoomScale > scrollView.minimumZoomScale) ? xOffset*2 : xOffset
+        anatomyRightConstraint.constant = (scrollView.zoomScale > scrollView.minimumZoomScale) ? 0 : xOffset*3
         view.layoutIfNeeded()
     }
     
@@ -132,5 +161,13 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return contentView
+    }
+    
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        self.zooming = true
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        self.zooming = false
     }
 }

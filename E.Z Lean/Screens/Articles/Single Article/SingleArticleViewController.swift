@@ -37,8 +37,8 @@ class SingleArticleViewController: UIViewController, WKNavigationDelegate {
         configProgressView()
         
         view = webView
-        let url = URL.init(fileURLWithPath: urlStringToLoad)
-        webView.loadFileURL(url, allowingReadAccessTo: url)
+        let url = URL.init(fileURLWithPath: Article.storagePath + urlStringToLoad)
+        webView.loadFileURL(url, allowingReadAccessTo: Article.storageUrl)
     }
     
     func configProgressView() {

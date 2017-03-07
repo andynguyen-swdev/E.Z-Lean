@@ -32,7 +32,10 @@ class CategoryPopOverViewController: UIViewController, UITableViewDelegate {
                     cell.textLabel?.text = category.name
                     cell.imageView?.image = category.image
                     cell.imageView?.tintColor = Colors.brightOrange
-                    cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "Disclosure Indicator"))
+                    
+                    let indicator = UIImageView(image: #imageLiteral(resourceName: "Disclosure Indicator"))
+                    indicator.tintColor = Colors.brightOrange
+                    cell.accessoryView = indicator
             }
             .addDisposableTo(disposeBag)
         tableView.rx.setDelegate(self).addDisposableTo(disposeBag)

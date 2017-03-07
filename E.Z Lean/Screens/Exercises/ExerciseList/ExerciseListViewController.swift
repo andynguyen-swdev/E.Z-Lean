@@ -35,13 +35,15 @@ class ExerciseListViewController: UIViewController {
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
-        scrollView.delegate = self
-        tableView.isScrollEnabled = false
+//        scrollView.delegate = self
+//        tableView.isScrollEnabled = false
         
         bindBodyPart()
         configButtonTintColor()
         configDataSource()
         configSelectModel()
+        
+        tableView.tableHeaderView?.topAnchor.constraint(lessThanOrEqualTo: view.topAnchor).isActive = true
     }
     
     func configSelectModel() {
@@ -78,5 +80,9 @@ class ExerciseListViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         scrollOffset = bodyPartImageView.height + anatomyCell.height
+    }
+    
+    deinit {
+        print("deinit-ExerciseList")
     }
 }

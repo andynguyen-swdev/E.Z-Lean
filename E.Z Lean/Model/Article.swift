@@ -53,6 +53,13 @@ class Article: Object, IdentifiableType {
         return (realm.objects(Article.self).max(ofProperty: "id") as Int? ?? 0) + 1
     }()
     
+    static var storagePath: String {
+        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/Articles/"
+    }
+    static var storageUrl: URL {
+        return URL(fileURLWithPath: storagePath)
+    }
+    
     deinit {
         print("Deinit-Article")
     }

@@ -28,7 +28,40 @@ class SearchViewController: UIViewController {
         configSearchBar()
         configCollectionView()
         configDataSource()
+        configNavigationCenter()
         bindSearchBar()
+    }
+    
+    func configNavigationCenter() {
+        NotificationCenter.default
+            .rx
+            .notification(Notification.Name.UIKeyboardWillChangeFrame)
+            .concat(NotificationCenter
+                .default
+                .rx
+                .notification(Notification.Name.UIKeyboardWillHide)
+            )
+            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInteractive))
+            .subscribe(onNext: { [unowned self] in
+                self.adjustForKeyboard(notification: $0)
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    func adjustForKeyboard(notification: Notification) {
+        let userInfo = notification.userInfo!
+        
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardViewEndFrame = self.view.convert(keyboardScreenEndFrame, from: self.view.window)
+        let intersection = keyboardViewEndFrame.intersection(self.view.frame)
+        
+        if notification.name == Notification.Name.UIKeyboardWillHide {
+            self.collectionView.contentInset.bottom = 0
+        } else {
+            self.collectionView.contentInset.bottom = intersection.height
+        }
+        self.collectionView.scrollIndicatorInsets = self.collectionView.contentInset
+        
     }
     
     func bindSearchBar() {
@@ -53,6 +86,7 @@ class SearchViewController: UIViewController {
         collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
         collectionView.rx.modelSelected(Article.self)
             .subscribe(onNext: { [unowned self] article in
+                self.view.endEditing(true)
                 self.performSegue(withIdentifier: SegueIdentifiers.searchToSingleArticle, sender: article)
             })
             .addDisposableTo(disposeBag)
@@ -74,13 +108,20 @@ class SearchViewController: UIViewController {
         
         let uiButton = searchBar.value(forKey: "cancelButton") as! UIButton
         uiButton.setTitle("Huỷ", for: UIControlState.normal)
-        
+    
         searchBar.rx.cancelButtonClicked
             .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInteractive))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] _ in
                 self.searchBar.resignFirstResponder()
                 _ = self.navigationController?.popViewController(animated: true)
+            })
+            .addDisposableTo(disposeBag)
+        
+        searchBar.rx.searchButtonClicked
+            .subscribe(onNext: { [unowned self] _ in
+                _ = self.searchBar.resignFirstResponder()
+                uiButton.isEnabled = true
             })
             .addDisposableTo(disposeBag)
     }

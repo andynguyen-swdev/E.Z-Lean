@@ -7,28 +7,28 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxSwiftExt
+import RxGesture
 
 extension TouchableAnatomy {
-    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        guard event != nil else { return false }
-        return true
+    func config() {
+//        self.rx.tapGesture(numberOfTouchesRequired: 1, numberOfTapsRequired: 1, configuration: nil)
+//            .subscribe(onNext: { [unowned self] gesture in
+//                let location = gesture.location(in: self)
+//                self.currentBodyPart.value = self.getTouchedPart(location: location)
+//            })
+//            .addDisposableTo(disposeBag)
     }
     
-    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        guard event != nil else { return false }
-        return true
-    }
-    
-    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        if let location = touch?.location(in: self) {
-            if let bodyPart = getTouchedPart(location: location) {
-                print(bodyPart)
-                self.currentBodyPart.value = bodyPart
-            }
+    func touched(at location: CGPoint) {
+        if let bodyPart = getTouchedPart(location: location) {
+            self.currentBodyPart.value = bodyPart
         }
     }
     
-    func getTouchedPart(location: CGPoint) -> BodyPart? {
+    private func getTouchedPart(location: CGPoint) -> BodyPart? {
         if location.isIn(calfPaths) {
             return .calf
         }

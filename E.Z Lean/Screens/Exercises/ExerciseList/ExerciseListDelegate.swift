@@ -14,20 +14,9 @@ extension ExerciseListViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let yOffset = scrollView.contentOffset.y
-        
-        if scrollView == self.scrollView {
-            if yOffset >= scrollOffset {
-                scrollView.isScrollEnabled = false
-                tableView.isScrollEnabled = true
-            }
-        }
-        
-        if scrollView == self.tableView {
-            if yOffset <= 0 {
-                self.scrollView.isScrollEnabled = true
-                self.tableView.isScrollEnabled = false
-            }
-        }
+        tableView.tableHeaderView?.frame.origin.y = min(0,yOffset)
+        tableView.tableHeaderView?.layoutIfNeeded()
+        print(tableView.tableHeaderView!.frame.origin.y)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

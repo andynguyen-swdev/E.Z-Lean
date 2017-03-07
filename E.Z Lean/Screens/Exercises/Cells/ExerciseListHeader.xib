@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ExerciseListHeader" customModule="E_Z_Lean" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJ3-fL-yvw" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biceps.png" translatesAutoresizingMaskIntoConstraints="NO" id="aTV-p4-Hfl">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="aTV-p4-Hfl" secondAttribute="height" multiplier="24/9" id="rVl-1Z-Xhr"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biceps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2K-VI-rLM">
+                            <rect key="frame" x="148" y="54.5" width="78" height="32"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            <size key="shadowOffset" width="1" height="1"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NH-1R-kkt">
+                            <rect key="frame" x="0.0" y="140" width="375" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cấu tạo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFL-tc-8ct">
+                                    <rect key="frame" x="20" y="14" width="65" height="23"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzO-wa-Wip">
+                                    <rect key="frame" x="351" y="14" width="8" height="22"/>
+                                    <state key="normal" image="Disclosure Indicator"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD9-eK-vos">
+                                    <rect key="frame" x="317" y="14" width="22" height="22"/>
+                                    <state key="normal" image="Detail Disclosure"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.81568627450980391" green="0.52549019607843139" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="WFL-tc-8ct" firstAttribute="leading" secondItem="6NH-1R-kkt" secondAttribute="leading" constant="20" id="0lw-Lz-dad"/>
+                                <constraint firstItem="QzO-wa-Wip" firstAttribute="leading" secondItem="QD9-eK-vos" secondAttribute="trailing" constant="12" id="IAo-0f-Sdf"/>
+                                <constraint firstItem="QzO-wa-Wip" firstAttribute="centerY" secondItem="6NH-1R-kkt" secondAttribute="centerY" id="V0N-Ac-D6M"/>
+                                <constraint firstItem="WFL-tc-8ct" firstAttribute="centerY" secondItem="6NH-1R-kkt" secondAttribute="centerY" id="enN-E0-7rW"/>
+                                <constraint firstItem="QD9-eK-vos" firstAttribute="centerY" secondItem="QzO-wa-Wip" secondAttribute="centerY" id="kE9-aa-YX7"/>
+                                <constraint firstAttribute="trailing" secondItem="QzO-wa-Wip" secondAttribute="trailing" constant="16" id="tDr-OQ-5VP"/>
+                                <constraint firstAttribute="height" constant="50" id="v9c-9q-vgw"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="aTV-p4-Hfl" firstAttribute="top" secondItem="GJ3-fL-yvw" secondAttribute="top" id="1SB-qQ-YxA"/>
+                        <constraint firstItem="6NH-1R-kkt" firstAttribute="leading" secondItem="GJ3-fL-yvw" secondAttribute="leading" id="3cd-qk-wKG"/>
+                        <constraint firstItem="6NH-1R-kkt" firstAttribute="top" secondItem="aTV-p4-Hfl" secondAttribute="bottom" id="Ra9-cB-CX7"/>
+                        <constraint firstItem="J2K-VI-rLM" firstAttribute="centerY" secondItem="aTV-p4-Hfl" secondAttribute="centerY" id="UOF-hy-ttm"/>
+                        <constraint firstAttribute="trailing" secondItem="6NH-1R-kkt" secondAttribute="trailing" id="fEI-lA-bIW"/>
+                        <constraint firstAttribute="trailing" secondItem="aTV-p4-Hfl" secondAttribute="trailing" id="n8j-2g-isJ"/>
+                        <constraint firstItem="aTV-p4-Hfl" firstAttribute="leading" secondItem="GJ3-fL-yvw" secondAttribute="leading" id="nBS-74-v6y"/>
+                        <constraint firstItem="J2K-VI-rLM" firstAttribute="centerX" secondItem="aTV-p4-Hfl" secondAttribute="centerX" id="tLT-bb-6WX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="GJ3-fL-yvw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JH3-Cj-T1k"/>
+                <constraint firstAttribute="trailing" secondItem="GJ3-fL-yvw" secondAttribute="trailing" id="PMn-q4-iiu"/>
+                <constraint firstAttribute="bottom" secondItem="GJ3-fL-yvw" secondAttribute="bottom" id="SAh-yC-Nx1"/>
+                <constraint firstItem="GJ3-fL-yvw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yDP-Eh-KNw"/>
+            </constraints>
+            <connections>
+                <outlet property="anatomyCell" destination="6NH-1R-kkt" id="OjN-Lj-8iG"/>
+                <outlet property="anatomyLabel" destination="WFL-tc-8ct" id="xx7-cd-33w"/>
+                <outlet property="bodyPartImageView" destination="aTV-p4-Hfl" id="QVJ-0F-7Aw"/>
+                <outlet property="bodyPartNameLabel" destination="J2K-VI-rLM" id="YxC-fG-BIm"/>
+                <outlet property="detailDisclosureButton" destination="QD9-eK-vos" id="SSa-vt-S87"/>
+            </connections>
+            <point key="canvasLocation" x="45.5" y="83.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Detail Disclosure" width="22" height="22"/>
+        <image name="Disclosure Indicator" width="8" height="14"/>
+        <image name="biceps.png" width="750" height="393"/>
+    </resources>
+</document>

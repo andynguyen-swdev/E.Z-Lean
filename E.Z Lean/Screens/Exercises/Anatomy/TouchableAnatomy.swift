@@ -11,6 +11,7 @@ import RxSwift
 
 class TouchableAnatomy: UIControl {
     var currentBodyPart: Variable<BodyPart?> = Variable(nil)
+    var disposeBag = DisposeBag()
     
 	// Calf
 	var calfLeftPath: UIBezierPath!

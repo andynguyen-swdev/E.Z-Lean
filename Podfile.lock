@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.3.0)
   - IBAnimatable (3.1.2)
+  - LTMorphingLabel (0.4.0)
   - MaterialControls (1.2.2)
   - Popover (1.0.4)
   - ReachabilitySwift (3)
@@ -12,6 +13,9 @@ PODS:
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
   - RxDataSources (1.0.3):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
+  - RxGesture (1.0.0):
     - RxCocoa (~> 3.0)
     - RxSwift (~> 3.0)
   - RxRealm (0.5.1):
@@ -29,12 +33,14 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - IBAnimatable
+  - LTMorphingLabel
   - MaterialControls
   - Popover
   - ReachabilitySwift
   - RealmSwift
   - RxCocoa
   - RxDataSources
+  - RxGesture
   - RxRealm
   - RxSwift
   - RxSwiftExt
@@ -45,6 +51,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   IBAnimatable: 26b74a72df9369d40faab97428477c246b9e42ba
+  LTMorphingLabel: d9a85f16ac306f0e07321d6819964deb2dc69638
   MaterialControls: 1c6b29e78d3a13d8dd6a67ed31b6d26eb5de8f72
   Popover: 8bced665f98824ded3b8114a27f4d2281c78a672
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
@@ -52,6 +59,7 @@ SPEC CHECKSUMS:
   RealmSwift: 30d49739ccb3385d201242736ca4dda56aec9dfc
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
+  RxGesture: df17ca8be513640294c544b3165875e91de665ec
   RxRealm: c80d17d42fc362f4d8af4ac62de360b014be5c3f
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   RxSwiftExt: 492a6575cf6afabb8feeed3204bd0f9e2c695e67
@@ -59,6 +67,6 @@ SPEC CHECKSUMS:
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 28c396bc05b65847373f3a1b7a1831d345677efa
+PODFILE CHECKSUM: e80fe3d170030990f3dd12d7ebcc70955cbaf60f
 
 COCOAPODS: 1.2.0

@@ -41,7 +41,7 @@ enum BodyPart {
     var image: UIImage? {
         switch self {
         case .calf:
-            return nil
+            return #imageLiteral(resourceName: "calves.png")
         case .hamstring:
             return #imageLiteral(resourceName: "hamstring.png")
         case .quad:
@@ -59,7 +59,7 @@ enum BodyPart {
         case .triceps:
             return #imageLiteral(resourceName: "triceps.png")
         case .forearm:
-            return nil
+            return #imageLiteral(resourceName: "forearm.png")
         case .core:
             return #imageLiteral(resourceName: "core.png")
         }

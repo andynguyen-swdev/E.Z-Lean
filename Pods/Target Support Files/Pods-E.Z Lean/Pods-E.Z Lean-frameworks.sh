@@ -91,6 +91,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/IBAnimatable/IBAnimatable.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LTMorphingLabel/LTMorphingLabel.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MaterialControls/MaterialControls.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Popover/Popover.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReachabilitySwift/ReachabilitySwift.framework"
@@ -98,6 +99,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxCocoa/RxCocoa.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxDataSources/RxDataSources.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RxGesture/RxGesture.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxRealm/RxRealm.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxSwift/RxSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxSwiftExt/RxSwiftExt.framework"
@@ -108,6 +110,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/IBAnimatable/IBAnimatable.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LTMorphingLabel/LTMorphingLabel.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MaterialControls/MaterialControls.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Popover/Popover.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReachabilitySwift/ReachabilitySwift.framework"
@@ -115,6 +118,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxCocoa/RxCocoa.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxDataSources/RxDataSources.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RxGesture/RxGesture.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxRealm/RxRealm.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxSwift/RxSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxSwiftExt/RxSwiftExt.framework"
