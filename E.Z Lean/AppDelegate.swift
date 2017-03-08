@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         print(NSTemporaryDirectory())
         DatabaseManager.articles.createArticles()
+//        UITextField.appearance().keyboardAppearance = .dark
         return true
     }
 

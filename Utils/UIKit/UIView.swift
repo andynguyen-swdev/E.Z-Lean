@@ -9,7 +9,26 @@ import UIKit
 import Foundation
 
 @IBDesignable
-public class CustomUIView: UIView {}
+public class CustomUIView: UIView {
+    @IBInspectable public var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    
+    @IBInspectable public var borderColor: UIColor {
+        get {
+            return UIColor.init(cgColor: layer.borderColor!)
+        }
+        set {
+            layer.borderColor = newValue.cgColor
+        }
+    }
+}
 
 extension UIView {
     public func createAnchorsToFitWith(other: UIView) {
@@ -17,7 +36,7 @@ extension UIView {
         self.bottomAnchor.constraint(equalTo: other.bottomAnchor).isActive = true
         self.leftAnchor.constraint(equalTo: other.leftAnchor).isActive = true
         self.rightAnchor.constraint(equalTo: other.rightAnchor).isActive = true
-
+        
     }
     
     static public func disableAndHideView(views: UIView...) {
@@ -52,24 +71,4 @@ extension UIView {
             
         }
     }
-    
-    @IBInspectable public var borderWidth: CGFloat {
-        get {
-            return layer.borderWidth
-        }
-        set {
-            layer.borderWidth = newValue
-            layer.masksToBounds = newValue > 0
-        }
-    }
-    
-    @IBInspectable public var borderColor: UIColor {
-        get {
-            return UIColor.init(cgColor: layer.borderColor!)
-        }
-        set {
-            layer.borderColor = newValue.cgColor
-        }
-    }
-
 }

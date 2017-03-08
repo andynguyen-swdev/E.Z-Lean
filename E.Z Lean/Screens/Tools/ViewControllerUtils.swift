@@ -10,33 +10,30 @@ import Foundation
 import UIKit
 import RxSwift
 import IBAnimatable
+
 extension UIViewController {
     func addDoneButton(textFields : [UITextField]){
-        let toolBar = UIToolbar()
+        let toolBar = BorderedToolBar()
+        toolBar.isOpaque = true
+        toolBar.isTranslucent = false
         toolBar.sizeToFit()
+        
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneClicked))
+        doneButton.tintColor = .black
         toolBar.setItems([flexibleSpace,doneButton], animated: false)
         for tf in textFields {
+            tf.tintColor = .black
             tf.inputAccessoryView = toolBar
         }
-       
+        
         
     }
     func addDoneButtonForAnimatableTF(textFields : [AnimatableTextField]){
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneClicked))
-        toolBar.setItems([flexibleSpace,doneButton], animated: false)
-        for tf in textFields {
-            tf.inputAccessoryView = toolBar
-        }
-        
-        
+        addDoneButton(textFields: textFields)
     }
+    
     func doneClicked() {
         self.view.endEditing(true)
     }
@@ -72,3 +69,29 @@ extension UIViewController {
         
     }
 }
+
+class BorderedToolBar: UIToolbar, BorderDesignable {
+    @IBInspectable open var borderColor: UIColor? {
+        didSet {
+            configureBorder()
+        }
+    }
+    
+    @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
+        didSet {
+            configureBorder()
+        }
+    }
+    
+    open var borderSides: BorderSides  = .AllSides {
+        didSet {
+            configureBorder()
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        configureBorder()
+    }
+}
+

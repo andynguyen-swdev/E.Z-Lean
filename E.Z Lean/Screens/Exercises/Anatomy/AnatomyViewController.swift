@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxSwiftExt
+import Popover
 
 class AnatomyViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
@@ -25,6 +26,8 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
     var zooming = false
     var minScaleZoom: Variable<CGFloat?> = Variable(nil)
     var disposeBag = DisposeBag()
+    var popOver: Popover?
+    var bodyPartLabel: UILabel?
     
     override func viewDidLoad() {
         configScrollView()
@@ -36,6 +39,7 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
     
     func configScrollView() {
         scrollView.delegate = self
+        
         let doubleTapGesture = UITapGestureRecognizer(target: nil, action: nil)
         doubleTapGesture.numberOfTapsRequired = 2
         scrollView.rx.gesture(doubleTapGesture)
@@ -62,13 +66,56 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
         let longPressGesture = UILongPressGestureRecognizer(target: nil, action: nil)
         scrollView.rx.gesture(longPressGesture)
             .subscribe(onNext: { [unowned self] gesture in
-                let location = gesture.location(in: self.anatomyControl)
-                let bodyPart = self.anatomyControl.getTouchedPart(location: location)
+                guard let window = self.view.window else { return }
+                
+                let locationInAnatomy = gesture.location(in: self.anatomyControl)
+                let locationInRootView = gesture.location(in: window)
+                
+                let bodyPart = self.anatomyControl.getTouchedPart(location: locationInAnatomy)
+                
                 if gesture.state == .ended {
                     self.anatomyControl.selectBodyPart(bodyPart)
+                    self.popOver?.dismiss()
+                    self.scrollView.isScrollEnabled = true
                     return
                 }
-                self.navigationItem.title = bodyPart?.name ?? "Các bộ phận cơ thể"
+                else if gesture.state == .began {
+                    let bodyPartLabel = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 70, height: 30)))
+                    bodyPartLabel.text = bodyPart?.name ?? " "
+                    bodyPartLabel.font = UIFont(name: "Helvetica Neue", size: 17)!
+                    bodyPartLabel.textColor = .white
+                    
+                    bodyPartLabel.sizeToFit()
+                    bodyPartLabel.textAlignment = .center
+                    bodyPartLabel.frame = bodyPartLabel.frame.insetBy(dx: -10, dy: -10)
+                    bodyPartLabel.frame.origin = .zero
+                    
+                    let popOver = Popover(options:
+                        [.type(.up),
+                         .cornerRadius(4),
+                         .color(UIColor.black.withAlphaComponent(0.5)),
+                         .showBlackOverlay(false)
+                        ])
+                    popOver.show(bodyPartLabel, point: locationInRootView)
+                    
+                    self.bodyPartLabel = bodyPartLabel
+                    self.popOver = popOver
+                    self.scrollView.isScrollEnabled = false
+                    return
+                }
+                else if gesture.state == .changed {
+                    let popOver = self.popOver!
+                    let bodyPartLabel = self.bodyPartLabel!
+                    
+                    bodyPartLabel.text = bodyPart?.name ?? " "
+                    bodyPartLabel.sizeToFit()
+                    bodyPartLabel.frame = bodyPartLabel.frame.insetBy(dx: -10, dy: -10)
+                    bodyPartLabel.frame.origin = .zero
+                    
+                    popOver.frame.size.width = bodyPartLabel.width
+                    popOver.frame.origin.x = locationInRootView.x - popOver.width / 2
+                    popOver.frame.origin.y = locationInRootView.y - popOver.height
+                }
             })
             .addDisposableTo(disposeBag)
     }
