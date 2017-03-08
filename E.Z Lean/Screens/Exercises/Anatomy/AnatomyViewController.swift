@@ -81,7 +81,7 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
                 }
                 else if gesture.state == .began {
                     let bodyPartLabel = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 70, height: 30)))
-                    bodyPartLabel.text = bodyPart?.name ?? " "
+                    bodyPartLabel.text = bodyPart?.name ?? "   "
                     bodyPartLabel.font = UIFont(name: "Helvetica Neue", size: 17)!
                     bodyPartLabel.textColor = .white
                     
@@ -96,6 +96,7 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
                          .color(UIColor.black.withAlphaComponent(0.5)),
                          .showBlackOverlay(false)
                         ])
+                    popOver.contentMode = .redraw
                     popOver.show(bodyPartLabel, point: locationInRootView)
                     
                     self.bodyPartLabel = bodyPartLabel
@@ -107,7 +108,7 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
                     let popOver = self.popOver!
                     let bodyPartLabel = self.bodyPartLabel!
                     
-                    bodyPartLabel.text = bodyPart?.name ?? " "
+                    bodyPartLabel.text = bodyPart?.name ?? "   "
                     bodyPartLabel.sizeToFit()
                     bodyPartLabel.frame = bodyPartLabel.frame.insetBy(dx: -10, dy: -10)
                     bodyPartLabel.frame.origin = .zero
@@ -115,6 +116,7 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
                     popOver.frame.size.width = bodyPartLabel.width
                     popOver.frame.origin.x = locationInRootView.x - popOver.width / 2
                     popOver.frame.origin.y = locationInRootView.y - popOver.height
+                    popOver.arrowShowPoint = popOver.frame.origin.add(x: popOver.width/2, y: 0)
                 }
             })
             .addDisposableTo(disposeBag)

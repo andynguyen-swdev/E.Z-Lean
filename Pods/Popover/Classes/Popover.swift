@@ -55,7 +55,7 @@ open class Popover: UIView {
   fileprivate var containerView: UIView!
   fileprivate var contentView: UIView!
   fileprivate var contentViewFrame: CGRect!
-  fileprivate var arrowShowPoint: CGPoint!
+  open var arrowShowPoint: CGPoint!
 
   public init() {
     super.init(frame: CGRect.zero)
