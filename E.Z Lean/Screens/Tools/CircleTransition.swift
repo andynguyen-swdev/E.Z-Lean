@@ -28,6 +28,7 @@ extension CircularTransition: UIViewControllerAnimatedTransitioning {
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
         
+        let fromView = transitionContext.view(forKey: .from)!
         let toView = transitionContext.view(forKey: .to)!
         let toVC = transitionContext.viewController(forKey: .to)!
         toView.frame = transitionContext.finalFrame(for: toVC)
@@ -37,26 +38,42 @@ extension CircularTransition: UIViewControllerAnimatedTransitioning {
         
         let size = AppDelegate.instance.window!.frame.size
         let radius = sqrt(size.width*size.width + size.height*size.height)
-        
         circle.frame.size = CGSize(width: radius*2, height: radius*2)
         circle.layer.cornerRadius = radius
-        
         circle.center = startingPoint
-        circle.transform = .init(scaleX: 17 / radius, y: 17 / radius)
         
-        let snapshot = UIView(frame: toView.frame)
-        snapshot.alpha = 0.99
-        snapshot.layer.mask = circle.layer
-        snapshot.layer.addSublayer(toView.layer)
-        containerView.addSubview(snapshot)
-        
-        UIView.animate(withDuration: duration, animations: { [unowned self] in
-            self.circle.transform = .identity
-            snapshot.alpha = 1
-        }, completion: { completed in
-            print(completed)
+        if transitionMode == .present {
+            circle.transform = .init(scaleX: 17 / radius, y: 17 / radius)
+            
+            let placeHolder = UIView(frame: toView.bounds)
+            placeHolder.alpha = 0.99
+            placeHolder.layer.mask = circle.layer
+            placeHolder.layer.addSublayer(toView.layer)
+            containerView.addSubview(placeHolder)
+            
+            UIView.animate(withDuration: duration, animations: { [unowned self] in
+                self.circle.transform = .identity
+                placeHolder.alpha = 1
+                }, completion: { completed in
+                    containerView.addSubview(toView)
+                    transitionContext.completeTransition(completed)
+            })
+        }
+        else if transitionMode == .pop {
             containerView.addSubview(toView)
-            transitionContext.completeTransition(completed)
-        })
+            containerView.sendSubview(toBack: toView)
+            
+            fromView.layer.mask = circle.layer
+            fromView.alpha = 0.99
+            
+            UIView.animate(withDuration: duration, animations: { [unowned self] in
+                fromView.alpha = 1
+                self.circle.transform = .init(scaleX: 17 / radius, y: 17 / radius)
+            }) { completed in
+                fromView.removeFromSuperview()
+                containerView.bringSubview(toFront: toView)
+                transitionContext.completeTransition(completed)
+            }
+        } 
     }
 }

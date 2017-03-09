@@ -9,8 +9,8 @@
 import UIKit
 import QuartzCore
 import IBAnimatable
-class ToolViewController: UIViewController,UINavigationControllerDelegate{
-    static var instance :ToolViewController!
+class ToolViewController: UIViewController {
+    static var instance : ToolViewController!
     @IBOutlet weak var wilksView: UIView!
     @IBOutlet weak var tdeeView: UIView!
     @IBOutlet weak var oneRMView: UIView!
@@ -32,16 +32,6 @@ class ToolViewController: UIViewController,UINavigationControllerDelegate{
         wilksView.frame.origin = CGPoint(x:0, y: -self.wilksView.height)
         tdeeView.frame.origin = CGPoint(x:0, y: -self.wilksView.height)
         oneRMView.frame.origin = CGPoint(x:0, y: -self.wilksView.height)
-    }
-    let transition = CircularTransition()
-    
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let transition = CircularTransition()
-//        transition.startingPoint = CGPoint(x:100,y:100)
-        transition.circleColor = UIColor.blue
-//        transition.transitionMode = .present
-        
-        return transition
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,3 +59,21 @@ extension UIView {
     
 }
 
+extension ToolViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        (navigationController as? EZLeanNavigationController)?.isPushing = false
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        let transition = CircularTransition()
+        //        transition.startingPoint = CGPoint(x:100,y:100)
+        transition.circleColor = UIColor.blue
+        if fromVC is ToolViewController {
+            transition.transitionMode = .present
+        } else {
+            transition.transitionMode = .pop
+        }
+        return transition
+    }
+}

@@ -9,11 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Lean Navigation Controller-->
         <scene sceneID="Ock-RK-PwE">
             <objects>
-                <navigationController id="UHe-CG-n94" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="ww7-VZ-zX5">
+                <navigationController id="UHe-CG-n94" customClass="EZLeanNavigationController" customModule="E_Z_Lean" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="ww7-VZ-zX5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -38,21 +39,77 @@
                         <viewControllerLayoutGuide type="bottom" id="NwO-1c-EVG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="314-Rr-wYS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1Y-JY-n3o">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Squat.png" translatesAutoresizingMaskIntoConstraints="NO" id="thp-5A-Ge1" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="toneColor">
+                                                <color key="value" red="0.50196078430000002" green="0.44705882349999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <view opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="zl5-gJ-ycz">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
+                                        <color key="backgroundColor" red="0.19215686274509802" green="0.17254901960784313" blue="0.11764705882352941" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUF-YP-kEv" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="One Rep-Max">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                                <point key="value" x="2" y="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="WwW-dK-Q4p" kind="show" identifier="goTo1Rm" id="0TY-qQ-Nig"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="aUF-YP-kEv" firstAttribute="leading" secondItem="U1Y-JY-n3o" secondAttribute="leading" id="5DK-Xv-snp"/>
+                                    <constraint firstItem="aUF-YP-kEv" firstAttribute="top" secondItem="U1Y-JY-n3o" secondAttribute="top" id="7hC-y3-Qmw"/>
+                                    <constraint firstAttribute="bottom" secondItem="zl5-gJ-ycz" secondAttribute="bottom" id="AQL-lP-BBR"/>
+                                    <constraint firstItem="zl5-gJ-ycz" firstAttribute="top" secondItem="U1Y-JY-n3o" secondAttribute="top" id="DVw-t5-3EJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="zl5-gJ-ycz" secondAttribute="trailing" id="EE5-bO-rqp"/>
+                                    <constraint firstAttribute="bottom" secondItem="aUF-YP-kEv" secondAttribute="bottom" id="GA8-i5-dRP"/>
+                                    <constraint firstAttribute="trailing" secondItem="aUF-YP-kEv" secondAttribute="trailing" id="W5G-yY-Abs"/>
+                                    <constraint firstAttribute="bottom" secondItem="thp-5A-Ge1" secondAttribute="bottom" id="XpJ-aS-ZtY"/>
+                                    <constraint firstItem="thp-5A-Ge1" firstAttribute="leading" secondItem="U1Y-JY-n3o" secondAttribute="leading" id="f8d-gg-cje"/>
+                                    <constraint firstItem="zl5-gJ-ycz" firstAttribute="leading" secondItem="U1Y-JY-n3o" secondAttribute="leading" id="nlT-RW-rx2"/>
+                                    <constraint firstAttribute="trailing" secondItem="thp-5A-Ge1" secondAttribute="trailing" id="taF-SY-SrQ"/>
+                                    <constraint firstItem="thp-5A-Ge1" firstAttribute="top" secondItem="U1Y-JY-n3o" secondAttribute="top" id="zBJ-tg-un7"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axa-0g-fUf">
-                                <rect key="frame" x="0.0" y="197.5" width="375" height="133.5"/>
+                                <rect key="frame" x="0.0" y="120.5" width="375" height="120.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Food.png" translatesAutoresizingMaskIntoConstraints="NO" id="gcp-3S-fEF">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MjM-20-M0Y">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.15686274509803921" blue="0.12156862745098039" alpha="0.56000000000000005" colorSpace="calibratedRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9e-v5-52m" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                         <state key="normal" title="TDEE">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -93,17 +150,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amZ-CE-Ijs">
-                                <rect key="frame" x="0.0" y="331" width="375" height="133"/>
+                                <rect key="frame" x="0.0" y="241" width="375" height="120.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Deadlift.png" translatesAutoresizingMaskIntoConstraints="NO" id="QCb-em-KpH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8p-2d-Jmn">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                         <color key="backgroundColor" red="0.15294117647058825" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.52000000000000002" colorSpace="calibratedRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXd-iB-UPf" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                         <state key="normal" title="Wilks">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -143,62 +200,6 @@
                                     <constraint firstItem="QCb-em-KpH" firstAttribute="leading" secondItem="amZ-CE-Ijs" secondAttribute="leading" id="tyd-FP-3KH"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1Y-JY-n3o">
-                                <rect key="frame" x="0.0" y="64" width="375" height="133.5"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Squat.png" translatesAutoresizingMaskIntoConstraints="NO" id="thp-5A-Ge1" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="toneColor">
-                                                <color key="value" red="0.50196078430000002" green="0.44705882349999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <view opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="zl5-gJ-ycz">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
-                                        <color key="backgroundColor" red="0.19215686274509802" green="0.17254901960784313" blue="0.11764705882352941" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUF-YP-kEv" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
-                                        <state key="normal" title="One Rep-Max">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
-                                                <point key="value" x="2" y="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="WwW-dK-Q4p" kind="show" identifier="goTo1Rm" id="0TY-qQ-Nig"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="aUF-YP-kEv" firstAttribute="leading" secondItem="U1Y-JY-n3o" secondAttribute="leading" id="5DK-Xv-snp"/>
-                                    <constraint firstItem="aUF-YP-kEv" firstAttribute="top" secondItem="U1Y-JY-n3o" secondAttribute="top" id="7hC-y3-Qmw"/>
-                                    <constraint firstAttribute="bottom" secondItem="zl5-gJ-ycz" secondAttribute="bottom" id="AQL-lP-BBR"/>
-                                    <constraint firstItem="zl5-gJ-ycz" firstAttribute="top" secondItem="U1Y-JY-n3o" secondAttribute="top" id="DVw-t5-3EJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="zl5-gJ-ycz" secondAttribute="trailing" id="EE5-bO-rqp"/>
-                                    <constraint firstAttribute="bottom" secondItem="aUF-YP-kEv" secondAttribute="bottom" id="GA8-i5-dRP"/>
-                                    <constraint firstAttribute="trailing" secondItem="aUF-YP-kEv" secondAttribute="trailing" id="W5G-yY-Abs"/>
-                                    <constraint firstAttribute="bottom" secondItem="thp-5A-Ge1" secondAttribute="bottom" id="XpJ-aS-ZtY"/>
-                                    <constraint firstItem="thp-5A-Ge1" firstAttribute="leading" secondItem="U1Y-JY-n3o" secondAttribute="leading" id="f8d-gg-cje"/>
-                                    <constraint firstItem="zl5-gJ-ycz" firstAttribute="leading" secondItem="U1Y-JY-n3o" secondAttribute="leading" id="nlT-RW-rx2"/>
-                                    <constraint firstAttribute="trailing" secondItem="thp-5A-Ge1" secondAttribute="trailing" id="taF-SY-SrQ"/>
-                                    <constraint firstItem="thp-5A-Ge1" firstAttribute="top" secondItem="U1Y-JY-n3o" secondAttribute="top" id="zBJ-tg-un7"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.23921568627450979" green="0.23921568627450979" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -207,7 +208,7 @@
                             <constraint firstItem="axa-0g-fUf" firstAttribute="top" secondItem="U1Y-JY-n3o" secondAttribute="bottom" id="FRi-LA-Z9f"/>
                             <constraint firstItem="amZ-CE-Ijs" firstAttribute="leading" secondItem="314-Rr-wYS" secondAttribute="leading" id="IHI-NU-KHJ"/>
                             <constraint firstAttribute="trailing" secondItem="axa-0g-fUf" secondAttribute="trailing" id="Rj1-vv-Y9I"/>
-                            <constraint firstItem="yhi-Cp-9YM" firstAttribute="bottom" secondItem="U1Y-JY-n3o" secondAttribute="top" id="eUV-nj-2tP"/>
+                            <constraint firstItem="U1Y-JY-n3o" firstAttribute="top" secondItem="314-Rr-wYS" secondAttribute="top" id="Yau-HH-vBJ"/>
                             <constraint firstItem="U1Y-JY-n3o" firstAttribute="height" secondItem="314-Rr-wYS" secondAttribute="height" multiplier="0.2" id="iUt-uT-kPY"/>
                             <constraint firstItem="U1Y-JY-n3o" firstAttribute="leading" secondItem="314-Rr-wYS" secondAttribute="leading" id="nYS-fT-0u0"/>
                             <constraint firstItem="axa-0g-fUf" firstAttribute="leading" secondItem="314-Rr-wYS" secondAttribute="leading" id="pDd-zd-sxf"/>
