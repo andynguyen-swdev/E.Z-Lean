@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -218,7 +217,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Công cụ" id="Gp8-b3-U3D">
-                        <barButtonItem key="rightBarButtonItem" image="CombinedShape.png" id="NDk-DI-2hj">
+                        <barButtonItem key="rightBarButtonItem" image="Detail Disclosure" id="NDk-DI-2hj">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
@@ -284,7 +283,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O94-Wl-zqq">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O94-Wl-zqq">
                                 <rect key="frame" x="0.0" y="79" width="375" height="588"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5n-8X-pNo" customClass="AnimatableView" customModule="IBAnimatable">
@@ -579,7 +578,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJk-qE-mvp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJk-qE-mvp">
                                 <rect key="frame" x="0.0" y="79" width="375" height="588"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEf-6K-2I7" customClass="AnimatableView" customModule="IBAnimatable">
@@ -934,7 +933,7 @@
                                     <action selector="popToRootVC:" destination="ljG-9r-71G" eventType="touchUpInside" id="RFE-ZX-i4n"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSA-8s-Exn" customClass="AnimatableScrollView" customModule="IBAnimatable">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSA-8s-Exn" customClass="AnimatableScrollView" customModule="IBAnimatable">
                                 <rect key="frame" x="0.0" y="79" width="375" height="721"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KX-pQ-SQs" userLabel="Content View" customClass="AnimatableView" customModule="IBAnimatable">
@@ -1407,7 +1406,7 @@
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="gSA-8s-Exn" secondAttribute="bottom" id="10q-KK-gn7"/>
+                            <constraint firstAttribute="bottom" secondItem="gSA-8s-Exn" secondAttribute="bottom" id="10q-KK-gn7"/>
                             <constraint firstItem="Xx4-Cm-5ML" firstAttribute="centerY" secondItem="yOk-1E-AL1" secondAttribute="centerY" id="5OJ-UE-eRC"/>
                             <constraint firstItem="gSA-8s-Exn" firstAttribute="top" secondItem="Xx4-Cm-5ML" secondAttribute="bottom" constant="15" id="6gg-mz-JY8"/>
                             <constraint firstItem="gSA-8s-Exn" firstAttribute="leading" secondItem="jmg-cS-xtr" secondAttribute="leading" id="FQT-X5-dOq"/>
@@ -1454,8 +1453,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CombinedShape.png" width="22" height="22"/>
         <image name="Deadlift.png" width="374" height="125"/>
+        <image name="Detail Disclosure" width="22" height="22"/>
         <image name="Food.png" width="375" height="125"/>
         <image name="Squat.png" width="375" height="125"/>
         <image name="back_icon.png" width="14" height="14"/>

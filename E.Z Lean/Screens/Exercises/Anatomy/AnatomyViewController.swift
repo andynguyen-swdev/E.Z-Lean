@@ -24,6 +24,8 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var anatomyRightConstraint: NSLayoutConstraint!
     
     var zooming = false
+    var longPressing = false
+    
     var minScaleZoom: Variable<CGFloat?> = Variable(nil)
     var disposeBag = DisposeBag()
     var popOver: Popover?
@@ -35,6 +37,10 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
         configNavigation()
         configTouchBodyPart()
         addBackgroundView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        longPressing = false
     }
     
     func configScrollView() {
@@ -57,8 +63,9 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
         let oneTapGesture = UITapGestureRecognizer(target: nil, action: nil)
         scrollView.rx.gesture(oneTapGesture)
             .subscribe(onNext: { [unowned self] gesture in
-                let location = gesture.location(in: self.anatomyControl)
                 guard !self.zooming else { return }
+                guard !self.longPressing else { return }
+                let location = gesture.location(in: self.anatomyControl)
                 self.anatomyControl.touched(at: location)
             })
             .addDisposableTo(disposeBag)
@@ -80,6 +87,8 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
                     return
                 }
                 else if gesture.state == .began {
+                    self.longPressing = true
+                    
                     let bodyPartLabel = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 70, height: 30)))
                     bodyPartLabel.text = bodyPart?.name ?? "   "
                     bodyPartLabel.font = UIFont(name: "Helvetica Neue", size: 17)!

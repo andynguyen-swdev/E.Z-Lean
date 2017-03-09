@@ -6,7 +6,7 @@ class CircularTransition: NSObject {
     var startingPoint = CGPoint.zero
     var circleColor = UIColor.white
     
-    var duration = 0.3 as Double
+    var duration = 0.5 as Double
     var circle: UIView!
     
     enum CircularTransitionMode:Int {
