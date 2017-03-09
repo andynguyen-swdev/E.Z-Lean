@@ -9,7 +9,7 @@
 import UIKit
 import IBAnimatable
 import RxSwift
-class WilksCalculatorViewController: UIViewController,UITextFieldDelegate {
+class WilksCalculatorViewController: UIViewController,UITextFieldDelegate,UINavigationControllerDelegate {
     let LB_TO_KG:Double = 0.45359237
     let MA:Double = -216.0475144
     let MB:Double = 16.2606339
@@ -40,10 +40,10 @@ class WilksCalculatorViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.navigationController?.setNavigationBarHidden(true, animated: true)
+//    }
    override func viewDidLoad() {
         super.viewDidLoad()
         configNavigationCenter(disposeBag: disposeBag, scrollView: scrollView)
@@ -51,6 +51,9 @@ class WilksCalculatorViewController: UIViewController,UITextFieldDelegate {
         componentsDidEdited()
         
         // Do any additional setup after loading the view.
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
     }
     func setUp(){
         result.isHidden = true
@@ -108,8 +111,7 @@ class WilksCalculatorViewController: UIViewController,UITextFieldDelegate {
             
     }
     @IBAction func popToRootVC(_ sender: Any) {
-        _ = self.navigationController?.popViewController(animated: true)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+       self.dismiss(animated: true, completion: nil)
 
     }
 

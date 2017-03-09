@@ -8,16 +8,18 @@
 
 import UIKit
 import RxSwift
-
-class OneRMCalculatorViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+import IBAnimatable
+class OneRMCalculatorViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate {
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var reps: UITextField!
-    
+    static weak var instance = OneRMCalculatorViewController()
+    @IBOutlet  weak var backButton: AnimatableButton!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var result: UILabel!
      @IBOutlet weak var repsLabel: UILabel!
-    
+
     let disposeBag = DisposeBag()
+    let transition = CircularTransition()
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
    
@@ -26,7 +28,7 @@ class OneRMCalculatorViewController: UIViewController, UICollectionViewDataSourc
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        //self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,11 @@ class OneRMCalculatorViewController: UIViewController, UICollectionViewDataSourc
         
         // Do any additional setup after loading the view.
     }
+ 
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+   
     func componentsDidEdited(){
         reps.addTarget(self, action: #selector(calculate), for: .editingChanged)
         weight.addTarget(self, action: #selector(calculate), for: .editingChanged)
@@ -91,7 +98,6 @@ class OneRMCalculatorViewController: UIViewController, UICollectionViewDataSourc
         let label1 = cell.contentView.viewWithTag(101) as! UILabel
         let label2 = cell.contentView.viewWithTag(102) as! UILabel
         if index%2 == 1 {
-            print(index)
             cell.backgroundColor = UIColor(hexString: "#F2F3F4")
         } else {
             cell.backgroundColor = UIColor(hexString: "#FFFFFF")
@@ -117,8 +123,8 @@ class OneRMCalculatorViewController: UIViewController, UICollectionViewDataSourc
         }
     }
     @IBAction func popToRootVc(_ sender: Any) {
-        _ = self.navigationController?.popViewController(animated: true)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+      //self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
         
     }
     override func didReceiveMemoryWarning() {
@@ -129,4 +135,10 @@ class OneRMCalculatorViewController: UIViewController, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.width, height: 37)
     }
+
+    deinit {
+        print("deinit")
+    }
+ 
+
 }
