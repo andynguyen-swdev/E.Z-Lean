@@ -9,10 +9,10 @@
 import UIKit
 import IBAnimatable
 import RxSwift
-class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate{
+class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate,UINavigationControllerDelegate{
     let LB_TO_KG:Double = 0.45359237
     let FOOT_TO_CENTIMETER = 30.48
-    let CALO_IF_GAIN_ONE_KG = 1102.0
+    let CALO_IF_GAIN_ONE_KG = 1102.0/4
     @IBOutlet weak var scrollView: AnimatableScrollView!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var weightUnit: UISwitch!
@@ -37,16 +37,19 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
     
     let disposeBag = DisposeBag()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigationCenter(disposeBag: disposeBag, scrollView: scrollView)
         setUp()
         componentDidEdited()
 
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
     }
     func setUp(){
         gender.isOn = false
@@ -170,8 +173,7 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
         
     }
     @IBAction func popToRootVC(_ sender: Any) {
-        _ = self.navigationController?.popViewController(animated: true)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         calculate()

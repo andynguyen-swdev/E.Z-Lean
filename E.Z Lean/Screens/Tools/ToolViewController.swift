@@ -8,61 +8,91 @@
 
 import UIKit
 import QuartzCore
-class ToolViewController: UIViewController{
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-
-    @IBOutlet weak var tableView: UITableView!
+import IBAnimatable
+class ToolViewController: UIViewController,UINavigationControllerDelegate{
+    static var instance :ToolViewController!
+    @IBOutlet weak var wilksView: UIView!
+    @IBOutlet weak var tdeeView: UIView!
+    @IBOutlet weak var oneRMView: UIView!
+    @IBOutlet weak var oneRMButton: AnimatableButton!
+    @IBOutlet weak var tdeeButton: AnimatableButton!
+    var selectedView : UIView!
+    var naviHeight: CGFloat!
     override func viewDidLoad() {
         super.viewDidLoad()
-        button1.layer.cornerRadius = 5
-        button1.layer.masksToBounds = true
-        button2.layer.cornerRadius = 5
-        button2.layer.masksToBounds = true
-        button3.layer.cornerRadius = 5
-        button3.layer.masksToBounds = true
+        naviHeight =  UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.height)!
 
     }
     override func viewWillAppear(_ animated: Bool) {
-        setStartPosition()
-        DispatchQueue.main.async {
-            
-            self.button1.startAnimation(duration: 1,delay: 0.4, vector: CGVector(dx: 0, dy: 200), spring: 0.8)
-        }
-         DispatchQueue.main.async {
-            self.button2.startAnimation(duration: 1.5, delay: 0.2, vector: CGVector(dx: 0, dy: 325), spring: 0.7)
-        }
-         DispatchQueue.main.async {
-            self.button3.startAnimation(duration: 2, delay: 0.0, vector: CGVector(dx: 0, dy: 450), spring: 0.5)
-            
-        }
-
+        
+        navigationController?.delegate = self
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
     }
     func setStartPosition(){
-        button1.frame.origin = CGPoint(x: view.frame.width/2-button1.frame.width/2, y: -button1.frame.height)
-        button2.frame.origin = CGPoint(x: view.frame.width/2-button1.frame.width/2, y: -button1.frame.height)
-        button3.frame.origin = CGPoint(x: view.frame.width/2-button1.frame.width/2, y: -button1.frame.height)
-        button1.alpha=0
-        button2.alpha=0
-        button3.alpha = 0
+        wilksView.frame.origin = CGPoint(x:0, y: -self.wilksView.height)
+        tdeeView.frame.origin = CGPoint(x:0, y: -self.wilksView.height)
+        oneRMView.frame.origin = CGPoint(x:0, y: -self.wilksView.height)
     }
-    
+    let transition = CircularTransition()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("123")
+        if segue.identifier == "goTo1Rm" {
+            let vc = segue.destination as! OneRMCalculatorViewController
+            selectedView = oneRMView
+            
+        } else  if segue.identifier == "goToWilks"{
+            selectedView = wilksView
+        } else  {
+            selectedView = tdeeView
+        }
+        
+        
+    }
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if fromVC is ToolViewController {
+             transition.transitionMode = .present
+        } else {
+            transition.transitionMode = .dismiss
+            
+        }
+        transition.startingPoint = CGPoint(x:100,y:100)
+        transition.circleColor = UIColor.blue
+        
+        return transition
+    }
+
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        transition.transitionMode = .present
+//        transition.startingPoint = selectedView.center
+//        transition.circleColor = UIColor.blue
+//        
+//        return transition
+//    }
+//    
+//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        transition.transitionMode = .dismiss
+//        transition.startingPoint = selectedView.center
+//        transition.circleColor = UIColor.blue
+//        
+//        return transition
+//    }
   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
     
 }
-extension UIButton{
-    func startAnimation(duration:Double,delay: Double? = 0.0,vector : CGVector,spring:Double){
+extension UIView{
+    func startAnimation(duration:Double,delay: Double? = 0.0,vector : CGVector,naviHeight: CGFloat,spring:Double){
         let oldOrigin = self.frame.origin
         UIView.animate(withDuration: duration, delay: delay!, usingSpringWithDamping: CGFloat(spring), initialSpringVelocity: 0, options: .curveEaseIn, animations: {
             self.alpha = 1
-            self.frame.origin = oldOrigin.add(x: vector.dx, y: vector.dy)
+            self.frame.origin = oldOrigin.add(x: vector.dx, y: vector.dy+naviHeight+self.height)
         }, completion: nil)
     }
     
 }
+
