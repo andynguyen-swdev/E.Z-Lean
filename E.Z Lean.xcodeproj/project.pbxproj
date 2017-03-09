@@ -115,6 +115,8 @@
 		F1D8333D1E47871F00772F42 /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333C1E47871F00772F42 /* ToolViewController.swift */; };
 		F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */; };
 		F1D833411E478F2D00772F42 /* StringToDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D833401E478F2D00772F42 /* StringToDouble.swift */; };
+		F1EB919E1E71D1B30078A407 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = F1EB919D1E71D1B30078A407 /* next.png */; };
+		F1EB91A01E71D1BC0078A407 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = F1EB919F1E71D1BC0078A407 /* back.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -254,6 +256,8 @@
 		F1D8333C1E47871F00772F42 /* ToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolViewController.swift; sourceTree = "<group>"; };
 		F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneRMCalculatorViewController.swift; sourceTree = "<group>"; };
 		F1D833401E478F2D00772F42 /* StringToDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringToDouble.swift; sourceTree = "<group>"; };
+		F1EB919D1E71D1B30078A407 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		F1EB919F1E71D1BC0078A407 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		FB6B1D2003A8D42E46A6F7CA /* Pods_E_Z_Lean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Z_Lean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -669,7 +673,9 @@
 			children = (
 				F123ED4C1E68CFEC000D24BD /* Deadlift.png */,
 				F123ED4D1E68CFEC000D24BD /* Food.png */,
+				F1EB919D1E71D1B30078A407 /* next.png */,
 				F1B5C5271E697AFF006BB375 /* back_icon.png */,
+				F1EB919F1E71D1BC0078A407 /* back.png */,
 				F1B5C5251E697878006BB375 /* CombinedShape.png */,
 				F123ED4E1E68CFEC000D24BD /* Squat.png */,
 			);
@@ -804,8 +810,10 @@
 				F123ED4F1E68CFEC000D24BD /* Deadlift.png in Resources */,
 				50B7C0F51E6BF33E00C7DD76 /* back.png in Resources */,
 				50B7C0FB1E6BF33E00C7DD76 /* triceps.png in Resources */,
+				F1EB919E1E71D1B30078A407 /* next.png in Resources */,
 				507F54931E58563C006E296B /* CategoryArticleCell.xib in Resources */,
 				F123ED501E68CFEC000D24BD /* Food.png in Resources */,
+				F1EB91A01E71D1BC0078A407 /* back.png in Resources */,
 				507F54951E58563C006E296B /* SmallArticleCell.xib in Resources */,
 				5052D93D1E6C4A43000784DD /* calves.png in Resources */,
 				50AF4C721E48FE2300E8EF8A /* Coaches.storyboard in Resources */,

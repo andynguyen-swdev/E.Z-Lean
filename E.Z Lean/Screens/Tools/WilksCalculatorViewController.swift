@@ -9,7 +9,7 @@
 import UIKit
 import IBAnimatable
 import RxSwift
-class WilksCalculatorViewController: UIViewController,UITextFieldDelegate,UINavigationControllerDelegate {
+class WilksCalculatorViewController: ModelViewController,UITextFieldDelegate,UINavigationControllerDelegate {
     let LB_TO_KG:Double = 0.45359237
     let MA:Double = -216.0475144
     let MB:Double = 16.2606339
@@ -46,6 +46,10 @@ class WilksCalculatorViewController: UIViewController,UITextFieldDelegate,UINavi
     }
     
     override func viewDidLoad() {
+        textFieldArr=[weight]
+        animatableTFArr = [squat,deadLift,benchPress]
+        addTargetForAll(textFields: textFieldArr)
+        addTargetForAllAnimatable(textFields: animatableTFArr)
         super.viewDidLoad()
         configNavigationCenter(disposeBag: disposeBag, scrollView: scrollView)
         setUp()
@@ -60,8 +64,8 @@ class WilksCalculatorViewController: UIViewController,UITextFieldDelegate,UINavi
         result.isHidden = true
         gender.isOn = false
         weightUnit.isOn = false
-        addDoneButton(textFields: [weight])
-        addDoneButtonForAnimatableTF(textFields: [squat,deadLift,benchPress])
+        addDoneButton(textFields: textFieldArr)
+        addDoneButtonForAnimatableTF(textFields: animatableTFArr)
         
     }
     func componentsDidEdited(){

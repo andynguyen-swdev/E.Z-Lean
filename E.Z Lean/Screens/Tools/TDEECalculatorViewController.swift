@@ -9,7 +9,7 @@
 import UIKit
 import IBAnimatable
 import RxSwift
-class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate,UINavigationControllerDelegate{
+class TDEECalculatorViewController: ModelViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate,UINavigationControllerDelegate{
     let LB_TO_KG:Double = 0.45359237
     let FOOT_TO_CENTIMETER = 30.48
     let CALO_IF_GAIN_ONE_KG = 1102.0/4
@@ -44,6 +44,10 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textFieldArr=[bodyFat,weight,height,age]
+        animatableTFArr = [numberOfGainWeight,numberofLoseWeight]
+        addTargetForAll(textFields: textFieldArr)
+        addTargetForAllAnimatable(textFields: animatableTFArr)
         configNavigationCenter(disposeBag: disposeBag, scrollView: scrollView)
         setUp()
         componentDidEdited()
@@ -65,8 +69,8 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
         loseResult.isHidden = true
         result.isHidden = true
         pickerView.layer.cornerRadius = 4
-        addDoneButton(textFields: [bodyFat,weight,height,age])
-        addDoneButtonForAnimatableTF(textFields: [numberOfGainWeight,numberofLoseWeight])
+        addDoneButton(textFields: textFieldArr)
+        addDoneButtonForAnimatableTF(textFields: animatableTFArr)
     }
     func componentDidEdited(){
         numberOfGainWeight.addTarget(self, action: #selector(calculate), for: .editingChanged)

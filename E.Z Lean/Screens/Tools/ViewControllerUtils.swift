@@ -10,19 +10,25 @@ import Foundation
 import UIKit
 import RxSwift
 import IBAnimatable
-
-extension UIViewController {
+class ModelViewController: UIViewController{
+    var textFieldArr : [UITextField]!
+    var tag = 0
+    var animatableTFArr: [AnimatableTextField]!
+}
+extension ModelViewController {
     func addDoneButton(textFields : [UITextField]){
         let toolBar = BorderedToolBar()
         toolBar.isOpaque = true
         toolBar.isTranslucent = false
         toolBar.sizeToFit()
-        
+            
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneClicked))
         doneButton.tintColor = .black
-        toolBar.setItems([flexibleSpace,doneButton], animated: false)
+        let back = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: nil, action: #selector(backAction))
+        let next = UIBarButtonItem(image: UIImage(named: "next"), style: .done, target: nil, action: #selector(nextAction))
+        toolBar.setItems([back,next,flexibleSpace,doneButton], animated: false)
         for tf in textFields {
             tf.tintColor = .black
             tf.inputAccessoryView = toolBar
@@ -30,10 +36,35 @@ extension UIViewController {
         
         
     }
+    func backAction(){
+        if let backTF = self.view.viewWithTag(self.tag-1) as? UITextField {
+            backTF.becomeFirstResponder()
+            
+        } else {
+            self.view.endEditing(true)
+        }
+    }
+    func nextAction(){
+        if let backTF = self.view.viewWithTag(tag+1) as? UITextField {
+            backTF.becomeFirstResponder()
+        } else {
+            self.view.endEditing(true)
+        }
+    }
+    func addTargetForAll(textFields : [UITextField]){
+        for tf in textFields {
+            tf.addTarget(self, action: #selector(setTag), for: .editingDidBegin)
+        }
+    }
+    func addTargetForAllAnimatable(textFields : [AnimatableTextField]){
+        addTargetForAll(textFields: textFields)
+    }
     func addDoneButtonForAnimatableTF(textFields : [AnimatableTextField]){
         addDoneButton(textFields: textFields)
     }
-    
+    func setTag(text: UITextField){
+        tag = text.tag
+    }
     func doneClicked() {
         self.view.endEditing(true)
     }

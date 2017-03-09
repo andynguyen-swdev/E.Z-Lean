@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 import IBAnimatable
-class OneRMCalculatorViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate {
+class OneRMCalculatorViewController: ModelViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate {
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var reps: UITextField!
     static weak var instance = OneRMCalculatorViewController()
@@ -17,7 +17,7 @@ class OneRMCalculatorViewController: UIViewController, UICollectionViewDataSourc
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var result: UILabel!
      @IBOutlet weak var repsLabel: UILabel!
-
+    
     let disposeBag = DisposeBag()
     let transition = CircularTransition()
     @IBOutlet weak var collectionView: UICollectionView!
@@ -28,7 +28,8 @@ class OneRMCalculatorViewController: UIViewController, UICollectionViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        textFieldArr = [weight,reps]
+        addTargetForAll(textFields: textFieldArr)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         configNavigationCenter(disposeBag: disposeBag, scrollView: scrollView)
         
@@ -49,7 +50,7 @@ class OneRMCalculatorViewController: UIViewController, UICollectionViewDataSourc
     func setUp(){
         collectionView.layer.cornerRadius = 4
         result.isHidden = true
-        addDoneButton(textFields:[weight,reps])
+        addDoneButton(textFields:textFieldArr)
     }
     func calculate(){
         guard let weightTxt = weight.text,
