@@ -40,11 +40,12 @@ class WilksCalculatorViewController: UIViewController,UITextFieldDelegate,UINavi
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.navigationController?.setNavigationBarHidden(true, animated: true)
-//    }
-   override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         configNavigationCenter(disposeBag: disposeBag, scrollView: scrollView)
         setUp()
@@ -73,20 +74,20 @@ class WilksCalculatorViewController: UIViewController,UITextFieldDelegate,UINavi
     }
     func calculate(_ sender: Any) {
         var myResult:Double!
-    
+        
         guard let weightTxt = weight.text,
-                let benchPressTxt = benchPress.text,
+            let benchPressTxt = benchPress.text,
             let squatTxt = squat.text,
-        let deadliftTxt = deadLift.text
-        else {
-            return
+            let deadliftTxt = deadLift.text
+            else {
+                return
         }
         guard var myWeight =  Double(weightTxt),
-        var myBenchPress = Double(benchPressTxt),
-        var mySquat = Double(squatTxt),
-        var myDeadLift = Double(deadliftTxt)
+            var myBenchPress = Double(benchPressTxt),
+            var mySquat = Double(squatTxt),
+            var myDeadLift = Double(deadliftTxt)
             else {
-            return
+                return
         }
         
         if weightUnit.isOn {
@@ -107,28 +108,29 @@ class WilksCalculatorViewController: UIViewController,UITextFieldDelegate,UINavi
     func wilksFormula(myWeight:Double,myLifted:Double,a:Double,b:Double,c:Double,d:Double,e:Double,f:Double)
         ->Double{
             print(pow(10, 2))
-        return 500*myLifted/(a+b*myWeight+c*pow(myWeight, 2)+d*pow(myWeight, 3)+e*pow(myWeight, 4)+f*pow(myWeight, 5))
+            return 500*myLifted/(a+b*myWeight+c*pow(myWeight, 2)+d*pow(myWeight, 3)+e*pow(myWeight, 4)+f*pow(myWeight, 5))
             
     }
     @IBAction func popToRootVC(_ sender: Any) {
-       self.dismiss(animated: true, completion: nil)
-
+        //       self.dismiss(animated: true, completion: nil)
+        _ = navigationController?.popViewController(animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

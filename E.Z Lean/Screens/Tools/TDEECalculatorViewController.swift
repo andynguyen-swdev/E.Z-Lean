@@ -37,10 +37,11 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
     
     let disposeBag = DisposeBag()
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigationCenter(disposeBag: disposeBag, scrollView: scrollView)
@@ -55,9 +56,11 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
         gender.isOn = false
         weightUnit.isOn = false
         heightUnit.isOn = false
+        
         pickerView.dataSource = self
         pickerView.delegate = self
         pickerView.selectRow(125, inComponent: 0, animated: false)
+        
         gainResult.isHidden = true
         loseResult.isHidden = true
         result.isHidden = true
@@ -173,8 +176,11 @@ class TDEECalculatorViewController: UIViewController,UIPickerViewDelegate,UIPick
         
     }
     @IBAction func popToRootVC(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        _ = navigationController?.popViewController(animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         calculate()
     }

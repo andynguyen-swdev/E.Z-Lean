@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UHe-CG-n94">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UHe-CG-n94">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -73,7 +73,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="ljG-9r-71G" kind="presentation" identifier="goToTdee" id="s3O-Tx-2cn"/>
+                                            <segue destination="ljG-9r-71G" kind="show" identifier="goToTdee" id="s3O-Tx-2cn"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -124,7 +124,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="gni-gj-Rzd" kind="presentation" identifier="goToWilks" id="bYN-Jv-VKu"/>
+                                            <segue destination="gni-gj-Rzd" kind="show" identifier="goToWilks" id="bYN-Jv-VKu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -499,7 +499,7 @@
                             <constraint firstItem="DOu-WI-P45" firstAttribute="width" secondItem="qsJ-Ph-Y9a" secondAttribute="width" constant="-16" id="Bmq-9g-KDi"/>
                             <constraint firstItem="O94-Wl-zqq" firstAttribute="top" secondItem="3CA-Yi-w4Z" secondAttribute="bottom" constant="15" id="FfB-qW-ATM"/>
                             <constraint firstItem="iqY-2d-9jf" firstAttribute="centerY" secondItem="3CA-Yi-w4Z" secondAttribute="centerY" id="Iqz-zv-vQf"/>
-                            <constraint firstItem="3CA-Yi-w4Z" firstAttribute="top" secondItem="Nb8-Qc-RHr" secondAttribute="bottom" constant="10" id="UaG-n4-w5l"/>
+                            <constraint firstItem="3CA-Yi-w4Z" firstAttribute="top" secondItem="qsJ-Ph-Y9a" secondAttribute="top" constant="30" id="L2e-Te-bcS"/>
                             <constraint firstItem="Wdf-3V-Ccw" firstAttribute="top" secondItem="O94-Wl-zqq" secondAttribute="bottom" id="UyH-xu-fVs"/>
                             <constraint firstItem="3CA-Yi-w4Z" firstAttribute="leading" secondItem="qsJ-Ph-Y9a" secondAttribute="leading" constant="8" id="gD1-zO-Phv"/>
                             <constraint firstAttribute="trailing" secondItem="O94-Wl-zqq" secondAttribute="trailing" id="jJV-LH-9tz"/>
@@ -516,6 +516,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="1RM" id="Viq-U5-5y6"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="3CA-Yi-w4Z" id="Wok-FE-CaG"/>
                         <outlet property="collectionView" destination="OQX-W6-Gri" id="liL-Gj-sHl"/>
@@ -716,7 +717,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4N-1m-hm2">
                                                 <rect key="frame" x="90" y="17" width="179.5" height="70"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
-                                                <color key="textColor" red="0.81568627450980391" green="0.52549019607843139" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -847,6 +848,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sJk-qE-mvp" firstAttribute="top" secondItem="LsF-Pj-DTW" secondAttribute="bottom" constant="15" id="5tN-0H-3f1"/>
+                            <constraint firstItem="LsF-Pj-DTW" firstAttribute="top" secondItem="O6J-ds-fUT" secondAttribute="top" constant="30" id="DLv-Fa-Ig8"/>
                             <constraint firstItem="sJk-qE-mvp" firstAttribute="leading" secondItem="O6J-ds-fUT" secondAttribute="leading" id="FKr-p8-4Il"/>
                             <constraint firstItem="kXO-dV-aWh" firstAttribute="top" secondItem="sJk-qE-mvp" secondAttribute="bottom" id="GnH-g5-OHh"/>
                             <constraint firstItem="kXO-dV-aWh" firstAttribute="top" secondItem="sJk-qE-mvp" secondAttribute="bottom" id="HKj-Rm-tcb"/>
@@ -865,8 +867,14 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="string" keyPath="_startPoint" value="bottom"/>
                         </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mvW-Bn-ac0"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Wilks Calculator" id="CNe-iS-OKk"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="benchPress" destination="wM5-pf-9EI" id="tYH-by-32y"/>
                         <outlet property="deadLift" destination="m5H-Qb-5a9" id="LSN-Vh-o5g"/>
@@ -895,13 +903,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TDEE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOk-1E-AL1">
-                                <rect key="frame" x="162.5" y="79" width="50" height="23.5"/>
+                                <rect key="frame" x="162.5" y="35" width="50" height="23.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xx4-Cm-5ML" userLabel="Back Button" customClass="AnimatableButton" customModule="IBAnimatable">
-                                <rect key="frame" x="8" y="74" width="34" height="34"/>
+                                <rect key="frame" x="8" y="30" width="34" height="34"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="oy2-AQ-Uy5"/>
@@ -927,7 +935,7 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSA-8s-Exn" customClass="AnimatableScrollView" customModule="IBAnimatable">
-                                <rect key="frame" x="0.0" y="123" width="375" height="677"/>
+                                <rect key="frame" x="0.0" y="79" width="375" height="721"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KX-pQ-SQs" userLabel="Content View" customClass="AnimatableView" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="652"/>
@@ -1156,10 +1164,10 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                                                 <real key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
                                                                 <color key="value" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="0.28000000000000003" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
@@ -1403,9 +1411,9 @@
                             <constraint firstItem="Xx4-Cm-5ML" firstAttribute="centerY" secondItem="yOk-1E-AL1" secondAttribute="centerY" id="5OJ-UE-eRC"/>
                             <constraint firstItem="gSA-8s-Exn" firstAttribute="top" secondItem="Xx4-Cm-5ML" secondAttribute="bottom" constant="15" id="6gg-mz-JY8"/>
                             <constraint firstItem="gSA-8s-Exn" firstAttribute="leading" secondItem="jmg-cS-xtr" secondAttribute="leading" id="FQT-X5-dOq"/>
+                            <constraint firstItem="Xx4-Cm-5ML" firstAttribute="top" secondItem="jmg-cS-xtr" secondAttribute="top" constant="30" id="JXn-iw-urC"/>
                             <constraint firstItem="Xx4-Cm-5ML" firstAttribute="leading" secondItem="jmg-cS-xtr" secondAttribute="leading" constant="8" id="MhT-LJ-7pB"/>
                             <constraint firstAttribute="trailing" secondItem="gSA-8s-Exn" secondAttribute="trailing" id="TQB-Xd-k0A"/>
-                            <constraint firstItem="Xx4-Cm-5ML" firstAttribute="top" secondItem="67h-81-MxF" secondAttribute="bottom" constant="10" id="XCH-Ra-wVD"/>
                             <constraint firstItem="5KX-pQ-SQs" firstAttribute="width" secondItem="jmg-cS-xtr" secondAttribute="width" id="h9G-qq-ce9"/>
                             <constraint firstItem="yOk-1E-AL1" firstAttribute="centerX" secondItem="jmg-cS-xtr" secondAttribute="centerX" id="qiA-TO-CYW"/>
                         </constraints>
@@ -1420,7 +1428,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="K4r-R3-bKc"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>

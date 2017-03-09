@@ -25,6 +25,7 @@
 		5021EE081E68603A0058B500 /* ExerciseListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021EE071E68603A0058B500 /* ExerciseListDataSource.swift */; };
 		5021EE0A1E6863660058B500 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021EE091E6863660058B500 /* Exercise.swift */; };
 		50276FA21E4A2AE4006CBAC0 /* SingleArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50276FA11E4A2AE4006CBAC0 /* SingleArticleViewController.swift */; };
+		502C55B41E71A4F2003D8B0D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502C55B31E71A4F2003D8B0D /* UIViewExtension.swift */; };
 		503B73B01E549E3B005838CC /* CategoryPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503B73AF1E549E3B005838CC /* CategoryPopOverViewController.swift */; };
 		504209851E55D912005AC8D4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504209841E55D912005AC8D4 /* Constant.swift */; };
 		504209881E55DF79005AC8D4 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504209871E55DF79005AC8D4 /* Article.swift */; };
@@ -162,6 +163,7 @@
 		5021EE071E68603A0058B500 /* ExerciseListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListDataSource.swift; sourceTree = "<group>"; };
 		5021EE091E6863660058B500 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		50276FA11E4A2AE4006CBAC0 /* SingleArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleArticleViewController.swift; sourceTree = "<group>"; };
+		502C55B31E71A4F2003D8B0D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		503B73AF1E549E3B005838CC /* CategoryPopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPopOverViewController.swift; sourceTree = "<group>"; };
 		504209841E55D912005AC8D4 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		504209871E55DF79005AC8D4 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -522,6 +524,7 @@
 				50A67F9B1E472C5700E463F7 /* UIImage.swift */,
 				50A67F9C1E472C5700E463F7 /* UIImageView.swift */,
 				50A67F9D1E472C5700E463F7 /* UIView.swift */,
+				502C55B31E71A4F2003D8B0D /* UIViewExtension.swift */,
 				5052D9391E6C2EC3000784DD /* UIScrollView.swift */,
 			);
 			path = UIKit;
@@ -577,8 +580,8 @@
 				F1910DF51E6F346F000AE150 /* CircleTransition.swift */,
 				F1D8333C1E47871F00772F42 /* ToolViewController.swift */,
 				F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */,
-				F12644DA1E4B7B0600C5D33C /* WilksCalculatorViewController.swift */,
 				F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */,
+				F12644DA1E4B7B0600C5D33C /* WilksCalculatorViewController.swift */,
 				F1335C9C1E6D866D00DFCA6B /* ViewControllerUtils.swift */,
 			);
 			path = Tools;
@@ -946,6 +949,7 @@
 				50A67FA01E472C5700E463F7 /* CGRect.swift in Sources */,
 				50A67FA51E472C5700E463F7 /* GKGraphNode2D.swift in Sources */,
 				5052D9451E6CDF36000784DD /* WKWebView.swift in Sources */,
+				502C55B41E71A4F2003D8B0D /* UIViewExtension.swift in Sources */,
 				5052D93A1E6C2EC3000784DD /* UIScrollView.swift in Sources */,
 				50A67FA61E472C5700E463F7 /* SKNode.swift in Sources */,
 				50A67F9E1E472C5700E463F7 /* CGFloat.swift in Sources */,
