@@ -16,7 +16,7 @@ extension CGPoint {
         return sqrt(dx * dx + dy * dy)
     }
     
-    public func add(x: CGFloat, y: CGFloat) -> CGPoint {
+    public func add(x: CGFloat = 0, y: CGFloat = 0) -> CGPoint {
         return CGPoint(x: self.x + x, y: self.y + y)
     }
 }

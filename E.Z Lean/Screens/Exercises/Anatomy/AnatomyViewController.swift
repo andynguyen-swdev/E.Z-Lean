@@ -69,7 +69,7 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
                 guard let window = self.view.window else { return }
                 
                 let locationInAnatomy = gesture.location(in: self.anatomyControl)
-                let locationInRootView = gesture.location(in: window)
+                let locationInRootView = gesture.location(in: window).add(y: -30)
                 
                 let bodyPart = self.anatomyControl.getTouchedPart(location: locationInAnatomy)
                 
@@ -93,7 +93,7 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
                     let popOver = Popover(options:
                         [.type(.up),
                          .cornerRadius(4),
-                         .color(UIColor.black.withAlphaComponent(0.5)),
+                         .color(UIColor.black.withAlphaComponent(0.75)),
                          .showBlackOverlay(false)
                         ])
                     popOver.contentMode = .redraw
