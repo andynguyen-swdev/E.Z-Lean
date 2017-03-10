@@ -14,6 +14,7 @@ class ModelViewController: UIViewController{
     var textFieldArr : [UITextField]!
     var tag = 0
     var animatableTFArr: [AnimatableTextField]!
+    let disposeBag = DisposeBag()
 }
 extension ModelViewController {
     func addDoneButton(textFields : [UITextField]){
@@ -27,6 +28,7 @@ extension ModelViewController {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneClicked))
         doneButton.tintColor = .black
         let back = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: nil, action: #selector(backAction))
+    
         let next = UIBarButtonItem(image: UIImage(named: "next"), style: .done, target: nil, action: #selector(nextAction))
         toolBar.setItems([back,next,flexibleSpace,doneButton], animated: false)
         for tf in textFields {
@@ -68,7 +70,7 @@ extension ModelViewController {
     func doneClicked() {
         self.view.endEditing(true)
     }
-    func configNavigationCenter(disposeBag: DisposeBag,scrollView: UIScrollView) {
+    func configNavigationCenter(scrollView: UIScrollView) {
         NotificationCenter.default
             .rx
             .notification(Notification.Name.UIKeyboardWillChangeFrame)
