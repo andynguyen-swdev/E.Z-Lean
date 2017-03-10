@@ -40,6 +40,8 @@
 		5052D9401E6C59AF000784DD /* ExercisePhotosDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052D93F1E6C59AF000784DD /* ExercisePhotosDataSource.swift */; };
 		5052D9421E6C59B9000784DD /* ExercisePhotosDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052D9411E6C59B9000784DD /* ExercisePhotosDelegate.swift */; };
 		5052D9451E6CDF36000784DD /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052D9441E6CDF36000784DD /* WKWebView.swift */; };
+		5069FA3C1E7255F600188777 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5069FA3B1E7255F600188777 /* GoogleService-Info.plist */; };
+		5069FA3D1E72562000188777 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5069FA3B1E7255F600188777 /* GoogleService-Info.plist */; };
 		5079F5BB1E65A5DC002B50B1 /* StringScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5079F5BA1E65A5DC002B50B1 /* StringScore.swift */; };
 		507F54901E58563C006E296B /* RecentArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F548A1E58563C006E296B /* RecentArticleCell.swift */; };
 		507F54911E58563C006E296B /* RecentArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 507F548B1E58563C006E296B /* RecentArticleCell.xib */; };
@@ -180,6 +182,7 @@
 		5052D93F1E6C59AF000784DD /* ExercisePhotosDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisePhotosDataSource.swift; sourceTree = "<group>"; };
 		5052D9411E6C59B9000784DD /* ExercisePhotosDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisePhotosDelegate.swift; sourceTree = "<group>"; };
 		5052D9441E6CDF36000784DD /* WKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
+		5069FA3B1E7255F600188777 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5079F5BA1E65A5DC002B50B1 /* StringScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringScore.swift; sourceTree = "<group>"; };
 		507F548A1E58563C006E296B /* RecentArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentArticleCell.swift; sourceTree = "<group>"; };
 		507F548B1E58563C006E296B /* RecentArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentArticleCell.xib; sourceTree = "<group>"; };
@@ -338,6 +341,7 @@
 				50A67FB61E472CC400E463F7 /* Screens */,
 				50062A231E470D62002BDE90 /* Assets.xcassets */,
 				50062A251E470D62002BDE90 /* LaunchScreen.storyboard */,
+				5069FA3B1E7255F600188777 /* GoogleService-Info.plist */,
 				50062A281E470D62002BDE90 /* Info.plist */,
 			);
 			path = "E.Z Lean";
@@ -813,6 +817,7 @@
 				F1EB919E1E71D1B30078A407 /* next.png in Resources */,
 				507F54931E58563C006E296B /* CategoryArticleCell.xib in Resources */,
 				F123ED501E68CFEC000D24BD /* Food.png in Resources */,
+				5069FA3C1E7255F600188777 /* GoogleService-Info.plist in Resources */,
 				F1EB91A01E71D1BC0078A407 /* back.png in Resources */,
 				507F54951E58563C006E296B /* SmallArticleCell.xib in Resources */,
 				5052D93D1E6C4A43000784DD /* calves.png in Resources */,
@@ -824,6 +829,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5069FA3D1E72562000188777 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

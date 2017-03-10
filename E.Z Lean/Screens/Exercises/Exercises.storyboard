@@ -101,17 +101,17 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joG-kq-fUh" userLabel="Body Part Image Container">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biceps.png" translatesAutoresizingMaskIntoConstraints="NO" id="BEt-tw-koM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6u9-BD-IP9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biceps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzy-Kt-5wD" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                            <rect key="frame" x="149" y="54.5" width="78" height="32"/>
+                                                            <rect key="frame" x="149" y="55" width="78" height="32"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -139,20 +139,20 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqA-8G-ySf">
-                                            <rect key="frame" x="0.0" y="140.5" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="141" width="375" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cấu tạo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvC-Ja-VMr">
-                                                    <rect key="frame" x="20" y="13.5" width="65" height="23"/>
+                                                    <rect key="frame" x="20" y="14" width="65" height="23"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-AJ-VOH">
-                                                    <rect key="frame" x="351" y="14" width="8" height="22"/>
+                                                    <rect key="frame" x="351" y="15" width="8" height="22"/>
                                                     <state key="normal" image="Disclosure Indicator"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT7-Y7-fsu">
-                                                    <rect key="frame" x="317" y="14" width="22" height="22"/>
+                                                    <rect key="frame" x="317" y="15" width="22" height="22"/>
                                                     <state key="normal" image="Detail Disclosure"/>
                                                 </button>
                                             </subviews>
@@ -215,7 +215,7 @@
                         <viewControllerLayoutGuide type="top" id="rBw-vH-XoO"/>
                         <viewControllerLayoutGuide type="bottom" id="t9e-uj-yGw"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OWk-Bp-1R5">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="OWk-Bp-1R5">
                         <rect key="frame" x="0.0" y="64" width="375" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -223,7 +223,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulgarian Split Squat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDs-iw-c0K">
-                                        <rect key="frame" x="102" y="11.5" width="171.5" height="22.5"/>
+                                        <rect key="frame" x="102" y="11" width="172" height="23"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -240,7 +240,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="643"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OEB-ic-mfc">
-                                        <rect key="frame" x="8" y="8" width="359" height="261.5"/>
+                                        <rect key="frame" x="8" y="8" width="359" height="262"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="OEB-ic-mfc" secondAttribute="height" multiplier="350/255" id="AnJ-a5-QAR"/>
@@ -274,12 +274,12 @@
                                         </cells>
                                     </collectionView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="q1Z-BY-Ghu">
-                                        <rect key="frame" x="168" y="269.5" width="39" height="37"/>
+                                        <rect key="frame" x="168" y="270" width="39" height="37"/>
                                         <color key="pageIndicatorTintColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="0.54896190068493156" colorSpace="calibratedRGB"/>
                                         <color key="currentPageIndicatorTintColor" red="0.81568627449999997" green="0.52549019610000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </pageControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3S-sb-QFy">
-                                        <rect key="frame" x="16" y="306.5" width="343" height="245.5"/>
+                                        <rect key="frame" x="16" y="307" width="343" height="311"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Dụng cụ:">
                                                 <attributes>
@@ -421,17 +421,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJK-Ta-3zu" userLabel="Seperator" customClass="AnimatableView" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="568" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="634" width="375" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Video Playlist" translatesAutoresizingMaskIntoConstraints="NO" id="BAq-Bv-T8E">
-                                                <rect key="frame" x="16" y="12.5" width="25" height="25"/>
+                                                <rect key="frame" x="16" y="13" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="O8j-sl-LJG"/>
                                                     <constraint firstAttribute="width" constant="25" id="bAg-HH-r0v"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xem clip hướng dẫn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMk-uM-xNo">
-                                                <rect key="frame" x="53" y="15.5" width="156" height="20"/>
+                                                <rect key="frame" x="53" y="16" width="156" height="20"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

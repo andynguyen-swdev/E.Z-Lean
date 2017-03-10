@@ -16,7 +16,7 @@ class OneRMCalculatorViewController: ModelViewController, UICollectionViewDataSo
     @IBOutlet  weak var backButton: AnimatableButton!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var result: UILabel!
-     @IBOutlet weak var repsLabel: UILabel!
+    @IBOutlet weak var repsLabel: UILabel!
     
     
     let transition = CircularTransition()
