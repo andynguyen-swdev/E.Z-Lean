@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>6392570087-k0n4sr0s29ku0tfp4lfb1s1pembg62s8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.6392570087-k0n4sr0s29ku0tfp4lfb1s1pembg62s8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyARleVFgfuK53DG2BVvf3YVCG8E4HYNa6U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>6392570087</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>vn.ezLean.E-Z-Lean</string>
+	<key>PROJECT_ID</key>
+	<string>ez-lean</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ez-lean.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:6392570087:ios:78bc10b364e4b90b</string>
+	<key>DATABASE_URL</key>
+	<string>https://ez-lean.firebaseio.com</string>
+</dict>
+</plist>

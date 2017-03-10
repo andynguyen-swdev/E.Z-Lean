@@ -26,8 +26,13 @@ extension ModelViewController {
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneClicked))
         doneButton.tintColor = .black
+        
         let back = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: nil, action: #selector(backAction))
+        back.tintColor = .black
+        
         let next = UIBarButtonItem(image: UIImage(named: "next"), style: .done, target: nil, action: #selector(nextAction))
+        next.tintColor = .black
+        
         toolBar.setItems([back,next,flexibleSpace,doneButton], animated: false)
         for tf in textFields {
             tf.tintColor = .black

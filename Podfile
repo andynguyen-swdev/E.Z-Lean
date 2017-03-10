@@ -25,6 +25,10 @@ pod 'RealmSwift'
 pod 'ReachabilitySwift'
 pod 'SlideMenuControllerSwift'
 pod 'LTMorphingLabel'
+
+pod 'Firebase/Core'
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
 end
 
 post_install do |installer|
