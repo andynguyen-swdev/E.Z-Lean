@@ -44,13 +44,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E.Z Lean | 6 Tháng 2, 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMq-TZ-mMP">
-                        <rect key="frame" x="45" y="304.66666666666669" width="168" height="17"/>
+                        <rect key="frame" x="44" y="304.66666666666669" width="168" height="17"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile PIcture" translatesAutoresizingMaskIntoConstraints="NO" id="HND-56-6ZK" customClass="AnimatableImageView" customModule="IBAnimatable">
-                        <rect key="frame" x="11" y="300" width="26" height="26"/>
+                        <rect key="frame" x="10" y="300" width="26" height="26"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="HND-56-6ZK" secondAttribute="height" multiplier="1:1" id="cCe-iI-9JX"/>
                             <constraint firstAttribute="height" constant="26" id="tLq-AS-8gK"/>
@@ -61,6 +61,13 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GjS-ec-ken">
+                        <rect key="frame" x="0.0" y="201.33333333333334" width="358" height="1"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="eUL-q7-9GG"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,10 +81,13 @@
                 <constraint firstItem="xMq-TZ-mMP" firstAttribute="leading" secondItem="HND-56-6ZK" secondAttribute="trailing" constant="8" id="RcK-hg-Sxw"/>
                 <constraint firstItem="JFD-F3-GAV" firstAttribute="leading" secondItem="jBW-cQ-de0" secondAttribute="leading" id="Wm6-4d-wNM"/>
                 <constraint firstItem="orK-aV-CxI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XuQ-Vk-V95"/>
+                <constraint firstItem="GjS-ec-ken" firstAttribute="trailing" secondItem="orK-aV-CxI" secondAttribute="trailing" id="caT-G9-nJ7"/>
                 <constraint firstItem="JFD-F3-GAV" firstAttribute="trailing" secondItem="jBW-cQ-de0" secondAttribute="trailing" id="dPk-UM-ofn"/>
-                <constraint firstItem="HND-56-6ZK" firstAttribute="leading" secondItem="JFD-F3-GAV" secondAttribute="leading" constant="1" id="nlW-Qp-xCl"/>
+                <constraint firstItem="GjS-ec-ken" firstAttribute="leading" secondItem="orK-aV-CxI" secondAttribute="leading" id="lYb-9p-crz"/>
+                <constraint firstItem="HND-56-6ZK" firstAttribute="leading" secondItem="JFD-F3-GAV" secondAttribute="leading" id="nlW-Qp-xCl"/>
                 <constraint firstItem="orK-aV-CxI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="te2-GM-XaM"/>
                 <constraint firstItem="jBW-cQ-de0" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="uqf-gO-NVO"/>
+                <constraint firstItem="GjS-ec-ken" firstAttribute="top" secondItem="orK-aV-CxI" secondAttribute="bottom" id="vIi-HR-aCL"/>
                 <constraint firstItem="jBW-cQ-de0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="xEC-wl-G9P"/>
                 <constraint firstItem="JFD-F3-GAV" firstAttribute="top" secondItem="jBW-cQ-de0" secondAttribute="bottom" constant="5.0000000000000284" id="xz7-0U-LTS"/>
             </constraints>
@@ -97,6 +107,7 @@
                 <outlet property="summaryLabel" destination="JFD-F3-GAV" id="XYe-82-FL7"/>
                 <outlet property="thumbnailImageView" destination="orK-aV-CxI" id="6KU-Bw-TRa"/>
                 <outlet property="titleLabel" destination="jBW-cQ-de0" id="8Q0-uM-cSS"/>
+                <outlet property="writerAndTimeLabel" destination="xMq-TZ-mMP" id="bFv-py-vtU"/>
             </connections>
             <point key="canvasLocation" x="857" y="179"/>
         </collectionViewCell>

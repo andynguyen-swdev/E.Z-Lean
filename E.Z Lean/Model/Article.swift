@@ -8,35 +8,66 @@
 
 import RealmSwift
 import RxDataSources
+import Firebase
 
 class Article: Object, IdentifiableType {
     dynamic var id: Int = 0
+    dynamic var writer: String = "E.Z Lean"
     
     dynamic var title: String = ""
     dynamic var titleWithoutDiacritic: String = ""
     
     dynamic var summary: String = ""
-    dynamic var contentLink: String = ""
+    dynamic var originalLink: String = ""
+    
+    dynamic var timePublished = NSDate(timeIntervalSinceNow: 0)
+    var timePublishedString: String {
+        let date = self.timePublished
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "dd 'Tháng' MM',' yyyy"
+        return formatter.string(from: date as Date)
+    }
+    
+    dynamic var timestamp: Int = 0
+    
     dynamic var category: ArticleCategory?
     
-    dynamic var imageRatio: Float = 0
+    dynamic var imageRatio: Float = 16/9
     dynamic var thumbnailImageLink: String = ""
     var thumgnailURL: URL? { return URL(string: thumbnailImageLink) }
     
-    static func create(title: String, summary: String ,contentLink: String, imageLink: String, imageRatio: Float, category: ArticleCategory?) -> Article {
+    static func create(snapshot: FIRDataSnapshot) -> Article {
         let article = Article()
+        let value = snapshot.value as! [String: AnyObject]
         
-        article.title = title
+        article.id = value["id"] as! Int
+        article.writer = value["writer"] as! String
         
-        let string = NSMutableString(string: title) as CFMutableString
+        article.title = value["title"] as! String
+        let string = NSMutableString(string: article.title) as CFMutableString
         CFStringTransform(string, nil, kCFStringTransformStripDiacritics, false)
         article.titleWithoutDiacritic = string as String
         
-        article.summary = summary
-        article.contentLink = contentLink
-        article.thumbnailImageLink = imageLink
-        article.imageRatio = imageRatio
-        article.category = category
+        article.originalLink = value["originalLink"] as! String
+        
+        let topImage = value["top_image"] as! [String: AnyObject]
+        article.thumbnailImageLink = topImage["link"] as! String
+        
+        let size = topImage["size"] as! [Int]
+        article.imageRatio = size[0] != 0 ? Float(size[0]) / Float(size[1]) : 16/10
+        
+        article.summary = value["summary"] as! String
+        article.category = DatabaseManager.articles.getArticleCategory(name: value["category"] as! String)
+        
+        let dateString = value["timePublished"] as! String
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Bangkok")!
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: dateString)!
+        article.timePublished = date as NSDate
+        
+        article.timestamp = value["timestamp"] as! Int
         
         return article
     }
@@ -48,16 +79,13 @@ class Article: Object, IdentifiableType {
     typealias Identity = Article
     var identity: Article { return self }
     
-    static var incrementID: Int = {
-        let realm = try! Realm()
-        return (realm.objects(Article.self).max(ofProperty: "id") as Int? ?? 0) + 1
-    }()
-    
-    static var storagePath: String {
-        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/Articles/"
-    }
-    static var storageUrl: URL {
-        return URL(fileURLWithPath: storagePath)
+    func getContent(completionHandler: @escaping (String) -> ()) {
+        let ref = FirebaseArticleManager.instance.contentRef.child(String(id))
+        ref.observe(.value, with: { snapshot in
+            let content = snapshot.value as! String
+            let html = HTMLGenerator.create(content: content)
+            completionHandler(html)
+        })
     }
     
     deinit {

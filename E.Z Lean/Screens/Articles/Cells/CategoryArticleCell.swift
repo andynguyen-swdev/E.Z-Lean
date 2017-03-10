@@ -15,6 +15,7 @@ class CategoryArticleCell: ArticleCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var writerAndTimeLabel: UILabel!
     
     var imageAspectConstraint: NSLayoutConstraint?
     
@@ -27,6 +28,9 @@ class CategoryArticleCell: ArticleCell {
         layer.shadowRadius = 2
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0
+        
+        layer.borderColor = UIColor.black.withAlphaComponent(0.25).cgColor
+        layer.borderWidth = 1
         
         setImageRatio(16/9)
     }
@@ -46,6 +50,7 @@ class CategoryArticleCell: ArticleCell {
     override func config(article: Article, collectionView: UICollectionView? = nil, indexPath: IndexPath? = nil) {
         titleLabel.text = article.title
         summaryLabel.text = article.summary
+        writerAndTimeLabel.text = article.writer + " | " + article.timePublishedString
         
         setImageRatio(article.imageRatio)
         

@@ -48,7 +48,8 @@ class SearchViewDataSource {
                     self.articles.value = []
                     return Variable<[Article]>([]).asObservable()
                 }
-                return Observable.array(from: DatabaseManager.articles.search(querry: querry))
+                let dattenbua = DatabaseManager.articles.search(querry: querry)
+                return Observable.array(from: dattenbua)
             }
             .bindTo(articles)
             .addDisposableTo(disposeBag)

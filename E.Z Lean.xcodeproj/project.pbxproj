@@ -50,6 +50,10 @@
 		507F54941E58563C006E296B /* SmallArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F548E1E58563C006E296B /* SmallArticleCell.swift */; };
 		507F54951E58563C006E296B /* SmallArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 507F548F1E58563C006E296B /* SmallArticleCell.xib */; };
 		507F54991E585FF4006E296B /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F54981E585FF4006E296B /* ArticleCell.swift */; };
+		508CAB461E72F6C3005BD1FB /* FireBaseArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CAB451E72F6C3005BD1FB /* FireBaseArticleManager.swift */; };
+		508CAB481E7330D8005BD1FB /* HTMLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CAB471E7330D8005BD1FB /* HTMLGenerator.swift */; };
+		508CAB4B1E733147005BD1FB /* base_prefix.txt in Resources */ = {isa = PBXBuildFile; fileRef = 508CAB491E733147005BD1FB /* base_prefix.txt */; };
+		508CAB4C1E733147005BD1FB /* base_suffix.txt in Resources */ = {isa = PBXBuildFile; fileRef = 508CAB4A1E733147005BD1FB /* base_suffix.txt */; };
 		50A67F781E472C4700E463F7 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 50A67F761E472C4700E463F7 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50A67F7B1E472C4700E463F7 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A67F741E472C4700E463F7 /* Utils.framework */; };
 		50A67F7C1E472C4700E463F7 /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50A67F741E472C4700E463F7 /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -191,6 +195,10 @@
 		507F548E1E58563C006E296B /* SmallArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallArticleCell.swift; sourceTree = "<group>"; };
 		507F548F1E58563C006E296B /* SmallArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmallArticleCell.xib; sourceTree = "<group>"; };
 		507F54981E585FF4006E296B /* ArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		508CAB451E72F6C3005BD1FB /* FireBaseArticleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireBaseArticleManager.swift; sourceTree = "<group>"; };
+		508CAB471E7330D8005BD1FB /* HTMLGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLGenerator.swift; sourceTree = "<group>"; };
+		508CAB491E733147005BD1FB /* base_prefix.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = base_prefix.txt; sourceTree = "<group>"; };
+		508CAB4A1E733147005BD1FB /* base_suffix.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = base_suffix.txt; sourceTree = "<group>"; };
 		50A67F741E472C4700E463F7 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A67F761E472C4700E463F7 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		50A67F771E472C4700E463F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -412,6 +420,9 @@
 				50AF24AB1E5C827200453512 /* ArticleCategory.swift */,
 				5021EE091E6863660058B500 /* Exercise.swift */,
 				50B7C0EA1E6BF02200C7DD76 /* BodyPart.swift */,
+				508CAB471E7330D8005BD1FB /* HTMLGenerator.swift */,
+				508CAB491E733147005BD1FB /* base_prefix.txt */,
+				508CAB4A1E733147005BD1FB /* base_suffix.txt */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -554,6 +565,7 @@
 			children = (
 				50AF24A91E5C823B00453512 /* DatabaseManager.swift */,
 				50F521A81E5D390300275564 /* ArticlesManager.swift */,
+				508CAB451E72F6C3005BD1FB /* FireBaseArticleManager.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -788,6 +800,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508CAB4C1E733147005BD1FB /* base_suffix.txt in Resources */,
 				50062A271E470D62002BDE90 /* LaunchScreen.storyboard in Resources */,
 				50D89D451E4C166400F56AAF /* test2.html in Resources */,
 				5052D93E1E6C4A43000784DD /* forearm.png in Resources */,
@@ -810,6 +823,7 @@
 				50B7C0F71E6BF33E00C7DD76 /* chest.png in Resources */,
 				50B7C1031E6C096400C7DD76 /* hamstring.png in Resources */,
 				507F54911E58563C006E296B /* RecentArticleCell.xib in Resources */,
+				508CAB4B1E733147005BD1FB /* base_prefix.txt in Resources */,
 				F123ED511E68CFEC000D24BD /* Squat.png in Resources */,
 				F123ED4F1E68CFEC000D24BD /* Deadlift.png in Resources */,
 				50B7C0F51E6BF33E00C7DD76 /* back.png in Resources */,
@@ -914,8 +928,10 @@
 				50F521A91E5D390300275564 /* ArticlesManager.swift in Sources */,
 				F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */,
 				504278051E49ACE900D062DF /* RecentCollectionViewDelegate.swift in Sources */,
+				508CAB481E7330D8005BD1FB /* HTMLGenerator.swift in Sources */,
 				F12644DB1E4B7B0600C5D33C /* WilksCalculatorViewController.swift in Sources */,
 				5021EDFE1E6857890058B500 /* BaseCell.swift in Sources */,
+				508CAB461E72F6C3005BD1FB /* FireBaseArticleManager.swift in Sources */,
 				5042098B1E55E00F005AC8D4 /* CategoryViewDataSource.swift in Sources */,
 				501ABB531E68508B00562787 /* TouchableAnatomy.swift in Sources */,
 				501ABB581E6853C800562787 /* ExerciseListViewController.swift in Sources */,

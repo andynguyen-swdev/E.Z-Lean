@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         AppDelegate.instance = self
         FIRApp.configure()
+        FIRDatabase.database().persistenceEnabled = true
         
         print(NSTemporaryDirectory())
         DatabaseManager.articles.createArticles()

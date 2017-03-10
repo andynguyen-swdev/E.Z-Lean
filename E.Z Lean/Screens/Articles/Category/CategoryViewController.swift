@@ -75,7 +75,7 @@ class CategoryViewController: UIViewController {
         if segue.identifier == SegueIdentifiers.categoryToSingleArticle {
             let article = sender as! Article
             let vc = segue.destination as! SingleArticleViewController
-            vc.urlStringToLoad = article.contentLink
+            vc.article = article
         }
     }
 }

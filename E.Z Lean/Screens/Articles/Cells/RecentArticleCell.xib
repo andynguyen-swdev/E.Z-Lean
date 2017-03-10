@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,10 +38,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBr-V8-9E9" customClass="AnimatableView" customModule="IBAnimatable">
-                        <rect key="frame" x="0.0" y="161.5" width="358" height="40"/>
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="201.5"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile PIcture" translatesAutoresizingMaskIntoConstraints="NO" id="HND-56-6ZK" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                <rect key="frame" x="9" y="5" width="30" height="30"/>
+                                <rect key="frame" x="9" y="165.5" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HND-56-6ZK" secondAttribute="height" multiplier="1:1" id="cCe-iI-9JX"/>
                                     <constraint firstAttribute="height" constant="30" id="tLq-AS-8gK"/>
@@ -59,13 +59,13 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E.Z Lean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMq-TZ-mMP">
-                                <rect key="frame" x="46" y="18" width="56" height="17"/>
+                                <rect key="frame" x="46" y="178.5" width="56" height="17"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 Tháng 2, 2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emH-et-muY">
-                                <rect key="frame" x="246" y="18" width="102" height="17"/>
+                                <rect key="frame" x="246" y="178.5" width="102" height="17"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -75,8 +75,6 @@
                             <constraint firstItem="emH-et-muY" firstAttribute="bottom" secondItem="xMq-TZ-mMP" secondAttribute="bottom" id="6Xy-gy-lpW"/>
                             <constraint firstItem="xMq-TZ-mMP" firstAttribute="leading" secondItem="HND-56-6ZK" secondAttribute="trailing" constant="7" id="Hcb-7E-jUg"/>
                             <constraint firstItem="xMq-TZ-mMP" firstAttribute="bottom" secondItem="HND-56-6ZK" secondAttribute="bottom" id="SLX-Eo-Wnt"/>
-                            <constraint firstItem="HND-56-6ZK" firstAttribute="centerY" secondItem="uBr-V8-9E9" secondAttribute="centerY" id="bjf-m1-ZSQ"/>
-                            <constraint firstAttribute="height" constant="40" id="tkN-ho-WsW"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="_startPoint" value="top"/>
@@ -84,7 +82,7 @@
                                 <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="value" white="0.0" alpha="0.29468107876712341" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -96,6 +94,9 @@
                     </label>
                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dumbbell_25" translatesAutoresizingMaskIntoConstraints="NO" id="oBH-BU-pY2" customClass="AnimatableImageView" customModule="IBAnimatable">
                         <rect key="frame" x="11" y="298.5" width="25" height="24.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24.5" id="4ww-Eh-bQt"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luyện tập" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc6-3L-Ixo">
                         <rect key="frame" x="42" y="302.5" width="63" height="17"/>
@@ -118,9 +119,11 @@
                 <constraint firstItem="emH-et-muY" firstAttribute="trailing" secondItem="jBW-cQ-de0" secondAttribute="trailing" id="bhZ-Z2-MJ0"/>
                 <constraint firstAttribute="trailing" secondItem="uBr-V8-9E9" secondAttribute="trailing" id="cYZ-qc-zaE"/>
                 <constraint firstItem="JFD-F3-GAV" firstAttribute="trailing" secondItem="jBW-cQ-de0" secondAttribute="trailing" id="dPk-UM-ofn"/>
+                <constraint firstItem="HND-56-6ZK" firstAttribute="top" secondItem="orK-aV-CxI" secondAttribute="bottom" constant="-36" id="fwl-kJ-d1K"/>
                 <constraint firstAttribute="bottom" secondItem="oBH-BU-pY2" secondAttribute="bottom" constant="7" id="lm0-1Z-cxQ"/>
                 <constraint firstItem="Kc6-3L-Ixo" firstAttribute="centerY" secondItem="oBH-BU-pY2" secondAttribute="centerY" id="obA-Lh-JgL"/>
                 <constraint firstItem="oBH-BU-pY2" firstAttribute="leading" secondItem="JFD-F3-GAV" secondAttribute="leading" constant="1" id="qZt-P6-r7D"/>
+                <constraint firstItem="uBr-V8-9E9" firstAttribute="height" secondItem="orK-aV-CxI" secondAttribute="height" id="s2M-wu-hef"/>
                 <constraint firstItem="Kc6-3L-Ixo" firstAttribute="leading" secondItem="oBH-BU-pY2" secondAttribute="trailing" constant="6" id="tT6-Jm-Xgi"/>
                 <constraint firstItem="orK-aV-CxI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="te2-GM-XaM"/>
                 <constraint firstItem="jBW-cQ-de0" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="uqf-gO-NVO"/>
@@ -142,6 +145,7 @@
             <connections>
                 <outlet property="categoryImage" destination="oBH-BU-pY2" id="ZPS-B0-Zjg"/>
                 <outlet property="categoryLabel" destination="Kc6-3L-Ixo" id="lJg-iU-bSw"/>
+                <outlet property="dateLabel" destination="emH-et-muY" id="wqG-OO-EPi"/>
                 <outlet property="imageAspectRatioConstraint" destination="yaT-Tb-QRH" id="fG3-nd-ryy"/>
                 <outlet property="summaryLabel" destination="JFD-F3-GAV" id="XYe-82-FL7"/>
                 <outlet property="thumbnailImageView" destination="orK-aV-CxI" id="6KU-Bw-TRa"/>

@@ -100,7 +100,7 @@ class RecentViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let article = sender as? Article {
             guard let vc = segue.destination as? SingleArticleViewController else { return }
-            vc.urlStringToLoad = article.contentLink
+            vc.article = article
             return
         }
         if let category = sender as? ArticleCategory {

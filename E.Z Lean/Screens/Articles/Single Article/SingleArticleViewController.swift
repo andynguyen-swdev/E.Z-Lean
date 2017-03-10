@@ -14,7 +14,7 @@ extension WKWebView {
 }
 
 class SingleArticleViewController: UIViewController, WKNavigationDelegate {
-    var urlStringToLoad: String!
+    var article: Article!
     let webView = WKWebView.instance
     var initialPageLoaded = false
     
@@ -23,7 +23,6 @@ class SingleArticleViewController: UIViewController, WKNavigationDelegate {
     var disposeBag = DisposeBag()
     
     deinit {
-        webView.loadHTMLString("", baseURL: nil)
         progressView.removeFromSuperview()
         print("deinit-SingleArticle")
     }
@@ -37,8 +36,11 @@ class SingleArticleViewController: UIViewController, WKNavigationDelegate {
         configProgressView()
         
         view = webView
-        let url = URL.init(fileURLWithPath: Article.storagePath + urlStringToLoad)
-        webView.loadFileURL(url, allowingReadAccessTo: Article.storageUrl)
+//        webView.load(URLRequest(url: URL(string:"about:blank")!))
+        
+        article.getContent { [weak self] content in
+            _ = self?.webView.loadHTMLString(content, baseURL: nil)
+        }
     }
     
     func configProgressView() {

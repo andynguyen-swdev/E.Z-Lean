@@ -12,6 +12,7 @@ import RxSwift
 import RxCocoa
 
 class RecentArticleCell: ArticleCell {
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
@@ -25,7 +26,7 @@ class RecentArticleCell: ArticleCell {
         // Initialization code
         
         self.layer.masksToBounds = false
-        layer.shadowOffset = CGSize(width: 0, height: 2)
+        layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowRadius = 2
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
@@ -53,6 +54,7 @@ class RecentArticleCell: ArticleCell {
         summaryLabel.text = article.summary
         categoryImage.image = article.category?.image
         categoryLabel.text = article.category?.name
+        dateLabel.text = article.timePublishedString
         
         setImageRatio(article.imageRatio)
         

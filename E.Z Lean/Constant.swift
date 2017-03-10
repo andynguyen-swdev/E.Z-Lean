@@ -28,7 +28,9 @@ struct BarOptions {
 }
 
 struct Colors {
-    static let collectionViewBackground = UIColor(hexString: "#DDDDDD")
+    static let collectionViewBackground =
+//        UIColor.white
+        UIColor(hexString: "#DDDDDD")
     static let brightOrange = UIColor(hexString: "#E79F62")
     static let redOrange = UIColor(hexString: "#D0866B")
     

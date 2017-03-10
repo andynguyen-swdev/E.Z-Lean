@@ -1,0 +1,21 @@
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        $("img").addClass("img-responsive center-block");
+        $("._4lmi ._2cuy").css("width","auto");
+        // $("._4lmk._5s6c").css("text-align","center");
+        $("._h2w").css("width","auto");
+        $("._4lmk").css("width","auto")
+        .addClass("center-block");
+        $("._h2x ._usd._h2z").css("max-width","100%");
+        $("._2yud").css("width","auto")
+                    // .css("display","inline-block")
+                    // .css("left","50%")
+                    // .css("transform","translate(-50%, 0%)")
+                    // .css("position","absolute")
+                    ;
+        })
+</script>
+
+</html>

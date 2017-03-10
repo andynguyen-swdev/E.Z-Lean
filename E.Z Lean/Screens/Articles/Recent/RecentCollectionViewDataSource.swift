@@ -12,6 +12,7 @@ import RxDataSources
 import RxRealm
 import RealmSwift
 import SDWebImage
+import Firebase
 
 class RecentCollectionViewDataSource {
     weak var collectionView: UICollectionView!
@@ -55,8 +56,19 @@ class RecentCollectionViewDataSource {
     
     func getData() {
         Observable.array(from: DatabaseManager.articles.allArticles)
-//            .map { Array($0.prefix(3)) }
+//                        .map { Array($0.prefix(3)) }
             .bindTo(articles)
             .addDisposableTo(disposeBag)
+        
+//        FirebaseArticleManager.instance
+//            .allArticles
+//            .observe(.value, with: { [weak self] snapshot in
+//                self?.articles.value = []
+//                
+//                for item in snapshot.children {
+//                    let article = Article.create(snapshot: item as! FIRDataSnapshot)
+//                    self?.articles.value.append(article)
+//                }
+//            })
     }
 }

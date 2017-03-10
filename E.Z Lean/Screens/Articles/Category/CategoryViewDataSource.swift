@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import SDWebImage
+import Firebase
 
 class CategoryViewDataSource {
     weak var collectionView: UICollectionView!
@@ -58,5 +59,16 @@ class CategoryViewDataSource {
             )
             .bindTo(articles)
             .addDisposableTo(disposeBag)
+        
+//        FirebaseArticleManager.instance
+//            .getArticlesOf(category: category.name)
+//            .observe(.value, with: { [weak self] snapshot in
+//                self?.articles.value = []
+//                
+//                for item in snapshot.children {
+//                    let article = Article.create(snapshot: item as! FIRDataSnapshot)
+//                    self?.articles.value.append(article)
+//                }
+//            })
     }
 }
