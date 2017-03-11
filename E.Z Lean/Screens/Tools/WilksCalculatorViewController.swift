@@ -42,6 +42,7 @@ class WilksCalculatorViewController: ModelViewController,UITextFieldDelegate,UIN
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tabBarController?.setDarkStyle()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     

@@ -25,18 +25,28 @@ struct Icons {
 struct BarOptions {
     static let navigationBarTranslucent = false
     static let tabBarTranslucent = false
+    
+    static let navigationBarStyle: UIBarStyle = .black
+    static let tabBarStyle: UIBarStyle = .black
 }
 
 struct Colors {
     static let collectionViewBackground =
 //        UIColor.white
-        UIColor(hexString: "#DDDDDD")
+        UIColor(hexString: "#EEEEEE")
     static let brightOrange = UIColor(hexString: "#E79F62")
     static let redOrange = UIColor(hexString: "#D0866B")
     
-    static let navigationBarColor = UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
+    static let navigationBarColor =
+//        UIColor.white
+        UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
     
-    static let tabBarColor = navigationBarColor
+    static let navigationTitleColor = UIColor.white
+    
+    static let tabBarColor =
+//        UIColor.white
+    UIColor(red: 44/256, green: 44/255, blue: 44/256, alpha: 1)
+    
     static let selectedTabBarItem = UIColor.white
     static let unselectedTabBarItem = try! UIColor(rgba_throws: "#777777")
 }

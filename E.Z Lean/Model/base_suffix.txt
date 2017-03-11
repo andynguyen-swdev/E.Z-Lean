@@ -15,7 +15,8 @@
                     // .css("transform","translate(-50%, 0%)")
                     // .css("position","absolute")
                     ;
-        })
+        $("._4_mf").remove();
+        });
 </script>
 
 </html>

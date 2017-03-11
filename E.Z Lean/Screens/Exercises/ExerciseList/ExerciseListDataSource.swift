@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import RxRealm
 import RxDataSources
+import RxSwiftExt
 
 class ExerciseListDataSource {
     var cellType = ExerciseListTableViewCell.self
@@ -17,6 +18,7 @@ class ExerciseListDataSource {
     weak var tableView: UITableView!
     
     var exercises: Variable<[Exercise]> = Variable([])
+    var bodyPart: Variable<BodyPart?> = Variable(nil)
     
     var disposeBag = DisposeBag()
     
@@ -25,11 +27,22 @@ class ExerciseListDataSource {
     }
     
     func config() {
-        Observable.just([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
+        exercises
+            .asObservable()
             .bindTo(tableView.rx
                 .items(cellIdentifier: cellType.identifier, cellType: cellType)) {
                     row, ele, cell in
+                    cell.config(with: ele)
             }
+            .addDisposableTo(disposeBag)
+        
+        bodyPart.asObservable()
+            .unwrap()
+            .flatMapLatest { bodyPart -> Observable<Array<Exercise>> in
+                let result = DatabaseManager.exercises.getExercisesOf(bodyPart: bodyPart)
+                return Observable.array(from: result)
+            }
+            .bindTo(exercises)
             .addDisposableTo(disposeBag)
     }
 }

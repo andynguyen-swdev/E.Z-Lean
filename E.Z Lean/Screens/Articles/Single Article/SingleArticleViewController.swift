@@ -43,6 +43,10 @@ class SingleArticleViewController: UIViewController, WKNavigationDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.setLightStyle()
+    }
+    
     func configProgressView() {
         progressView.removeFromSuperview()
         webView.addSubview(progressView)

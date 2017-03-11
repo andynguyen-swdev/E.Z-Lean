@@ -35,6 +35,8 @@ class EZLeanTabBarViewController: UITabBarController {
         
         tabBar.isTranslucent = BarOptions.tabBarTranslucent
         tabBar.isOpaque = !BarOptions.tabBarTranslucent
+        
+        tabBar.barStyle = BarOptions.tabBarStyle
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -118,5 +120,19 @@ class EZLeanTabBarViewController: UITabBarController {
         bottomBar.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor).isActive = true
         
         bottomBar.backgroundColor = try! UIColor(rgba_throws: "#777777")
+    }
+}
+
+extension UITabBarController {
+    func setLightStyle() {
+        tabBar.barStyle = .default
+        tabBar.barTintColor = UIColor(colorLiteralRed: 251/256, green: 251/256, blue: 251/256, alpha: 1)
+        tabBar.tintColor = .black
+    }
+    
+    func setDarkStyle() {
+        tabBar.barStyle = .black
+        tabBar.barTintColor = Colors.tabBarColor
+        tabBar.tintColor = .white
     }
 }

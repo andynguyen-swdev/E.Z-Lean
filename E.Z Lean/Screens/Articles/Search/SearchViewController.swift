@@ -97,10 +97,12 @@ class SearchViewController: UIViewController {
         searchBar.showsCancelButton = true
         searchBar.sizeToFit()
         
-        searchBar.barStyle = .black
+        searchBar.barStyle = .default
         searchBar.placeholder = "Tìm"
+        
         let textField = searchBar.value(forKey: "searchField") as! UITextField
-        textField.textColor = .white
+        textField.textColor = .black
+        textField.backgroundColor = UIColor(hexString: "#EEEEEE")
         
         navigationItem.title = ""
         navigationItem.titleView = searchBar
@@ -138,6 +140,7 @@ class SearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tabBarController?.setLightStyle()
         searchBar.becomeFirstResponder()
     }
     

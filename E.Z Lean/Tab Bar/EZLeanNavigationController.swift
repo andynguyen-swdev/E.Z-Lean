@@ -13,13 +13,16 @@ class EZLeanNavigationController: UINavigationController, UIGestureRecognizerDel
     
     override func viewDidLoad() {
         navigationBar.barTintColor = Colors.navigationBarColor
-//        navigationBar.barTintColor = UIColor(hexString: "#404040")
+        //        navigationBar.barTintColor = UIColor(hexString: "#404040")
         
         interactivePopGestureRecognizer?.delegate = self
         self.delegate = self
         
+        navigationBar.barStyle = BarOptions.navigationBarStyle
         navigationBar.isTranslucent = BarOptions.navigationBarTranslucent
         navigationBar.isOpaque = !BarOptions.navigationBarTranslucent
+        
+        navigationBar.titleTextAttributes?[NSForegroundColorAttributeName] = Colors.navigationTitleColor
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -33,5 +36,19 @@ class EZLeanNavigationController: UINavigationController, UIGestureRecognizerDel
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return viewControllers.count > 1 && !isPushing
+    }
+}
+
+extension UINavigationController {
+    func setLightStyle() {
+        navigationBar.barStyle = .default
+        navigationBar.barTintColor = UIColor(colorLiteralRed: 251/256, green: 251/256, blue: 251/256, alpha: 1)
+        navigationBar.titleTextAttributes?[NSForegroundColorAttributeName] = UIColor.black
+    }
+    
+    func setDarkStyle() {
+        navigationBar.barStyle = .black
+        navigationBar.barTintColor = Colors.navigationBarColor
+        navigationBar.titleTextAttributes?[NSForegroundColorAttributeName] = UIColor.white
     }
 }

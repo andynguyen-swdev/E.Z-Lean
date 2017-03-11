@@ -17,6 +17,7 @@ class SmallArticleCell: ArticleCell {
     @IBOutlet weak var profilePictureImageView: AnimatableImageView!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var thumbnailAspectRatioConstraint: NSLayoutConstraint!
+    @IBOutlet weak var writerAndTimeLabel: UILabel!
     
     @IBOutlet var paddingConstraints: [NSLayoutConstraint]!
     
@@ -36,6 +37,7 @@ class SmallArticleCell: ArticleCell {
         titleLabel.text = article.title
         summaryLabel.text = article.summary
         setImageRatio(article.imageRatio)
+        writerAndTimeLabel.text = article.writer + " | " + article.timePublishedString
         
         guard let _ = collectionView, let _ = indexPath else { return }
         let url = article.thumgnailURL

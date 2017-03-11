@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Utils
 import RxSwift
 import RxCocoa
 import RxSwiftExt
@@ -24,20 +25,57 @@ class ExerciseViewController: UIViewController {
     
     override func viewDidLoad() {
         configCollectionView()
+        exerciseDescriptionLabel.text = ""
         
         exercise.asObservable()
             .unwrap()
-            .subscribe(onNext: { [unowned self] exercise in
-                self.exerciseNameLabel.text = exercise.name
-                self.collectionViewPageControl.numberOfPages = exercise.imageLinks.count
+            .subscribe(onNext: { [weak self] exercise in
+                self?.exerciseNameLabel.text = exercise.name
+                self?.collectionViewPageControl.numberOfPages = exercise.imageLinks.count
+                
+                if exercise.imageLinks.count == 1 {
+                    self?.collectionViewPageControl.alpha = 0
+                    self?.exercisePhotosCollectionView.isScrollEnabled = false
+                }
+                let content = exercise.content
+                
+                DispatchQueue.global().async {
+                    content.attributedStringFromHTML { attrStr in
+                        DispatchQueue.global().async {
+                            let mutableString = NSMutableAttributedString(attributedString: attrStr!)
+                            
+                            while mutableString.mutableString.contains("\t") {
+                                let range = mutableString.mutableString.range(of: "\t")
+                                mutableString.replaceCharacters(in: range, with: " ")
+                            }
+                            
+                            let range = NSRange(location: 0, length: mutableString.length)
+                            
+                            let style = NSMutableParagraphStyle()
+                            style.setParagraphStyle(.default)
+                            style.firstLineHeadIndent = 0
+                            style.headIndent = 0
+                            style.alignment = .justified
+                            style.paragraphSpacing = 15
+                            style.lineSpacing = 7.5
+                            
+                            style.tabStops.forEach { style.removeTabStop($0) }
+                            
+                            mutableString.addAttributes([NSParagraphStyleAttributeName: style], range: range)
+                            
+                            DispatchQueue.main.async {
+                                self?.exerciseDescriptionLabel.attributedText = mutableString
+                            }
+                        }
+                    }
+                }
             })
             .addDisposableTo(disposeBag)
-        
-        exercise.value = Exercise.create(id: 0, name: "Dumbbel Curl", imageLinks: [
-            "http://workoutlabs.com/wp-content/uploads/watermarked/Standing_Dumbbell_Curl.png",
-            "http://workoutlabs.com/wp-content/uploads/watermarked/Seated_Dumbbell_Curl.png",
-            "https://s-media-cache-ak0.pinimg.com/736x/2d/c2/a4/2dc2a49a8fca69cde358fa1a2f517ba2.jpg"
-            ])
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.setDarkStyle()
+        navigationController?.setDarkStyle()
     }
     
     func configCollectionView() {
@@ -55,3 +93,5 @@ class ExerciseViewController: UIViewController {
         print("deinit-ExerciseViewController")
     }
 }
+
+

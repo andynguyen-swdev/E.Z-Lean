@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(NSTemporaryDirectory())
         DatabaseManager.articles.createArticles()
+        DatabaseManager.exercises.downloadExercises()
 //        UITextField.appearance().keyboardAppearance = .dark
         return true
     }

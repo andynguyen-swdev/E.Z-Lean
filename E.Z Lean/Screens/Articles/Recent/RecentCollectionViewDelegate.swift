@@ -14,13 +14,13 @@ extension RecentViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        cell.alpha = 0
-        let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 0, 0)
-        cell.layer.transform = transform
-        UIView.animate(withDuration: 1/60) {
-            cell.alpha = 1
-            cell.layer.transform = CATransform3DIdentity
-        }
+//        cell.alpha = 0
+//        let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 0, 0)
+//        cell.layer.transform = transform
+//        UIView.animate(withDuration: 1/60) {
+//            cell.alpha = 1
+//            cell.layer.transform = CATransform3DIdentity
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

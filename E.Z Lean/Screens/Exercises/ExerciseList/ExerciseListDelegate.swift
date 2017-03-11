@@ -14,9 +14,11 @@ extension ExerciseListViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let yOffset = scrollView.contentOffset.y
-        tableView.tableHeaderView?.frame.origin.y = min(0,yOffset)
-        tableView.tableHeaderView?.layoutIfNeeded()
-        print(tableView.tableHeaderView!.frame.origin.y)
+        if yOffset >= 0 {
+            bodyPartImageContainerTopConstraint.constant = yOffset
+        } else {
+            bodyPartImageContainerTopConstraint.constant = 0
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

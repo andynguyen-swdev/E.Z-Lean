@@ -55,7 +55,7 @@ class Article: Object, IdentifiableType {
         article.thumbnailImageLink = topImage["link"] as! String
         
         let size = topImage["size"] as! [Int]
-        article.imageRatio = size[0] != 0 ? Float(size[0]) / Float(size[1]) : 16/10
+        article.imageRatio = size[0] != 0 ? Float(size[0]) / Float(size[1]) : 1
         
         article.summary = value["summary"] as! String
         article.category = DatabaseManager.articles.getArticleCategory(name: value["category"] as! String)
@@ -83,7 +83,12 @@ class Article: Object, IdentifiableType {
         let ref = FirebaseArticleManager.instance.contentRef.child(String(id))
         ref.observe(.value, with: { snapshot in
             let content = snapshot.value as! String
-            let html = HTMLGenerator.create(content: content)
+            var imageLink: String? = self.thumbnailImageLink
+            if imageLink == "no image" {
+                imageLink = nil
+            }
+            
+            let html = HTMLGenerator.create(topImageLink: imageLink, content: content)
             completionHandler(html)
         })
     }

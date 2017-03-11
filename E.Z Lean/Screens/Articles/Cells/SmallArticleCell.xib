@@ -94,6 +94,7 @@
                 <outlet property="thumbnailAspectRatioConstraint" destination="dkU-JF-c7g" id="SmO-Xz-LFt"/>
                 <outlet property="thumbnailImageView" destination="ehS-0f-8kg" id="Nn1-qP-NXX"/>
                 <outlet property="titleLabel" destination="vmk-GB-GLG" id="75f-X6-6Un"/>
+                <outlet property="writerAndTimeLabel" destination="Yjz-cm-omS" id="Pih-h7-1T7"/>
                 <outletCollection property="paddingConstraints" destination="r6c-Ke-MRc" collectionClass="NSMutableArray" id="jL2-H7-njS"/>
                 <outletCollection property="paddingConstraints" destination="eaf-8n-8gZ" collectionClass="NSMutableArray" id="rud-07-w6Q"/>
             </connections>

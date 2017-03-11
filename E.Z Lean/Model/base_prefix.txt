@@ -36,4 +36,6 @@
 </head>
 
 <body>
+    <div class="_5bdz" style="padding-bottom: 56%%; width: 100%%; background-image: url(%@); background-position: center;">
+    </div>
     <div class="container">

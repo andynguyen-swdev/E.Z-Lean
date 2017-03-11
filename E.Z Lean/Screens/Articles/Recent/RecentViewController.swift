@@ -44,6 +44,12 @@ class RecentViewController: UIViewController {
         configButtons()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setLightStyle()
+        navigationController?.navigationBar.tintColor = .black
+        tabBarController?.setLightStyle()
+    }
+    
     func configTabBar() {
         EZLeanTabBarViewController.instance
             .currentIndex
@@ -67,10 +73,10 @@ class RecentViewController: UIViewController {
     
     func configButtons() {
         categoryBarButton.backgroundColor = .clear
-        categoryBarButton.tintColor = Colors.brightOrange
+        categoryBarButton.tintColor = .black
         
         searchButton.backgroundColor = .clear
-        searchButton.tintColor = Colors.brightOrange
+        searchButton.tintColor = .black
         
         categoryBarButton.rx
             .tap
@@ -115,7 +121,10 @@ class RecentViewController: UIViewController {
     func presentPopOver() {
         let vc = self.popOverCategory
         let view = vc.view
-        view?.frame = CGRect(x: 0, y: 0, width: self.view.width-16, height: 198)
+        
+        let height = (CGFloat(DatabaseManager.articles.allArticeCategory.count) + 1.5) * 44
+        
+        view?.frame = CGRect(x: 0, y: 0, width: self.view.width-16, height: height)
         view?.translatesAutoresizingMaskIntoConstraints = false
         
         let options: [PopoverOption] = [

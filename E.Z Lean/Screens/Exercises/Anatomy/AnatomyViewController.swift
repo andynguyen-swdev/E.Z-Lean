@@ -43,6 +43,12 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
         longPressing = false
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.setDarkStyle()
+        navigationController?.setDarkStyle()
+        navigationController?.navigationBar.tintColor = .white
+    }
+    
     func configScrollView() {
         scrollView.delegate = self
         

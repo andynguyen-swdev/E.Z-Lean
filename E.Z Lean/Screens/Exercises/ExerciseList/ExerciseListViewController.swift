@@ -19,12 +19,12 @@ class ExerciseListViewController: UIViewController {
     @IBOutlet weak var bodyPartImageView: UIImageView!
     @IBOutlet weak var bodyPartImageViewOverlay: UIView!
     @IBOutlet weak var bodyPartNameLabel: UILabel!
+    @IBOutlet weak var bodyPartImageContainerTopConstraint: NSLayoutConstraint!
     
     // Anatomy cell
     @IBOutlet weak var anatomyCell: UIView!
     @IBOutlet weak var anatomyLabel: UILabel!
     @IBOutlet weak var anatomyDisclosureIndicator: UIButton!
-    @IBOutlet weak var anatomyDetailDisclosure: UIButton!
     
     // Scroll views
     var scrollOffset: CGFloat!
@@ -42,21 +42,35 @@ class ExerciseListViewController: UIViewController {
         configButtonTintColor()
         configDataSource()
         configSelectModel()
-        
-        tableView.tableHeaderView?.topAnchor.constraint(lessThanOrEqualTo: view.topAnchor).isActive = true
+    
+        bodyPartImageContainer.bottomAnchor.constraint(equalTo: anatomyCell.topAnchor).isActive = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.setDarkStyle()
+        navigationController?.setDarkStyle()
+        navigationController?.navigationBar.tintColor = .white
     }
     
     func configSelectModel() {
-        tableView.rx.modelSelected(Int.self)
-            .subscribe(onNext: { [unowned self] _ in
-                self.performSegue(withIdentifier: SegueIdentifiers.exerciseListToExercise, sender: nil)
+        tableView.rx.modelSelected(Exercise.self)
+            .subscribe(onNext: { [unowned self] exercise in
+                self.performSegue(withIdentifier: SegueIdentifiers.exerciseListToExercise, sender: exercise)
             })
             .addDisposableTo(disposeBag)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let exercise = sender as? Exercise {
+            let vc = segue.destination as! ExerciseViewController
+            vc.exercise.value = exercise
+        }
+    }
+    
     func configButtonTintColor() {
-        anatomyDetailDisclosure.tintColor = .white
-        anatomyDisclosureIndicator.tintColor = .white
+        anatomyDisclosureIndicator.tintColor = .black
+        anatomyLabel.textColor = .black
+        anatomyCell.backgroundColor = .white
     }
     
     func bindBodyPart() {
@@ -74,6 +88,7 @@ class ExerciseListViewController: UIViewController {
     func configDataSource() {
         ExerciseListTableViewCell.registerFor(tableView: tableView)
         dataSource = ExerciseListDataSource(tableView: tableView)
+        dataSource.bodyPart.value = self.bodyPart.value
         dataSource.config()
         tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
     }

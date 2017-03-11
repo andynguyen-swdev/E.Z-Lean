@@ -34,6 +34,7 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.8)
   - IBAnimatable (3.1.2)
+  - Kanna (2.1.1)
   - LTMorphingLabel (0.4.0)
   - MaterialControls (1.2.2)
   - Popover (1.0.4)
@@ -69,6 +70,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - IBAnimatable
+  - Kanna (~> 2.1.0)
   - LTMorphingLabel
   - MaterialControls
   - Popover
@@ -95,6 +97,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   IBAnimatable: 26b74a72df9369d40faab97428477c246b9e42ba
+  Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
   LTMorphingLabel: d9a85f16ac306f0e07321d6819964deb2dc69638
   MaterialControls: 1c6b29e78d3a13d8dd6a67ed31b6d26eb5de8f72
   Popover: 8bced665f98824ded3b8114a27f4d2281c78a672
@@ -111,6 +114,6 @@ SPEC CHECKSUMS:
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 482424b634f9a838977d194a21f0fb7565128f12
+PODFILE CHECKSUM: 9446e6401d414a7a35bc2b56ef81a55b0277f2ef
 
 COCOAPODS: 1.2.0

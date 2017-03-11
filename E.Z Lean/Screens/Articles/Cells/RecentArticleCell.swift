@@ -26,10 +26,10 @@ class RecentArticleCell: ArticleCell {
         // Initialization code
         
         self.layer.masksToBounds = false
-        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowRadius = 2
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.5
+        layer.shadowOpacity = 0
         
         categoryImage.tintColor = Colors.brightOrange
         setImageRatio(16/9)
@@ -39,7 +39,7 @@ class RecentArticleCell: ArticleCell {
     
     func setImageRatio(_ ratio: Float) {
         var ratio = CGFloat(ratio)
-        ratio = (ratio > 16/9) ? ratio : 16/9
+        ratio = (ratio > 16/7) ? ratio : 16/7
         
         guard var constraint = imageAspectRatioConstraint else { return }
         constraint.isActive = false

@@ -8,33 +8,29 @@
 
 import Foundation
 
-enum BodyPart {
-    case calf, hamstring, quad, glute, chest, lats, shoulder, biceps, triceps, forearm, core
+enum BodyPart: String {
+    case
+    calf = "Calves",
+    hamstring = "Hamstrings",
+    quad = "Quadriceps",
+    glute = "Glute",
+    chest = "Chest",
+    lats = "Back",
+    shoulder = "Shoulder - Traps",
+    biceps = "Biceps",
+    triceps = "Triceps",
+    forearm = "Forearm",
+    core = "Core"
     
     var name: String {
-        switch self {
-        case .calf:
-            return "Calf"
-        case .hamstring:
-            return "Hamstring"
-        case .quad:
-            return "Quadriceps"
-        case .glute:
-            return "Hip - Glute"
-        case .chest:
-            return "Chest"
-        case .lats:
-            return "Lats"
-        case .shoulder:
-            return "Shoulders - Traps"
-        case .biceps:
-            return "Biceps"
-        case .triceps:
-            return "Triceps"
-        case .forearm:
-            return "Forearm"
-        case .core:
-            return "Core"
+        return self.rawValue
+    }
+    
+    static func getBodyPart(from string: String) -> BodyPart? {
+        if string == "Shoulder" || string == "Trapezius" {
+            return BodyPart.shoulder
+        } else {
+            return BodyPart.init(rawValue: string)
         }
     }
     
@@ -51,7 +47,7 @@ enum BodyPart {
         case .chest:
             return #imageLiteral(resourceName: "chest.png")
         case .lats:
-            return #imageLiteral(resourceName: "back.png")
+            return #imageLiteral(resourceName: "lats.png")
         case .shoulder:
             return #imageLiteral(resourceName: "shoulder.png")
         case .biceps:

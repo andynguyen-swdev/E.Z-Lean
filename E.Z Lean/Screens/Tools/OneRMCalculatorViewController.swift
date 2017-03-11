@@ -38,6 +38,10 @@ class OneRMCalculatorViewController: ModelViewController, UICollectionViewDataSo
         collectionView.dataSource = self
         collectionView.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.setDarkStyle()
+    }
  
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent

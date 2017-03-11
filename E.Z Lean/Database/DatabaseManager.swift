@@ -12,4 +12,5 @@ import RxSwift
 
 class DatabaseManager {
     static var articles = ArticlesManager()
+    static var exercises = ExercisesManager()
 }

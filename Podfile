@@ -29,6 +29,9 @@ pod 'LTMorphingLabel'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
+
+pod 'Kanna', '~> 2.1.0'
+
 end
 
 post_install do |installer|

@@ -45,6 +45,10 @@ class CategoryViewController: UIViewController {
         configSelectCell()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.setLightStyle()
+    }
+    
     func configSelectCell() {
         collectionView.rx
             .modelSelected(Article.self)
@@ -58,7 +62,7 @@ class CategoryViewController: UIViewController {
         navigationItem.title = category.name
         
         let btn = UIButton(type: .system)
-        btn.setImage(category.image, for: .normal)
+//        btn.setImage(category.image, for: .normal)
         btn.tintColor = Colors.brightOrange
         btn.setTitle(category.name, for: .normal)
         btn.setTitleColor(.white, for: .normal)
@@ -68,7 +72,7 @@ class CategoryViewController: UIViewController {
         btn.sizeToFit()
         
         navigationItem.titleView = btn
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Back Chevron"), style: .plain, target: nil, action: nil)
+        //        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Back Chevron"), style: .plain, target: nil, action: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -24,20 +24,20 @@ class CategoryArticleCell: ArticleCell {
         // Initialization code
         
         self.layer.masksToBounds = false
-        layer.shadowOffset = CGSize(width: 0, height: 1)
+        layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowRadius = 2
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0
         
         layer.borderColor = UIColor.black.withAlphaComponent(0.25).cgColor
-        layer.borderWidth = 1
+        layer.borderWidth = 0.25
         
         setImageRatio(16/9)
     }
     
     func setImageRatio(_ ratio: Float) {
         var ratio = CGFloat(ratio)
-        ratio = (ratio > 16/9) ? ratio : 16/9
+        ratio = (ratio > 16/7) ? ratio : 16/7
         
         if let constraint = imageAspectConstraint {
             constraint.isActive = false

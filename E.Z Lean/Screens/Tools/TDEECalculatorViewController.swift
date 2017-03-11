@@ -40,6 +40,7 @@ class TDEECalculatorViewController: ModelViewController,UIPickerViewDelegate,UIP
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        tabBarController?.setDarkStyle()
     }
     
     override func viewDidLoad() {
@@ -53,6 +54,7 @@ class TDEECalculatorViewController: ModelViewController,UIPickerViewDelegate,UIP
         componentDidEdited()
 
     }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
