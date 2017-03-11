@@ -35,8 +35,7 @@ class WilksCalculatorViewController: ModelViewController,UITextFieldDelegate,UIN
     @IBOutlet weak var gender: UISwitch!
     
     @IBOutlet weak var weight: UITextField!
-    
-    let disposeBag = DisposeBag()
+   
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -52,7 +51,7 @@ class WilksCalculatorViewController: ModelViewController,UITextFieldDelegate,UIN
         addTargetForAll(textFields: textFieldArr)
         addTargetForAllAnimatable(textFields: animatableTFArr)
         super.viewDidLoad()
-        configNavigationCenter(disposeBag: disposeBag, scrollView: scrollView)
+        configNavigationCenter( scrollView: scrollView)
         setUp()
         componentsDidEdited()
         

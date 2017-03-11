@@ -35,7 +35,7 @@ class TDEECalculatorViewController: ModelViewController,UIPickerViewDelegate,UIP
     private let numberOfRow = 250
     let data: [String] = ["Ít vận động(nhân viên văn phòng)","Vận động nhẹ(1-3 lần/tuần)","Vận động vừa(3-5 lần/tuần)","Vận đông nhiều(6-7 lần/tuần)","Vận động tích cực(vận động viên)"]
     
-    let disposeBag = DisposeBag()
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,7 +49,7 @@ class TDEECalculatorViewController: ModelViewController,UIPickerViewDelegate,UIP
         animatableTFArr = [numberOfGainWeight,numberofLoseWeight]
         addTargetForAll(textFields: textFieldArr)
         addTargetForAllAnimatable(textFields: animatableTFArr)
-        configNavigationCenter(disposeBag: disposeBag, scrollView: scrollView)
+        configNavigationCenter(scrollView: scrollView)
         setUp()
         componentDidEdited()
 

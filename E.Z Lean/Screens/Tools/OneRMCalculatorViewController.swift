@@ -18,7 +18,7 @@ class OneRMCalculatorViewController: ModelViewController, UICollectionViewDataSo
     @IBOutlet weak var result: UILabel!
     @IBOutlet weak var repsLabel: UILabel!
     
-    let disposeBag = DisposeBag()
+    
     let transition = CircularTransition()
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -31,17 +31,15 @@ class OneRMCalculatorViewController: ModelViewController, UICollectionViewDataSo
         textFieldArr = [weight,reps]
         addTargetForAll(textFields: textFieldArr)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        configNavigationCenter(disposeBag: disposeBag, scrollView: scrollView)
+        configNavigationCenter(scrollView: scrollView)
+        
         
         setUp()
         componentsDidEdited()
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        tabBarController?.setDarkStyle()
-    }
+
  
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
@@ -69,7 +67,7 @@ class OneRMCalculatorViewController: ModelViewController, UICollectionViewDataSo
             if myReps <= 0 {
                 repsLabel.text = "Số lần cần > 0"
             } else {
-                repsLabel.text = "Số lần cần <= 10"
+                repsLabel.text = "Số lần cần < 11"
             }
             
             repsLabel.textColor = UIColor(hexString: "#FF2200")

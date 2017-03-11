@@ -23,17 +23,13 @@ class ToolViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.delegate = self
         naviHeight =  UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.height)!
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
-    func setStartPosition(){
-        wilksView.frame.origin = CGPoint(x:0, y: -self.wilksView.height)
-        tdeeView.frame.origin = CGPoint(x:0, y: -self.wilksView.height)
-        oneRMView.frame.origin = CGPoint(x:0, y: -self.wilksView.height)
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -47,17 +43,6 @@ class ToolViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
         tabBarController?.setDarkStyle()
     }
-}
-
-extension UIView {
-    func startAnimation(duration:Double,delay: Double? = 0.0,vector : CGVector,naviHeight: CGFloat,spring:Double){
-        let oldOrigin = self.frame.origin
-        UIView.animate(withDuration: duration, delay: delay!, usingSpringWithDamping: CGFloat(spring), initialSpringVelocity: 0, options: .curveEaseIn, animations: {
-            self.alpha = 1
-            self.frame.origin = oldOrigin.add(x: vector.dx, y: vector.dy+naviHeight+self.height)
-        }, completion: nil)
-    }
-    
 }
 
 extension ToolViewController: UINavigationControllerDelegate {
