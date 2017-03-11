@@ -81,4 +81,8 @@ class Exercise: Object {
     override static func primaryKey() -> String? {
         return "name"
     }
+    
+    deinit {
+        print("deinit-Exercise")
+    }
 }
