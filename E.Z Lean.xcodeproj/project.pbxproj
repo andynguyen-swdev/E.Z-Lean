@@ -112,11 +112,22 @@
 		F1335C9D1E6D866D00DFCA6B /* ModelViewControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1335C9C1E6D866D00DFCA6B /* ModelViewControllerUtils.swift */; };
 		F164A41F1E4F621A0084F6B3 /* TDEECalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */; };
 		F1910DF61E6F346F000AE150 /* CircleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1910DF51E6F346F000AE150 /* CircleTransition.swift */; };
+		F1AF670B1E7359AA005FC6C9 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF670A1E7359AA005FC6C9 /* MusicPlayerViewController.swift */; };
+		F1AF670E1E737C0E005FC6C9 /* SongViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF670C1E737C0E005FC6C9 /* SongViewCell.swift */; };
+		F1AF670F1E737C0E005FC6C9 /* SongViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1AF670D1E737C0E005FC6C9 /* SongViewCell.xib */; };
+		F1B1FC1D1E731D24006FA8DA /* ListSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1FC1C1E731D24006FA8DA /* ListSongViewController.swift */; };
+		F1B1FC1F1E731E37006FA8DA /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1FC1E1E731E37006FA8DA /* Song.swift */; };
+		F1B1FC211E732025006FA8DA /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1FC201E732025006FA8DA /* StringUtils.swift */; };
+		F1B1FC231E73229A006FA8DA /* ListSongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1FC221E73229A006FA8DA /* ListSongTableViewCell.swift */; };
+		F1B1FC251E7324E2006FA8DA /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1FC241E7324E2006FA8DA /* MyUtils.swift */; };
+		F1B1FC271E732B75006FA8DA /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B1FC261E732B75006FA8DA /* TestView.xib */; };
+		F1B1FC291E732C32006FA8DA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1FC281E732C32006FA8DA /* TestView.swift */; };
 		F1B5C5261E697878006BB375 /* CombinedShape.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B5C5251E697878006BB375 /* CombinedShape.png */; };
 		F1B5C5281E697AFF006BB375 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B5C5271E697AFF006BB375 /* back_icon.png */; };
 		F1D8333D1E47871F00772F42 /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333C1E47871F00772F42 /* ToolViewController.swift */; };
 		F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */; };
 		F1D833411E478F2D00772F42 /* StringToDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D833401E478F2D00772F42 /* StringToDouble.swift */; };
+		F1D94C481E744CB300B6B42F /* PlayerMusicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1D94C471E744CB300B6B42F /* PlayerMusicView.xib */; };
 		F1EB919E1E71D1B30078A407 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = F1EB919D1E71D1B30078A407 /* next.png */; };
 		F1EB91A01E71D1BC0078A407 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = F1EB919F1E71D1BC0078A407 /* back.png */; };
 /* End PBXBuildFile section */
@@ -254,11 +265,22 @@
 		F1335C9C1E6D866D00DFCA6B /* ModelViewControllerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelViewControllerUtils.swift; sourceTree = "<group>"; };
 		F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDEECalculatorViewController.swift; sourceTree = "<group>"; };
 		F1910DF51E6F346F000AE150 /* CircleTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTransition.swift; sourceTree = "<group>"; };
+		F1AF670A1E7359AA005FC6C9 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
+		F1AF670C1E737C0E005FC6C9 /* SongViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongViewCell.swift; sourceTree = "<group>"; };
+		F1AF670D1E737C0E005FC6C9 /* SongViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongViewCell.xib; sourceTree = "<group>"; };
+		F1B1FC1C1E731D24006FA8DA /* ListSongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSongViewController.swift; sourceTree = "<group>"; };
+		F1B1FC1E1E731E37006FA8DA /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		F1B1FC201E732025006FA8DA /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		F1B1FC221E73229A006FA8DA /* ListSongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSongTableViewCell.swift; sourceTree = "<group>"; };
+		F1B1FC241E7324E2006FA8DA /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
+		F1B1FC261E732B75006FA8DA /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
+		F1B1FC281E732C32006FA8DA /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		F1B5C5251E697878006BB375 /* CombinedShape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CombinedShape.png; sourceTree = "<group>"; };
 		F1B5C5271E697AFF006BB375 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
 		F1D8333C1E47871F00772F42 /* ToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolViewController.swift; sourceTree = "<group>"; };
 		F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneRMCalculatorViewController.swift; sourceTree = "<group>"; };
 		F1D833401E478F2D00772F42 /* StringToDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringToDouble.swift; sourceTree = "<group>"; };
+		F1D94C471E744CB300B6B42F /* PlayerMusicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerMusicView.xib; sourceTree = "<group>"; };
 		F1EB919D1E71D1B30078A407 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		F1EB919F1E71D1BC0078A407 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		FB6B1D2003A8D42E46A6F7CA /* Pods_E_Z_Lean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Z_Lean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -611,6 +633,17 @@
 			isa = PBXGroup;
 			children = (
 				50AF4C6E1E48FE2300E8EF8A /* Coaches.storyboard */,
+				F1B1FC1C1E731D24006FA8DA /* ListSongViewController.swift */,
+				F1B1FC221E73229A006FA8DA /* ListSongTableViewCell.swift */,
+				F1B1FC281E732C32006FA8DA /* TestView.swift */,
+				F1B1FC1E1E731E37006FA8DA /* Song.swift */,
+				F1B1FC201E732025006FA8DA /* StringUtils.swift */,
+				F1B1FC241E7324E2006FA8DA /* MyUtils.swift */,
+				F1B1FC261E732B75006FA8DA /* TestView.xib */,
+				F1AF670A1E7359AA005FC6C9 /* MusicPlayerViewController.swift */,
+				F1AF670C1E737C0E005FC6C9 /* SongViewCell.swift */,
+				F1AF670D1E737C0E005FC6C9 /* SongViewCell.xib */,
+				F1D94C471E744CB300B6B42F /* PlayerMusicView.xib */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -821,7 +854,10 @@
 				F1EB91A01E71D1BC0078A407 /* back.png in Resources */,
 				507F54951E58563C006E296B /* SmallArticleCell.xib in Resources */,
 				5052D93D1E6C4A43000784DD /* calves.png in Resources */,
+				F1B1FC271E732B75006FA8DA /* TestView.xib in Resources */,
 				50AF4C721E48FE2300E8EF8A /* Coaches.storyboard in Resources */,
+				F1AF670F1E737C0E005FC6C9 /* SongViewCell.xib in Resources */,
+				F1D94C481E744CB300B6B42F /* PlayerMusicView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,6 +936,8 @@
 				5021EE031E6857D80058B500 /* ExerciseListTableViewCell.swift in Sources */,
 				5021EE061E6860300058B500 /* ExerciseListDelegate.swift in Sources */,
 				50B6CBC61E5776250064291C /* SearchViewDataSource.swift in Sources */,
+				F1B1FC1F1E731E37006FA8DA /* Song.swift in Sources */,
+				F1B1FC211E732025006FA8DA /* StringUtils.swift in Sources */,
 				F1910DF61E6F346F000AE150 /* CircleTransition.swift in Sources */,
 				50FEF9321E4EA23A00308CCA /* EZLeanNavigationController.swift in Sources */,
 				501ABB511E68508B00562787 /* AnatomyViewController.swift in Sources */,
@@ -910,6 +948,7 @@
 				503B73B01E549E3B005838CC /* CategoryPopOverViewController.swift in Sources */,
 				507F54921E58563C006E296B /* CategoryArticleCell.swift in Sources */,
 				5021EE081E68603A0058B500 /* ExerciseListDataSource.swift in Sources */,
+				F1B1FC291E732C32006FA8DA /* TestView.swift in Sources */,
 				507F54901E58563C006E296B /* RecentArticleCell.swift in Sources */,
 				50F521A91E5D390300275564 /* ArticlesManager.swift in Sources */,
 				F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */,
@@ -924,13 +963,18 @@
 				50E947C71E55F3ED00AEFEC4 /* SearchViewController.swift in Sources */,
 				507F54991E585FF4006E296B /* ArticleCell.swift in Sources */,
 				50AF4C651E48D78000E8EF8A /* EZLeanTabBarViewController.swift in Sources */,
+				F1AF670E1E737C0E005FC6C9 /* SongViewCell.swift in Sources */,
 				50276FA21E4A2AE4006CBAC0 /* SingleArticleViewController.swift in Sources */,
 				F1D8333D1E47871F00772F42 /* ToolViewController.swift in Sources */,
+				F1AF670B1E7359AA005FC6C9 /* MusicPlayerViewController.swift in Sources */,
 				5052D9421E6C59B9000784DD /* ExercisePhotosDelegate.swift in Sources */,
 				501ABB521E68508B00562787 /* TouchableAnatomy+Function.swift in Sources */,
 				5079F5BB1E65A5DC002B50B1 /* StringScore.swift in Sources */,
+				F1B1FC251E7324E2006FA8DA /* MyUtils.swift in Sources */,
 				5021EE0A1E6863660058B500 /* Exercise.swift in Sources */,
+				F1B1FC231E73229A006FA8DA /* ListSongTableViewCell.swift in Sources */,
 				50062A1D1E470D62002BDE90 /* AppDelegate.swift in Sources */,
+				F1B1FC1D1E731D24006FA8DA /* ListSongViewController.swift in Sources */,
 				50AF24AC1E5C827200453512 /* ArticleCategory.swift in Sources */,
 				50B7C0EB1E6BF02200C7DD76 /* BodyPart.swift in Sources */,
 				50AF24AA1E5C823B00453512 /* DatabaseManager.swift in Sources */,
