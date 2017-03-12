@@ -13,6 +13,7 @@ import Kanna
 class Anatomy: Object {
     dynamic var id = ""
     dynamic var name = ""
+    dynamic var tag = ""
     dynamic var bodyPart = ""
     dynamic var date_created = ""
     dynamic var content = ""
@@ -32,6 +33,7 @@ class Anatomy: Object {
             .forEach { tag in
                 if let part = BodyPart.getBodyPart(from: tag) {
                     bodyPart = part
+                    anatomy.tag = tag
                     return
                 }
         }

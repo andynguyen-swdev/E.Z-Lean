@@ -40,6 +40,9 @@ class EZLeanTabBarViewController: UITabBarController {
         
         viewControllers?[2].tabBarItem.title = "Công cụ"
         viewControllers?[2].tabBarItem.image = #imageLiteral(resourceName: "Training_27")
+        
+        viewControllers?[3].tabBarItem.title = "Nhạc tập"
+        viewControllers?[3].tabBarItem.image = #imageLiteral(resourceName: "Music_27")
     }
     
     override func viewDidAppear(_ animated: Bool) {

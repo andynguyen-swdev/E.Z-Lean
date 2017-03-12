@@ -56,9 +56,9 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func configRightTabBarButton() {
-        let btn = navigationItem.rightBarButtonItem?
+        let btn = navigationItem.rightBarButtonItem
         
-        btn.rx.tap
+        btn?.rx.tap
             .subscribe(onNext: { [unowned self] _ in
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "Tutorial")
                 vc?.modalPresentationStyle = .overFullScreen

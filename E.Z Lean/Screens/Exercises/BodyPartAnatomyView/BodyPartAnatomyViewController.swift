@@ -22,6 +22,7 @@ class BodyPartAnatomyViewController: UIViewController {
     override func viewDidLoad() {
         BodyPartAnatomyCell.registerFor(tableView: tableView)
         tableView.rowHeight = tableView.width / 16 * 12
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cấu tạo", style: .plain, target: nil, action: nil)
         
         bodyPart.asObservable()
             .unwrap()

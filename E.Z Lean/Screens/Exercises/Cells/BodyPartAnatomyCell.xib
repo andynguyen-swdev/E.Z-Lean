@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="453" height="304"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="453" height="303"/>
+                <rect key="frame" x="0.0" y="0.0" width="453" height="303.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EZ Lean logo" translatesAutoresizingMaskIntoConstraints="NO" id="wLm-tR-bhP">
@@ -24,17 +24,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="453" height="304"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cấu tạo cơ hình thang" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEY-EN-RWA">
-                                <rect key="frame" x="16" y="182" width="421" height="114"/>
+                                <rect key="frame" x="16" y="174" width="421" height="114"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.45218857020547948" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.65381528253424659" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="SEY-EN-RWA" secondAttribute="trailing" constant="16" id="Clu-qf-I8d"/>
                             <constraint firstItem="SEY-EN-RWA" firstAttribute="leading" secondItem="zhG-Bc-pbD" secondAttribute="leading" constant="16" id="hSl-ID-YSm"/>
-                            <constraint firstAttribute="bottom" secondItem="SEY-EN-RWA" secondAttribute="bottom" constant="8" id="obQ-JL-fw0"/>
+                            <constraint firstAttribute="bottom" secondItem="SEY-EN-RWA" secondAttribute="bottom" constant="16" id="obQ-JL-fw0"/>
                         </constraints>
                     </view>
                 </subviews>

@@ -26,6 +26,7 @@ class BodyPartAnatomyWebViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = anatomy.tag
     
         webView.removeFromSuperview()
         webView.navigationDelegate = self
