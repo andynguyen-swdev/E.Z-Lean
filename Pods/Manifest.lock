@@ -38,6 +38,7 @@ PODS:
   - LTMorphingLabel (0.4.0)
   - MaterialControls (1.2.2)
   - Popover (1.0.4)
+  - PopupDialog (0.5.3)
   - ReachabilitySwift (3)
   - Realm (2.4.3):
     - Realm/Headers (= 2.4.3)
@@ -74,6 +75,7 @@ DEPENDENCIES:
   - LTMorphingLabel
   - MaterialControls
   - Popover
+  - PopupDialog (~> 0.5)
   - ReachabilitySwift
   - RealmSwift
   - RxCocoa
@@ -101,6 +103,7 @@ SPEC CHECKSUMS:
   LTMorphingLabel: d9a85f16ac306f0e07321d6819964deb2dc69638
   MaterialControls: 1c6b29e78d3a13d8dd6a67ed31b6d26eb5de8f72
   Popover: 8bced665f98824ded3b8114a27f4d2281c78a672
+  PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
   RealmSwift: 30d49739ccb3385d201242736ca4dda56aec9dfc
@@ -114,6 +117,6 @@ SPEC CHECKSUMS:
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 9446e6401d414a7a35bc2b56ef81a55b0277f2ef
+PODFILE CHECKSUM: 997d70553f15965337664782754ed0bf95069240
 
 COCOAPODS: 1.2.0

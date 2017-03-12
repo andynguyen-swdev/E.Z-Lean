@@ -120,6 +120,9 @@ class WilksCalculatorViewController: ModelViewController,UITextFieldDelegate,UIN
         _ = navigationController?.popViewController(animated: true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    @IBAction func showPopUp(_ sender: Any) {
+        addPopUp(title: "Thông tin", mess: "Điểm Wlks dùng để so sánh sức mạnh tương đối giữa các powerlifter cho dù cân nặng của họ có khác nhau.")
+    }
     
     deinit {
         print("deinit-WilksCalculatorViewController")

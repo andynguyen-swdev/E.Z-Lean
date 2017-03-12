@@ -186,6 +186,10 @@ class TDEECalculatorViewController: ModelViewController,UIPickerViewDelegate,UIP
         _ = navigationController?.popViewController(animated: true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    @IBAction func showInfo(_ sender: Any) {
+        addPopUp(title: "Thông tin", mess: "TDEE (là viết tắt của Total Daily Energy Expenditure) là chỉ số calo cần thiết cho cơ thể trong 1 ngày bao gồm tất cả hoạt động ăn chơi ngủ nghỉ mà bạn có trong ngày.")
+    }
+    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         calculate()
@@ -210,4 +214,5 @@ class TDEECalculatorViewController: ModelViewController,UIPickerViewDelegate,UIP
     deinit {
         print("deinit-TDEECalculatorViewController")
     }
+    
 }

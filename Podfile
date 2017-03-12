@@ -25,6 +25,7 @@ pod 'RealmSwift'
 pod 'ReachabilitySwift'
 pod 'SlideMenuControllerSwift'
 pod 'LTMorphingLabel'
+pod 'PopupDialog', '~> 0.5'
 
 pod 'Firebase/Core'
 pod 'Firebase/Database'

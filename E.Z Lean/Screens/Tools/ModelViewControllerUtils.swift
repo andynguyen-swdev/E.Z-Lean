@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import RxSwift
 import IBAnimatable
+import PopupDialog
 class ModelViewController: UIViewController{
     var textFieldArr : [UITextField]!
     var tag = 0
@@ -104,6 +105,38 @@ extension ModelViewController {
         }
         scrollView.scrollIndicatorInsets = scrollView.contentInset
         
+    }
+    func addPopUp(title: String,mess: String,image: String = ""){
+        var popUp : PopupDialog!
+        if image != ""{
+            popUp = PopupDialog(title: title, message: mess)
+        } else {
+            popUp = PopupDialog(title: title, message: mess, image: UIImage(named: image))
+        }
+        let button = DefaultButton(title: "OK"){
+            print("out")
+        }
+        popUp.addButtons([button])
+        popUp.transitionStyle = .bounceDown
+        //custom appearance
+        let dialogAppearance = PopupDialogDefaultView.appearance()
+        dialogAppearance.messageColor = UIColor(white: 0.6, alpha: 1)
+        dialogAppearance.messageFont = UIFont(name: "HelveticaNeue", size: 17)!
+        dialogAppearance.titleColor = UIColor.black
+        dialogAppearance.titleFont = UIFont(name: "HelveticaNeue", size: 20)!
+        dialogAppearance.cornerRadius = 4
+        dialogAppearance.messageTextAlignment = .left
+        
+        //custom overlay view
+        let overlay = PopupDialogOverlayView.appearance()
+        overlay.opacity = 0.5
+        //overlay.liveBlur = true
+        
+        //custom button
+        let buttonAppearance = DefaultButton.appearance()
+        buttonAppearance.titleFont = UIFont(name: "HelveticaNeue", size: 20)!
+        buttonAppearance.titleColor = UIColor.black
+        self.present(popUp, animated: true, completion: nil)
     }
 }
 

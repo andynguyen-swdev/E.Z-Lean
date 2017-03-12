@@ -344,7 +344,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="6qh-Am-8hC" customClass="AnimatableCollectionViewCell" customModule="IBAnimatable">
-                                                <rect key="frame" x="27" y="0.0" width="306" height="36"/>
+                                                <rect key="frame" x="26.5" y="0.0" width="306" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="306" height="36"/>
@@ -503,6 +503,22 @@
                                     </mask>
                                 </variation>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDa-Mi-EvJ" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="333" y="30" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Kmt-lT-bNd"/>
+                                    <constraint firstAttribute="width" constant="34" id="Rkr-L3-gAg"/>
+                                </constraints>
+                                <state key="normal" image="Info Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showPopup:" destination="WwW-dK-Q4p" eventType="touchUpInside" id="otw-gK-qyl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -510,10 +526,12 @@
                             <constraint firstItem="O94-Wl-zqq" firstAttribute="top" secondItem="3CA-Yi-w4Z" secondAttribute="bottom" constant="15" id="FfB-qW-ATM"/>
                             <constraint firstItem="iqY-2d-9jf" firstAttribute="centerY" secondItem="3CA-Yi-w4Z" secondAttribute="centerY" id="Iqz-zv-vQf"/>
                             <constraint firstItem="3CA-Yi-w4Z" firstAttribute="top" secondItem="qsJ-Ph-Y9a" secondAttribute="top" constant="30" id="L2e-Te-bcS"/>
+                            <constraint firstAttribute="trailing" secondItem="sDa-Mi-EvJ" secondAttribute="trailing" constant="8" id="L7r-FO-uRR"/>
                             <constraint firstItem="Wdf-3V-Ccw" firstAttribute="top" secondItem="O94-Wl-zqq" secondAttribute="bottom" id="UyH-xu-fVs"/>
                             <constraint firstItem="3CA-Yi-w4Z" firstAttribute="leading" secondItem="qsJ-Ph-Y9a" secondAttribute="leading" constant="8" id="gD1-zO-Phv"/>
                             <constraint firstAttribute="trailing" secondItem="O94-Wl-zqq" secondAttribute="trailing" id="jJV-LH-9tz"/>
                             <constraint firstItem="O94-Wl-zqq" firstAttribute="leading" secondItem="qsJ-Ph-Y9a" secondAttribute="leading" id="jZS-5W-8Ia"/>
+                            <constraint firstItem="3CA-Yi-w4Z" firstAttribute="centerY" secondItem="sDa-Mi-EvJ" secondAttribute="centerY" id="qlK-EU-eTu"/>
                             <constraint firstItem="iqY-2d-9jf" firstAttribute="centerX" secondItem="qsJ-Ph-Y9a" secondAttribute="centerX" id="tMU-Vl-wlX"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -854,6 +872,22 @@
                                     <constraint firstItem="w6J-bL-Pv0" firstAttribute="leading" secondItem="sJk-qE-mvp" secondAttribute="leading" constant="8" id="tPc-li-W8W"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5B-YM-yc1" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="333" y="30" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="9bA-XD-NKF"/>
+                                    <constraint firstAttribute="height" constant="34" id="JZd-le-4YG"/>
+                                </constraints>
+                                <state key="normal" image="Info Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showPopUp:" destination="gni-gj-Rzd" eventType="touchUpInside" id="Ije-tR-JRd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -863,10 +897,12 @@
                             <constraint firstItem="kXO-dV-aWh" firstAttribute="top" secondItem="sJk-qE-mvp" secondAttribute="bottom" id="GnH-g5-OHh"/>
                             <constraint firstItem="kXO-dV-aWh" firstAttribute="top" secondItem="sJk-qE-mvp" secondAttribute="bottom" id="HKj-Rm-tcb"/>
                             <constraint firstItem="LsF-Pj-DTW" firstAttribute="centerY" secondItem="VeR-oS-5fK" secondAttribute="centerY" id="QeC-1X-7SX"/>
+                            <constraint firstItem="LsF-Pj-DTW" firstAttribute="centerY" secondItem="e5B-YM-yc1" secondAttribute="centerY" id="UJU-o9-Jdv"/>
                             <constraint firstAttribute="trailing" secondItem="sJk-qE-mvp" secondAttribute="trailing" id="VZV-WA-KwO"/>
                             <constraint firstItem="LsF-Pj-DTW" firstAttribute="leading" secondItem="O6J-ds-fUT" secondAttribute="leading" constant="8" id="cd6-S3-1tk"/>
                             <constraint firstItem="VeR-oS-5fK" firstAttribute="centerX" secondItem="O6J-ds-fUT" secondAttribute="centerX" id="ikl-Fg-Vld"/>
                             <constraint firstItem="LsF-Pj-DTW" firstAttribute="top" secondItem="uuT-Kk-v8k" secondAttribute="bottom" constant="10" id="mvW-Bn-ac0"/>
+                            <constraint firstAttribute="trailing" secondItem="e5B-YM-yc1" secondAttribute="trailing" constant="8" id="nHr-Vz-KkR"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="startColor">
@@ -1418,17 +1454,36 @@
                                     <constraint firstAttribute="bottom" secondItem="5KX-pQ-SQs" secondAttribute="bottom" id="jKB-Xd-LmP"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2f-2o-09H" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="333" y="30" width="34" height="34"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="KH7-47-W7F"/>
+                                    <constraint firstAttribute="height" constant="34" id="mRm-CT-5vr"/>
+                                </constraints>
+                                <state key="normal" image="Info Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showInfo:" destination="ljG-9r-71G" eventType="touchUpInside" id="rzK-gu-Arc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="gSA-8s-Exn" secondAttribute="bottom" id="10q-KK-gn7"/>
                             <constraint firstItem="Xx4-Cm-5ML" firstAttribute="centerY" secondItem="yOk-1E-AL1" secondAttribute="centerY" id="5OJ-UE-eRC"/>
                             <constraint firstItem="gSA-8s-Exn" firstAttribute="top" secondItem="Xx4-Cm-5ML" secondAttribute="bottom" constant="15" id="6gg-mz-JY8"/>
+                            <constraint firstItem="Xx4-Cm-5ML" firstAttribute="centerY" secondItem="U2f-2o-09H" secondAttribute="centerY" id="DSa-GM-lAy"/>
                             <constraint firstItem="gSA-8s-Exn" firstAttribute="leading" secondItem="jmg-cS-xtr" secondAttribute="leading" id="FQT-X5-dOq"/>
                             <constraint firstItem="Xx4-Cm-5ML" firstAttribute="top" secondItem="jmg-cS-xtr" secondAttribute="top" constant="30" id="JXn-iw-urC"/>
                             <constraint firstItem="Xx4-Cm-5ML" firstAttribute="leading" secondItem="jmg-cS-xtr" secondAttribute="leading" constant="8" id="MhT-LJ-7pB"/>
                             <constraint firstAttribute="trailing" secondItem="gSA-8s-Exn" secondAttribute="trailing" id="TQB-Xd-k0A"/>
                             <constraint firstItem="5KX-pQ-SQs" firstAttribute="width" secondItem="jmg-cS-xtr" secondAttribute="width" id="h9G-qq-ce9"/>
                             <constraint firstItem="yOk-1E-AL1" firstAttribute="centerX" secondItem="jmg-cS-xtr" secondAttribute="centerX" id="qiA-TO-CYW"/>
+                            <constraint firstAttribute="trailing" secondItem="U2f-2o-09H" secondAttribute="trailing" constant="8" id="z6T-OF-Wbr"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="startColor">
@@ -1463,13 +1518,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JX-d7-tiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3431.640625" y="726.5625"/>
+            <point key="canvasLocation" x="3431.1999999999998" y="725.93703148425789"/>
         </scene>
     </scenes>
     <resources>
         <image name="Deadlift.png" width="374" height="125"/>
         <image name="Detail Disclosure" width="22" height="22"/>
         <image name="Food.png" width="375" height="125"/>
+        <image name="Info Button" width="34" height="34"/>
         <image name="Squat.png" width="375" height="125"/>
         <image name="back_icon.png" width="14" height="14"/>
     </resources>
