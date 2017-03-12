@@ -127,6 +127,9 @@ class OneRMCalculatorViewController: ModelViewController, UICollectionViewDataSo
         _ = self.navigationController?.popToRootViewController(animated: true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    @IBAction func showPopup(_ sender: Any) {
+        addPopUp(title: "Thông tin", mess: "One Rep-Max(One Repetition Maximum/1RM) là khối lượng nặng nhất mà bạn có thể nâng được với một lần nâng, tương tự vậy với 2RM,3RM... 1RM thể hiện sức mạnh cực đại của bạn, khi biết được chỉ số này, các bạn sẽ có 1 kế hoạch tập luyện tốt hơn. Ví dụ: các bạn muốn tập sức mạnh thì tập 85-90% 1RM, tập cơ bắp to nhanh thì tập 75-85% 1RM, tập fitness thì có thể tập từ 65-75% 1RM.")
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

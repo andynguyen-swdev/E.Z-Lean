@@ -42,14 +42,7 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
         configTouchBodyPart()
         configNavigationTitle()
         addBackgroundView()
-        
-        navigationItem.rightBarButtonItem?.rx.tap
-            .subscribe(onNext: { [unowned self] _ in
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Tutorial")
-                vc?.modalPresentationStyle = .overFullScreen
-                self.present(vc!, animated: true)
-            })
-            .addDisposableTo(disposeBag)
+        configRightTabBarButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,6 +53,18 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
         tabBarController?.setDarkStyle()
         navigationController?.setDarkStyle()
         navigationController?.navigationBar.tintColor = .white
+    }
+    
+    func configRightTabBarButton() {
+        let btn = navigationItem.rightBarButtonItem?
+        
+        btn.rx.tap
+            .subscribe(onNext: { [unowned self] _ in
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Tutorial")
+                vc?.modalPresentationStyle = .overFullScreen
+                self.present(vc!, animated: true)
+            })
+            .addDisposableTo(disposeBag)
     }
     
     func configNavigationTitle() {

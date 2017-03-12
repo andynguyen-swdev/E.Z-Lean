@@ -12,11 +12,12 @@ import SwiftyJSON
 import IBAnimatable
 class ListSongTableViewCell: UITableViewCell {
     
-
-    @IBOutlet weak var playButton: AnimatableButton!
     @IBOutlet weak var author: UILabel!
+
     @IBOutlet weak var name: UILabel!
-    var songsArr = [Song]()
+    @IBOutlet weak var button: AnimatableButton!
+   
+    static var songsArr = [Song]()
     var source:String!
     override func awakeFromNib() {
        super.awakeFromNib()
@@ -32,6 +33,7 @@ class ListSongTableViewCell: UITableViewCell {
         self.name.text = song.name
         self.author.text = song.author
         self.source = song.source
+        print("add")
     }
     func loadData(api:String){
         Alamofire.request(api).responseJSON(){
@@ -39,8 +41,6 @@ class ListSongTableViewCell: UITableViewCell {
             if let result = response.result.value {
                 let temp = Song.parseToSong(json: JSON(result))
                 self.setUp(song: temp)
-                self.songsArr.append(temp)
-                print(self.songsArr.count)
             }
         }
         
