@@ -31,7 +31,7 @@ class MusicPlayerViewController: UIViewController,UITableViewDelegate {
                  "ZW7OCW97", "ZW7OB0UW","ZW7U6ZOI", "ZW70B7E9","ZW7OOO70","ZW70FFO9",]
     @IBOutlet weak var tableView: UITableView!
     var selectedSong: Song?
-    var selectedIndex: Int!
+    var selectedIndex = -1
     let avPlayer = AVPlayer()
     var avPlayerLayer: AVPlayerLayer!
     var timeObserver: AnyObject!
@@ -73,8 +73,9 @@ class MusicPlayerViewController: UIViewController,UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+      
         let cell = tableView.cellForRow(at: indexPath) as! ListSongTableViewCell
+        cell.button.isHidden = false
         selectedIndex = indexPath.row
         selectedSong = Song(name: cell.name.text!, author: cell.author.text!, source: cell.source!)
         containerView.isHidden = false
@@ -103,11 +104,7 @@ class MusicPlayerViewController: UIViewController,UITableViewDelegate {
         loadingIndicatorView.hidesWhenStopped = true
         avPlayer.addObserver(self, forKeyPath: "currentItem.playbackLikelyToKeepUp",
                              options: .new, context: &playbackLikelyToKeepUpContext)
-        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.avPlayerLayer,  queue: nil, using: { (_) in
-            DispatchQueue.main.async {
-                self.nextSong()
-            }
-        })
+        NotificationCenter.default.addObserver(self, selector: #selector(nextSong), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: self.avPlayer.currentItem)
     }
     
     @IBAction func pauseSongAction(_ sender: Any) {
@@ -137,35 +134,45 @@ class MusicPlayerViewController: UIViewController,UITableViewDelegate {
         if isRepeat {
             print("ABC")
             repeatButton.setImage(UIImage(named: "img-player-repeat"), for: .normal)
-        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.avPlayer.currentItem, queue: nil, using: { (_) in
-            DispatchQueue.main.async {
-                self.avPlayer.seek(to: kCMTimeZero)
-                self.avPlayer.play()
-            }
-        })
+             NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: self.avPlayer.currentItem)
+            NotificationCenter.default.addObserver(self, selector: #selector(resetSong), name: .AVPlayerItemDidPlayToEndTime, object: self.avPlayer.currentItem)
         } else {
             repeatButton.setImage(UIImage(named: "img-player-repeat-none"), for: .normal)
-            NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: self.avPlayerLayer)
+            NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: self.avPlayer.currentItem)
+            NotificationCenter.default.addObserver(self, selector: #selector(nextSongAction), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: self.avPlayer.currentItem)
         }
         
     }
+    func resetSong(){
+        self.avPlayer.seek(to: kCMTimeZero)
+        self.avPlayer.play()
+    }
     func nextSong(){
+        print("nextttt")
+    
         if selectedIndex == songs.value.count-1 {
             selectedIndex = 0
         } else {
             selectedIndex = selectedIndex + 1
         }
+        
         let playerItem = AVPlayerItem(url: URL(string: songs.value[selectedIndex].source)!)
+        print(songs.value[selectedIndex].source)
         avPlayer.replaceCurrentItem(with: playerItem)
+        resetSong()
     }
     func previousSong(){
+       
         if selectedIndex == 0 {
             selectedIndex = songs.value.count-1
         } else {
             selectedIndex = selectedIndex - 1
         }
+        
         let playerItem = AVPlayerItem(url: URL(string: songs.value[selectedIndex].source)!)
         avPlayer.replaceCurrentItem(with: playerItem)
+        resetSong()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
