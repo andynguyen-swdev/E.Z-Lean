@@ -13,6 +13,8 @@ import RxSwiftExt
 import Popover
 
 class AnatomyViewController: UIViewController, UIScrollViewDelegate {
+    static var instance: AnatomyViewController!
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var bodyImageView: UIImageView!
@@ -32,11 +34,22 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
     var bodyPartLabel: UILabel?
     
     override func viewDidLoad() {
+        AnatomyViewController.instance = self
+        
         configScrollView()
         configTabBar()
         configNavigation()
         configTouchBodyPart()
+        configNavigationTitle()
         addBackgroundView()
+        
+        navigationItem.rightBarButtonItem?.rx.tap
+            .subscribe(onNext: { [unowned self] _ in
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Tutorial")
+                vc?.modalPresentationStyle = .overFullScreen
+                self.present(vc!, animated: true)
+            })
+            .addDisposableTo(disposeBag)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,6 +60,21 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
         tabBarController?.setDarkStyle()
         navigationController?.setDarkStyle()
         navigationController?.navigationBar.tintColor = .white
+    }
+    
+    func configNavigationTitle() {
+        let titleView = UILabel(frame: .zero)
+        let text = NSMutableAttributedString(string: "E.Z Lean")
+        let range = NSMakeRange(0, text.length)
+        
+        text.addAttribute(NSFontAttributeName, value: UIFont.init(name: "Menlo", size: 20)!, range: range)
+        text.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: range)
+        text.addAttribute(NSForegroundColorAttributeName, value: Colors.brightOrange, range: NSMakeRange(0, 1))
+        
+        titleView.attributedText = text
+        titleView.sizeToFit()
+        
+        navigationItem.titleView = titleView
     }
     
     func configScrollView() {
@@ -87,6 +115,10 @@ class AnatomyViewController: UIViewController, UIScrollViewDelegate {
                 let bodyPart = self.anatomyControl.getTouchedPart(location: locationInAnatomy)
                 
                 if gesture.state == .ended {
+                    if bodyPart == nil {
+                        self.longPressing = false
+                    }
+                    
                     self.anatomyControl.selectBodyPart(bodyPart)
                     self.popOver?.dismiss()
                     self.scrollView.isScrollEnabled = true

@@ -22,6 +22,7 @@ PODS:
   - FirebaseDatabase (3.1.2):
     - FirebaseAnalytics (~> 3.7)
   - FirebaseInstanceID (1.0.9)
+  - FLAnimatedImage (1.0.12)
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
@@ -61,6 +62,9 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SDWebImage/GIF (4.0.0):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
   - SlideMenuControllerSwift (3.0.1)
   - SwiftyJSON (3.1.4)
 
@@ -69,6 +73,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - FLAnimatedImage
   - IBAnimatable
   - Kanna (~> 2.1.0)
   - LTMorphingLabel
@@ -83,6 +88,7 @@ DEPENDENCIES:
   - RxSwift
   - RxSwiftExt
   - SDWebImage
+  - SDWebImage/GIF
   - SlideMenuControllerSwift
   - SwiftyJSON
 
@@ -94,6 +100,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 1c0a13bf59bb95cdd19577252499f0ec6a03e999
   FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   IBAnimatable: 26b74a72df9369d40faab97428477c246b9e42ba
@@ -114,6 +121,6 @@ SPEC CHECKSUMS:
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 9446e6401d414a7a35bc2b56ef81a55b0277f2ef
+PODFILE CHECKSUM: 72abe42067b5a8c25be9c8b6e5174d8b73cd3755
 
 COCOAPODS: 1.2.0

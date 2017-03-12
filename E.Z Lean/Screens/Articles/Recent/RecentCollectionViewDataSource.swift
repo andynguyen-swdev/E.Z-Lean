@@ -16,6 +16,7 @@ import Firebase
 
 class RecentCollectionViewDataSource {
     weak var collectionView: UICollectionView!
+    var cellWidth: CGFloat = 0
     
     var disposeBag = DisposeBag()
     var articles: Variable<[Article]> = Variable([])
@@ -39,7 +40,7 @@ class RecentCollectionViewDataSource {
             data, cView, indexPath, article in
             let cell = cView.dequeueReusableCell(withReuseIdentifier: self.cellType.identifier, for: indexPath) as! cellClass
             
-            cell.contentWidth = cView.width - 10
+            cell.contentWidth = self.cellWidth
             cell.config(article: article, collectionView: cView, indexPath: indexPath)
             return cell
         }

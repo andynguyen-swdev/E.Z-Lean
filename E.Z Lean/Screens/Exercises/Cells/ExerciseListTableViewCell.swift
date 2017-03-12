@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExerciseListTableViewCell: BaseTableViewCell, CellIdentifiable {
+class ExerciseListTableViewCell: BaseTableViewCell {
     @IBOutlet weak var exerciseImageView: UIImageView!
     @IBOutlet weak var exerciseNameLabel: UILabel!
     

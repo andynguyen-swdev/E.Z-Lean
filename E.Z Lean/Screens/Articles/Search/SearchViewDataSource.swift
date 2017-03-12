@@ -13,6 +13,7 @@ import UIKit
 
 class SearchViewDataSource {
     weak var collectionView: UICollectionView!
+    var cellWidth = 0 as CGFloat
     
     var searchQuerry: Variable<String> = Variable("")
     var articles: Variable<[Article]> = Variable([])
@@ -28,7 +29,7 @@ class SearchViewDataSource {
                 .items(cellIdentifier: SmallArticleCell.identifier,
                        cellType: SmallArticleCell.self))
             { [unowned self] row, article, cell in
-                cell.contentWidth = self.collectionView.width - 10
+                cell.contentWidth = self.cellWidth
                 cell.config(article: article,
                             collectionView: self.collectionView,
                             indexPath: IndexPath(item: row, section: 0))

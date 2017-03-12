@@ -22,8 +22,27 @@ class ToolViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.delegate = self
-        naviHeight =  UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.height)!
+        navigationController?.tabBarItem.title = "Công cụ"
+        navigationController?.tabBarItem.image = #imageLiteral(resourceName: "Training_27")
         
+        configNavigationTitle()
+        
+        naviHeight =  UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.height)!
+    }
+    
+    func configNavigationTitle() {
+        let titleView = UILabel(frame: .zero)
+        let text = NSMutableAttributedString(string: "E.Z Lean")
+        let range = NSMakeRange(0, text.length)
+        
+        text.addAttribute(NSFontAttributeName, value: UIFont.init(name: "Menlo", size: 20)!, range: range)
+        text.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: range)
+        text.addAttribute(NSForegroundColorAttributeName, value: Colors.brightOrange, range: NSMakeRange(0, 1))
+        
+        titleView.attributedText = text
+        titleView.sizeToFit()
+        
+        navigationItem.titleView = titleView
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{

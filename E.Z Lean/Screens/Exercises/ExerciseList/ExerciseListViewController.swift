@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxSwiftExt
+import RxGesture
 
 class ExerciseListViewController: UIViewController {
     var bodyPart: Variable<BodyPart?> = Variable(nil)
@@ -35,14 +36,12 @@ class ExerciseListViewController: UIViewController {
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
-//        scrollView.delegate = self
-//        tableView.isScrollEnabled = false
-        
         bindBodyPart()
         configButtonTintColor()
         configDataSource()
         configSelectModel()
-    
+        configAnatomyCell()
+        
         bodyPartImageContainer.bottomAnchor.constraint(equalTo: anatomyCell.topAnchor).isActive = true
     }
     
@@ -50,6 +49,15 @@ class ExerciseListViewController: UIViewController {
         tabBarController?.setDarkStyle()
         navigationController?.setDarkStyle()
         navigationController?.navigationBar.tintColor = .white
+    }
+    
+    func configAnatomyCell() {
+        anatomyCell.rx.tapGesture()
+            .subscribe(onNext: { [unowned self] gesture in
+                guard gesture.state == .ended else { return }
+                self.performSegue(withIdentifier: SegueIdentifiers.exerciseListToBodyPartAnatomy, sender: self.bodyPart.value)
+            })
+            .addDisposableTo(disposeBag)
     }
     
     func configSelectModel() {
@@ -64,6 +72,9 @@ class ExerciseListViewController: UIViewController {
         if let exercise = sender as? Exercise {
             let vc = segue.destination as! ExerciseViewController
             vc.exercise.value = exercise
+        } else if segue.identifier == SegueIdentifiers.exerciseListToBodyPartAnatomy {
+            let vc = segue.destination as! BodyPartAnatomyViewController
+            vc.bodyPart.value = sender as? BodyPart
         }
     }
     
@@ -94,7 +105,21 @@ class ExerciseListViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        scrollOffset = bodyPartImageView.height + anatomyCell.height
+        super.viewDidLayoutSubviews()
+        
+        // Dynamic sizing for the header view
+        if let headerView = tableView.tableHeaderView {
+            var headerFrame = headerView.frame
+            let height = tableView.width * 9 / 24 + 50
+            
+            // If we don't have this check, viewDidLayoutSubviews() will get
+            // repeatedly, causing the app to hang.
+            if height != headerFrame.size.height {
+                headerFrame.size.height = height
+                headerView.frame = headerFrame
+                tableView.tableHeaderView = headerView
+            }
+        }
     }
     
     deinit {

@@ -37,6 +37,9 @@ class EZLeanTabBarViewController: UITabBarController {
         tabBar.isOpaque = !BarOptions.tabBarTranslucent
         
         tabBar.barStyle = BarOptions.tabBarStyle
+        
+        viewControllers?[2].tabBarItem.title = "Công cụ"
+        viewControllers?[2].tabBarItem.image = #imageLiteral(resourceName: "Training_27")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,12 +56,12 @@ class EZLeanTabBarViewController: UITabBarController {
         currentIndex.value = index
         animateSelectingRect(index: index)
         
-        if let image = tabBar.subviews[index+1].subviews.first {
-            image.transform = CGAffineTransform.identity
-            UIView.animate(withDuration: 0.25, delay: 0, options: .curveLinear, animations: {
-                image.transform = CGAffineTransform(rotationAngle: -CGFloat.pi)
-            })
-        }
+//        if let image = tabBar.subviews[index+1].subviews.first {
+//            image.transform = CGAffineTransform.identity
+//            UIView.animate(withDuration: 0.25, delay: 0, options: .curveLinear, animations: {
+//                image.transform = CGAffineTransform(rotationAngle: -CGFloat.pi)
+//            })
+//        }
     }
     
     func animateSelectingRect(index: Int) {

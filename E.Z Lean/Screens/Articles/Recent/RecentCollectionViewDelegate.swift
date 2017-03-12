@@ -9,10 +9,7 @@
 import Utils
 
 extension RecentViewController: UICollectionViewDelegateFlowLayout {
-    var cellWidth: CGFloat {
-        return collectionView.width - 10
-    }
-    
+   
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 //        cell.alpha = 0
 //        let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 0, 0)

@@ -17,6 +17,7 @@ class RecentViewController: UIViewController {
     
     typealias cellClass = RecentArticleCell
     let cellType: cellClass.Type = cellClass.self
+    let cellWidth = UIScreen.main.bounds.width - 16
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoryBarButton: AnimatableButton!
@@ -38,6 +39,7 @@ class RecentViewController: UIViewController {
         RecentViewController.instance = self
         navigationController?.navigationBar.tintColor = Colors.brightOrange
         
+        configNavigationTitle()
         configTabBar()
         configCollectionView()
         configDataSource()
@@ -48,6 +50,20 @@ class RecentViewController: UIViewController {
         navigationController?.setLightStyle()
         navigationController?.navigationBar.tintColor = .black
         tabBarController?.setLightStyle()
+    }
+    
+    func configNavigationTitle() {
+        let titleView = UILabel(frame: .zero)
+        let text = NSMutableAttributedString(string: "E.Z Lean")
+        let range = NSMakeRange(0, text.length)
+        
+        text.addAttribute(NSFontAttributeName, value: UIFont.init(name: "Menlo", size: 20)!, range: range)
+        text.addAttribute(NSForegroundColorAttributeName, value: Colors.brightOrange, range: NSMakeRange(0, 1))
+        
+        titleView.attributedText = text
+        titleView.sizeToFit()
+        
+        navigationItem.titleView = titleView
     }
     
     func configTabBar() {
@@ -88,6 +104,7 @@ class RecentViewController: UIViewController {
     
     func configDataSource() {
         dataSource = RecentCollectionViewDataSource(collectionView)
+        dataSource.cellWidth = cellWidth
         dataSource.config()
         
         configSelectingCell()
@@ -124,7 +141,7 @@ class RecentViewController: UIViewController {
         
         let height = (CGFloat(DatabaseManager.articles.allArticeCategory.count) + 1.5) * 44
         
-        view?.frame = CGRect(x: 0, y: 0, width: self.view.width-16, height: height)
+        view?.frame = CGRect(x: 0, y: 0, width: cellWidth, height: height)
         view?.translatesAutoresizingMaskIntoConstraints = false
         
         let options: [PopoverOption] = [

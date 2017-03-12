@@ -88,7 +88,7 @@ class Article: Object, IdentifiableType {
                 imageLink = nil
             }
             
-            let html = HTMLGenerator.create(topImageLink: imageLink, content: content)
+            let html = HTMLGenerator.createArticle(topImageLink: imageLink, content: content)
             completionHandler(html)
         })
     }

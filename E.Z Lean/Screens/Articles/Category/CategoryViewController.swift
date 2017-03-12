@@ -16,7 +16,7 @@ class CategoryViewController: UIViewController {
     typealias cellClass = CategoryArticleCell
     var cellType: cellClass.Type = cellClass.self
     var cellWidth: CGFloat {
-        return collectionView.width - 10
+        return UIScreen.main.bounds.width - 16
     }
     
     var category: ArticleCategory!
@@ -62,17 +62,16 @@ class CategoryViewController: UIViewController {
         navigationItem.title = category.name
         
         let btn = UIButton(type: .system)
-//        btn.setImage(category.image, for: .normal)
+        //        btn.setImage(category.image, for: .normal)
         btn.tintColor = Colors.brightOrange
         btn.setTitle(category.name, for: .normal)
-        btn.setTitleColor(.white, for: .normal)
+        btn.setTitleColor(.black, for: .normal)
         btn.titleLabel?.font = UIFont(name: "System", size: 17)
         btn.imageEdgeInsets = UIEdgeInsetsMake(0, -7, 0, 0)
         btn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -7)
         btn.sizeToFit()
         
         navigationItem.titleView = btn
-        //        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Back Chevron"), style: .plain, target: nil, action: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

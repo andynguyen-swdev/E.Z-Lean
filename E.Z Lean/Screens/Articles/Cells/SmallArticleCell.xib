@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="365" height="101"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azj-M9-8Bo">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azj-M9-8Bo">
                         <rect key="frame" x="8" y="8" width="83" height="85"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="articles_background" translatesAutoresizingMaskIntoConstraints="NO" id="ehS-0f-8kg" customClass="AnimatableImageView" customModule="IBAnimatable">

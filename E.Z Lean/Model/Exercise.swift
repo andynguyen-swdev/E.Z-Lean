@@ -20,6 +20,7 @@ class RealmString: Object {
 }
 
 class Exercise: Object {
+    dynamic var id = ""
     dynamic var name = ""
     dynamic var date_created = ""
     dynamic var bodyPart = ""
@@ -29,6 +30,7 @@ class Exercise: Object {
     static func create(json: JSON) -> Exercise {
         let exercise = Exercise()
         exercise.name = json["title"].stringValue
+        exercise.id = json["global_ID"].stringValue
         
         let date = json["date"].stringValue
         let truncated = date.substring(to: date.index(date.endIndex, offsetBy: -6))
@@ -79,7 +81,7 @@ class Exercise: Object {
     }
     
     override static func primaryKey() -> String? {
-        return "name"
+        return "id"
     }
     
     deinit {

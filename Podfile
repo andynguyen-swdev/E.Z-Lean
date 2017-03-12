@@ -17,7 +17,10 @@ pod 'RxSwiftExt'
 pod 'RxRealm'
 pod 'RxGesture'
 pod 'IBAnimatable'
+
 pod 'SDWebImage'
+pod 'SDWebImage/GIF'
+
 pod 'Alamofire'
 pod 'MaterialControls'
 pod 'Popover'
@@ -31,6 +34,7 @@ pod 'Firebase/Database'
 pod 'Firebase/Auth'
 
 pod 'Kanna', '~> 2.1.0'
+pod 'FLAnimatedImage'
 
 end
 

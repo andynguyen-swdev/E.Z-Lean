@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class BaseTableViewCell: UITableViewCell {
+class BaseTableViewCell: UITableViewCell, CellIdentifiable {
     var disposeBag = DisposeBag()
     
     override func awakeFromNib() {

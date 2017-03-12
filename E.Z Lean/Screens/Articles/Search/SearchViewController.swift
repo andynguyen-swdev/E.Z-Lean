@@ -16,6 +16,8 @@ class SearchViewController: UIViewController {
     var searchBar: UISearchBar!
     
     var cellType: ArticleCell.Type = SmallArticleCell.self
+    let cellWidth = UIScreen.main.bounds.width - 16
+    
     var dataSource: SearchViewDataSource!
     var disposeBag = DisposeBag()
     
@@ -82,7 +84,9 @@ class SearchViewController: UIViewController {
     
     func configDataSource() {
         dataSource = SearchViewDataSource(collectionView: collectionView)
+        dataSource.cellWidth = cellWidth
         dataSource.config()
+        
         collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
         collectionView.rx.modelSelected(Article.self)
             .subscribe(onNext: { [unowned self] article in
@@ -104,7 +108,7 @@ class SearchViewController: UIViewController {
         textField.textColor = .black
         textField.backgroundColor = UIColor(hexString: "#EEEEEE")
         
-        navigationItem.title = ""
+        navigationItem.title = "Tìm"
         navigationItem.titleView = searchBar
         navigationItem.hidesBackButton = true
         

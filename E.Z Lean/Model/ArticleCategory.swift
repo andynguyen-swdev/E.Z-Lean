@@ -33,9 +33,15 @@ struct ArticleCategoryImageManager {
         switch category.name {
         case "Luyện tập":
             return Icons.dumbbell_25
+        case "Dinh dưỡng":
+            return #imageLiteral(resourceName: "Thanksgiving")
+        case "Chương trình tập":
+            return #imageLiteral(resourceName: "Today")
+        case "Kiến thức nền tảng":
+            return #imageLiteral(resourceName: "Books")
         default:
             return nil
         }
     }
 }
-    
+

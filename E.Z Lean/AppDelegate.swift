@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Utils
 import Firebase
 
 @UIApplicationMain
@@ -15,18 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var instance: AppDelegate!
     var window: UIWindow?
 
-
+    override init() {
+        super.init()
+        AppDelegate.instance = self
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        AppDelegate.instance = self
         FIRApp.configure()
         FIRDatabase.database().persistenceEnabled = true
         
         print(NSTemporaryDirectory())
         DatabaseManager.articles.createArticles()
         DatabaseManager.exercises.downloadExercises()
-//        UITextField.appearance().keyboardAppearance = .dark
+        DatabaseManager.anatomy.downloadAnatomy()
+        
         return true
     }
 

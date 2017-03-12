@@ -61,4 +61,5 @@ struct SegueIdentifiers {
     // Exercise
     static let anatomyToExerciseList = "AnatomyToExerciseList"
     static let exerciseListToExercise = "ExerciseListToExercise"
+    static let exerciseListToBodyPartAnatomy = "ExerciseListToBodyPartAnatomy"
 }

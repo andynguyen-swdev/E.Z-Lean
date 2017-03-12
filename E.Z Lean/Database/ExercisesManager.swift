@@ -35,7 +35,7 @@ extension DatabaseManager {
         }
         
         func downloadExercises() {
-            let endPoint = "https://public-api.wordpress.com/rest/v1.1/sites/ezleanblog.wordpress.com/posts/?pretty=true&category=Exercise&after=\(lastestDate)"
+            let endPoint = "https://public-api.wordpress.com/rest/v1.1/sites/ezleanblog.wordpress.com/posts/?pretty=true&category=Exercise&modified_after=\(lastestDate)"
     
             Alamofire.request(endPoint).responseJSON { [unowned self] respond in
                 if let value = respond.result.value {

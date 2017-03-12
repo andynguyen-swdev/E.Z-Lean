@@ -10,7 +10,7 @@ import UIKit
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.width - 10
+        let width = self.cellWidth
         let article = dataSource.articles.value[indexPath.row]
         let cell = cellType.fromNib
         
