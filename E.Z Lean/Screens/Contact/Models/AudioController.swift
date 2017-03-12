@@ -65,7 +65,7 @@ class AudioController {
         bindTime()
         configPlayingBar()
         configControlCenter()
-//        configReachability()
+        //        configReachability()
         infoCenter.nowPlayingInfo = [:]
         configurated = true
     }
@@ -227,7 +227,7 @@ class AudioController {
             .subscribe(onNext: { gesture in
                 guard gesture.state == .ended else { return }
                 MusicPlayerViewController.instance.modalPresentationStyle = .overFullScreen
-                EZLeanTabBarViewController.instance.viewControllers?[3].present(MusicPlayerViewController.instance, animated: true)
+                EZLeanTabBarViewController.instance.present(MusicPlayerViewController.instance, animated: true)
                 self.playingBar.isHidden = true
             })
             .addDisposableTo(disposeBag)

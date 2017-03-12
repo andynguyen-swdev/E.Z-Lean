@@ -66,6 +66,9 @@ class MusicPlayerViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.isStatusBarHidden = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
         AudioController.instance.playingBar.isHidden = false
     }
     
@@ -73,7 +76,8 @@ class MusicPlayerViewController: UIViewController {
         songImageView.contentMode = .scaleAspectFill
         songImageView.rx
             .swipeGesture(.down)
-            .subscribe(onNext: { [unowned self] _ in
+            .subscribe(onNext: { [unowned self] gesture in
+                guard gesture.state != .possible else { return }
                 self.dismiss(animated: true)
             })
             .addDisposableTo(disposeBag)
@@ -185,8 +189,10 @@ class MusicPlayerViewController: UIViewController {
         nextButton.rx
             .longPressGesture()
             .throttle(0.5, scheduler: ConcurrentDispatchQueueScheduler.init(qos: .userInteractive))
-            .subscribe(onNext: { _ in
+            .subscribe(onNext: { gesture in
                 print("Seek next")
+                print(gesture.state)
+                guard gesture.state != .possible else { return }
                 AudioController.instance.seekNext(time: 3)
             })
             .addDisposableTo(disposeBag)
@@ -194,8 +200,9 @@ class MusicPlayerViewController: UIViewController {
         previousButton.rx
             .longPressGesture()
             .throttle(0.5, scheduler: ConcurrentDispatchQueueScheduler.init(qos: .userInteractive))
-            .subscribe(onNext: { _ in
+            .subscribe(onNext: { gesture in
                 print("Seek back")
+                guard gesture.state != .possible else { return }
                 AudioController.instance.seekBack(time: 4)
             })
             .addDisposableTo(disposeBag)
@@ -229,10 +236,10 @@ class MusicPlayerViewController: UIViewController {
             .tap
             .subscribe(onNext: { [unowned self] _ in
                 self.dismiss(animated: true)
-                AudioController.instance.playingBar.isHidden = false
             })
             .addDisposableTo(disposeBag)
     }
+    
     
     func configShuffleOption() {
         AudioController.instance.shuffleOption

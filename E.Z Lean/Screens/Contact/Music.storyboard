@@ -7,7 +7,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -187,7 +186,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa7-7A-Y2a" userLabel="Hide Button">
-                                <rect key="frame" x="8" y="10" width="22" height="22"/>
+                                <rect key="frame" x="8" y="20" width="22" height="22"/>
                                 <state key="normal" image="img-player-hide"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-aP-V40">
@@ -260,24 +259,24 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="k0p-aP-V40" secondAttribute="trailing" id="2vI-48-LhT"/>
                             <constraint firstItem="xIR-rk-TzH" firstAttribute="trailing" secondItem="ZDJ-6f-lxW" secondAttribute="trailing" id="3Dn-yB-8mr"/>
-                            <constraint firstAttribute="topMargin" secondItem="ZDJ-6f-lxW" secondAttribute="top" id="5sz-gb-Pm4"/>
                             <constraint firstItem="ZDJ-6f-lxW" firstAttribute="leading" secondItem="5B6-eb-kZO" secondAttribute="leading" id="DW1-KT-web"/>
                             <constraint firstItem="k0p-aP-V40" firstAttribute="top" secondItem="ZDJ-6f-lxW" secondAttribute="bottom" id="FXm-Ib-4tT"/>
                             <constraint firstItem="ZDJ-6f-lxW" firstAttribute="leading" secondItem="Aa7-7A-Y2a" secondAttribute="leading" constant="-8" id="Gxi-6n-LdR"/>
                             <constraint firstItem="Qdm-pn-dag" firstAttribute="leading" secondItem="5B6-eb-kZO" secondAttribute="leading" id="HWa-pJ-QQD"/>
                             <constraint firstItem="k0p-aP-V40" firstAttribute="leading" secondItem="5B6-eb-kZO" secondAttribute="leading" id="Lzo-9G-93A"/>
                             <constraint firstItem="fow-6M-uPg" firstAttribute="top" secondItem="Qdm-pn-dag" secondAttribute="bottom" id="NDq-h6-gZ5"/>
+                            <constraint firstItem="t0m-hb-LK1" firstAttribute="top" secondItem="ZDJ-6f-lxW" secondAttribute="top" id="NV1-Gz-ZZw"/>
                             <constraint firstAttribute="trailing" secondItem="ZDJ-6f-lxW" secondAttribute="trailing" id="QqO-O9-UXe"/>
                             <constraint firstItem="Qdm-pn-dag" firstAttribute="top" secondItem="k0p-aP-V40" secondAttribute="bottom" id="TbJ-bL-54R"/>
+                            <constraint firstItem="ZDJ-6f-lxW" firstAttribute="top" secondItem="pVI-Yb-gkQ" secondAttribute="bottom" constant="-20" id="WAS-v4-Flq"/>
                             <constraint firstItem="wyN-dO-eLv" firstAttribute="leading" secondItem="5B6-eb-kZO" secondAttribute="leading" id="dip-OB-5f9"/>
-                            <constraint firstItem="t0m-hb-LK1" firstAttribute="top" secondItem="5B6-eb-kZO" secondAttribute="top" id="etC-D8-hXW"/>
                             <constraint firstItem="xIR-rk-TzH" firstAttribute="leading" secondItem="ZDJ-6f-lxW" secondAttribute="leading" id="hiZ-FD-yQq"/>
                             <constraint firstItem="t0m-hb-LK1" firstAttribute="leading" secondItem="5B6-eb-kZO" secondAttribute="leading" id="mrK-9q-WMP"/>
                             <constraint firstAttribute="trailing" secondItem="Qdm-pn-dag" secondAttribute="trailing" id="nBg-ol-hI3"/>
                             <constraint firstAttribute="trailing" secondItem="t0m-hb-LK1" secondAttribute="trailing" id="nd5-Uo-jnI"/>
                             <constraint firstItem="wyN-dO-eLv" firstAttribute="centerY" secondItem="ZDJ-6f-lxW" secondAttribute="bottom" id="vUr-25-8le"/>
                             <constraint firstItem="xIR-rk-TzH" firstAttribute="top" secondItem="ZDJ-6f-lxW" secondAttribute="top" id="yQw-SJ-q9r"/>
-                            <constraint firstItem="ZDJ-6f-lxW" firstAttribute="top" secondItem="Aa7-7A-Y2a" secondAttribute="top" constant="-10" id="yTp-ro-pMB"/>
+                            <constraint firstItem="ZDJ-6f-lxW" firstAttribute="top" secondItem="Aa7-7A-Y2a" secondAttribute="top" constant="-20" id="yTp-ro-pMB"/>
                             <constraint firstAttribute="trailing" secondItem="wyN-dO-eLv" secondAttribute="trailing" id="yho-lS-QfS"/>
                             <constraint firstItem="xIR-rk-TzH" firstAttribute="bottom" secondItem="ZDJ-6f-lxW" secondAttribute="bottom" id="zar-Wp-U9h"/>
                         </constraints>
