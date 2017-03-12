@@ -11,8 +11,10 @@ import Utils
 import RxSwift
 
 class BodyPartAnatomyWebViewController: UIViewController, WKNavigationDelegate {
+    static let reusedWebView = WKWebView(frame: .zero)
+    
     var anatomy: Anatomy!
-    let webView = WKWebView.instance
+    let webView = BodyPartAnatomyWebViewController.reusedWebView
     var initialPageLoaded = false
     
     var progressView: UIProgressView!

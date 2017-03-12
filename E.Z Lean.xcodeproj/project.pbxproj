@@ -20,8 +20,6 @@
 		500F09671E755855004C7270 /* Zoom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 500F09641E755855004C7270 /* Zoom.gif */; };
 		500F09691E755DDC004C7270 /* Anatomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F09681E755DDC004C7270 /* Anatomy.swift */; };
 		500F096B1E75603E004C7270 /* AnatomyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F096A1E75603E004C7270 /* AnatomyManager.swift */; };
-		500F096E1E757B33004C7270 /* anatomy_prefix.txt in Resources */ = {isa = PBXBuildFile; fileRef = 500F096C1E757B33004C7270 /* anatomy_prefix.txt */; };
-		500F096F1E757B33004C7270 /* anatomy_suffix.txt in Resources */ = {isa = PBXBuildFile; fileRef = 500F096D1E757B33004C7270 /* anatomy_suffix.txt */; };
 		500F09721E7587E3004C7270 /* BodyPartAnatomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F09711E7587E3004C7270 /* BodyPartAnatomyViewController.swift */; };
 		500F09751E758963004C7270 /* BodyPartAnatomyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F09731E758963004C7270 /* BodyPartAnatomyCell.swift */; };
 		500F09761E758963004C7270 /* BodyPartAnatomyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 500F09741E758963004C7270 /* BodyPartAnatomyCell.xib */; };
@@ -37,6 +35,8 @@
 		5021EE061E6860300058B500 /* ExerciseListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021EE051E6860300058B500 /* ExerciseListDelegate.swift */; };
 		5021EE081E68603A0058B500 /* ExerciseListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021EE071E68603A0058B500 /* ExerciseListDataSource.swift */; };
 		5021EE0A1E6863660058B500 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021EE091E6863660058B500 /* Exercise.swift */; };
+		502685221E75BDC100611F56 /* anatomy_prefix.txt in Resources */ = {isa = PBXBuildFile; fileRef = 502685201E75BDC100611F56 /* anatomy_prefix.txt */; };
+		502685231E75BDC100611F56 /* anatomy_suffix.txt in Resources */ = {isa = PBXBuildFile; fileRef = 502685211E75BDC100611F56 /* anatomy_suffix.txt */; };
 		50276FA21E4A2AE4006CBAC0 /* SingleArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50276FA11E4A2AE4006CBAC0 /* SingleArticleViewController.swift */; };
 		502C55B41E71A4F2003D8B0D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502C55B31E71A4F2003D8B0D /* UIViewExtension.swift */; };
 		503B73B01E549E3B005838CC /* CategoryPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503B73AF1E549E3B005838CC /* CategoryPopOverViewController.swift */; };
@@ -189,8 +189,6 @@
 		500F09641E755855004C7270 /* Zoom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Zoom.gif; sourceTree = "<group>"; };
 		500F09681E755DDC004C7270 /* Anatomy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anatomy.swift; sourceTree = "<group>"; };
 		500F096A1E75603E004C7270 /* AnatomyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnatomyManager.swift; sourceTree = "<group>"; };
-		500F096C1E757B33004C7270 /* anatomy_prefix.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = anatomy_prefix.txt; path = ../../../anatomy_prefix.txt; sourceTree = "<group>"; };
-		500F096D1E757B33004C7270 /* anatomy_suffix.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = anatomy_suffix.txt; path = ../../../anatomy_suffix.txt; sourceTree = "<group>"; };
 		500F09711E7587E3004C7270 /* BodyPartAnatomyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPartAnatomyViewController.swift; sourceTree = "<group>"; };
 		500F09731E758963004C7270 /* BodyPartAnatomyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPartAnatomyCell.swift; sourceTree = "<group>"; };
 		500F09741E758963004C7270 /* BodyPartAnatomyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BodyPartAnatomyCell.xib; sourceTree = "<group>"; };
@@ -206,6 +204,8 @@
 		5021EE051E6860300058B500 /* ExerciseListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListDelegate.swift; sourceTree = "<group>"; };
 		5021EE071E68603A0058B500 /* ExerciseListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListDataSource.swift; sourceTree = "<group>"; };
 		5021EE091E6863660058B500 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		502685201E75BDC100611F56 /* anatomy_prefix.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anatomy_prefix.txt; sourceTree = "<group>"; };
+		502685211E75BDC100611F56 /* anatomy_suffix.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anatomy_suffix.txt; sourceTree = "<group>"; };
 		50276FA11E4A2AE4006CBAC0 /* SingleArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleArticleViewController.swift; sourceTree = "<group>"; };
 		502C55B31E71A4F2003D8B0D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		503B73AF1E549E3B005838CC /* CategoryPopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPopOverViewController.swift; sourceTree = "<group>"; };
@@ -491,8 +491,8 @@
 				508CAB471E7330D8005BD1FB /* HTMLGenerator.swift */,
 				508CAB491E733147005BD1FB /* article_base_prefix.txt */,
 				508CAB4A1E733147005BD1FB /* article_base_suffix.txt */,
-				500F096C1E757B33004C7270 /* anatomy_prefix.txt */,
-				500F096D1E757B33004C7270 /* anatomy_suffix.txt */,
+				502685201E75BDC100611F56 /* anatomy_prefix.txt */,
+				502685211E75BDC100611F56 /* anatomy_suffix.txt */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -912,6 +912,7 @@
 				50062A241E470D62002BDE90 /* Assets.xcassets in Resources */,
 				50B7C0FA1E6BF33E00C7DD76 /* shoulder.png in Resources */,
 				50AF4C701E48FE2300E8EF8A /* Tools.storyboard in Resources */,
+				502685231E75BDC100611F56 /* anatomy_suffix.txt in Resources */,
 				50FDA4D31E6DACB2001356ED /* ExerciseListHeader.xib in Resources */,
 				50062A221E470D62002BDE90 /* Main.storyboard in Resources */,
 				50B7C1021E6C096400C7DD76 /* glute.png in Resources */,
@@ -919,9 +920,7 @@
 				50B7C0F71E6BF33E00C7DD76 /* chest.png in Resources */,
 				50B7C1031E6C096400C7DD76 /* hamstring.png in Resources */,
 				507F54911E58563C006E296B /* RecentArticleCell.xib in Resources */,
-				500F096E1E757B33004C7270 /* anatomy_prefix.txt in Resources */,
 				508CAB4B1E733147005BD1FB /* article_base_prefix.txt in Resources */,
-				500F096F1E757B33004C7270 /* anatomy_suffix.txt in Resources */,
 				F123ED511E68CFEC000D24BD /* Squat.png in Resources */,
 				F123ED4F1E68CFEC000D24BD /* Deadlift.png in Resources */,
 				50B7C0F51E6BF33E00C7DD76 /* lats.png in Resources */,
@@ -935,6 +934,7 @@
 				507F54951E58563C006E296B /* SmallArticleCell.xib in Resources */,
 				500F09761E758963004C7270 /* BodyPartAnatomyCell.xib in Resources */,
 				5052D93D1E6C4A43000784DD /* calves.png in Resources */,
+				502685221E75BDC100611F56 /* anatomy_prefix.txt in Resources */,
 				F1B1FC271E732B75006FA8DA /* TestView.xib in Resources */,
 				50AF4C721E48FE2300E8EF8A /* Coaches.storyboard in Resources */,
 				F1AF670F1E737C0E005FC6C9 /* SongViewCell.xib in Resources */,

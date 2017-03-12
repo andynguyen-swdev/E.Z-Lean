@@ -20,8 +20,10 @@ class BodyPartAnatomyViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
+        tableView.bounces = true
+        tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
+        
         BodyPartAnatomyCell.registerFor(tableView: tableView)
-        tableView.rowHeight = tableView.width / 16 * 12
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cấu tạo", style: .plain, target: nil, action: nil)
         
         bodyPart.asObservable()
@@ -58,5 +60,14 @@ class BodyPartAnatomyViewController: UIViewController {
     
     deinit {
         print("deinit-BodyPartAnatomyView")
+    }
+}
+
+extension BodyPartAnatomyViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if anatomyArr.value.count == 1 {
+            return tableView.height
+        }
+        return tableView.width / 16 * 12
     }
 }
