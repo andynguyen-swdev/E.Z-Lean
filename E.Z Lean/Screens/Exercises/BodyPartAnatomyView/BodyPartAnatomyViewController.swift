@@ -27,7 +27,9 @@ class BodyPartAnatomyViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cấu tạo", style: .plain, target: nil, action: nil)
         
         bodyPart.asObservable()
+            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .default))
             .unwrap()
+            .observeOn(MainScheduler.instance)
             .map {
                 DatabaseManager.anatomy.getAnatomyOf(bodyPart: $0)
             }
@@ -38,6 +40,8 @@ class BodyPartAnatomyViewController: UIViewController {
             .addDisposableTo(disposeBag)
         
         anatomyArr.asObservable()
+            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .default))
+            .observeOn(MainScheduler.instance)
             .bindTo(tableView.rx
                 .items(cellIdentifier: BodyPartAnatomyCell.identifier, cellType: BodyPartAnatomyCell.self)
             ) { row, ele, cell in
@@ -46,6 +50,8 @@ class BodyPartAnatomyViewController: UIViewController {
             .addDisposableTo(disposeBag)
         
         tableView.rx.modelSelected(Anatomy.self)
+            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .default))
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] anatomy in
                 let vc = BodyPartAnatomyWebViewController(nibName: nil, bundle: nil)
                 vc.anatomy = anatomy

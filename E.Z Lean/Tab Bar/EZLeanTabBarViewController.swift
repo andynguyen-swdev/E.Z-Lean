@@ -65,6 +65,12 @@ class EZLeanTabBarViewController: UITabBarController {
 //                image.transform = CGAffineTransform(rotationAngle: -CGFloat.pi)
 //            })
 //        }
+        
+        if index == 3 {
+            AudioController.instance.playingBar.alpha = 1
+        } else {
+            AudioController.instance.playingBar.alpha = 0
+        }
     }
     
     func animateSelectingRect(index: Int) {

@@ -62,4 +62,7 @@ struct SegueIdentifiers {
     static let anatomyToExerciseList = "AnatomyToExerciseList"
     static let exerciseListToExercise = "ExerciseListToExercise"
     static let exerciseListToBodyPartAnatomy = "ExerciseListToBodyPartAnatomy"
+    
+    // Music
+    static let CategoryToSongList = "CategoryToSongList"
 }

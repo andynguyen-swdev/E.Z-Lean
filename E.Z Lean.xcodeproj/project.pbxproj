@@ -37,6 +37,29 @@
 		5021EE0A1E6863660058B500 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021EE091E6863660058B500 /* Exercise.swift */; };
 		502685221E75BDC100611F56 /* anatomy_prefix.txt in Resources */ = {isa = PBXBuildFile; fileRef = 502685201E75BDC100611F56 /* anatomy_prefix.txt */; };
 		502685231E75BDC100611F56 /* anatomy_suffix.txt in Resources */ = {isa = PBXBuildFile; fileRef = 502685211E75BDC100611F56 /* anatomy_suffix.txt */; };
+		502685431E75C89A00611F56 /* ReactiveCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685261E75C89A00611F56 /* ReactiveCollectionViewDataSource.swift */; };
+		502685441E75C89A00611F56 /* ReactiveTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685271E75C89A00611F56 /* ReactiveTableViewDataSource.swift */; };
+		502685451E75C89A00611F56 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685291E75C89A00611F56 /* CategoryCell.swift */; };
+		502685461E75C89A00611F56 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5026852A1E75C89A00611F56 /* CategoryCell.xib */; };
+		502685471E75C89A00611F56 /* SongListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026852B1E75C89A00611F56 /* SongListTableViewCell.swift */; };
+		502685481E75C89A00611F56 /* SongListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5026852C1E75C89A00611F56 /* SongListTableViewCell.xib */; };
+		502685491E75C89A00611F56 /* DiscoverCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026852F1E75C89A00611F56 /* DiscoverCollectionViewDelegate.swift */; };
+		5026854A1E75C89A00611F56 /* DiscoverDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685301E75C89A00611F56 /* DiscoverDataSource.swift */; };
+		5026854B1E75C89A00611F56 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685311E75C89A00611F56 /* DiscoverViewController.swift */; };
+		5026854C1E75C89A00611F56 /* SongListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685331E75C89A00611F56 /* SongListDataSource.swift */; };
+		5026854D1E75C89A00611F56 /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685341E75C89A00611F56 /* SongListViewController.swift */; };
+		5026854E1E75C89A00611F56 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685361E75C89A00611F56 /* AudioController.swift */; };
+		5026854F1E75C89A00611F56 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685371E75C89A00611F56 /* Category.swift */; };
+		502685501E75C89A00611F56 /* LinkGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685381E75C89A00611F56 /* LinkGenerator.swift */; };
+		502685511E75C89A00611F56 /* PlayOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685391E75C89A00611F56 /* PlayOption.swift */; };
+		502685521E75C89A00611F56 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026853A1E75C89A00611F56 /* Song.swift */; };
+		502685531E75C89A00611F56 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026853B1E75C89A00611F56 /* Status.swift */; };
+		502685541E75C89A00611F56 /* MusicPlayerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026853D1E75C89A00611F56 /* MusicPlayerTableViewDataSource.swift */; };
+		502685551E75C89A00611F56 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026853E1E75C89A00611F56 /* MusicPlayerViewController.swift */; };
+		502685561E75C89A00611F56 /* ImageTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685401E75C89A00611F56 /* ImageTransitionAnimator.swift */; };
+		502685571E75C89A00611F56 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502685411E75C89A00611F56 /* MyNavigationController.swift */; };
+		502685591E75CCA900611F56 /* Music.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502685581E75CCA900611F56 /* Music.storyboard */; };
+		5026855B1E75E0E800611F56 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026855A1E75E0E800611F56 /* Playlist.swift */; };
 		50276FA21E4A2AE4006CBAC0 /* SingleArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50276FA11E4A2AE4006CBAC0 /* SingleArticleViewController.swift */; };
 		502C55B41E71A4F2003D8B0D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502C55B31E71A4F2003D8B0D /* UIViewExtension.swift */; };
 		503B73B01E549E3B005838CC /* CategoryPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503B73AF1E549E3B005838CC /* CategoryPopOverViewController.swift */; };
@@ -101,7 +124,6 @@
 		50AF4C6F1E48FE2300E8EF8A /* Articles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AF4C681E48FE2300E8EF8A /* Articles.storyboard */; };
 		50AF4C701E48FE2300E8EF8A /* Tools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AF4C6A1E48FE2300E8EF8A /* Tools.storyboard */; };
 		50AF4C711E48FE2300E8EF8A /* Exercises.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AF4C6C1E48FE2300E8EF8A /* Exercises.storyboard */; };
-		50AF4C721E48FE2300E8EF8A /* Coaches.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AF4C6E1E48FE2300E8EF8A /* Coaches.storyboard */; };
 		50B1E5321E734DC40008F547 /* ExercisesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1E5311E734DC40008F547 /* ExercisesManager.swift */; };
 		50B6CBC61E5776250064291C /* SearchViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B6CBC51E5776250064291C /* SearchViewDataSource.swift */; };
 		50B6CBC81E5777400064291C /* SearchViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B6CBC71E5777400064291C /* SearchViewDelegate.swift */; };
@@ -129,22 +151,11 @@
 		F1335C9D1E6D866D00DFCA6B /* ModelViewControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1335C9C1E6D866D00DFCA6B /* ModelViewControllerUtils.swift */; };
 		F164A41F1E4F621A0084F6B3 /* TDEECalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */; };
 		F1910DF61E6F346F000AE150 /* CircleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1910DF51E6F346F000AE150 /* CircleTransition.swift */; };
-		F1AF670B1E7359AA005FC6C9 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF670A1E7359AA005FC6C9 /* MusicPlayerViewController.swift */; };
-		F1AF670E1E737C0E005FC6C9 /* SongViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF670C1E737C0E005FC6C9 /* SongViewCell.swift */; };
-		F1AF670F1E737C0E005FC6C9 /* SongViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1AF670D1E737C0E005FC6C9 /* SongViewCell.xib */; };
-		F1B1FC1D1E731D24006FA8DA /* ListSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1FC1C1E731D24006FA8DA /* ListSongViewController.swift */; };
-		F1B1FC1F1E731E37006FA8DA /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1FC1E1E731E37006FA8DA /* Song.swift */; };
-		F1B1FC211E732025006FA8DA /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1FC201E732025006FA8DA /* StringUtils.swift */; };
-		F1B1FC231E73229A006FA8DA /* ListSongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1FC221E73229A006FA8DA /* ListSongTableViewCell.swift */; };
-		F1B1FC251E7324E2006FA8DA /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1FC241E7324E2006FA8DA /* MyUtils.swift */; };
-		F1B1FC271E732B75006FA8DA /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B1FC261E732B75006FA8DA /* TestView.xib */; };
-		F1B1FC291E732C32006FA8DA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1FC281E732C32006FA8DA /* TestView.swift */; };
 		F1B5C5261E697878006BB375 /* CombinedShape.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B5C5251E697878006BB375 /* CombinedShape.png */; };
 		F1B5C5281E697AFF006BB375 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B5C5271E697AFF006BB375 /* back_icon.png */; };
 		F1D8333D1E47871F00772F42 /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333C1E47871F00772F42 /* ToolViewController.swift */; };
 		F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */; };
 		F1D833411E478F2D00772F42 /* StringToDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D833401E478F2D00772F42 /* StringToDouble.swift */; };
-		F1D94C481E744CB300B6B42F /* PlayerMusicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1D94C471E744CB300B6B42F /* PlayerMusicView.xib */; };
 		F1EB919E1E71D1B30078A407 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = F1EB919D1E71D1B30078A407 /* next.png */; };
 		F1EB91A01E71D1BC0078A407 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = F1EB919F1E71D1BC0078A407 /* back.png */; };
 /* End PBXBuildFile section */
@@ -206,6 +217,29 @@
 		5021EE091E6863660058B500 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		502685201E75BDC100611F56 /* anatomy_prefix.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anatomy_prefix.txt; sourceTree = "<group>"; };
 		502685211E75BDC100611F56 /* anatomy_suffix.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anatomy_suffix.txt; sourceTree = "<group>"; };
+		502685261E75C89A00611F56 /* ReactiveCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		502685271E75C89A00611F56 /* ReactiveTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveTableViewDataSource.swift; sourceTree = "<group>"; };
+		502685291E75C89A00611F56 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		5026852A1E75C89A00611F56 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		5026852B1E75C89A00611F56 /* SongListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongListTableViewCell.swift; sourceTree = "<group>"; };
+		5026852C1E75C89A00611F56 /* SongListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListTableViewCell.xib; sourceTree = "<group>"; };
+		5026852F1E75C89A00611F56 /* DiscoverCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		502685301E75C89A00611F56 /* DiscoverDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverDataSource.swift; sourceTree = "<group>"; };
+		502685311E75C89A00611F56 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		502685331E75C89A00611F56 /* SongListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongListDataSource.swift; sourceTree = "<group>"; };
+		502685341E75C89A00611F56 /* SongListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
+		502685361E75C89A00611F56 /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		502685371E75C89A00611F56 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		502685381E75C89A00611F56 /* LinkGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkGenerator.swift; sourceTree = "<group>"; };
+		502685391E75C89A00611F56 /* PlayOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayOption.swift; sourceTree = "<group>"; };
+		5026853A1E75C89A00611F56 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		5026853B1E75C89A00611F56 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		5026853D1E75C89A00611F56 /* MusicPlayerTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerTableViewDataSource.swift; sourceTree = "<group>"; };
+		5026853E1E75C89A00611F56 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
+		502685401E75C89A00611F56 /* ImageTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTransitionAnimator.swift; sourceTree = "<group>"; };
+		502685411E75C89A00611F56 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		502685581E75CCA900611F56 /* Music.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Music.storyboard; sourceTree = "<group>"; };
+		5026855A1E75E0E800611F56 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		50276FA11E4A2AE4006CBAC0 /* SingleArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleArticleViewController.swift; sourceTree = "<group>"; };
 		502C55B31E71A4F2003D8B0D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		503B73AF1E549E3B005838CC /* CategoryPopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPopOverViewController.swift; sourceTree = "<group>"; };
@@ -270,7 +304,6 @@
 		50AF4C681E48FE2300E8EF8A /* Articles.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Articles.storyboard; sourceTree = "<group>"; };
 		50AF4C6A1E48FE2300E8EF8A /* Tools.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tools.storyboard; sourceTree = "<group>"; };
 		50AF4C6C1E48FE2300E8EF8A /* Exercises.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Exercises.storyboard; sourceTree = "<group>"; };
-		50AF4C6E1E48FE2300E8EF8A /* Coaches.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coaches.storyboard; sourceTree = "<group>"; };
 		50B1E5311E734DC40008F547 /* ExercisesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesManager.swift; sourceTree = "<group>"; };
 		50B6CBC51E5776250064291C /* SearchViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewDataSource.swift; sourceTree = "<group>"; };
 		50B6CBC71E5777400064291C /* SearchViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewDelegate.swift; sourceTree = "<group>"; };
@@ -300,22 +333,11 @@
 		F1335C9C1E6D866D00DFCA6B /* ModelViewControllerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelViewControllerUtils.swift; sourceTree = "<group>"; };
 		F164A41E1E4F621A0084F6B3 /* TDEECalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDEECalculatorViewController.swift; sourceTree = "<group>"; };
 		F1910DF51E6F346F000AE150 /* CircleTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTransition.swift; sourceTree = "<group>"; };
-		F1AF670A1E7359AA005FC6C9 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
-		F1AF670C1E737C0E005FC6C9 /* SongViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongViewCell.swift; sourceTree = "<group>"; };
-		F1AF670D1E737C0E005FC6C9 /* SongViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongViewCell.xib; sourceTree = "<group>"; };
-		F1B1FC1C1E731D24006FA8DA /* ListSongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSongViewController.swift; sourceTree = "<group>"; };
-		F1B1FC1E1E731E37006FA8DA /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
-		F1B1FC201E732025006FA8DA /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
-		F1B1FC221E73229A006FA8DA /* ListSongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSongTableViewCell.swift; sourceTree = "<group>"; };
-		F1B1FC241E7324E2006FA8DA /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
-		F1B1FC261E732B75006FA8DA /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
-		F1B1FC281E732C32006FA8DA /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		F1B5C5251E697878006BB375 /* CombinedShape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CombinedShape.png; sourceTree = "<group>"; };
 		F1B5C5271E697AFF006BB375 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
 		F1D8333C1E47871F00772F42 /* ToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolViewController.swift; sourceTree = "<group>"; };
 		F1D8333E1E478D2600772F42 /* OneRMCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneRMCalculatorViewController.swift; sourceTree = "<group>"; };
 		F1D833401E478F2D00772F42 /* StringToDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringToDouble.swift; sourceTree = "<group>"; };
-		F1D94C471E744CB300B6B42F /* PlayerMusicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerMusicView.xib; sourceTree = "<group>"; };
 		F1EB919D1E71D1B30078A407 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		F1EB919F1E71D1BC0078A407 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -470,6 +492,86 @@
 				5021EDFF1E68579A0058B500 /* BaseTableViewCell.swift */,
 			);
 			path = Abstract;
+			sourceTree = "<group>";
+		};
+		502685241E75C89A00611F56 /* Abstracts */ = {
+			isa = PBXGroup;
+			children = (
+				502685261E75C89A00611F56 /* ReactiveCollectionViewDataSource.swift */,
+				502685271E75C89A00611F56 /* ReactiveTableViewDataSource.swift */,
+			);
+			path = Abstracts;
+			sourceTree = "<group>";
+		};
+		502685281E75C89A00611F56 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				502685291E75C89A00611F56 /* CategoryCell.swift */,
+				5026852A1E75C89A00611F56 /* CategoryCell.xib */,
+				5026852B1E75C89A00611F56 /* SongListTableViewCell.swift */,
+				5026852C1E75C89A00611F56 /* SongListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5026852D1E75C89A00611F56 /* DiscoverView */ = {
+			isa = PBXGroup;
+			children = (
+				5026852E1E75C89A00611F56 /* InitialScreen */,
+				502685321E75C89A00611F56 /* SongListScreen */,
+			);
+			path = DiscoverView;
+			sourceTree = "<group>";
+		};
+		5026852E1E75C89A00611F56 /* InitialScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5026852F1E75C89A00611F56 /* DiscoverCollectionViewDelegate.swift */,
+				502685301E75C89A00611F56 /* DiscoverDataSource.swift */,
+				502685311E75C89A00611F56 /* DiscoverViewController.swift */,
+			);
+			path = InitialScreen;
+			sourceTree = "<group>";
+		};
+		502685321E75C89A00611F56 /* SongListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				502685331E75C89A00611F56 /* SongListDataSource.swift */,
+				502685341E75C89A00611F56 /* SongListViewController.swift */,
+			);
+			path = SongListScreen;
+			sourceTree = "<group>";
+		};
+		502685351E75C89A00611F56 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				502685361E75C89A00611F56 /* AudioController.swift */,
+				502685371E75C89A00611F56 /* Category.swift */,
+				5026855A1E75E0E800611F56 /* Playlist.swift */,
+				502685381E75C89A00611F56 /* LinkGenerator.swift */,
+				502685391E75C89A00611F56 /* PlayOption.swift */,
+				5026853A1E75C89A00611F56 /* Song.swift */,
+				5026853B1E75C89A00611F56 /* Status.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5026853C1E75C89A00611F56 /* MusicPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				5026853D1E75C89A00611F56 /* MusicPlayerTableViewDataSource.swift */,
+				5026853E1E75C89A00611F56 /* MusicPlayerViewController.swift */,
+			);
+			path = MusicPlayerView;
+			sourceTree = "<group>";
+		};
+		5026853F1E75C89A00611F56 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				502685401E75C89A00611F56 /* ImageTransitionAnimator.swift */,
+				502685411E75C89A00611F56 /* MyNavigationController.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 		50276FA01E4A2AD1006CBAC0 /* Single Article */ = {
@@ -697,18 +799,13 @@
 		50AF4C6D1E48FE2300E8EF8A /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				50AF4C6E1E48FE2300E8EF8A /* Coaches.storyboard */,
-				F1B1FC1C1E731D24006FA8DA /* ListSongViewController.swift */,
-				F1AF670A1E7359AA005FC6C9 /* MusicPlayerViewController.swift */,
-				F1B1FC221E73229A006FA8DA /* ListSongTableViewCell.swift */,
-				F1B1FC281E732C32006FA8DA /* TestView.swift */,
-				F1B1FC1E1E731E37006FA8DA /* Song.swift */,
-				F1B1FC201E732025006FA8DA /* StringUtils.swift */,
-				F1B1FC241E7324E2006FA8DA /* MyUtils.swift */,
-				F1B1FC261E732B75006FA8DA /* TestView.xib */,
-				F1AF670C1E737C0E005FC6C9 /* SongViewCell.swift */,
-				F1AF670D1E737C0E005FC6C9 /* SongViewCell.xib */,
-				F1D94C471E744CB300B6B42F /* PlayerMusicView.xib */,
+				502685581E75CCA900611F56 /* Music.storyboard */,
+				502685241E75C89A00611F56 /* Abstracts */,
+				502685281E75C89A00611F56 /* Cells */,
+				5026852D1E75C89A00611F56 /* DiscoverView */,
+				502685351E75C89A00611F56 /* Models */,
+				5026853C1E75C89A00611F56 /* MusicPlayerView */,
+				5026853F1E75C89A00611F56 /* NavigationController */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -864,6 +961,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = Z3TDYH9DM8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					50A67F731E472C4700E463F7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -912,15 +1014,18 @@
 				50062A241E470D62002BDE90 /* Assets.xcassets in Resources */,
 				50B7C0FA1E6BF33E00C7DD76 /* shoulder.png in Resources */,
 				50AF4C701E48FE2300E8EF8A /* Tools.storyboard in Resources */,
+				502685461E75C89A00611F56 /* CategoryCell.xib in Resources */,
 				502685231E75BDC100611F56 /* anatomy_suffix.txt in Resources */,
 				50FDA4D31E6DACB2001356ED /* ExerciseListHeader.xib in Resources */,
 				50062A221E470D62002BDE90 /* Main.storyboard in Resources */,
 				50B7C1021E6C096400C7DD76 /* glute.png in Resources */,
 				50B7C0F91E6BF33E00C7DD76 /* leg.png in Resources */,
+				502685591E75CCA900611F56 /* Music.storyboard in Resources */,
 				50B7C0F71E6BF33E00C7DD76 /* chest.png in Resources */,
 				50B7C1031E6C096400C7DD76 /* hamstring.png in Resources */,
 				507F54911E58563C006E296B /* RecentArticleCell.xib in Resources */,
 				508CAB4B1E733147005BD1FB /* article_base_prefix.txt in Resources */,
+				502685481E75C89A00611F56 /* SongListTableViewCell.xib in Resources */,
 				F123ED511E68CFEC000D24BD /* Squat.png in Resources */,
 				F123ED4F1E68CFEC000D24BD /* Deadlift.png in Resources */,
 				50B7C0F51E6BF33E00C7DD76 /* lats.png in Resources */,
@@ -935,10 +1040,6 @@
 				500F09761E758963004C7270 /* BodyPartAnatomyCell.xib in Resources */,
 				5052D93D1E6C4A43000784DD /* calves.png in Resources */,
 				502685221E75BDC100611F56 /* anatomy_prefix.txt in Resources */,
-				F1B1FC271E732B75006FA8DA /* TestView.xib in Resources */,
-				50AF4C721E48FE2300E8EF8A /* Coaches.storyboard in Resources */,
-				F1AF670F1E737C0E005FC6C9 /* SongViewCell.xib in Resources */,
-				F1D94C481E744CB300B6B42F /* PlayerMusicView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1012,16 +1113,21 @@
 				F1335C9D1E6D866D00DFCA6B /* ModelViewControllerUtils.swift in Sources */,
 				50B7C1061E6C0AC100C7DD76 /* ExerciseViewController.swift in Sources */,
 				5042098C1E55E00F005AC8D4 /* CategoryViewDelegate.swift in Sources */,
+				502685551E75C89A00611F56 /* MusicPlayerViewController.swift in Sources */,
+				502685511E75C89A00611F56 /* PlayOption.swift in Sources */,
 				504209881E55DF79005AC8D4 /* Article.swift in Sources */,
 				500F09721E7587E3004C7270 /* BodyPartAnatomyViewController.swift in Sources */,
+				502685571E75C89A00611F56 /* MyNavigationController.swift in Sources */,
 				5021EE001E68579A0058B500 /* BaseTableViewCell.swift in Sources */,
 				5021EE031E6857D80058B500 /* ExerciseListTableViewCell.swift in Sources */,
 				5072896C1E758F020099862F /* BodyPartAnatomyWebViewController.swift in Sources */,
+				502685471E75C89A00611F56 /* SongListTableViewCell.swift in Sources */,
 				5021EE061E6860300058B500 /* ExerciseListDelegate.swift in Sources */,
+				5026854F1E75C89A00611F56 /* Category.swift in Sources */,
 				50B6CBC61E5776250064291C /* SearchViewDataSource.swift in Sources */,
-				F1B1FC1F1E731E37006FA8DA /* Song.swift in Sources */,
-				F1B1FC211E732025006FA8DA /* StringUtils.swift in Sources */,
+				502685541E75C89A00611F56 /* MusicPlayerTableViewDataSource.swift in Sources */,
 				F1910DF61E6F346F000AE150 /* CircleTransition.swift in Sources */,
+				5026854D1E75C89A00611F56 /* SongListViewController.swift in Sources */,
 				50FEF9321E4EA23A00308CCA /* EZLeanNavigationController.swift in Sources */,
 				501ABB511E68508B00562787 /* AnatomyViewController.swift in Sources */,
 				507F54941E58563C006E296B /* SmallArticleCell.swift in Sources */,
@@ -1032,13 +1138,16 @@
 				507F54921E58563C006E296B /* CategoryArticleCell.swift in Sources */,
 				5021EE081E68603A0058B500 /* ExerciseListDataSource.swift in Sources */,
 				500F095A1E752BBC004C7270 /* TutorialPageViewController.swift in Sources */,
-				F1B1FC291E732C32006FA8DA /* TestView.swift in Sources */,
 				507F54901E58563C006E296B /* RecentArticleCell.swift in Sources */,
 				500F09691E755DDC004C7270 /* Anatomy.swift in Sources */,
 				50F521A91E5D390300275564 /* ArticlesManager.swift in Sources */,
+				5026854A1E75C89A00611F56 /* DiscoverDataSource.swift in Sources */,
 				F1D8333F1E478D2600772F42 /* OneRMCalculatorViewController.swift in Sources */,
 				504278051E49ACE900D062DF /* RecentCollectionViewDelegate.swift in Sources */,
 				508CAB481E7330D8005BD1FB /* HTMLGenerator.swift in Sources */,
+				502685521E75C89A00611F56 /* Song.swift in Sources */,
+				5026854C1E75C89A00611F56 /* SongListDataSource.swift in Sources */,
+				502685431E75C89A00611F56 /* ReactiveCollectionViewDataSource.swift in Sources */,
 				F12644DB1E4B7B0600C5D33C /* WilksCalculatorViewController.swift in Sources */,
 				5021EDFE1E6857890058B500 /* BaseCell.swift in Sources */,
 				508CAB461E72F6C3005BD1FB /* FireBaseArticleManager.swift in Sources */,
@@ -1046,30 +1155,34 @@
 				501ABB531E68508B00562787 /* TouchableAnatomy.swift in Sources */,
 				500F095C1E753DDA004C7270 /* TutorialContainerViewController.swift in Sources */,
 				501ABB581E6853C800562787 /* ExerciseListViewController.swift in Sources */,
+				502685441E75C89A00611F56 /* ReactiveTableViewDataSource.swift in Sources */,
 				500F096B1E75603E004C7270 /* AnatomyManager.swift in Sources */,
 				50B6CBC81E5777400064291C /* SearchViewDelegate.swift in Sources */,
+				5026855B1E75E0E800611F56 /* Playlist.swift in Sources */,
+				5026854B1E75C89A00611F56 /* DiscoverViewController.swift in Sources */,
 				504209851E55D912005AC8D4 /* Constant.swift in Sources */,
 				50E947C71E55F3ED00AEFEC4 /* SearchViewController.swift in Sources */,
 				507F54991E585FF4006E296B /* ArticleCell.swift in Sources */,
+				502685531E75C89A00611F56 /* Status.swift in Sources */,
 				50AF4C651E48D78000E8EF8A /* EZLeanTabBarViewController.swift in Sources */,
-				F1AF670E1E737C0E005FC6C9 /* SongViewCell.swift in Sources */,
 				50276FA21E4A2AE4006CBAC0 /* SingleArticleViewController.swift in Sources */,
 				F1D8333D1E47871F00772F42 /* ToolViewController.swift in Sources */,
-				F1AF670B1E7359AA005FC6C9 /* MusicPlayerViewController.swift in Sources */,
 				500F09751E758963004C7270 /* BodyPartAnatomyCell.swift in Sources */,
 				5052D9421E6C59B9000784DD /* ExercisePhotosDelegate.swift in Sources */,
+				502685501E75C89A00611F56 /* LinkGenerator.swift in Sources */,
 				501ABB521E68508B00562787 /* TouchableAnatomy+Function.swift in Sources */,
 				5079F5BB1E65A5DC002B50B1 /* StringScore.swift in Sources */,
-				F1B1FC251E7324E2006FA8DA /* MyUtils.swift in Sources */,
 				5021EE0A1E6863660058B500 /* Exercise.swift in Sources */,
 				50B1E5321E734DC40008F547 /* ExercisesManager.swift in Sources */,
+				502685491E75C89A00611F56 /* DiscoverCollectionViewDelegate.swift in Sources */,
 				500F095E1E753FA7004C7270 /* FirstTutorialViewController.swift in Sources */,
-				F1B1FC231E73229A006FA8DA /* ListSongTableViewCell.swift in Sources */,
+				502685561E75C89A00611F56 /* ImageTransitionAnimator.swift in Sources */,
+				5026854E1E75C89A00611F56 /* AudioController.swift in Sources */,
 				50062A1D1E470D62002BDE90 /* AppDelegate.swift in Sources */,
-				F1B1FC1D1E731D24006FA8DA /* ListSongViewController.swift in Sources */,
 				50AF24AC1E5C827200453512 /* ArticleCategory.swift in Sources */,
 				50B7C0EB1E6BF02200C7DD76 /* BodyPart.swift in Sources */,
 				50AF24AA1E5C823B00453512 /* DatabaseManager.swift in Sources */,
+				502685451E75C89A00611F56 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

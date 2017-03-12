@@ -344,7 +344,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="6qh-Am-8hC" customClass="AnimatableCollectionViewCell" customModule="IBAnimatable">
-                                                <rect key="frame" x="26.5" y="0.0" width="306" height="36"/>
+                                                <rect key="frame" x="27" y="0.0" width="306" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="306" height="36"/>

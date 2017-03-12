@@ -8,7 +8,7 @@ target 'E.Z Lean' do
 
 
   # Pods for E.Z Lean
-	pod ’SwiftyJSON’
+pod 'SwiftyJSON'
 
 pod 'RxSwift'
 pod 'RxCocoa'
@@ -16,6 +16,8 @@ pod 'RxDataSources'
 pod 'RxSwiftExt'
 pod 'RxRealm'
 pod 'RxGesture'
+pod 'RxAlamofire'
+
 pod 'IBAnimatable'
 
 pod 'SDWebImage'
