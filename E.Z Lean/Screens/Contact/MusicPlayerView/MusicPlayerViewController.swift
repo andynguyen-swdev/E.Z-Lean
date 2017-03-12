@@ -16,7 +16,6 @@ import Utils
 class MusicPlayerViewController: UIViewController {
     @IBOutlet weak var songImageView: UIImageView!
     @IBOutlet weak var hideButton: UIButton!
-    @IBOutlet weak var optionButton: UIButton!
     
     @IBOutlet weak var progressSlider: UISlider!
     @IBOutlet weak var currentTimeLabel: UILabel!
@@ -54,7 +53,6 @@ class MusicPlayerViewController: UIViewController {
         configRepeatOption()
         configShuffleOption()
         configHideButton()
-        configOptionButton()
         configPlayPauseButton()
         configNextPreviousButton()
         configTimeLabel()
@@ -72,7 +70,7 @@ class MusicPlayerViewController: UIViewController {
     }
     
     func configImageView() {
-        songImageView.contentMode = .scaleAspectFit
+        songImageView.contentMode = .scaleAspectFill
         songImageView.rx
             .swipeGesture(.down)
             .subscribe(onNext: { [unowned self] _ in
@@ -221,16 +219,6 @@ class MusicPlayerViewController: UIViewController {
                 case true: AudioController.instance.play()
                 case false: AudioController.instance.pause()
                 }
-            })
-            .addDisposableTo(disposeBag)
-    }
-    
-    func configOptionButton() {
-        optionButton.tintColor = .white
-        optionButton.rx
-            .tap
-            .subscribe(onNext: { [unowned self] _ in
-                print("tapped")
             })
             .addDisposableTo(disposeBag)
     }

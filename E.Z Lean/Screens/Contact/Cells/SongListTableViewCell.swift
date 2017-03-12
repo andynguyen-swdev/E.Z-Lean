@@ -19,13 +19,10 @@ class SongListTableViewCell: SongConfigurableTableViewCell {
     @IBOutlet weak var songImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var selectedIndicator: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        addButton.backgroundColor = .clear
-        addButton.tintColor = .black
         selectedIndicator.isHidden = true
     }
     

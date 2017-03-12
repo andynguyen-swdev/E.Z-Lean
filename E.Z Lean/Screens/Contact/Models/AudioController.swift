@@ -226,8 +226,8 @@ class AudioController {
             .tapGesture()
             .subscribe(onNext: { gesture in
                 guard gesture.state == .ended else { return }
-                MusicPlayerViewController.instance.modalPresentationStyle = .overCurrentContext
-                self.window.rootViewController?.present(MusicPlayerViewController.instance, animated: true)
+                MusicPlayerViewController.instance.modalPresentationStyle = .overFullScreen
+                EZLeanTabBarViewController.instance.viewControllers?[3].present(MusicPlayerViewController.instance, animated: true)
                 self.playingBar.isHidden = true
             })
             .addDisposableTo(disposeBag)

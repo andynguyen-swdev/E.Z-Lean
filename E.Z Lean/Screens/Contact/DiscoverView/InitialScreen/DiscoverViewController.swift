@@ -30,6 +30,7 @@ class DiscoverViewController: UIViewController, ImageTransitionAnimatable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.delegate = self
 //        AudioController.instance.config()
     
         configNavigation()
@@ -105,5 +106,9 @@ extension DiscoverViewController: UINavigationControllerDelegate {
             return animator
         }
         return nil
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        (navigationController as? EZLeanNavigationController)?.isPushing = false
     }
 }

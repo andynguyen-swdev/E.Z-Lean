@@ -170,6 +170,10 @@
                                     <constraint firstAttribute="width" secondItem="ZDJ-6f-lxW" secondAttribute="height" multiplier="80:49" id="7iv-Ck-6P0"/>
                                 </constraints>
                             </imageView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIR-rk-TzH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.2459439212" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0m-hb-LK1" customClass="AnimatableView" customModule="IBAnimatable">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                 <constraints>
@@ -255,23 +259,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="k0p-aP-V40" secondAttribute="trailing" id="2vI-48-LhT"/>
+                            <constraint firstItem="xIR-rk-TzH" firstAttribute="trailing" secondItem="ZDJ-6f-lxW" secondAttribute="trailing" id="3Dn-yB-8mr"/>
                             <constraint firstAttribute="topMargin" secondItem="ZDJ-6f-lxW" secondAttribute="top" id="5sz-gb-Pm4"/>
                             <constraint firstItem="ZDJ-6f-lxW" firstAttribute="leading" secondItem="5B6-eb-kZO" secondAttribute="leading" id="DW1-KT-web"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Qdm-pn-dag" secondAttribute="bottom" id="DhQ-KS-3tJ"/>
                             <constraint firstItem="k0p-aP-V40" firstAttribute="top" secondItem="ZDJ-6f-lxW" secondAttribute="bottom" id="FXm-Ib-4tT"/>
                             <constraint firstItem="ZDJ-6f-lxW" firstAttribute="leading" secondItem="Aa7-7A-Y2a" secondAttribute="leading" constant="-8" id="Gxi-6n-LdR"/>
                             <constraint firstItem="Qdm-pn-dag" firstAttribute="leading" secondItem="5B6-eb-kZO" secondAttribute="leading" id="HWa-pJ-QQD"/>
                             <constraint firstItem="k0p-aP-V40" firstAttribute="leading" secondItem="5B6-eb-kZO" secondAttribute="leading" id="Lzo-9G-93A"/>
+                            <constraint firstItem="fow-6M-uPg" firstAttribute="top" secondItem="Qdm-pn-dag" secondAttribute="bottom" id="NDq-h6-gZ5"/>
                             <constraint firstAttribute="trailing" secondItem="ZDJ-6f-lxW" secondAttribute="trailing" id="QqO-O9-UXe"/>
                             <constraint firstItem="Qdm-pn-dag" firstAttribute="top" secondItem="k0p-aP-V40" secondAttribute="bottom" id="TbJ-bL-54R"/>
                             <constraint firstItem="wyN-dO-eLv" firstAttribute="leading" secondItem="5B6-eb-kZO" secondAttribute="leading" id="dip-OB-5f9"/>
                             <constraint firstItem="t0m-hb-LK1" firstAttribute="top" secondItem="5B6-eb-kZO" secondAttribute="top" id="etC-D8-hXW"/>
+                            <constraint firstItem="xIR-rk-TzH" firstAttribute="leading" secondItem="ZDJ-6f-lxW" secondAttribute="leading" id="hiZ-FD-yQq"/>
                             <constraint firstItem="t0m-hb-LK1" firstAttribute="leading" secondItem="5B6-eb-kZO" secondAttribute="leading" id="mrK-9q-WMP"/>
                             <constraint firstAttribute="trailing" secondItem="Qdm-pn-dag" secondAttribute="trailing" id="nBg-ol-hI3"/>
                             <constraint firstAttribute="trailing" secondItem="t0m-hb-LK1" secondAttribute="trailing" id="nd5-Uo-jnI"/>
                             <constraint firstItem="wyN-dO-eLv" firstAttribute="centerY" secondItem="ZDJ-6f-lxW" secondAttribute="bottom" id="vUr-25-8le"/>
+                            <constraint firstItem="xIR-rk-TzH" firstAttribute="top" secondItem="ZDJ-6f-lxW" secondAttribute="top" id="yQw-SJ-q9r"/>
                             <constraint firstItem="ZDJ-6f-lxW" firstAttribute="top" secondItem="Aa7-7A-Y2a" secondAttribute="top" constant="-10" id="yTp-ro-pMB"/>
                             <constraint firstAttribute="trailing" secondItem="wyN-dO-eLv" secondAttribute="trailing" id="yho-lS-QfS"/>
+                            <constraint firstItem="xIR-rk-TzH" firstAttribute="bottom" secondItem="ZDJ-6f-lxW" secondAttribute="bottom" id="zar-Wp-U9h"/>
                         </constraints>
                     </view>
                     <connections>

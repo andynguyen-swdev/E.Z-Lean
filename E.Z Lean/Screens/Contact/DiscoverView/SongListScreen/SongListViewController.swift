@@ -30,6 +30,15 @@ class SongListViewController: UIViewController, ImageTransitionAnimatable {
     var imageViewForTransition: UIImageView!
     var selectedIndexPath: IndexPath!
     
+    var imageFrame: CGRect {
+        var frame = imageViewForTransition.superview!
+            .convert(imageViewForTransition.frame, to: view)
+        frame.origin = frame.origin.add(x: 0, y: UIApplication.shared.statusBarFrame.height + (navigationController?.navigationBar.frame.height ?? 0))
+        frame.size.width = view.width
+        frame.size.height = view.width / 16 * 7
+        return frame
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTransition()
@@ -84,6 +93,10 @@ class SongListViewController: UIViewController, ImageTransitionAnimatable {
         dataSource.cellType = cellType
         dataSource.playlist = playlist
         dataSource.config()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.setDarkStyle()
     }
     
     override func viewDidAppear(_ animated: Bool) {
