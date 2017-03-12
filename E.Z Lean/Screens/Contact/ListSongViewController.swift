@@ -30,9 +30,6 @@ class ListSongViewController: UIViewController, UITableViewDelegate {
         // Do any additional setup after loading the view.
     }
    
-    @IBAction func invokePlayButton(_ sender: Any) {
-    }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

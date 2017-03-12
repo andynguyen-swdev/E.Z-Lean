@@ -33,7 +33,7 @@ class ListSongTableViewCell: UITableViewCell {
         self.name.text = song.name
         self.author.text = song.author
         self.source = song.source
-        print("add")
+        button.isHidden = true
     }
     func loadData(api:String){
         Alamofire.request(api).responseJSON(){
