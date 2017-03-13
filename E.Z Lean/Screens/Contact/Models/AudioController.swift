@@ -104,7 +104,7 @@ class AudioController {
                 self.playingBar.configWith(song: song)
                 self.configControllCenter(song: song)
                 if self.playingBar.superview == nil {
-                    self.window.addSubview(self.playingBar)
+                    DiscoverViewController.instance.navigationController?.view.addSubview(self.playingBar)
                 }
                 self.progressBar.progress = 0
             })
@@ -199,6 +199,7 @@ class AudioController {
     func configPlayingBar() {
         playingBar.frame.size.height = 50
         playingBar.frame.size.width = window.width
+        
         playingBar.frame.origin = CGPoint(x: 0, y: window.height - EZLeanTabBarViewController.instance.tabBar.height - playingBar.height)
         
         progressBar.frame = CGRect(x: 0, y: -progressBar.height, width: playingBar.width, height: progressBar.height)
@@ -227,8 +228,8 @@ class AudioController {
             .subscribe(onNext: { gesture in
                 guard gesture.state == .ended else { return }
                 MusicPlayerViewController.instance.modalPresentationStyle = .overFullScreen
-                EZLeanTabBarViewController.instance.present(MusicPlayerViewController.instance, animated: true)
-                self.playingBar.isHidden = true
+                DiscoverViewController.instance.navigationController?.present(MusicPlayerViewController.instance, animated: true)
+//                self.playingBar.isHidden = true
             })
             .addDisposableTo(disposeBag)
     }
