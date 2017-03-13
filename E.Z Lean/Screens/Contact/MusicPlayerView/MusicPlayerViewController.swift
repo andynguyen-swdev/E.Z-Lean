@@ -66,10 +66,11 @@ class MusicPlayerViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.isStatusBarHidden = false
+        AudioController.instance.playingBar.isHidden = false
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        AudioController.instance.playingBar.isHidden = false
+        
     }
     
     func configImageView() {
