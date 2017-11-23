@@ -18,22 +18,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+import UIKit
 import RxSwift
 import RxCocoa
 
 /// Default values for `UILongPressGestureRecognizer` configuration
-private enum Defaults {
-    static var numberOfTouchesRequired: Int = 1
-    static var numberOfTapsRequired: Int = 0
-    static var minimumPressDuration: CFTimeInterval = 0.5
-    static var allowableMovement: CGFloat = 10
-    static var configuration: ((UILongPressGestureRecognizer) -> Void)? = nil
+public enum LongPressGestureRecognizerDefaults {
+    public static var numberOfTouchesRequired: Int = 1
+    public static var numberOfTapsRequired: Int = 0
+    public static var minimumPressDuration: CFTimeInterval = 0.5
+    public static var allowableMovement: CGFloat = 10
+    public static var configuration: ((UILongPressGestureRecognizer, RxGestureRecognizerDelegate) -> Void)?
 }
+
+fileprivate typealias Defaults = LongPressGestureRecognizerDefaults
 
 /// A `GestureRecognizerFactory` for `UITapGestureRecognizer`
 public struct LongPressGestureRecognizerFactory: GestureRecognizerFactory {
+
     public typealias Gesture = UILongPressGestureRecognizer
-    public let configuration: (UILongPressGestureRecognizer) -> Void
+    public let configuration: (UILongPressGestureRecognizer, RxGestureRecognizerDelegate) -> Void
 
     /**
      Initialiaze a `GestureRecognizerFactory` for `UILongPressGestureRecognizer`
@@ -48,14 +52,14 @@ public struct LongPressGestureRecognizerFactory: GestureRecognizerFactory {
         numberOfTapsRequired: Int = Defaults.numberOfTapsRequired,
         minimumPressDuration: CFTimeInterval = Defaults.minimumPressDuration,
         allowableMovement: CGFloat = Defaults.allowableMovement,
-        configuration: ((UILongPressGestureRecognizer) -> Void)? = Defaults.configuration
-        ){
-        self.configuration = { gestureRecognizer in
+        configuration: ((UILongPressGestureRecognizer, RxGestureRecognizerDelegate) -> Void)? = Defaults.configuration
+        ) {
+        self.configuration = { gestureRecognizer, delegate in
             gestureRecognizer.numberOfTouchesRequired = numberOfTouchesRequired
             gestureRecognizer.numberOfTapsRequired = numberOfTapsRequired
             gestureRecognizer.minimumPressDuration = minimumPressDuration
             gestureRecognizer.allowableMovement = allowableMovement
-            configuration?(gestureRecognizer)
+            configuration?(gestureRecognizer, delegate)
         }
     }
 }
@@ -75,7 +79,7 @@ extension AnyGestureRecognizerFactory {
         numberOfTapsRequired: Int = Defaults.numberOfTapsRequired,
         minimumPressDuration: CFTimeInterval = Defaults.minimumPressDuration,
         allowableMovement: CGFloat = Defaults.allowableMovement,
-        configuration: ((UILongPressGestureRecognizer) -> Void)? = Defaults.configuration
+        configuration: ((UILongPressGestureRecognizer, RxGestureRecognizerDelegate) -> Void)? = Defaults.configuration
         ) -> AnyGestureRecognizerFactory {
         let gesture = LongPressGestureRecognizerFactory(
             numberOfTouchesRequired: numberOfTouchesRequired,
@@ -103,7 +107,7 @@ public extension Reactive where Base: UIView {
         numberOfTapsRequired: Int = Defaults.numberOfTapsRequired,
         minimumPressDuration: CFTimeInterval = Defaults.minimumPressDuration,
         allowableMovement: CGFloat = Defaults.allowableMovement,
-        configuration: ((UILongPressGestureRecognizer) -> Void)? = Defaults.configuration
+        configuration: ((UILongPressGestureRecognizer, RxGestureRecognizerDelegate) -> Void)? = Defaults.configuration
         ) -> ControlEvent<UILongPressGestureRecognizer> {
 
         return gesture(LongPressGestureRecognizerFactory(

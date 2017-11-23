@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FC261882849BA60BC686E547A4E0C59A"
+               BlueprintIdentifier = "0661C88D864E844CB0E060C87E957FF3"
                BuildableName = "Pods_E_Z_Lean.framework"
                BlueprintName = "Pods-E.Z Lean"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FC261882849BA60BC686E547A4E0C59A"
+            BlueprintIdentifier = "0661C88D864E844CB0E060C87E957FF3"
             BuildableName = "Pods_E_Z_Lean.framework"
             BlueprintName = "Pods-E.Z Lean"
             ReferencedContainer = "container:Pods.xcodeproj">

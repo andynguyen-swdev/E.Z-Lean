@@ -141,6 +141,8 @@ extension ModelViewController {
 }
 
 class BorderedToolBar: UIToolbar, BorderDesignable {
+    var borderType: BorderType = .solid
+    
     @IBInspectable open var borderColor: UIColor? {
         didSet {
             configureBorder()

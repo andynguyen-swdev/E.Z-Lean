@@ -33,14 +33,13 @@ class CategoryViewDataSource {
     }
     
     func bindDataSource() {
-        let dataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSectionModel<String,Article>>()
-        dataSource.configureCell = { [unowned self]
+        let dataSource = RxCollectionViewSectionedReloadDataSource<AnimatableSectionModel<String,Article>>(configureCell: { [unowned self]
             data, cView, indexPath, article in
             let cell = cView.dequeueReusableCell(withReuseIdentifier: self.cellType.identifier, for: indexPath) as! cellClass
             cell.contentWidth = self.cellWidth
             cell.config(article: article, collectionView: cView, indexPath: indexPath)
             return cell
-        }
+            })
         
         articles.asObservable()
             .map { articles in
@@ -57,8 +56,8 @@ class CategoryViewDataSource {
             .articles
             .sorted(byKeyPath: "id", ascending: true)
             )
-            .bindTo(articles)
-            .addDisposableTo(disposeBag)
+            .bind(to: articles)
+            .disposed(by: disposeBag)
         
 //        FirebaseArticleManager.instance
 //            .getArticlesOf(category: category.name)

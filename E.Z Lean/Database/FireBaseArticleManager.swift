@@ -12,14 +12,14 @@ import Firebase
 class FirebaseArticleManager {
     static let instance = FirebaseArticleManager()
     
-    let ref = FIRDatabase.database().reference(withPath: "articles")
-    let contentRef = FIRDatabase.database().reference(withPath: "contents")
+    let ref = Database.database().reference(withPath: "articles")
+    let contentRef = Database.database().reference(withPath: "contents")
     
-    var allArticles: FIRDatabaseQuery {
+    var allArticles: DatabaseQuery {
         return ref.queryOrdered(byChild: "timestamp")
     }
     
-    func getArticlesOf(category: String) -> FIRDatabaseQuery {
+    func getArticlesOf(category: String) -> DatabaseQuery {
         return ref.queryOrdered(byChild: "category").queryStarting(atValue: category).queryEnding(atValue: category)
     }
 }

@@ -55,7 +55,7 @@ class SongListViewController: UIViewController, ImageTransitionAnimatable {
                     self.bottomConstraint.constant = Status.snackBar.height
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         AudioController.instance
             .isPlaying
@@ -65,7 +65,7 @@ class SongListViewController: UIViewController, ImageTransitionAnimatable {
                     self.tableView.contentInset.bottom = 50
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func configSelectingCell() {
@@ -76,7 +76,7 @@ class SongListViewController: UIViewController, ImageTransitionAnimatable {
                     cell.isSelected = true
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         tableView.rx
             .itemDeselected
             .subscribe(onNext: { [unowned self] indexPath in
@@ -84,7 +84,7 @@ class SongListViewController: UIViewController, ImageTransitionAnimatable {
                     cell.isSelected = false
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func configDataSource() {
@@ -111,7 +111,7 @@ class SongListViewController: UIViewController, ImageTransitionAnimatable {
                 guard gesture.state == .ended else { return }
                 _ = self.navigationController?.popViewController(animated: true)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func configTransition() {
@@ -126,7 +126,7 @@ class SongListViewController: UIViewController, ImageTransitionAnimatable {
                 self.categoryNameLabel.text = ""
                 self.categoryImageView.sd_setImage(with: URL(string: playlist.imageLink))
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     deinit {

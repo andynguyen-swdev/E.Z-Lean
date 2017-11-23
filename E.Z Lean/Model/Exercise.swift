@@ -8,7 +8,7 @@
 
 import RealmSwift
 import SwiftyJSON
-import Kanna
+//import Kanna
 
 class RealmString: Object {
     dynamic var content: String = ""
@@ -49,7 +49,7 @@ class Exercise: Object {
     }
     
     func handle(content: String) {
-        if let doc = HTML(html: content, encoding: .utf8) {
+        if let doc = try? HTML(html: content, encoding: .utf8) {
             // Search for nodes by CSS
             for link in doc.css("img") {
                 let url = link["src"]!

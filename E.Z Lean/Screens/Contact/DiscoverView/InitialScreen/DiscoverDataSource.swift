@@ -28,21 +28,21 @@ class DiscoverDataSource: ReactiveCollectionViewDataSource {
     func bindDataSource() {
         playlists.asObservable()
             .observeOn(MainScheduler.instance)
-            .bindTo(collectionView
+            .bind(to: collectionView
                 .rx
                 .items(cellIdentifier: CategoryCell.identifier, cellType: CategoryCell.self)
             ) {
                 row, playlist, cell in
                 cell.configWith(playlist: playlist)
             }
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func getData() {
-        let ref = FIRDatabase.database().reference(withPath: "song_playlists")
+        let ref = Database.database().reference(withPath: "song_playlists")
         ref.observe(.value, with: { snapshot in
             snapshot.children.forEach { [weak self] item in
-                let playlist = Playlist.create(snapshot: item as! FIRDataSnapshot)
+                let playlist = Playlist.create(snapshot: item as! DataSnapshot)
                 self?.playlists.value.insert(playlist, at: 0)
             }
         })

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Differentiator.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FLAnimatedImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,11 +30,6 @@
 			<false/>
 		</dict>
 		<key>IBAnimatable.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Kanna.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -124,129 +124,18 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>leveldb-library.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>nanopb.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1326FD6E61BDF39A79F66FD739F7D052</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1FD675D81425DA3521C2461D358CBD9E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>35A3833D8ADB042416437B62E2ED71C8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3A43395A1696E283CA24A4012C4E0CC1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>42B8B5C654440E55EDDA4238E337BC2E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4C69BF3EF4CE81852226B9442B0C2DF4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4D10E4FF5A483B852B47CCA0B994E340</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4DB37FDD6D9682249FC26FBD3DF9EBE9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>528A6EA9577A7397419A64D173266071</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7AC62172606F8A4496B4630D0AE462B2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>83B5B60C676A8D31829A6AE91CE86A75</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9336E44CCF968045779998BDB12ED3DB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>96EA106D946910EE3FB88E94E9A6D959</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9FFB181BD24A80A0386300E7A0F9B091</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A026EC1104A66BFD95E89FFC942117FA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C81A6BEB27A0B2CC34751D8553218D30</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D0E4FA0D1388EA8B8D9E040513C5E4CC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D1D1D519BE016C9A4FBBDA6CB5321690</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EBB374C3D0FE2AA7C4AE848A217E1078</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EF3CEA61C7CC02632EFBD41ED863EDDC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FC261882849BA60BC686E547A4E0C59A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

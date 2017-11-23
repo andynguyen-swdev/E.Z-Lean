@@ -4,144 +4,50 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Drawing/EZLeanTabBarViewController.swift"
-            timestampString = "508090075.224148"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "init(coder:)"
-            landmarkType = "7">
+            scope = "0"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.OpenGLErrorBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Drawing/EZLeanTabBarViewController.swift"
-            timestampString = "508090082.439565"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "init(coder:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "E.Z Lean/Screens/Articles/Cells/ArticleCell.swift"
-            timestampString = "509177094.974968"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "ArticleCell"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "E.Z Lean/Screens/Articles/Cells/ArticleCell.swift"
-            timestampString = "509177231.732322"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "ArticleCell"
-            landmarkType = "3">
+            breakpointStackSelectionBehavior = "1"
+            symbolName = "__GPUTOOLS_HAS_DETECTED_AN_OPENGL_ERROR__"
+            moduleName = "libglInterpose.dylib">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.OpenGLError">
+                  <ActionContent>
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
             <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "E_Z_Lean.ArticleCell.__deallocating_deinit"
-                  moduleName = "E.Z Lean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duyanh2912/Desktop/E.Z-Lean/E.Z%20Lean/Screens/Articles/Cells/ArticleCell.swift"
-                  timestampString = "509177231.746274"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "E_Z_Lean.ArticleCell.init (frame : __C.CGRect) -&gt; E_Z_Lean.ArticleCell"
-                  moduleName = "E.Z Lean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duyanh2912/Desktop/E.Z-Lean/E.Z%20Lean/Screens/Articles/Cells/ArticleCell.swift"
-                  timestampString = "509177231.750069"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "87">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "E_Z_Lean.ArticleCell.__allocating_init (frame : __C.CGRect) -&gt; E_Z_Lean.ArticleCell"
-                  moduleName = "E.Z Lean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duyanh2912/Desktop/E.Z-Lean/E.Z%20Lean/Screens/Articles/Cells/ArticleCell.swift"
-                  timestampString = "509177231.754553"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "E_Z_Lean.ArticleCell.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;E_Z_Lean.ArticleCell&gt;"
-                  moduleName = "E.Z Lean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duyanh2912/Desktop/E.Z-Lean/E.Z%20Lean/Screens/Articles/Cells/ArticleCell.swift"
-                  timestampString = "509177231.759884"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "E_Z_Lean.ArticleCell.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;E_Z_Lean.ArticleCell&gt;"
-                  moduleName = "E.Z Lean"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duyanh2912/Desktop/E.Z-Lean/E.Z%20Lean/Screens/Articles/Cells/ArticleCell.swift"
-                  timestampString = "509177231.762758"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "87">
-               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.IDEConstraintErrorBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            breakpointStackSelectionBehavior = "1">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -37,7 +37,7 @@ class Article: Object, IdentifiableType {
     dynamic var thumbnailImageLink: String = ""
     var thumgnailURL: URL? { return URL(string: thumbnailImageLink) }
     
-    static func create(snapshot: FIRDataSnapshot) -> Article {
+    static func create(snapshot: DataSnapshot) -> Article {
         let article = Article()
         let value = snapshot.value as! [String: AnyObject]
         

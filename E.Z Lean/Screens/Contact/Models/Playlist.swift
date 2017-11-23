@@ -19,7 +19,7 @@ class Playlist: Object {
         return "name"
     }
     
-    static func create(snapshot: FIRDataSnapshot) -> Playlist {
+    static func create(snapshot: DataSnapshot) -> Playlist {
         let playlist = Playlist()
         playlist.name = snapshot.key
         playlist.imageLink = snapshot.childSnapshot(forPath: "image_link").value as! String

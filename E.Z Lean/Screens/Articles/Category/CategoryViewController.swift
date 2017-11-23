@@ -39,7 +39,7 @@ class CategoryViewController: UIViewController {
         dataSource.config()
         dataSource.cellWidth = cellWidth
         
-        collectionView.rx.setDelegate(self).addDisposableTo(disposeBag)
+        collectionView.rx.setDelegate(self).disposed(by: disposeBag)
         
         configNavigationItem()
         configSelectCell()
@@ -55,7 +55,7 @@ class CategoryViewController: UIViewController {
             .subscribe(onNext: { [weak self] article in
                 self?.performSegue(withIdentifier: SegueIdentifiers.categoryToSingleArticle, sender: article)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func configNavigationItem() {

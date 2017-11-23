@@ -81,7 +81,7 @@ class MusicPlayerViewController: UIViewController {
                 guard gesture.state != .possible else { return }
                 self.dismiss(animated: true)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func configProgressSlider() {
@@ -102,33 +102,42 @@ class MusicPlayerViewController: UIViewController {
             .map { 100*$0 }
             .observeOn(MainScheduler.instance)
             .filter { [unowned self] _ in !self.sliding }
-            .bindTo(progressSlider.rx.value)
-            .addDisposableTo(disposeBag)
+            .bind(to: progressSlider.rx.value)
+            .disposed(by: disposeBag)
         
         let slideObservable = progressSlider.rx
             .value
             .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInteractive))
             .share()
             .filter { [unowned self] _ in self.sliding }
-            .map { value in Double(value/100) * AudioController.instance.duration.value }
+            .flatMap { (value) -> Observable<Double> in
+                return Observable.just(Double(value/100) * AudioController.instance.duration.value)
+            }
+        
         slideObservable
-            .map { [unowned self] in self.convert(time: $0) }
+            .map(convert)
             .observeOn(MainScheduler.instance)
-            .bindTo(currentTimeLabel.rx.text)
-            .addDisposableTo(disposeBag)
+            .bind { [unowned self] string -> Void in
+                self.currentTimeLabel.text = string
+                return
+            }
+            .disposed(by: disposeBag)
+        
         slideObservable
             .map { AudioController.instance.duration.value - $0 }
             .map { [unowned self] time -> String in
                 return "-\(self.convert(time: time))"
             }
             .observeOn(MainScheduler.instance)
-            .bindTo(remainingTimeLabel.rx.text)
-            .addDisposableTo(disposeBag)
+            .bind { [unowned self] (string: String) in
+                self.remainingTimeLabel.text = string
+            }
+            .disposed(by: disposeBag)
         
         progressSlider.rx
             .controlEvent(.touchDown)
             .subscribe(onNext: { [unowned self] _ in self.sliding = true })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         Observable.of(progressSlider.rx.controlEvent(.touchUpInside),
                       progressSlider.rx.controlEvent(.touchUpOutside))
@@ -140,7 +149,7 @@ class MusicPlayerViewController: UIViewController {
                 AudioController.instance.currentTime.value = time
                 }
             )
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func configTimeLabel() {
@@ -151,8 +160,8 @@ class MusicPlayerViewController: UIViewController {
             .share()
             .map { [unowned self] in return self.convert(time: $0) }
             .observeOn(MainScheduler.instance)
-            .bindTo(currentTimeLabel.rx.text)
-            .addDisposableTo(disposeBag)
+            .bind(to: currentTimeLabel.rx.text)
+            .disposed(by: disposeBag)
         
         AudioController.instance.currentTime
             .asObservable()
@@ -162,8 +171,8 @@ class MusicPlayerViewController: UIViewController {
             .map { [unowned self] in self.convert(time: $0) }
             .map { return "-\($0)" }
             .observeOn(MainScheduler.instance)
-            .bindTo(remainingTimeLabel.rx.text)
-            .addDisposableTo(disposeBag)
+            .bind(to: remainingTimeLabel.rx.text)
+            .disposed(by: disposeBag)
     }
     
     func convert(time: Double) -> String {
@@ -180,12 +189,12 @@ class MusicPlayerViewController: UIViewController {
             .subscribe(onNext: { _ in
                 AudioController.instance.nextSong()
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         previousButton.rx.tap
             .subscribe(onNext: { _ in
                 AudioController.instance.previousSong()
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         nextButton.rx
             .longPressGesture()
@@ -196,7 +205,7 @@ class MusicPlayerViewController: UIViewController {
                 guard gesture.state != .possible else { return }
                 AudioController.instance.seekNext(time: 3)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         previousButton.rx
             .longPressGesture()
@@ -206,7 +215,7 @@ class MusicPlayerViewController: UIViewController {
                 guard gesture.state != .possible else { return }
                 AudioController.instance.seekBack(time: 4)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func configPlayPauseButton() {
@@ -219,7 +228,7 @@ class MusicPlayerViewController: UIViewController {
                     self.pauseButton.setImage(#imageLiteral(resourceName: "img-player-pause"), for: .normal)
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         pauseButton.rx.tap
             .subscribe(onNext: { _ in
@@ -228,7 +237,7 @@ class MusicPlayerViewController: UIViewController {
                 case false: AudioController.instance.pause()
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func configHideButton() {
@@ -238,24 +247,24 @@ class MusicPlayerViewController: UIViewController {
             .subscribe(onNext: { [unowned self] _ in
                 self.dismiss(animated: true)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     
     func configShuffleOption() {
         AudioController.instance.shuffleOption
             .asObservable()
-            .bindTo(shuffleOption)
-            .addDisposableTo(disposeBag)
+            .bind(to: shuffleOption)
+            .disposed(by: disposeBag)
         
         shuffleOption.asObservable()
-            .bindNext { [unowned self] in
+            .bind { [unowned self] in
                 switch $0 {
                 case .on: self.shuffleButton.setImage(#imageLiteral(resourceName: "img-player-shuffle"), for: .normal)
                 case .off: self.shuffleButton.setImage(#imageLiteral(resourceName: "img-player-shuffle-off"), for: .normal)
                 }
             }
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         shuffleButton.rx.tap
             .subscribe(onNext: { _ in
@@ -265,24 +274,24 @@ class MusicPlayerViewController: UIViewController {
                 case .off: shuffleOption.value = .on
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func configRepeatOption() {
         AudioController.instance.repeatOption
             .asObservable()
-            .bindTo(repeatOption)
-            .addDisposableTo(disposeBag)
+            .bind(to: repeatOption)
+            .disposed(by: disposeBag)
         
         repeatOption.asObservable()
-            .bindNext { [unowned self] in
+            .bind { [unowned self] in
                 switch $0 {
                 case .none: self.repeatButton.setImage(#imageLiteral(resourceName: "img-player-repeat-none"), for: .normal)
                 case .all: self.repeatButton.setImage(#imageLiteral(resourceName: "img-player-repeat"), for: .normal)
                 case .one: self.repeatButton.setImage(#imageLiteral(resourceName: "img-player-repeat-1"), for: .normal)
                 }
             }
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         repeatButton.rx.tap
             .subscribe(onNext: { _ in
@@ -293,7 +302,7 @@ class MusicPlayerViewController: UIViewController {
                 case .all: repeatOption.value = .none
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     func configDataSource() {
@@ -303,8 +312,8 @@ class MusicPlayerViewController: UIViewController {
         
         dataSource.selectedSong
             .asObservable()
-            .bindTo(currentSong)
-            .addDisposableTo(disposeBag)
+            .bind(to: currentSong)
+            .disposed(by: disposeBag)
         
         currentSong.asObservable()
             .unwrap()
@@ -313,7 +322,7 @@ class MusicPlayerViewController: UIViewController {
                 self.currentTimeLabel.text = "0:00"
                 self.remainingTimeLabel.text = "-0:00"
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     deinit {

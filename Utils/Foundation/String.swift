@@ -15,8 +15,8 @@ extension String {
             return completionBlock(nil)
         }
         
-        let options = [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType,
-                       NSCharacterEncodingDocumentAttribute: NSNumber(value:String.Encoding.utf8.rawValue)] as [String : Any]
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType : NSAttributedString.DocumentType.html,
+                       NSAttributedString.DocumentReadingOptionKey.characterEncoding: NSNumber(value:String.Encoding.utf8.rawValue)] as [NSAttributedString.DocumentReadingOptionKey : Any]
         
         DispatchQueue.main.async {
             if let attributedString = try? NSAttributedString(data: data, options: options, documentAttributes: nil) {

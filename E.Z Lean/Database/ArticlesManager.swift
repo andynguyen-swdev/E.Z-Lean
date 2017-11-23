@@ -63,7 +63,7 @@ extension DatabaseManager {
                     .queryEnding(atValue: self.lastestTimestamp - 1)
                     .observe(.value, with: { [unowned self] snapshot in
                         for item in snapshot.children {
-                            let article = Article.create(snapshot: item as! FIRDataSnapshot)
+                            let article = Article.create(snapshot: item as! DataSnapshot)
                             if article.timestamp < self.lastestTimestamp {
                                 self.lastestTimestamp = article.timestamp
                             }

@@ -30,13 +30,12 @@ pod 'RealmSwift'
 pod 'ReachabilitySwift'
 pod 'SlideMenuControllerSwift'
 pod 'LTMorphingLabel'
-pod 'PopupDialog', '~> 0.5'
+pod 'PopupDialog'
 
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
 
-pod 'Kanna', '~> 2.1.0'
 pod 'FLAnimatedImage'
 
 end
@@ -44,7 +43,7 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['SWIFT_VERSION'] = '3.0'
+      config.build_settings['SWIFT_VERSION'] = ‘4.0’
     end
   end
 end

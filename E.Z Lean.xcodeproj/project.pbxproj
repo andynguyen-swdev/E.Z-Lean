@@ -91,6 +91,14 @@
 		508CAB481E7330D8005BD1FB /* HTMLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CAB471E7330D8005BD1FB /* HTMLGenerator.swift */; };
 		508CAB4B1E733147005BD1FB /* article_base_prefix.txt in Resources */ = {isa = PBXBuildFile; fileRef = 508CAB491E733147005BD1FB /* article_base_prefix.txt */; };
 		508CAB4C1E733147005BD1FB /* article_base_suffix.txt in Resources */ = {isa = PBXBuildFile; fileRef = 508CAB4A1E733147005BD1FB /* article_base_suffix.txt */; };
+		508E547B1FC713AB00E4AABB /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E54741FC713AB00E4AABB /* CSS.swift */; };
+		508E547C1FC713AB00E4AABB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 508E54751FC713AB00E4AABB /* Info.plist */; };
+		508E547D1FC713AB00E4AABB /* Kanna.h in Headers */ = {isa = PBXBuildFile; fileRef = 508E54761FC713AB00E4AABB /* Kanna.h */; };
+		508E547E1FC713AB00E4AABB /* Kanna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E54771FC713AB00E4AABB /* Kanna.swift */; };
+		508E547F1FC713AB00E4AABB /* libxmlHTMLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E54781FC713AB00E4AABB /* libxmlHTMLDocument.swift */; };
+		508E54801FC713AB00E4AABB /* libxmlHTMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E54791FC713AB00E4AABB /* libxmlHTMLNode.swift */; };
+		508E54811FC713AB00E4AABB /* libxmlParserOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E547A1FC713AB00E4AABB /* libxmlParserOption.swift */; };
+		508E54851FC7170400E4AABB /* libxml2-kanna.h in Headers */ = {isa = PBXBuildFile; fileRef = 508E54831FC7170400E4AABB /* libxml2-kanna.h */; };
 		50951D271E735650009C34A3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50951D261E735650009C34A3 /* String.swift */; };
 		50A67F781E472C4700E463F7 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 50A67F761E472C4700E463F7 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50A67F7B1E472C4700E463F7 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A67F741E472C4700E463F7 /* Utils.framework */; };
@@ -106,11 +114,6 @@
 		50A67FA61E472C5700E463F7 /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F8D1E472C5700E463F7 /* SKNode.swift */; };
 		50A67FA71E472C5700E463F7 /* SKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F8E1E472C5700E463F7 /* SKSpriteNode.swift */; };
 		50A67FA81E472C5700E463F7 /* SKTextureAtlas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F8F1E472C5700E463F7 /* SKTextureAtlas.swift */; };
-		50A67FA91E472C5700E463F7 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F911E472C5700E463F7 /* Configuration.swift */; };
-		50A67FAA1E472C5700E463F7 /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F921E472C5700E463F7 /* TouchView.swift */; };
-		50A67FAB1E472C5700E463F7 /* TouchVisualizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 50A67F931E472C5700E463F7 /* TouchVisualizer.h */; };
-		50A67FAC1E472C5700E463F7 /* UIWindow+Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F941E472C5700E463F7 /* UIWindow+Swizzle.swift */; };
-		50A67FAD1E472C5700E463F7 /* Visualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F951E472C5700E463F7 /* Visualizer.swift */; };
 		50A67FAE1E472C5700E463F7 /* GifUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F971E472C5700E463F7 /* GifUIImageView.swift */; };
 		50A67FAF1E472C5700E463F7 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F981E472C5700E463F7 /* UIButton.swift */; };
 		50A67FB01E472C5700E463F7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A67F991E472C5700E463F7 /* UIColor.swift */; };
@@ -270,6 +273,15 @@
 		508CAB471E7330D8005BD1FB /* HTMLGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLGenerator.swift; sourceTree = "<group>"; };
 		508CAB491E733147005BD1FB /* article_base_prefix.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = article_base_prefix.txt; sourceTree = "<group>"; };
 		508CAB4A1E733147005BD1FB /* article_base_suffix.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = article_base_suffix.txt; sourceTree = "<group>"; };
+		508E54741FC713AB00E4AABB /* CSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSS.swift; sourceTree = "<group>"; };
+		508E54751FC713AB00E4AABB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		508E54761FC713AB00E4AABB /* Kanna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kanna.h; sourceTree = "<group>"; };
+		508E54771FC713AB00E4AABB /* Kanna.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kanna.swift; sourceTree = "<group>"; };
+		508E54781FC713AB00E4AABB /* libxmlHTMLDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = libxmlHTMLDocument.swift; sourceTree = "<group>"; };
+		508E54791FC713AB00E4AABB /* libxmlHTMLNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = libxmlHTMLNode.swift; sourceTree = "<group>"; };
+		508E547A1FC713AB00E4AABB /* libxmlParserOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = libxmlParserOption.swift; sourceTree = "<group>"; };
+		508E54831FC7170400E4AABB /* libxml2-kanna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libxml2-kanna.h"; sourceTree = "<group>"; };
+		508E54841FC7170400E4AABB /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		50951D261E735650009C34A3 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		50A67F741E472C4700E463F7 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A67F761E472C4700E463F7 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -285,11 +297,6 @@
 		50A67F8D1E472C5700E463F7 /* SKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
 		50A67F8E1E472C5700E463F7 /* SKSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSpriteNode.swift; sourceTree = "<group>"; };
 		50A67F8F1E472C5700E463F7 /* SKTextureAtlas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTextureAtlas.swift; sourceTree = "<group>"; };
-		50A67F911E472C5700E463F7 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		50A67F921E472C5700E463F7 /* TouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
-		50A67F931E472C5700E463F7 /* TouchVisualizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchVisualizer.h; sourceTree = "<group>"; };
-		50A67F941E472C5700E463F7 /* UIWindow+Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+Swizzle.swift"; sourceTree = "<group>"; };
-		50A67F951E472C5700E463F7 /* Visualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visualizer.swift; sourceTree = "<group>"; };
 		50A67F971E472C5700E463F7 /* GifUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifUIImageView.swift; sourceTree = "<group>"; };
 		50A67F981E472C5700E463F7 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		50A67F991E472C5700E463F7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -637,15 +644,39 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		508E54731FC713AB00E4AABB /* Kanna */ = {
+			isa = PBXGroup;
+			children = (
+				508E54821FC7170400E4AABB /* Modules */,
+				508E54741FC713AB00E4AABB /* CSS.swift */,
+				508E54751FC713AB00E4AABB /* Info.plist */,
+				508E54761FC713AB00E4AABB /* Kanna.h */,
+				508E54771FC713AB00E4AABB /* Kanna.swift */,
+				508E54781FC713AB00E4AABB /* libxmlHTMLDocument.swift */,
+				508E54791FC713AB00E4AABB /* libxmlHTMLNode.swift */,
+				508E547A1FC713AB00E4AABB /* libxmlParserOption.swift */,
+			);
+			path = Kanna;
+			sourceTree = "<group>";
+		};
+		508E54821FC7170400E4AABB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				508E54831FC7170400E4AABB /* libxml2-kanna.h */,
+				508E54841FC7170400E4AABB /* module.modulemap */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		50A67F751E472C4700E463F7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				508E54731FC713AB00E4AABB /* Kanna */,
 				50A67F811E472C5700E463F7 /* CoreGraphics */,
 				50A67F871E472C5700E463F7 /* Foundation */,
 				50A67F891E472C5700E463F7 /* Functional.swift */,
 				50A67F8A1E472C5700E463F7 /* GameplayKit */,
 				50A67F8C1E472C5700E463F7 /* SpriteKit */,
-				50A67F901E472C5700E463F7 /* TouchVisualizer */,
 				50A67F961E472C5700E463F7 /* UIKit */,
 				5052D9431E6CDF2A000784DD /* WebKit */,
 				50A67F761E472C4700E463F7 /* Utils.h */,
@@ -692,18 +723,6 @@
 				50A67F8F1E472C5700E463F7 /* SKTextureAtlas.swift */,
 			);
 			path = SpriteKit;
-			sourceTree = "<group>";
-		};
-		50A67F901E472C5700E463F7 /* TouchVisualizer */ = {
-			isa = PBXGroup;
-			children = (
-				50A67F911E472C5700E463F7 /* Configuration.swift */,
-				50A67F921E472C5700E463F7 /* TouchView.swift */,
-				50A67F931E472C5700E463F7 /* TouchVisualizer.h */,
-				50A67F941E472C5700E463F7 /* UIWindow+Swizzle.swift */,
-				50A67F951E472C5700E463F7 /* Visualizer.swift */,
-			);
-			path = TouchVisualizer;
 			sourceTree = "<group>";
 		};
 		50A67F961E472C5700E463F7 /* UIKit */ = {
@@ -899,7 +918,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50A67FAB1E472C5700E463F7 /* TouchVisualizer.h in Headers */,
+				508E547D1FC713AB00E4AABB /* Kanna.h in Headers */,
+				508E54851FC7170400E4AABB /* libxml2-kanna.h in Headers */,
 				50A67F781E472C4700E463F7 /* Utils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -959,7 +979,7 @@
 				TargetAttributes = {
 					50062A181E470D62002BDE90 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Z3TDYH9DM8;
+						DevelopmentTeam = A45AVBPAYP;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -969,7 +989,7 @@
 					};
 					50A67F731E472C4700E463F7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Z3TDYH9DM8;
+						DevelopmentTeam = A45AVBPAYP;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -1047,6 +1067,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508E547C1FC713AB00E4AABB /* Info.plist in Resources */,
 				5069FA3D1E72562000188777 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1075,9 +1096,60 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-E.Z Lean/Pods-E.Z Lean-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
+				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialControls/MaterialControls.framework",
+				"${BUILT_PRODUCTS_DIR}/Popover/Popover.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialControls.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Popover.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1090,13 +1162,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-E.Z Lean-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1191,30 +1266,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A67FAF1E472C5700E463F7 /* UIButton.swift in Sources */,
+				508E54811FC713AB00E4AABB /* libxmlParserOption.swift in Sources */,
 				50A67FB21E472C5700E463F7 /* UIImage.swift in Sources */,
 				50A67FB41E472C5700E463F7 /* UIView.swift in Sources */,
+				508E547F1FC713AB00E4AABB /* libxmlHTMLDocument.swift in Sources */,
 				50951D271E735650009C34A3 /* String.swift in Sources */,
-				50A67FAA1E472C5700E463F7 /* TouchView.swift in Sources */,
 				50A67FAE1E472C5700E463F7 /* GifUIImageView.swift in Sources */,
 				50A67FA71E472C5700E463F7 /* SKSpriteNode.swift in Sources */,
 				50A67FB11E472C5700E463F7 /* UIColorExtension.swift in Sources */,
 				50A67FA11E472C5700E463F7 /* CGSize.swift in Sources */,
 				50A67FA81E472C5700E463F7 /* SKTextureAtlas.swift in Sources */,
 				50A67FA41E472C5700E463F7 /* Functional.swift in Sources */,
+				508E54801FC713AB00E4AABB /* libxmlHTMLNode.swift in Sources */,
 				50A67F9F1E472C5700E463F7 /* CGPoint.swift in Sources */,
 				50A67FA21E472C5700E463F7 /* CGVector.swift in Sources */,
 				F1D833411E478F2D00772F42 /* StringToDouble.swift in Sources */,
-				50A67FA91E472C5700E463F7 /* Configuration.swift in Sources */,
-				50A67FAD1E472C5700E463F7 /* Visualizer.swift in Sources */,
-				50A67FAC1E472C5700E463F7 /* UIWindow+Swizzle.swift in Sources */,
 				50A67FA31E472C5700E463F7 /* Array.swift in Sources */,
 				50A67FB01E472C5700E463F7 /* UIColor.swift in Sources */,
 				50A67FB31E472C5700E463F7 /* UIImageView.swift in Sources */,
 				50A67FA01E472C5700E463F7 /* CGRect.swift in Sources */,
+				508E547E1FC713AB00E4AABB /* Kanna.swift in Sources */,
 				50A67FA51E472C5700E463F7 /* GKGraphNode2D.swift in Sources */,
 				5052D9451E6CDF36000784DD /* WKWebView.swift in Sources */,
 				502C55B41E71A4F2003D8B0D /* UIViewExtension.swift in Sources */,
 				5052D93A1E6C2EC3000784DD /* UIScrollView.swift in Sources */,
+				508E547B1FC713AB00E4AABB /* CSS.swift in Sources */,
 				50A67FA61E472C5700E463F7 /* SKNode.swift in Sources */,
 				50A67F9E1E472C5700E463F7 /* CGFloat.swift in Sources */,
 			);
@@ -1349,14 +1425,31 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z3TDYH9DM8;
+				DEVELOPMENT_TEAM = A45AVBPAYP;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"\"${PODS_ROOT}/leveldb-library\"",
+					"\"${PODS_ROOT}/leveldb-library/include\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuth\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDatabase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "E.Z Lean/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "vn.ezLean.E-Z-Lean";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Utils/Kanna/Modules";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/FLAnimatedImage/FLAnimatedImage";
 			};
 			name = Debug;
 		};
@@ -1366,14 +1459,31 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z3TDYH9DM8;
+				DEVELOPMENT_TEAM = A45AVBPAYP;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"\"${PODS_ROOT}/leveldb-library\"",
+					"\"${PODS_ROOT}/leveldb-library/include\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuth\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDatabase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "E.Z Lean/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "vn.ezLean.E-Z-Lean";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Utils/Kanna/Modules";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/FLAnimatedImage/FLAnimatedImage";
 			};
 			name = Release;
 		};
@@ -1384,19 +1494,21 @@
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Z3TDYH9DM8;
+				DEVELOPMENT_TEAM = A45AVBPAYP;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = Utils/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(SDKROOT)/usr/include/libxml2 $(SRCROOT)/Modules";
 				PRODUCT_BUNDLE_IDENTIFIER = duyanh2912.Utils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Utils/Kanna/Modules";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1409,18 +1521,20 @@
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Z3TDYH9DM8;
+				DEVELOPMENT_TEAM = A45AVBPAYP;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = Utils/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(SDKROOT)/usr/include/libxml2 $(SRCROOT)/Modules";
 				PRODUCT_BUNDLE_IDENTIFIER = duyanh2912.Utils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Utils/Kanna/Modules";
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

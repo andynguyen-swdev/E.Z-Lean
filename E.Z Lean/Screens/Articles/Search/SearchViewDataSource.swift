@@ -25,7 +25,7 @@ class SearchViewDataSource {
     
     func config() {
         articles.asObservable()
-            .bindTo(collectionView.rx
+            .bind(to: collectionView.rx
                 .items(cellIdentifier: SmallArticleCell.identifier,
                        cellType: SmallArticleCell.self))
             { [unowned self] row, article, cell in
@@ -34,7 +34,7 @@ class SearchViewDataSource {
                             collectionView: self.collectionView,
                             indexPath: IndexPath(item: row, section: 0))
             }
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
         searchQuerry.asObservable()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .userInteractive))
@@ -44,7 +44,7 @@ class SearchViewDataSource {
                 return querry as String
             }
             .observeOn(MainScheduler.instance)
-            .flatMapLatest { querry -> Observable<[Article]> in
+            .flatMapLatest { (querry: String) -> Observable<[Article]> in
                 if querry.isEmpty {
                     self.articles.value = []
                     return Variable<[Article]>([]).asObservable()
@@ -52,7 +52,7 @@ class SearchViewDataSource {
                 let dattenbua = DatabaseManager.articles.search(querry: querry)
                 return Observable.array(from: dattenbua)
             }
-            .bindTo(articles)
-            .addDisposableTo(disposeBag)
+            .bind(to: articles)
+            .disposed(by: disposeBag)
     }
 }

@@ -34,16 +34,15 @@ class RecentCollectionViewDataSource {
     }
     
     func bindDataSource() {
-        let dataSource = RxCollectionViewSectionedAnimatedDataSource<AnimatableSectionModel<String,Article>>()
-        dataSource.configureCell = {
-            [unowned self]
-            data, cView, indexPath, article in
-            let cell = cView.dequeueReusableCell(withReuseIdentifier: self.cellType.identifier, for: indexPath) as! cellClass
-            
-            cell.contentWidth = self.cellWidth
-            cell.config(article: article, collectionView: cView, indexPath: indexPath)
-            return cell
-        }
+        let dataSource = RxCollectionViewSectionedReloadDataSource<AnimatableSectionModel<String,Article>>(configureCell: {
+                [unowned self]
+                data, cView, indexPath, article -> UICollectionViewCell in
+                let cell = cView.dequeueReusableCell(withReuseIdentifier: self.cellType.identifier, for: indexPath) as! cellClass
+                
+                cell.contentWidth = self.cellWidth
+                cell.config(article: article, collectionView: cView, indexPath: indexPath)
+                return cell
+        })
         
         articles.asObservable()
             .map { articles in

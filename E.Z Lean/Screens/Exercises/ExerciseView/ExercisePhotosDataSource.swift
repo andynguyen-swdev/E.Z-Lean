@@ -31,7 +31,7 @@ class ExercisePhotosDataSource {
                 arr.insert(arr[arr.endIndex-2], at: 0)
                 return arr
             }
-            .bindTo(collectionView.rx
+            .bind(to: collectionView.rx
                 .items(cellIdentifier: "Cell")) {
                     [unowned self] row, ele, cell in
                     if self.loaded == false {
@@ -45,6 +45,6 @@ class ExercisePhotosDataSource {
                     imageView.sd_setIndicatorStyle(.gray)
                     imageView.sd_setImage(with: url)
             }
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
 }

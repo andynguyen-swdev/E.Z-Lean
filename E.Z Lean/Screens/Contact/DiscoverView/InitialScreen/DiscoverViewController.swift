@@ -12,7 +12,7 @@ import RxSwift
 import Alamofire
 import SwiftyJSON
 import SlideMenuControllerSwift
-import ReachabilitySwift
+//import ReachabilitySwift
 import MaterialControls
 
 class DiscoverViewController: UIViewController, ImageTransitionAnimatable {
